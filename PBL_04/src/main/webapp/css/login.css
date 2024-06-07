@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    background-color: #eee;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login-box {
+    width: 400px;
+    height: 300px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    background-color: white;
+}
+
+.login-box input {
+    width: auto;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    height: 40px;
+}
+
