@@ -28,7 +28,8 @@ public class TestController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/account_register.jsp").forward(request, response);
 	}
 
 	/**
@@ -36,7 +37,13 @@ public class TestController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+		String name = request.getParameter("name");
+		String mail = request.getParameter("mail");
+		String pass = request.getParameter("pass");
+		String pass_confirm = request.getParameter("pass_confirm");
+		String permission = request.getParameter("permission");
+		System.out.println(name + mail +  pass + pass_confirm + permission);
 	}
 
 }
