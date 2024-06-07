@@ -5,5 +5,6 @@ public class test1 {
 		System.out.println("saebetakano");
 		System.out.println("大石航馬");
 		System.out.println("原");
+		System.out.println("test");
 	}
 }
