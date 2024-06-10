@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <script src="js/day.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="text" name="name" class="col-12 border rounded px-4 fs-3" placeholder="yyyy/mm/dd" required>
+                    <input type="date" name="name" id="datepicker" value="" class="col-12 border rounded px-4 fs-3" required>
                 </div>
             </div>
 
@@ -73,10 +74,10 @@
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">単価</div>
                 <div class="col-1">
-                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">単価</div>
+                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
+                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
                 </div>
             </div>
 
@@ -97,9 +98,7 @@
                 </div>
 
                 <div class="col-8">
-                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考" required>
-                   
-                </textarea>
+                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考" required></textarea>
                 </div>
             </div>
 
