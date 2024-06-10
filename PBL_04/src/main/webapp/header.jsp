@@ -21,7 +21,7 @@
             <a href="#"class="col-2 text-black text-decoration-none m-1">アカウント登録</a>
             <a href="#"class="col-2 text-black text-decoration-none m-1">アカウント検索</a>
         </div>
-        <a href="#"class="col-1 text-end text-black text-decoration-none">
+        <a href="Logout"class="col-1 text-end text-black text-decoration-none">
             ログアウト
         </a>
     </div>
