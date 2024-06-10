@@ -36,7 +36,7 @@ public class salseRegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/salseRegisterConfirm.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/salesRegisterConfirm.jsp").forward(request, response);
 	}
 
 }
