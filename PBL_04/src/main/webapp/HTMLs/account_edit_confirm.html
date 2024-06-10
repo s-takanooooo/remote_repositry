@@ -14,12 +14,12 @@
     <!-- 本体 -->
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="fs-1 fw-bold">アカウント登録してよろしですか？</div>
+            <div class="fs-1 fw-bold">アカウント詳細編集確認</div>
         </div>
     </div>
-    <!-- placeholderにサーブレットから値を持ってくる -->
     <div class="row mt-4">
         <form method="post" action="#">
+            
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">氏名</div>
                 <div class="col-1">
@@ -51,32 +51,22 @@
             </div>
 
             <div class="row offset-2 col-8 my-4">
-                <div class="col-3 text-end fs-3">パスワード（確認）</div>
-                <div class="col-1">
-                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
-                </div>
-                <div class="col-8">
-                    <input type="text" class="col-12 border rounded px-4 fs-3" placeholder="${pass_confirm}" readonly>
-                </div>
-            </div>
-
-            <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">権限</div>
                 <div class="col-1">
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <!-- permissionがnothingの場合 -->
-                    <div class="row col-8">
+                <div class="row col-8">    
                     <c:if test="${permission == 'nothing'}">
                         <div class="col-2">
                             <input type="radio" class="" name="permission" id="nothing" checked>
                             <label class="fs-4" for="nothing">権限なし</label>
                         </div>
-                            <div class="col-2">
+                        <div class="col-2">
                             <input type="radio" class="" name="permission" id="read" disabled>
                             <label class="fs-4" for="read">参照</label>
                         </div>
-                            <div class="col-2">
+                        <div class="col-2">
                             <input type="radio" class="" name="permission" id="update" disabled>
                             <label class="fs-4" for="update">更新</label>
                         </div>
