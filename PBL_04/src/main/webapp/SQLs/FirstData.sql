@@ -1,0 +1,1 @@
+INSERT INTO accounts (name, mail,password, authority) VALUE (山田太郎, taro_yamada@tomatosystem.co.jp, Taro1234, 1);
