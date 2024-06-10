@@ -26,7 +26,7 @@
                             <th scope="col">権限</th>
                         </tr>
                     </thead>
-                    <c:foreach var="item" items="sales">
+                    <c:forEach var="item" items="accounts">
                         <tbody>
                             <tr>
                                 <td><button class="btn btn-primary  me-3" role="button">✓編集</button>
@@ -38,7 +38,7 @@
                                 <td>{item.authority}</td>
                             </tr>
                         </tbody>
-                    </c:foreach>
+                    </c:forEach>
                 </table>
             </div>
         </div>
