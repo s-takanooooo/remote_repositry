@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>売上詳細表示｜物品売り上げ管理システム</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
@@ -15,7 +15,6 @@
     <header>ここにヘッダーを追加</header>
     <div class="container-fluid">
         <div class="d-flex justify-content-start mx-4 mt-4">
-            <h1 class="fw-bold ms-5 mt-5">売上詳細表示</h1>
             <h1 class="fw-bold">売上詳細表示</h1>
         </div>
         <div class="row mt-2">
