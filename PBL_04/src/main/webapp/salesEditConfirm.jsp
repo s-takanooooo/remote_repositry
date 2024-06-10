@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 </head>
 
-<body>
-    <!-- ヘッダーをここに追加 -->
-    <div>
-        header
-    </div>
+<jsp:include page="header.jsp" />
     <!-- 本体 -->
     <div class="row">
         <div class="col-8 offset-2">

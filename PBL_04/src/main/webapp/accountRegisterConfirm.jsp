@@ -9,9 +9,7 @@
 <title>アカウント登録確認</title>
 </head>
 <body>
-	<!-- ヘッダーをここに追加 -->
-	<div>header</div>
-	<!-- 本体 -->
+<jsp:include page="header.jsp" />
 	<div class="row">
 		<div class="col-8 offset-2">
 			<div class="fs-1 fw-bold">アカウント登録してよろしですか？</div>

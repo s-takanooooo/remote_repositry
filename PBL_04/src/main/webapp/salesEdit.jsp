@@ -9,11 +9,7 @@
     <script src="js/day.js"></script>
 </head>
 
-<body>
-    <!-- ヘッダーをここに追加 -->
-    <div>
-        header
-    </div>
+<jsp:include page="header.jsp" />
     <!-- 本体 -->
     <div class="row">
         <div class="col-8 offset-2">

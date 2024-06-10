@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
-<body>
-    <header>ここにヘッダーを追加</header>
+<jsp:include page="header.jsp" />
     <div class="container-fluid">
         <div class="d-flex justify-content-start">
             <h1 class="fw-bold mt-5">アカウント検索結果表示</h1>
