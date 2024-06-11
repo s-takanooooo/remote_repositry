@@ -10,8 +10,8 @@
 
 <body>
     <div class="bg-secondary">
-    <div class="row fs-2">
-        <a href="#" class="col-3 text-black text-decoration-none m-1">
+    <div class="row fs-4">
+        <a href="#" class="col-3 col- text-black text-decoration-none m-1">
             物品売上管理システム
         </a>
         <div class="row col-8">
