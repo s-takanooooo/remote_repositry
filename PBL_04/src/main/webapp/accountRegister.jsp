@@ -96,7 +96,7 @@
 						id="update"> <label class="fs-5" for="update">アカウント登録</label>
 				</div>
 				<div class="col-4">
-					<input type="radio" class="" name="permission" value="10"
+					<input type="radio" class="" name="permission" value="11"
 						id="update"> <label class="fs-5" for="update">売上登録/アカウント登録</label>
 				</div>
 			</div>
