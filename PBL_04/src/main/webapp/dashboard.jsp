@@ -14,11 +14,11 @@
 			<a href="#" class="col-3 text-secondary text-decoration-none">
 				物品売上管理システム </a>
 			<div class="row col-8">
-				<a href="#" class="col-2 text-secondary text-decoration-none ">ダッシュボード</a>
-				<a href="#" class="col-2 text-secondary text-decoration-none ">売上登録</a>
-				<a href="#" class="col-2 text-secondary text-decoration-none ">売上検索</a>
+				<a href="Dashboard" class="col-2 text-secondary text-decoration-none ">ダッシュボード</a>
+				<a href="SalesRegister" class="col-2 text-secondary text-decoration-none ">売上登録</a>
+				<a href="SalesSearch" class="col-2 text-secondary text-decoration-none ">売上検索</a>
 				<a href="AccountRegister" class="col-3 text-secondary text-decoration-none ">アカウント登録</a>
-				<a href="#" class="col-3 text-secondary text-decoration-none ">アカウント検索</a>
+				<a href="AccountSearch" class="col-3 text-secondary text-decoration-none ">アカウント検索</a>
 			</div>
 			<a href="Logout"
 				class="col-1 text-end text-secondary text-decoration-none">
