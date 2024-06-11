@@ -19,7 +19,7 @@
     </div>
     <div class="row mt-4">
         <!-- アクションの指定 -->
-        <form method="post" action="#">
+        <form method="post" action="SalesDelete">
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">販売日</div>
                 <div class="col-8 offset-1">
@@ -83,7 +83,7 @@
 
             <div class="col-4 offset-5">
                 <button type="submit" class="col-4 btn btn-danger border rounded">✔　O　K</Kbd></button>
-                <a href="#" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+                <a href="SalesDelete" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
             </div>
         </form>
     </div>
