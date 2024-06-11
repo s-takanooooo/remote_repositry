@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -42,23 +41,20 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		
 		System.out.println("postが実行されました");
 		
-		HttpSession session = request.getSession();
-		
 		
 		
 		String day = request.getParameter("sale_date");
-		int account_id = (int)session.getAttribute("accounts_id");
+		String responsible = request.getParameter("responsible");
 		String sales_category = request.getParameter("category_id");
 		String trade_name = request.getParameter("trade_name");
 		String unit_price = request.getParameter("unit_prace");
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
 		
-		System.out.println(account_id);
 		
 		
 		SalesServices si = new SalesServices();
-		si.salesInsert(day, account_id, sales_category, trade_name, unit_price, sales_num, sales_note);
+		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
 		response.sendRedirect("SalesRegister");
 	}
 
