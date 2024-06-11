@@ -73,7 +73,7 @@
 			</div>
 			<div class="row col-8">
 				<!-- permissionがnothingの時 -->
-				<c:if test="${permission == 'nothing'}">
+				<c:if test="${permission == '0'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing"
 							checked> <label class="fs-4" for="nothing">権限なし</label>
@@ -89,7 +89,7 @@
 					<!-- permissionがreadの時 -->
 
 				</c:if>
-				<c:if test="${permission == 'nothing'}">
+				<c:if test="${permission == '1'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing">
 						<label class="fs-4" for="nothing">権限なし</label>
@@ -104,7 +104,7 @@
 					</div>
 				</c:if>
 				<!-- permissionがupdateの時 -->
-				<c:if test="${permission == 'nothing'}">
+				<c:if test="${permission == '10'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing">
 						<label class="fs-4" for="nothing">権限なし</label>
