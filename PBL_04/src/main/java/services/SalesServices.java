@@ -33,7 +33,7 @@ public class SalesServices {
 	}
 	
 	public int getAccountId(String account_name) {
-		String sql ="SELECT * from categories WHERE name=?";
+		String sql ="SELECT * from accounts WHERE name=?";
 		AccountsBean ab =null;
 		try(
 				Connection con =DbUtil.open();
@@ -102,21 +102,22 @@ public class SalesServices {
 		}
 	}
 	
-	public void salesEdit(String day,String name,String sales_category,
-			String trade_name,String unit_price,String sales_num,
-			String sales_note) {
-		String sql = "UPDATE sales SET sale_date=?,account_id=?,category_id=?,trade_name=?,unit_price=?,sale_number=?,note=?";
+	public void salesEdit(String day,String name,String sale_category,
+			String trade_name,String unit_price,String sale_num,
+			String sale_note, int sale_id) {
+		String sql = "UPDATE sales SET sale_date=?,account_id=?,category_id=?,trade_name=?,unit_price=?,sale_number=?,note=? where sale_id=?";
 		try(
 				Connection con = DbUtil.open();
 				PreparedStatement stmt = con.prepareStatement(sql);
 				){
 			stmt.setDate(1,Date.valueOf(day));
 			stmt.setInt(2,this.getAccountId(name));
-			stmt.setInt(3, this.getCategoryId(sales_category));
+			stmt.setInt(3, this.getCategoryId(sale_category));
 			stmt.setString(4,trade_name);
 			stmt.setString(5, unit_price);
-			stmt.setString(6, sales_num);
-			stmt.setString(7, sales_num);
+			stmt.setString(6, sale_num);
+			stmt.setString(7, sale_note);
+			stmt.setInt(8, sale_id);
 			int result = stmt.executeUpdate();
 			System.out.println(result);
 		}catch (SQLException e) {
