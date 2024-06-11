@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.AccountsBean;
 import services.AccountsServices;
 
 /**
@@ -47,7 +48,12 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(email +  "+" +  pass);
 		if(as.Login(email, pass) == true) {
 			HttpSession session = request.getSession();
-			session.setAttribute(email, pass);
+			AccountsBean ab = as.selectOne(email, pass);
+			session.setAttribute("accounts_id", ab.getAccount_id());
+			session.setAttribute("accountName", ab.getName());
+			session.setAttribute("mail", ab.getMail());
+			session.setAttribute("password", ab.getPassword());
+			session.setAttribute("authority", ab.getAuthority());
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}else {
 			request.setAttribute("login", false);
