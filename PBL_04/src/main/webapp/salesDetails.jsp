@@ -62,7 +62,7 @@
             <div class="text align-self-start">
                 <button class="btn btn-primary  me-3" role="button">✓編集</button>
                 <button class="btn btn-danger  me-3" role="button">×削除</button>
-                <a class="btn btn-light" href="#">キャンセル</a>
+                <a class="btn btn-light" href="SalesDetail">キャンセル</a>
             </div>
         </div>
     </div>
