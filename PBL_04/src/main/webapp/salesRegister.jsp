@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="col-8">
-                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考" required></textarea>
+                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
                 </div>
             </div>
 
