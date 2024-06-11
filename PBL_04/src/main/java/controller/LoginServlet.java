@@ -8,13 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.AccountsServices;
+
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,7 +30,9 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -36,7 +40,16 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String email = request.getParameter("email");
+		String pass = request.getParameter("pass");
+		System.out.println(email +  "+" +  pass);
+		if(as.Login(email, pass) == true) {
+			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
+		}else {
+			request.setAttribute("login", false);
+			this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);			
+		}
 	}
 
 }

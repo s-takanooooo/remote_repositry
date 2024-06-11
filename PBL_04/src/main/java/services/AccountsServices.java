@@ -8,26 +8,30 @@ import util.DbUtil;
 
 public class AccountsServices {
 
-	public boolean Login(String account_name, String mail) throws Exception{
-		
-		
-		String sql = "SELECT * FROM accounts WHERE account_name = ? AND mail = ?";
+	public boolean Login(String mail, String password){
+		boolean f = false;
+
+		String sql = "SELECT * FROM accounts WHERE mail = ? AND password = ?";
 
 		try (
 				Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 
-			ps.setString(1, account_name);
-			ps.setString(2, mail);
+			ps.setString(1, mail);
+			ps.setString(2, password);
 
 			ResultSet rs = ps.executeQuery();
-
-			if(rs != null) {
-				return true;  
-			}else {
-				return false;
-			}
 			
-		} 
+			if (rs.next()){
+				f =  true;
+			} else {
+				System.out.println("Query returned no results");
+				f = false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
 	}
 }
