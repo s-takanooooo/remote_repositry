@@ -18,7 +18,7 @@
     </div>
     <div class="row mt-4">
 		<!-- アクションの指定 -->
-        <form method="post" action="#">
+        <form method="post" action="SalesRegisterConfirmServlet">
             <div class="row offset-2 col-8 my-4">
                 
                 <div class="col-3 text-end fs-3">販売日</div>
@@ -84,7 +84,7 @@
             <div class="col-2 offset-5">
                 <table>
                 <tr><button type="submit" class="col-6 btn btn-primary border rounded">✔　登　録</button></tr>
-                <tr><a href="" class="col-6 btn btn-primary border rounded">キャンセル</a></tr>
+                <tr><a href="SalesRegister" class="col-6 btn btn-primary border rounded">キャンセル</a></tr>
         </table>
             </div>
 
