@@ -20,7 +20,7 @@
     
     <div class=" mt-4">
 		<!-- アクションの指定 -->
-        <form method="post" action="#">
+        <form method="post" action="AccountSearch">
             <div class="row offset-2 col-8 my-4">
                 <div class="col-2 text-end fs-3">氏名</div>
                 <div class="col-2">
@@ -59,7 +59,7 @@
             </div>
             <div class="col-2 offset-5">
                 <button type="submit" class="col-5 btn btn-primary border rounded">検　索</button>
-                <a href="#" class="btn btn-white border rounded col-5">クリア</a>
+                <a href="AccountSearch" class="btn btn-white border rounded col-5">クリア</a>
             </div>
         </form>
     </div>
