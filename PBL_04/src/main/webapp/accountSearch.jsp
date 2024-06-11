@@ -27,7 +27,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">部分一致</div>
                 </div>
                 <div class="col-8">
-                    <input type="text" name="name" class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
+                    <input type="text" name="name" class="col-12 border rounded px-4 fs-3" placeholder="氏名">
                 </div>
             </div>
             <div>
@@ -35,7 +35,7 @@
                 <div class="col-4 text-end fs-3 text-center">メールアドレス</div>
 
                 <div class="col-8">
-                    <input type="email" name="mail" class="col-12 border rounded px-4 fs-3 text" placeholder="メールアドレス" required>
+                    <input type="email" name="mail" class="col-12 border rounded px-4 fs-3 text" placeholder="メールアドレス">
                 </div>
             </div>
             </div>

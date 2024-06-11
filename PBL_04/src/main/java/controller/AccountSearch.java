@@ -42,7 +42,8 @@ public class AccountSearch extends HttpServlet {
 		
 		String name =  request.getParameter("name");
 		String mail = request.getParameter("mail");
-		int permission = Integer.parseInt(request.getParameter("permission"));
+		String permission = request.getParameter("permission");
+			
 		
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
 		
