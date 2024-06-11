@@ -34,7 +34,7 @@
 				<%-- <c:forEach var="item" items="sales"> --%>
 				<tbody>
 					<tr>
-						<td><a class="btn btn-primary" role="button" href="#">✓詳細</a></td>
+						<td><a class="btn btn-primary" role="button" href="SalesDetail">✓詳細</a></td>
 						<td>{item.sale_id}</td>
 						<td>{item.sale_date}</td>
 						<td>{item.account_name}</td>
