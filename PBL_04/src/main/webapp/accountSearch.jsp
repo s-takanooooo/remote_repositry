@@ -44,17 +44,21 @@
                 
                 <div class="row col-8">
                     <div class="col-2">
-                        <input type="radio" class="" name="permission" id="nothing">
+                        <input type="radio" class="" name="permission" id="nothing" value="0">
                         <label class="fs-4" for="nothing">権限なし</label>
-                    </div>
+                 	</div>
                     <div class="col-2">
-                    <input type="radio" class="" name="permission" id="read">
-                    <label class="fs-4" for="read">参照</label>
-                </div>
+                    	<input type="radio" class="" name="permission" id="read" value="1">
+                    	<label class="fs-4" for="read">売上登録</label>
+                	</div>
                     <div class="col-2">
-                    <input type="radio" class="" name="permission" id="update">
-                    <label class="fs-4" for="update">更新</label>
-                </div>
+                    	<input type="radio" class="" name="permission" id="update" value="10">
+                    	<label class="fs-4" for="update">アカウント登録</label>
+                	</div>
+                    <div class="col-2">
+                    	<input type="radio" class="" name="permission" id="update" value="11">
+                    	<label class="fs-4" for="update">売上登録/アカウント登録</label>
+                	</div>
                 </div>
             </div>
             <div class="col-2 offset-5">

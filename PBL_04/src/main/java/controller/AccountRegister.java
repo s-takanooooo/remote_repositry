@@ -45,6 +45,7 @@ public class AccountRegister extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
+		String errorMessage = null;
 		
 		request.setAttribute("name", name);
 		request.setAttribute("mail", mail);
@@ -52,14 +53,22 @@ public class AccountRegister extends HttpServlet {
 		request.setAttribute("permission", permission);
 		request.setAttribute("passConfirm", passConfirm);
 		
-		if(passConfirm.equals(pass)) {
-		this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
-		} else {
+		if(name.length() >= 20) {
+			errorMessage = "名前は30文字以内で入力してください";
+		}
+		if(mail.length() <= 100) {
+			errorMessage = "メールアドレスは100文字以内で入力してください";
+		}
+		if(pass.length() <= 30) {
+			errorMessage = "パスワードは30文字以内で入力してください";
+		}else if(!passConfirm.equals(pass)) {
 			boolean f = false;
 			request.setAttribute("same", f);
 			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
+			
+		} else {
+			this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
 		}
-		
 	}
 
 }

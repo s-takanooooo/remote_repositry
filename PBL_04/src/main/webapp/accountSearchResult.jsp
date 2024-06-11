@@ -28,16 +28,16 @@
                             <th scope="col">権限</th>
                         </tr>
                     </thead>
-                    <c:forEach var="item" items="accounts">
+                    <c:forEach var="item" items="${search}">
                         <tbody>
                             <tr>
                                 <td><button class="btn btn-primary  me-3" role="button">✓編集</button>
                                     <button class="btn btn-danger  me-3" role="button">×削除</button>
                                 </td>
-                                <td>{item.account_id}</td>
-                                <td>{item.account_name}</td>
-                                <td>{item.mail}</td>
-                                <td>{item.authority}</td>
+                                <td>${item.account_id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.mail}</td>
+                                <td>${item.authority}</td>
                             </tr>
                         </tbody>
                     </c:forEach>
