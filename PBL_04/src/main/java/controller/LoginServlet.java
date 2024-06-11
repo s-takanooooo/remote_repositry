@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.AccountsServices;
 
@@ -45,6 +46,8 @@ public class LoginServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 		System.out.println(email +  "+" +  pass);
 		if(as.Login(email, pass) == true) {
+			HttpSession session = request.getSession();
+			session.setAttribute(email, pass);
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}else {
 			request.setAttribute("login", false);
