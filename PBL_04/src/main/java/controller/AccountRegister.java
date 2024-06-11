@@ -30,7 +30,7 @@ public class AccountRegister extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 	}
 
 	/**
