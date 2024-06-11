@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<div class="row mt-4">
-		<form method="post" action="#">
+		<form method="post" action="AccountDelete">
 
 			<div class="row offset-2 col-8 my-4">
 				<div class="col-3 text-end fs-3">氏名</div>
@@ -105,7 +105,7 @@
 			<div class="col-2 offset-5">
 				<button type="submit" class="col-5 btn btn-danger border rounded">✖
 					O K</button>
-				<a href="#" class="btn btn-secondary col-5">キャンセル</a>
+				<a href="AccountDelete" class="btn btn-secondary col-5">キャンセル</a>
 			</div>
 		</form>
 	</div>
