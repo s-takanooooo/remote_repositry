@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Logout
@@ -30,6 +31,9 @@ public class Logout extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		//セッションを破棄するログアウト処理をここに書いてください
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
 		response.sendRedirect("LoginServlet");
 	}
 
