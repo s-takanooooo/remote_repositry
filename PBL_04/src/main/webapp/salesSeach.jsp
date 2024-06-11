@@ -12,19 +12,19 @@
 <jsp:include page="header.jsp" />
     <!-- 本体 -->
     
-    <div class="">
-        <div class="col-8 offset-2">
-            <div class="fs-1 fw-bold">売上検索条件入力</div>
-        </div>
-    </div>
     
-    <div class=" mt-4">
+        <div class="col-8 offset-2">
+            <div class="fs-2 fw-bold text-center">売上検索条件入力</div>
+        </div>
+    
+    
+    <div class="d-flex flex-row mt-4">
 		<!-- アクションの指定 -->
-        <form method="post" action="SalesSearch">
-            <div class="row offset-2 col-8 my-4">
+        <form class="col-12" method="post" action="SalesSearch">
+            <div class="row col-12 my-4">
                 
-                <div class="col-3 text-end fs-3">販売日</div>
-                <div class="col-3 offset-1">
+                <div class="col-3 offset-1 text-end fs-3">販売日</div>
+                <div class="col-3">
                     <input type="date" name="startDate" id="datepicker" value="" class="col-12 border rounded px-4 fs-3" required>
                 </div>
                 <div class="col-1 text-center fs-2">~</div>
@@ -35,10 +35,10 @@
             </div>
 
 
-            <div class="row offset-2 col-8 my-4">
-                <div class="col-3 text-end fs-3">担当</div>
+            <div class="row col-12 my-4">
+                <div class="col-3 offset-1 text-end fs-3">担当</div>
                 
-                <select class="col-8 offset-1 border rounded px-4 fs-3">
+                <select class="col-7 border rounded px-4 fs-3">
                     <option selected>選択してください</option>
                     <option value="1">花本</option>
                     <option value="2">鷹野</option>
@@ -47,10 +47,10 @@
                 </select>
             </div>
 
-            <div class="row offset-2 col-8 my-4">
+            <div class="row col-12 my-4">
                 <div class="col-3 text-end fs-3">商品カテゴリー</div>
                 <div class="col-1">
-                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+                    <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
                 </div>
                 <select class="col-8 border rounded px-4 fs-3">
                     <option selected>選択してください</option>
@@ -61,20 +61,20 @@
                 </select>
             </div>
             
-            <div class="row offset-2 col-8 my-4">
+            <div class="row col-12 my-4">
                 <div class="col-2 text-end fs-3">商品名</div>
                 <div class="col-2">
-                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">部分一致</div>
+                    <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
                 </div>
                 <div class="col-8">
                     <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
                 </div>
             </div>
             <div>
-            <div class="row offset-2 col-8 my-4">
+            <div class="row col-12 my-4">
                 <div class="col-2 text-end fs-3">備考</div>
                 <div class="col-2">
-                    <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">部分一致</div>
+                    <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
                 </div>
 
                 <div class="col-8">
