@@ -17,7 +17,7 @@
 	</div>
 	<!-- placeholderにサーブレットから値を持ってくる -->
 	<div class="row mt-4">
-		<form method="post" action="#">
+		<form method="get" action="AccountRegister">
 			<div class="row offset-2 col-8 my-4">
 				<div class="col-3 text-end fs-3">氏名</div>
 				<div class="col-1">
@@ -122,7 +122,7 @@
 			</div>
 			<div class="col-2 offset-5">
 				<button type="submit" class="col-4 btn btn-primary border rounded">ok</button>
-				<a href="#" class="btn btn-secondary col-4">キャンセル</a>
+				<a href="AccountRegister" class="btn btn-secondary col-4">キャンセル</a>
 			</div>
 		</form>
 	</div>
