@@ -24,7 +24,6 @@
         <a href="#"class="col-1 text-end text-black text-decoration-none">
             ログアウト
         </a>
-        <p>ようこそ${accountName}さん</p>
     </div>
     </div>
 </body>

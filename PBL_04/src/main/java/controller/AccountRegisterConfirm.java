@@ -44,7 +44,6 @@ public class AccountRegisterConfirm extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
-		System.out.println(name +" + "+mail + " + " + pass + " + " + passConfirm + " + " + permission);
 		
 		as.registerAccount(name, mail, pass, permission);
 		
