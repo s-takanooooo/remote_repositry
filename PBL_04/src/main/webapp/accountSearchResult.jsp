@@ -31,13 +31,15 @@
                     <c:forEach var="item" items="${search}">
                         <tbody>
                             <tr>
-                                <td><button class="btn btn-primary  me-3" role="button">✓編集</button>
-                                    <button class="btn btn-danger  me-3" role="button">×削除</button>
+                                <td><a class="btn btn-primary  me-3" role="button" href="AccountEdit?accountId%${item.account_id}">✓編集</a>
+                                    <a class="btn btn-danger  me-3" role="button" href="AccountEdit?accountId%${item.account_id}">×削除</a>
                                 </td>
                                 <td>${item.account_id}</td>
                                 <td>${item.name}</td>
                                 <td>${item.mail}</td>
                                 <td>${item.authority}</td>
+                                <td type="hidden">${item.pass}</td>
+                                <td type="hidden">${item.passConfirm}</td>
                             </tr>
                         </tbody>
                     </c:forEach>

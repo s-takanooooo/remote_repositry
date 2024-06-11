@@ -43,16 +43,10 @@ public class AccountSearch extends HttpServlet {
 		String name =  request.getParameter("name");
 		String mail = request.getParameter("mail");
 		String permission = request.getParameter("permission");
-			
+		
 		
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
 		
-		/*as.searchByName(name);
-		as.searchByMail(mail);
-		as.searchByAuthority(permission);
-		as.searchByNameAndMail(name, mail);
-		as.searchByNameAndAuthority(name, permission);
-		as.searchByMailAndAuthority(mail, permission);*/
 		
 		
 		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);

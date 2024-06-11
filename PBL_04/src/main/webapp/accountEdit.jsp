@@ -25,7 +25,7 @@
 			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${name}" required>
+					placeholder="${selectById.name}" required>
 			</div>
 		</div>
 
@@ -37,7 +37,7 @@
 			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${mail}" required>
+					placeholder="${selectById.mail}" required>
 			</div>
 		</div>
 
@@ -49,7 +49,7 @@
 			</div>
 			<div class="col-8">
 				<input type="password" class="col-12 border rounded px-4 fs-3"
-					placeholder="${pass}" required>
+					placeholder="${selectById.pass}" required>
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@
 			</div>
 			<div class="col-8">
 				<input type="password" class="col-12 border rounded px-4 fs-3"
-					placeholder="${pass_confirm}" required>
+					placeholder="${selectById.passConfirm}" required>
 			</div>
 		</div>
 
