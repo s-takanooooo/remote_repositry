@@ -47,7 +47,7 @@ public class AccountRegisterConfirm extends HttpServlet {
 		
 		as.registerAccount(name, mail, pass, permission);
 		
-		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
+		response.sendRedirect("Dashboard");
 	}
 
 }
