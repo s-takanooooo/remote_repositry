@@ -45,6 +45,7 @@ public class AccountRegister extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
+		
 		request.setAttribute("name", name);
 		request.setAttribute("mail", mail);
 		request.setAttribute("pass", pass);
