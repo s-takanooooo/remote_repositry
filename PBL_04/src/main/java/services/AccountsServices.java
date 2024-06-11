@@ -3,7 +3,6 @@ package services;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 import beans.AccountsBean;
 import util.DbUtil;
@@ -39,7 +38,6 @@ public class AccountsServices {
 	
 	public AccountsBean selectOne(String mail, String password) {
 		
-		ArrayList<AccountsBean> abList = new ArrayList<>();
 		AccountsBean ab = null;
 		String sql = "SELECT * FROM accounts WHERE mail = ? AND password = ?";
 		
@@ -65,5 +63,25 @@ public class AccountsServices {
 		}
 		return ab;
 		
+	}
+	
+	public void registerAccount(String name, String mail, String password, int authority) {
+		
+		String sql = "INSERT INTO accounts (name, mail, password, authority) VALUES (?,?,?,?)";
+		
+		try(
+				Connection conn = DbUtil.open();
+				PreparedStatement ps = conn.prepareStatement(sql);){
+		
+			ps.setString(1, name);
+			ps.setString(2, mail);
+			ps.setString(3, password);
+			ps.setInt(4, authority);
+			
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -17,7 +17,7 @@
 	</div>
 	<!-- placeholderにサーブレットから値を持ってくる -->
 	<div class="row mt-4">
-		<form method="get" action="AccountRegister">
+		<form method="post" action="AccountRegisterConfirm">
 			<div class="row offset-2 col-8 my-4">
 				<div class="col-3 text-end fs-3">氏名</div>
 				<div class="col-1">
@@ -25,7 +25,7 @@
 						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 				</div>
 				<div class="col-8">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="name" value="${name}"
 						placeholder="${name}" readonly>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 				</div>
 				<div class="col-8">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="mail" value="${mail}"
 						placeholder="${mail}" readonly>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 				</div>
 				<div class="col-8">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="pass" value="${pass}"
 						placeholder="${pass}" readonly>
 				</div>
 			</div>
@@ -61,8 +61,8 @@
 						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 				</div>
 				<div class="col-8">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
-						placeholder="${pass_confirm}" readonly>
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="passConfirm" value="${passConfirm}"
+						placeholder="${passConfirm}" readonly>
 				</div>
 			</div>
 
@@ -74,48 +74,78 @@
 				</div>
 				<div class="row col-8">
 					<!-- permissionがnothingの場合 -->
-					<c:if test="${permission == 'nothing'}">
+					<c:if test="${permission == 0}">
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="nothing"
+							<input type="radio" class="" name="permission" id="nothing" value="0"
 								checked> <label class="fs-4" for="nothing">権限なし</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="read" disabled>
-							<label class="fs-4" for="read">参照</label>
+							<input type="radio" class="" name="permission" id="read" value="1" disabled>
+							<label class="fs-4" for="read">売上登録</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="update"
-								disabled> <label class="fs-4" for="update">更新</label>
+							<input type="radio" class="" name="permission" id="update" value="10"
+								disabled> <label class="fs-4" for="update">アカウント登録</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="update" value="11"
+								disabled> <label class="fs-4" for="update">売上登録/アカウント登録</label>
 						</div>
 					</c:if>
 					<!-- permissionがreadの場合 -->
-					<c:if test="${permission == 'read'}">
+					<c:if test="${permission == 1}">
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="nothing"
+							<input type="radio" class="" name="permission" id="nothing" value="0"
 								disabled> <label class="fs-4" for="nothing">権限なし</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="read" checked>
-							<label class="fs-4" for="read">参照</label>
+							<input type="radio" class="" name="permission" id="read" value="1" checked>
+							<label class="fs-4" for="read">売上登録</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="update"
-								disabled> <label class="fs-4" for="update">更新</label>
+							<input type="radio" class="" name="permission" id="update" value="10"
+								disabled> <label class="fs-4" for="update">アカウント登録</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="update" value="11"
+								disabled> <label class="fs-4" for="update">売上登録/アカウント登録</label>
 						</div>
 					</c:if>
 					<!-- permissionがupdateの場合 -->
-					<c:if test="${permission == 'update'}">
+					<c:if test="${permission == 10}">
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="nothing"
+							<input type="radio" class="" name="permission" id="nothing" value="0"
 								disabled> <label class="fs-4" for="nothing">権限なし</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="read" disabled>
-							<label class="fs-4" for="read">参照</label>
+							<input type="radio" class="" name="permission" id="read" value="1" disabled>
+							<label class="fs-4" for="read">売上登録</label>
 						</div>
 						<div class="col-2">
-							<input type="radio" class="" name="permission" id="update"
-								checked> <label class="fs-4" for="update">更新</label>
+							<input type="radio" class="" name="permission" id="update" value="10"
+								checked> <label class="fs-4" for="update">アカウント登録</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="update" value="11"
+								disabled> <label class="fs-4" for="update">売上登録/アカウント登録</label>
+						</div>
+					</c:if>
+					<c:if test="${permission == 11}">
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="nothing" value="0"
+								disabled> <label class="fs-4" for="nothing">権限なし</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="read" value="1" disabled>
+							<label class="fs-4" for="read">売上登録</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="update" value="10"
+								disabled> <label class="fs-4" for="update">アカウント登録</label>
+						</div>
+						<div class="col-2">
+							<input type="radio" class="" name="permission" id="update" value="11"
+								checked> <label class="fs-4" for="update">売上登録/アカウント登録</label>
 						</div>
 					</c:if>
 				</div>

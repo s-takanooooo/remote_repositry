@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import services.AccountsServices;
 
 /**
- * Servlet implementation class AccountRegister
+ * Servlet implementation class AccountRegisterConfirm
  */
-@WebServlet("/AccountRegister")
-public class AccountRegister extends HttpServlet {
+@WebServlet("/AccountRegisterConfirm")
+public class AccountRegisterConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       AccountsServices as = new AccountsServices();
+	AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountRegister() {
+    public AccountRegisterConfirm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +30,7 @@ public class AccountRegister extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -38,7 +38,6 @@ public class AccountRegister extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("postへ遷移");
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
@@ -46,20 +45,10 @@ public class AccountRegister extends HttpServlet {
 		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
 		System.out.println(name +" + "+mail + " + " + pass + " + " + passConfirm + " + " + permission);
-		request.setAttribute("name", name);
-		request.setAttribute("mail", mail);
-		request.setAttribute("pass", pass);
-		request.setAttribute("permission", permission);
-		request.setAttribute("passConfirm", passConfirm);
 		
-		if(passConfirm.equals(pass)) {
-		this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
-		} else {
-			boolean f = false;
-			request.setAttribute("same", f);
-			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
-		}
+		as.registerAccount(name, mail, pass, permission);
 		
+		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
 	}
 
 }

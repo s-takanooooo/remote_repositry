@@ -18,12 +18,13 @@
             <a href="#" class="col-2 text-black text-decoration-none m-1">ダッシュボード</a>
             <a href="#"class="col-2 text-black text-decoration-none m-1">売上登録</a>
             <a href="#"class="col-2 text-black text-decoration-none m-1">売上検索</a>
-            <a href="#"class="col-2 text-black text-decoration-none m-1">アカウント登録</a>
+            <a href="accountRegister.jsp"class="col-2 text-black text-decoration-none m-1">アカウント登録</a>
             <a href="#"class="col-2 text-black text-decoration-none m-1">アカウント検索</a>
         </div>
         <a href="#"class="col-1 text-end text-black text-decoration-none">
             ログアウト
         </a>
+        <p>ようこそ${accountName}さん</p>
     </div>
     </div>
 </body>

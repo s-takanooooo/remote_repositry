@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -17,6 +18,11 @@
 </div>
 <div class="row mt-4">
 	<!-- アクションの指定 -->
+	<c:if test="${same == false}">
+	<div class="alert alert-danger" role="alert">
+		<div>入力されたパスワードが一致しておりません</div>
+	</div>
+	</c:if>
 	<form method="post" action="AccountRegister">
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-3 text-end fs-3">氏名</div>
@@ -63,7 +69,7 @@
 					class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="password" name="pass_confirm"
+				<input type="password" name="passConfirm"
 					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
 					required>
 			</div>
@@ -77,16 +83,20 @@
 			</div>
 			<div class="row col-8">
 				<div class="col-2">
-					<input type="radio" class="" name="permission" value="nothing"
+					<input type="radio" class="" name="permission" value="0"
 						id="nothing"> <label class="fs-4" for="nothing">権限なし</label>
 				</div>
 				<div class="col-2">
-					<input type="radio" class="" name="permission" value="read"
-						iid="read"> <label class="fs-4" for="read">参照</label>
+					<input type="radio" class="" name="permission" value="1"
+						iid="read"> <label class="fs-4" for="read">売上登録</label>
 				</div>
 				<div class="col-2">
-					<input type="radio" class="" name="permission" value="update"
-						iid="update"> <label class="fs-4" for="update">更新</label>
+					<input type="radio" class="" name="permission" value="10"
+						iid="update"> <label class="fs-4" for="update">アカウント登録</label>
+				</div>
+				<div class="col-2">
+					<input type="radio" class="" name="permission" value="10"
+						iid="update"> <label class="fs-4" for="update">売上登録/アカウント登録</label>
 				</div>
 			</div>
 		</div>
