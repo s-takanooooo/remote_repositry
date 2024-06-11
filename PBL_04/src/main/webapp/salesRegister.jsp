@@ -26,7 +26,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="date" name="name" id="datepicker" value="" class="col-12 border rounded px-4 fs-3" required>
+                    <input type="date" name="sale" id="datepicker" value="" class="col-12 border rounded px-4 fs-3" required>
                 </div>
             </div>
 
@@ -36,12 +36,12 @@
                 <div class="col-1">
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
-                <select class="col-8 border rounded px-4 fs-3">
+                <select class="col-8 border rounded px-4 fs-3" name="responsible">
                     <option selected>選択してください</option>
-                    <option value="1">花本</option>
-                    <option value="2">鷹野</option>
-                    <option value="3">大石</option>
-                    <option value="4">原</option>
+                    <option value="花本">花本</option>
+                    <option value="鷹野">鷹野</option>
+                    <option value="大石">大石</option>
+                    <option value="原">原</option>
                 </select>
             </div>
 
@@ -50,12 +50,12 @@
                 <div class="col-1">
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
-                <select class="col-8 border rounded px-4 fs-3">
+                <select class="col-8 border rounded px-4 fs-3" name="category">
                     <option selected>選択してください</option>
-                    <option value="1">商品1</option>
-                    <option value="2">商品2</option>
-                    <option value="3">商品3</option>
-                    <option value="4">商品4</option>
+                    <option value="商品1">商品1</option>
+                    <option value="商品2">商品2</option>
+                    <option value="商品3">商品3</option>
+                    <option value="商品4">商品4</option>
                 </select>
             </div>
 
@@ -65,7 +65,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
+                    <input type="text" name="trade_name" class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
+                    <input type="text" name="unit_prace" class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
+                    <input type="text" name="sale_number" class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="col-8">
-                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
+                    <textarea name="note" rows="4" class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
                 </div>
             </div>
 

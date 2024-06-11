@@ -59,7 +59,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		
 		SalesServices si = new SalesServices();
 		si.salesInsert(day, account_id, sales_category, trade_name, unit_price, sales_num, sales_note);
-		response.sendRedirect("");
+		response.sendRedirect("SalesRegister");
 	}
 
 }

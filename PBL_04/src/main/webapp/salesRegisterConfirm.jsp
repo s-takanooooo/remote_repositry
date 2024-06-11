@@ -23,23 +23,23 @@
                 
                 <div class="col-3 text-end fs-3">販売日</div>
                 <div class="col-3">
-                    <input type="date" name="name" id="datepicker" value="" class="col-12 border rounded px-4 fs-3" readonly>
+                    <input type="date" name="sale" id="datepicker" value="<c:out value="${day }"/>" class="col-12 border rounded px-4 fs-3" readonly>
                 </div>
             </div>
 
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">担当</div>
-                <select class="col-8 border rounded px-4 fs-3">
-                    <option selected>イチロー</option>
+                <select class="col-8 border rounded px-4 fs-3" name="responsible">
+                    <option selected><c:out value="${responsible}"/></option>
                     
                 </select>
             </div>
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">商品カテゴリー</div>
-                <select class="col-8 border rounded px-4 fs-3">
-                    <option selected>食料品</option>
+                <select class="col-8 border rounded px-4 fs-3" name="category">
+                    <option selected><c:out value="${sales_category}"/></option>
                     
                 </select>
             </div>
@@ -47,28 +47,28 @@
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">商品名</div>
                 <div class="col-8">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" value="からあげ弁当" readonly>
+                    <input type="text" name="trade_name" class="col-12 border rounded px-4 fs-3" value="<c:out value="${trade_name}"/>" readonly>
                 </div>
             </div>
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">単価</div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" value="540" readonly>
+                    <input type="text" name="unit_prace" class="col-12 border rounded px-4 fs-3" value="<c:out value="${unit_price}"/>" readonly>
                 </div>
             </div>
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">個数</div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" value="3" readonly>
+                    <input type="text" name="sale_number" class="col-12 border rounded px-4 fs-3" value="<c:out value="${sales_num}"/>" readonly>
                 </div>
             </div>
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">小計</div>
                 <div class="col-3">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" value="1620" readonly>
+                    <input type="text" name="note" class="col-12 border rounded px-4 fs-3" value="<c:out value="${subtotal}"/>" readonly>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                 <div class="col-3 text-end fs-3">備考</div>
 
                 <div class="col-8">
-                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" value="備考" readonly></textarea>
+                    <textarea name="note" rows="4" class="col-12 border rounded px-4 fs-3" readonly><c:out value="${sales_note}"/></textarea>
                 </div>
             </div>
 
