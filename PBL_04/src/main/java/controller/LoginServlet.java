@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(email +  "+" +  pass);
 		if(as.Login(email, pass) == true) {
 			HttpSession session = request.getSession();
-			AccountsBean ab = as.selectOne(email, pass);
+			AccountsBean ab = as.selectByMailAndPass(email, pass);
 			session.setAttribute("accounts_id", ab.getAccount_id());
 			session.setAttribute("accountName", ab.getName());
 			session.setAttribute("mail", ab.getMail());
