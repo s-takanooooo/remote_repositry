@@ -53,7 +53,7 @@
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">権限</div>
-			<jsp:include page="authorityBottun.jsp"></jsp:include>
+			<jsp:include page="authorityButton.jsp"></jsp:include>
 		</div>
 		<div class="col-8 offset-4">
 			<button type="submit" class="col-4 btn btn-primary border rounded">ok</button>

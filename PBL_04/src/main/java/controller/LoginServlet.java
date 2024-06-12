@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 			AccountsBean ab = as.selectByMailAndPass(email, pass);
 			session.setAttribute("accounts_id", ab.getAccount_id());
 			session.setAttribute("accountName", ab.getName());
-			session.setAttribute("mail", ab.getMail());
+			session.setAttribute("accountMail", ab.getMail());
 			session.setAttribute("password", ab.getPassword());
 			session.setAttribute("authority", ab.getAuthority());
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);

@@ -12,16 +12,16 @@ import javax.servlet.http.HttpSession;
 import services.AccountsServices;
 
 /**
- * Servlet implementation class AccountSearch
+ * Servlet implementation class SearchSession
  */
-@WebServlet("/AccountSearch")
-public class AccountSearch extends HttpServlet {
+@WebServlet("/SearchSession")
+public class SearchSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       AccountsServices as = new AccountsServices();
+	AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountSearch() {
+    public SearchSession() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +31,13 @@ public class AccountSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		String name = (String) session.getAttribute("name");
+		String mail = (String) session.getAttribute("mail");
+		String permission = (String) session.getAttribute("permission");
 		
-		
-		this.getServletContext().getRequestDispatcher("/accountSearch.jsp").forward(request, response);
+		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
+		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
 	}
 
 	/**
@@ -41,21 +45,6 @@ public class AccountSearch extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
-		String name =  request.getParameter("name");
-		String mail = request.getParameter("mail");
-		String permission = request.getParameter("permission");
-		session.setAttribute("name", name);
-		session.setAttribute("mail", mail);
-		session.setAttribute("permission", permission);
-		
-		
-		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
-		
-		
-		
-		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
 	}
 
 }
