@@ -54,7 +54,7 @@
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">単価</div>
                 <div class="col-3">
-                    <input type="text" name="unit_prace" class="col-12 border rounded px-4 fs-3" value="<c:out value="${unit_price}"/>" readonly>
+                    <input type="text" name="unit_price" class="col-12 border rounded px-4 fs-3" value="<c:out value="${unit_price}"/>" readonly>
                 </div>
             </div>
 

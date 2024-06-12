@@ -39,6 +39,8 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		request.setCharacterEncoding("utf8");
+		
 		System.out.println("postが実行されました");
 		
 		
@@ -50,9 +52,6 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		String unit_price = request.getParameter("unit_price");
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
-		
-
-		System.out.println(responsible);
 		
 		SalesServices si = new SalesServices();
 		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
