@@ -8,17 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.SalesServices;
+
 /**
- * Servlet implementation class SalesDelete
+ * Servlet implementation class SalesDeleteConfirm
  */
-@WebServlet("/SalesDelete")
-public class SalesDelete extends HttpServlet {
+@WebServlet("/SalesDeleteConfirm")
+public class SalesDeleteConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SalesDelete() {
+	public SalesDeleteConfirm() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,7 +31,7 @@ public class SalesDelete extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/salesDeleteConfirm.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -38,15 +40,15 @@ public class SalesDelete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf8");
-
 		String sale_id = request.getParameter("sale_id");
 
 		int sale = Integer.parseInt(sale_id);
 
-		request.setAttribute("sale", sale);
+		request.setAttribute("sale_id", sale_id);
 		
-		this.getServletContext().getRequestDispatcher("/SalesDeleteConfirm.jsp").forward(request, response);
+		SalesServices si = new SalesServices();
+		si.salesDelete(sale_id);
+		response.sendRedirect("SalesDelete");
 	}
 
 }
