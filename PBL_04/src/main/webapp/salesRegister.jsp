@@ -38,6 +38,7 @@
                 </div>
                 <select class="col-8 border rounded px-4 fs-3" name="responsible">
                     <option selected>選択してください</option>
+                    <option value="山田太郎">山田太郎</option>
                     <option value="花本">花本</option>
                     <option value="鷹野">鷹野</option>
                     <option value="大石">大石</option>
@@ -52,8 +53,8 @@
                 </div>
                 <select class="col-8 border rounded px-4 fs-3" name="category">
                     <option selected>選択してください</option>
-                    <option value="商品1">商品1</option>
-                    <option value="商品2">商品2</option>
+                    <option value="食料品">食料品</option>
+                    <option value="日用品">日用品</option>
                     <option value="商品3">商品3</option>
                     <option value="商品4">商品4</option>
                 </select>
@@ -75,7 +76,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-3">
-                    <input type="text" name="unit_prace" class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
+                    <input type="text" name="unit_price" class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
                 </div>
             </div>
 

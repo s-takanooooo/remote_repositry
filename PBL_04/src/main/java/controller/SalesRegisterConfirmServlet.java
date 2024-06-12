@@ -47,11 +47,12 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		String responsible = request.getParameter("responsible");
 		String sales_category = request.getParameter("category_id");
 		String trade_name = request.getParameter("trade_name");
-		String unit_price = request.getParameter("unit_prace");
+		String unit_price = request.getParameter("unit_price");
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
 		
-		
+
+		System.out.println(responsible);
 		
 		SalesServices si = new SalesServices();
 		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);

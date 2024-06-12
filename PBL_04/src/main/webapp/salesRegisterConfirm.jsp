@@ -23,7 +23,7 @@
                 
                 <div class="col-3 text-end fs-3">販売日</div>
                 <div class="col-3">
-                    <input type="date" name="sale" id="datepicker" value="<c:out value="${day }"/>" class="col-12 border rounded px-4 fs-3" readonly>
+                    <input type="date" name="sale_date" id="datepicker" value="<c:out value="${day }"/>" class="col-12 border rounded px-4 fs-3" readonly>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">商品カテゴリー</div>
-                <select class="col-8 border rounded px-4 fs-3" name="category">
+                <select class="col-8 border rounded px-4 fs-3" name="category_id">
                     <option selected><c:out value="${sales_category}"/></option>
                     
                 </select>
@@ -68,7 +68,7 @@
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">小計</div>
                 <div class="col-3">
-                    <input type="text" name="note" class="col-12 border rounded px-4 fs-3" value="<c:out value="${subtotal}"/>" readonly>
+                    <input type="text" class="col-12 border rounded px-4 fs-3" value="<c:out value="${subtotal}"/>" readonly>
                 </div>
             </div>
 
