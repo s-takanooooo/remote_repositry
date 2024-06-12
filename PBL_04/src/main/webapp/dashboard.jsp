@@ -13,9 +13,9 @@
 		<div class="d-flex flex-row fs-5 py-4 align-items-center"
 			style="height: 60px;">
 			<a href="#"
-				class="col-2 text-secondary text-decoration-none text-nowrap">
+				class="col-3 text-secondary text-decoration-none text-nowrap">
 				物品売上管理システム </a>
-			<div class="col-8 d-flex justify-content-between">
+			<div class="col-7 d-flex justify-content-between">
 				<a href="Dashboard"
 					class="mx-2 text-secondary text-decoration-none text-nowrap">ダッシュボード</a>
 				<a href="SalesRegister"
