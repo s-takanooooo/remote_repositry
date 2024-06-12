@@ -37,13 +37,14 @@
 
             <div class="row col-12 my-4">
                 <div class="col-3 offset-1 text-end fs-3">担当</div>
-                
-                <select class="col-7 border rounded px-4 fs-3">
+                <div class="col-7">
+                <select class="w-100 border rounded px-4 fs-3 form-select">
                     <option selected>選択してください</option>
                     <c:forEach var="staff_name" items="${staff}">
 					<option value="${staff_name}">${staff_name}</option>
 				</c:forEach>
                 </select>
+                </div>
             </div>
 
             <div class="row col-12 my-4">
@@ -51,12 +52,14 @@
                 <div class="col-1">
                     <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
                 </div>
-                <select class="col-8 border rounded px-4 fs-3">
+                <div class="col-7">
+                <select class="w-100 border rounded px-4 fs-3 form-select">
                     <option selected>選択してください</option>
                     <c:forEach var="category_name" items="${category}">
 					<option value="${category_name}">${category_name}</option>
 				</c:forEach>
                 </select>
+                </div>
             </div>
             
             <div class="row col-12 my-4">

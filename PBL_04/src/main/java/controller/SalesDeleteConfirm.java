@@ -41,6 +41,8 @@ public class SalesDeleteConfirm extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String sale_id = request.getParameter("sale_id");
+		
+		System.out.println(sale_id);
 
 		int sale = Integer.parseInt(sale_id);
 
