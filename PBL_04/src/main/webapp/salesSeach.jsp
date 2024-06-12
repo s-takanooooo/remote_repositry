@@ -40,10 +40,9 @@
                 
                 <select class="col-7 border rounded px-4 fs-3">
                     <option selected>選択してください</option>
-                    <option value="1">花本</option>
-                    <option value="2">鷹野</option>
-                    <option value="3">大石</option>
-                    <option value="4">原</option>
+                    <c:forEach var="staff_name" items="${staff}">
+					<option value="${staff_name}">${staff_name}</option>
+				</c:forEach>
                 </select>
             </div>
 
@@ -54,10 +53,9 @@
                 </div>
                 <select class="col-8 border rounded px-4 fs-3">
                     <option selected>選択してください</option>
-                    <option value="1">商品1</option>
-                    <option value="2">商品2</option>
-                    <option value="3">商品3</option>
-                    <option value="4">商品4</option>
+                    <c:forEach var="category_name" items="${category}">
+					<option value="${category_name}">${category_name}</option>
+				</c:forEach>
                 </select>
             </div>
             

@@ -37,11 +37,11 @@
                 </div>
                 <div class="col-8">
                     <select name="staff" class="col-12 border rounded px-4 fs-3 form-select" required>
-                        <option selected value="山田太郎">山田太郎</option>
-                        <option selected value="花本">花本</option>
-                        <option value="鷹野">鷹野</option>
-                        <option value="原">原</option>
-                        <option value="大石">大石</option>
+                        <option selected>選択してください</option>
+				<!-- itemsに配列を格納　value=配列の値が入る変数-->
+				<c:forEach var="staff_name" items="${staff}">
+					<option value="${staff_name}">${staff_name}</option>
+				</c:forEach>
                     </select>
                 </div>
             </div>
@@ -53,10 +53,11 @@
                 </div>
                 <div class="col-8">
                     <select name="category" class="col-12 border rounded px-4 fs-3 form-select" required>
-                        <option selected value="食料品">食料品</option>
-                        <option value="日用品">日用品</option>
-                        <option value="家電製品">家電製品</option>
-                        <option value="衣服">衣服</option>
+                        <option selected>選択してください</option>
+				<!-- itemsに配列を格納　value=配列の値が入る変数-->
+				<c:forEach var="category_name" items="${category}">
+					<option value="${category_name}">${category_name}</option>
+				</c:forEach>
                     </select>
                 </div>
             </div>

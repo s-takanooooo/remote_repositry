@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.SalesServices;
+
 /**
  * Servlet implementation class SalesEdit
  */
@@ -28,6 +30,10 @@ public class SalesEdit extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		SalesServices ss = new SalesServices();
+		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
+		request.setAttribute("category", ss.getCatgoryName());
+		request.setAttribute("staff", ss.getStaffName());
 		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 	}
 
