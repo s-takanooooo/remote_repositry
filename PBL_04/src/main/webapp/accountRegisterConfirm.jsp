@@ -72,7 +72,7 @@
 					<div
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
-				<jsp:include page="authorityBottun.jsp"/>
+				<jsp:include page="authorityButton.jsp"/>
 			</div>
 			<div class="col-8 offset-4">
 				<button type="submit" class="col-3 btn btn-primary border rounded">ok</button>
