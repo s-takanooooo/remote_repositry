@@ -72,7 +72,65 @@
 					<div
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
-				<jsp:include page="authorityButton.jsp"/>
+				<div class="row col-8">
+		<!-- 権限無しの場合 -->
+		<c:if test="${permission == '0'}">
+			<input type="hidden" name= "permission" value="${ permission }">
+			<div class="col-3 offset-1 form-check">
+				<input type="checkbox" class="form-check-input"
+					 id="salesRegister" disabled> <label
+					class="fs-5" for="salesRegister">売上登録</label>
+			</div>
+			<div class="col-3">
+				<input type="checkbox" class="form-check-input"
+				 id="update" disabled> <label
+					class="fs-5" for="update">アカウント登録</label>
+			</div>
+
+		</c:if>
+		<!-- 売上登録のみの場合 -->
+		<c:if test="${permission == '1'}">
+		<input type="hidden" name= "permission" value="${ permission }">
+			<div class="col-3 offset-1 form-check">
+				<input type="checkbox" class="form-check-input"
+					id="salesRegister" checked disabled> <label
+					class="fs-5" for="salesRegister">売上登録</label>
+			</div>
+			<div class="col-3">
+				<input type="checkbox" class="form-check-input"
+					id="update" disabled> <label
+					class="fs-5" for="update">アカウント登録</label>
+			</div>
+		</c:if>
+		<!-- アカウント登録のみの場合 -->
+		<c:if test="${permission == '10'}">
+		<input type="hidden" name= "permission" value="${ permission }">
+			<div class="col-3 offset-1 form-check">
+				<input type="checkbox" class="form-check-input"
+					 id="salesRegister" disabled> <label
+					class="fs-5" for="salesRegister">売上登録</label>
+			</div>
+			<div class="col-3">
+				<input type="checkbox" class="form-check-input"
+					 id="update" checked disabled> <label
+					class="fs-5" for="update">アカウント登録</label>
+			</div>
+		</c:if>
+		<!-- 全権限の場合 -->
+		<c:if test="${permission == '11'}">
+		<input type="hidden" name= "permission" value="${ permission }">
+			<div class="col-3 offset-1 form-check">
+				<input type="checkbox" class="form-check-input"
+					 id="salesRegister" checked disabled> <label
+					class="fs-5" for="salesRegister">売上登録</label>
+			</div>
+			<div class="col-3">
+				<input type="checkbox" class="form-check-input"
+					 id="update" checked disabled> <label
+					class="fs-5" for="update">アカウント登録</label>
+			</div>
+		</c:if>
+	</div>
 			</div>
 			<div class="col-8 offset-4">
 				<button type="submit" class="col-3 btn btn-primary border rounded">ok</button>

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import services.AccountsServices;
-import util.CommonUtil;
 
 /**
  * Servlet implementation class AccountRegisterConfirm
@@ -41,12 +40,12 @@ public class AccountRegisterConfirm extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
+		System.out.println(name);
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
-		String passConfirm = request.getParameter("passConfirm");
-		String accountsPermission = request.getParameter("accountsPermission");
-		String salesPermission = request.getParameter("salesPermission");
-		String strPermission = CommonUtil.setAutority(accountsPermission, salesPermission);
+		String strPermission = request.getParameter("permission");
+		System.out.println(strPermission);
+		
 		int permission = Integer.parseInt(strPermission);
 		
 		as.registerAccount(name, mail, pass, permission);

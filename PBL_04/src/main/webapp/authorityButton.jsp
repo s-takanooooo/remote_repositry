@@ -11,7 +11,7 @@
 	<div class="row col-8">
 		<!-- 権限無しの場合 -->
 		<c:if test="${permission == '0'}">
-
+			
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" disabled> <label
