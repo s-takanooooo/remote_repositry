@@ -63,23 +63,26 @@
             </div>
             
             <div class="row col-12 my-4">
-                <div class="col-2 text-end fs-3">商品名</div>
-                <div class="col-2">
+                <div class="col-3 text-end fs-3">商品名</div>
+                
+                <div class="col-1">
                     <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
                 </div>
-                <div class="col-8">
+                
+                <div class="col-7">
                     <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
                 </div>
             </div>
             <div>
             <div class="row col-12 my-4">
-                <div class="col-2 text-end fs-3">備考</div>
-                <div class="col-2">
+                <div class="col-3 text-end fs-3">備考</div>
+                <div class="col-1">
                     <div class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
+                    
                 </div>
 
-                <div class="col-8">
-                    <input type="text" name="mail" class="col-12 border rounded px-4 fs-3" placeholder="備考" required>
+                <div class="col-7">
+                    <textarea name="mail" class="col-12 border rounded px-4 fs-3" placeholder="備考" required></textarea>
                 </div>
             </div>
             </div>
