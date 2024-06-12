@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import beans.AccountsBean;
 import beans.CategoriesBean;
@@ -32,6 +33,24 @@ public class SalesServices {
 		return cb.getCategory_id();
 	}
 	
+	public ArrayList<String> getCatgoryName(){
+		String sql= "SELECT category_name FROM categories";
+		ArrayList<String> categories = new ArrayList<>();
+		try(
+				Connection con =DbUtil.open();
+				PreparedStatement stmt = con.prepareStatement(sql);
+				){
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				String category =rs.getString("category_name");
+				categories.add(category);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return categories;
+	}
+	
 	public int getAccountId(String account_name) {
 		String sql ="SELECT * from accounts WHERE name=?";
 		AccountsBean ab =null;
@@ -53,6 +72,24 @@ public class SalesServices {
 			e.printStackTrace();
 		}
 		return ab.getAccount_id();
+	}
+	
+	public ArrayList<String> getStaffName(){
+		String sql= "SELECT name FROM accounts";
+		ArrayList<String> staffs = new ArrayList<>();
+		try(
+				Connection con =DbUtil.open();
+				PreparedStatement stmt = con.prepareStatement(sql);
+				){
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				String staff =rs.getString("name");
+				staffs.add(staff);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return staffs;
 	}
 	
 	public void salesInsert(String day, String name,String sales_category,
@@ -124,4 +161,6 @@ public class SalesServices {
 			e.printStackTrace();
 		}
 	}
+	
+	
 }

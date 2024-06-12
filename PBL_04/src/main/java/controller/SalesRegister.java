@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.SalesServices;
+
 /**
  * Servlet implementation class salseRegisterServlet
  */
@@ -28,6 +30,9 @@ public class SalesRegister extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		SalesServices ss = new SalesServices();
+		request.setAttribute("categories", ss.getCatgoryName());
+		request.setAttribute("name", ss.getStaffName());
 		this.getServletContext().getRequestDispatcher("/salesRegister.jsp").forward(request, response);
 	}
 
