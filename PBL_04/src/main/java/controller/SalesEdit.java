@@ -43,10 +43,18 @@ public class SalesEdit extends HttpServlet {
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("product_name");
 		String unit_price = request.getParameter("price");
-		String sale_num = request.getParameter("product_name");
+		String sale_num = request.getParameter("product_num");
 		String sale_note = request.getParameter("mail");
 		String sale_id = request.getParameter("mail");
 		
+		request.setAttribute("day", day);
+		request.setAttribute("name", name);
+		request.setAttribute("sale_category", sale_category);
+		request.setAttribute("trade_name", trade_name);
+		request.setAttribute("unit_price", unit_price);
+		request.setAttribute("sale_num", sale_num);
+		request.setAttribute("sale_note", sale_note);
+		request.setAttribute("sale_id", sale_id);
 		
 		this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
 	}

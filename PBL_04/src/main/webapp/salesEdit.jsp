@@ -87,7 +87,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-4">
-                    <input type="text" name="product_name" class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
+                    <input type="text" name="product_num" class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
 
             <div class="col-4 offset-5">
                 <button type="submit" class="col-4 btn btn-primary border rounded">✔　登　録</button>
-                <a href="SalesEdit" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+                <a href="SalesEditConfirm" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
             </div>
         </form>
     </div>

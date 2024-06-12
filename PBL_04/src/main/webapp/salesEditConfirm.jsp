@@ -17,14 +17,14 @@
     </div>
     <div class="row mt-4">
         <!-- アクションの指定 -->
-        <form method="post" action="SalesEdit">
+        <form method="post" action="SalesEditConfirm">
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">販売日</div>
                 <div class="col-1">
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <input type="date" name="day" id="datepicker" class="col-12 px-4 fs-3" value=""
+                    <input type="date" name="day" id="datepicker" class="col-12 px-4 fs-3" value="<c:out value="${day}"/>"
                     readonly>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-8">
                     <select name="staff" class="col-12 border rounded px-4 fs-3 form-select" readonly>
-                        <option selected value="花本">花本</option>
+                        <option selected value="<c:out value="${name}"/>"><c:out value="${name}"/></option>
                     </select>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-8">
                     <select name="category" class="col-12 border rounded px-4 fs-3 form-select" readonly>
-                        <option selected value="食料品">食料品</option>
+                        <option selected value="<c:out value="${sale_category}"/>"><c:out value="${sale_category}"/></option>
                     </select>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <input type="text" name="product_name" class="col-12 border rounded px-4 fs-3" value="商品名" readonly>
+                    <input type="text" name="product_name" class="col-12 border rounded px-4 fs-3" value="<c:out value="${trade_name}"/>" readonly>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-4">
-                    <input type="text" name="price" class="col-12 border rounded px-4 fs-3" value="単価" readonly>
+                    <input type="text" name="price" class="col-12 border rounded px-4 fs-3" value="<c:out value="${unit_price}"/>" readonly>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-4">
-                    <input type="text" name="product_name" class="col-12 border rounded px-4 fs-3" value="個数" readonly>
+                    <input type="text" name="product_num" class="col-12 border rounded px-4 fs-3" value="<c:out value="${sale_num}"/>" readonly>
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                     <div class="col-10  text-dark  text-center fs-3">備考</div>
                 </div>
                 <div class="col-8">
-                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" value="備考" readonly></textarea>
+                    <textarea name="mail" rows="4" class="col-12 border rounded px-4 fs-3" value="備考" readonly><c:out value="${sale_note}"/></textarea>
                 </div>
             </div>
 

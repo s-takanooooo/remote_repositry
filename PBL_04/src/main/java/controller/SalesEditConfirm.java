@@ -47,7 +47,7 @@ public class SalesEditConfirm extends HttpServlet {
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("product_name");
 		String unit_price = request.getParameter("price");
-		String sale_num = request.getParameter("product_name");
+		String sale_num = request.getParameter("product_num");
 		String sale_note = request.getParameter("mail");
 
 		SalesServices si = new SalesServices();
