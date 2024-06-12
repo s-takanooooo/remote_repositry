@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.AccountsBean;
 import services.AccountsServices;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class AccountEdit
@@ -33,7 +35,13 @@ public class AccountEdit extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String accountId = request.getParameter("accountId");
 		System.out.println(accountId);
-		request.setAttribute("selectById", as.selectById(accountId));
+		AccountsBean ab = as.selectById(accountId);
+		
+		request.setAttribute("editAccountId", ab.getAccount_id());
+		request.setAttribute("editName", ab.getName());
+		request.setAttribute("editMail", ab.getMail());
+		request.setAttribute("editPass", ab.getPassword());
+		request.setAttribute("editAuth", ab.getAuthority());
 		
 		
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
@@ -50,7 +58,9 @@ public class AccountEdit extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
-		String permission = request.getParameter("permission");
+		String accountsPermission = request.getParameter("accountsPermission");
+		String salesPermission = request.getParameter("salesPermission");
+		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		String accountId = request.getParameter("accountId");
 		
 		request.setAttribute("accountId", accountId);

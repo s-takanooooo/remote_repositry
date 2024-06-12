@@ -11,7 +11,7 @@
 	<div class="row col-8">
 		<!-- 権限無しの場合 -->
 		<c:if test="${permission == '0'}">
-			
+			<input type="hidden" value="${permission}" name="permission">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" disabled> <label
@@ -26,6 +26,7 @@
 		</c:if>
 		<!-- 売上登録のみの場合 -->
 		<c:if test="${permission == '1'}">
+		<input type="hidden" value="${permission}" name="permission">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" checked disabled> <label
@@ -39,6 +40,7 @@
 		</c:if>
 		<!-- アカウント登録のみの場合 -->
 		<c:if test="${permission == '10'}">
+		<input type="hidden" value="${permission}" name="permission">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" disabled> <label
@@ -52,6 +54,7 @@
 		</c:if>
 		<!-- 全権限の場合 -->
 		<c:if test="${permission == '11'}">
+		<input type="hidden" value="${permission}" name="permission">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" checked disabled> <label

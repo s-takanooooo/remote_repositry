@@ -16,7 +16,7 @@
 </div>
 <div class="d-flex flex-row mt-4">
 	<form class="col-10 offset-1" method="post" action="AccountEdit">
-	<input type="hidden" value="${selectById.account_id}" name="accountId"> 
+	<input type="hidden" value="${editAccountId}" name="accountId"> 
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">氏名</div>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3" name="name"
-					value="${selectById.name}" required>
+					value="${editName}" required>
 			</div>
 		</div>
 
@@ -38,7 +38,7 @@
 			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail"
-					value="${selectById.mail}" required>
+					value="${editMail}" required>
 			</div>
 		</div>
 
@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-8">
 				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass"
-					value="${selectById.password}" required>
+					value="${editPass}" required>
 			</div>
 		</div>
 
@@ -62,7 +62,7 @@
 			</div>
 			<div class="col-8">
 				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm"
-					value="${selectById.password}" required>
+					value="${editPass}" required>
 			</div>
 		</div>
 
@@ -74,79 +74,46 @@
 			</div>
 			<div class="row col-8">
 				<!-- permissionがnothingの時 -->
-				<c:if test="${selectById.authority == '0'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing" value="0"
-							checked> <label class="fs-4" for="nothing">権限なし</label>
+				<c:if test="${editAuth == 0}">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
+						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
 					<div class="col-3">
-						<input type="radio" class="" name="permission" id="read" value="1">
-						<label class="fs-4" for="read">売上登録</label>
-					</div>
-					<div class="col-3">
-						<input type="radio" class="" name="permission" id="update" value="10">
-						<label class="fs-4" for="update">アカウント登録</label>
-					</div>
-					<div class="col-4">
-						<input type="radio" class="" name="permission" id="update" value="11">
-						<label class="fs-4" for="update">売上登録/アカウント登録</label>
+						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update">
+						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
 					<!-- permissionがreadの時 -->
-
 				</c:if>
-				<c:if test="${selectById.authority == '1'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing" value="0">
-						<label class="fs-4" for="nothing">権限なし</label>
+				<c:if test="${editAuth == 1}">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister" checked>
+						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
 					<div class="col-3">
-						<input type="radio" class="" name="permission" id="read" checked value="1">
-						<label class="fs-4" for="read">売上登録</label>
-					</div>
-					<div class="col-3">
-						<input type="radio" class="" name="permission" id="update" value="10">
-						<label class="fs-4" for="update">アカウント登録</label>
-					</div>
-					<div class="col-4">
-						<input type="radio" class="" name="permission" id="update" value="11">
-						<label class="fs-4" for="update">売上登録/アカウント登録</label>
+						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update">
+						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
 				</c:if>
 				<!-- permissionがupdateの時 -->
-				<c:if test="${selectById.authority == '10'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing" value="0">
-						<label class="fs-4" for="nothing">権限なし</label>
+				<c:if test="${editAuth == 10}">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
+						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="read" value="1">
-						<label class="fs-4" for="read">売上登録</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update" checked value="10">
-						<label class="fs-4" for="update">アカウント登録</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update" value="11">
-						<label class="fs-4" for="update">売上登録/アカウント登録</label>
+					<div class="col-3">
+						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update" checked>
+						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
 				</c:if>
-				<c:if test="${selectById.authority == '11'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing" value="0">
-						<label class="fs-4" for="nothing">権限なし</label>
+				<c:if test="${editAuth == 11}">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister" checked>
+						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="read" value="1">
-						<label class="fs-4" for="read">売上登録</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update" value="10">
-						<label class="fs-4" for="update">アカウント登録</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update" checked value="11">
-						<label class="fs-4" for="update">売上登録/アカウント登録</label>
+					<div class="col-3">
+						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update" cheched>
+						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
 				</c:if>
 			</div>
