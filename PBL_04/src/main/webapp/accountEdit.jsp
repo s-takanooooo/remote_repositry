@@ -24,8 +24,8 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${selectById.name}" required>
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="name"
+					value="${selectById.name}" required>
 			</div>
 		</div>
 
@@ -36,8 +36,8 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${selectById.mail}" required>
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail"
+					value="${selectById.mail}" required>
 			</div>
 		</div>
 
@@ -48,8 +48,8 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3"
-					placeholder="${selectById.pass}" required>
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass"
+					value="${selectById.password}" required>
 			</div>
 		</div>
 
@@ -60,8 +60,8 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3"
-					placeholder="${selectById.passConfirm}" required>
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm"
+					value="${selectById.password}" required>
 			</div>
 		</div>
 
@@ -73,49 +73,79 @@
 			</div>
 			<div class="row col-8">
 				<!-- permissionがnothingの時 -->
-				<c:if test="${permission == '0'}">
+				<c:if test="${selectById.authority == '0'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing"
 							checked> <label class="fs-4" for="nothing">権限なし</label>
 					</div>
-					<div class="col-2">
+					<div class="col-3">
 						<input type="radio" class="" name="permission" id="read">
-						<label class="fs-4" for="read">参照</label>
+						<label class="fs-4" for="read">売上登録</label>
 					</div>
-					<div class="col-2">
+					<div class="col-3">
 						<input type="radio" class="" name="permission" id="update">
-						<label class="fs-4" for="update">更新</label>
+						<label class="fs-4" for="update">アカウント登録</label>
+					</div>
+					<div class="col-4">
+						<input type="radio" class="" name="permission" id="update">
+						<label class="fs-4" for="update">売上登録/アカウント登録</label>
 					</div>
 					<!-- permissionがreadの時 -->
 
 				</c:if>
-				<c:if test="${permission == '1'}">
+				<c:if test="${selectById.authority == '1'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing">
 						<label class="fs-4" for="nothing">権限なし</label>
 					</div>
-					<div class="col-2">
+					<div class="col-3">
 						<input type="radio" class="" name="permission" id="read" checked>
-						<label class="fs-4" for="read">参照</label>
+						<label class="fs-4" for="read">売上登録</label>
 					</div>
-					<div class="col-2">
+					<div class="col-3">
 						<input type="radio" class="" name="permission" id="update">
-						<label class="fs-4" for="update">更新</label>
+						<label class="fs-4" for="update">アカウント登録</label>
+					</div>
+					<div class="col-4">
+						<input type="radio" class="" name="permission" id="update">
+						<label class="fs-4" for="update">売上登録/アカウント登録</label>
 					</div>
 				</c:if>
 				<!-- permissionがupdateの時 -->
-				<c:if test="${permission == '10'}">
+				<c:if test="${selectById.authority == '10'}">
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="nothing">
 						<label class="fs-4" for="nothing">権限なし</label>
 					</div>
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="read">
-						<label class="fs-4" for="read">参照</label>
+						<label class="fs-4" for="read">売上登録</label>
 					</div>
 					<div class="col-2">
 						<input type="radio" class="" name="permission" id="update" checked>
-						<label class="fs-4" for="update">更新</label>
+						<label class="fs-4" for="update">アカウント登録</label>
+					</div>
+					<div class="col-2">
+						<input type="radio" class="" name="permission" id="update">
+						<label class="fs-4" for="update">売上登録/アカウント登録</label>
+					</div>
+				</c:if>
+				<c:if test="${selectById.authority == '11'}">
+					<div class="col-2">
+						<input type="radio" class="" name="permission" id="nothing">
+						<label class="fs-4" for="nothing">権限なし</label>
+					</div>
+					<div class="col-2">
+						<input type="radio" class="" name="permission" id="read">
+						<label class="fs-4" for="read">売上登録</label>
+					</div>
+					<div class="col-2">
+						<input type="radio" class="" name="permission" id="update">
+						<label class="fs-4" for="update">アカウント登録</label>
+					</div>
+					<div class="col-2">
+						<input type="radio" class="" name="permission" id="update" checked>
+						<label class="fs-4" for="update">売上登録/アカウント登録</label>
 					</div>
 				</c:if>
 			</div>

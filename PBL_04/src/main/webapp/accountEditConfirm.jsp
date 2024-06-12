@@ -16,7 +16,7 @@
 </div>
 
 <div class="d-flex flex-row mt-4">
-	<form class="col-10 offset-1" method="get" action="AccountEdit">
+	<form class="col-10 offset-1" method="post" action="AccountEditConfirm">
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">氏名</div>
@@ -60,55 +60,7 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="row col-8">
-				<!-- permissionがnothingの時 -->
-				<c:if test="${permission == 'nothing'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing"
-							checked> <label class="fs-4" for="nothing">権限なし</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="read">
-						<label class="fs-4" for="read">参照</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update">
-						<label class="fs-4" for="update">更新</label>
-					</div>
-					<!-- permissionがreadの時 -->
-
-				</c:if>
-				<c:if test="${permission == 'nothing'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing">
-						<label class="fs-4" for="nothing">権限なし</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="read" checked>
-						<label class="fs-4" for="read">参照</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update">
-						<label class="fs-4" for="update">更新</label>
-					</div>
-				</c:if>
-				<!-- permissionがupdateの時 -->
-				<c:if test="${permission == 'nothing'}">
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="nothing">
-						<label class="fs-4" for="nothing">権限なし</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="read">
-						<label class="fs-4" for="read">参照</label>
-					</div>
-					<div class="col-2">
-						<input type="radio" class="" name="permission" id="update" checked>
-						<label class="fs-4" for="update">更新</label>
-					</div>
-				</c:if>
-			</div>
-
+			<jsp:include page="authorityBottun.jsp"></jsp:include>
 		</div>
 		<div class="col-8 offset-4">
 			<button type="submit" class="col-4 btn btn-primary border rounded">ok</button>

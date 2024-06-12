@@ -1,5 +1,6 @@
 package controller;
 
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -11,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import services.AccountsServices;
 
 /**
- * Servlet implementation class AccountEdit
+ * Servlet implementation class AccountEditConfirm
  */
-@WebServlet("/AccountEdit")
-public class AccountEdit extends HttpServlet {
+@WebServlet("/AccountEditConfirm")
+public class AccountEditConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       AccountsServices as = new AccountsServices();
+    AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountEdit() {
+    public AccountEditConfirm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,13 +31,7 @@ public class AccountEdit extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		String accountId = request.getParameter("accountId");
-		System.out.println(accountId);
-		request.setAttribute("selectById", as.selectById(accountId));
-		
-		
-		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -44,7 +39,6 @@ public class AccountEdit extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("postへ遷移");
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
@@ -52,21 +46,9 @@ public class AccountEdit extends HttpServlet {
 		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
 		
-		request.setAttribute("name", name);
-		request.setAttribute("mail", mail);
-		request.setAttribute("pass", pass);
-		request.setAttribute("permission", permission);
-		request.setAttribute("passConfirm", passConfirm);
+		as.registerAccount(name, mail, pass, permission);
 		
-		if(!passConfirm.equals(pass)) {
-			boolean f = false;
-			request.setAttribute("same", f);
-			request.getRequestDispatcher("/accountEdit.jsp").forward(request, response);
-		} else {
-			this.getServletContext().getRequestDispatcher("/accountEditConfirm.jsp").forward(request, response);
-		}
-		
-		
+		response.sendRedirect("Dashboard");
 	}
 
 }
