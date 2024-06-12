@@ -14,6 +14,11 @@
 <div class="col-8 offset-2">
 	<div class="fs-2 fw-bold text-center">アカウント詳細編集</div>
 </div>
+	<c:if test="${same == false}">
+		<div class="alert alert-danger col-5 offset-4" role="alert">
+			<div>入力されたパスワードが一致しておりません</div>
+		</div>
+	</c:if>
 <div class="d-flex flex-row mt-4">
 	<form class="col-10 offset-1" method="post" action="AccountEdit">
 	<input type="hidden" value="${editAccountId}" name="accountId"> 
