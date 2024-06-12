@@ -14,7 +14,7 @@
     <!-- 本体 -->
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="fs-1 fw-bold">売上編集</div>
+            <div class="fs-1 fw-bold">削除確認画面</div>
         </div>
     </div>
     <div class="row mt-4">

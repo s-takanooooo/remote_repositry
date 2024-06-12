@@ -61,7 +61,7 @@
         <div class="d-flex justify-content-center pe-5 me-5">
             <div class="text align-self-start">
                 <button class="btn btn-primary  me-3" role="button">✓編集</button>
-                <button class="btn btn-danger  me-3" role="button">×削除</button>
+                <a href="SalesDelete" class="btn btn-danger  me-3" role="button">×削除</button>
                 <a class="btn btn-light" href="SalesDetail">キャンセル</a>
             </div>
         </div>
