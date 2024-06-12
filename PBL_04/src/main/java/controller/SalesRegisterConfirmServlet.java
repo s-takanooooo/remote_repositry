@@ -41,10 +41,6 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf8");
 		
-		System.out.println("postが実行されました");
-		
-		
-		
 		String day = request.getParameter("sale_date");
 		String responsible = request.getParameter("responsible");
 		String sales_category = request.getParameter("category_id");

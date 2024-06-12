@@ -8,36 +8,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.SalesServices;
+
 /**
- * Servlet implementation class SalesEdit
+ * Servlet implementation class SalesEditConfirm
  */
-@WebServlet("/SalesEdit")
-public class SalesEdit extends HttpServlet {
+@WebServlet("/SalesEditConfirm")
+public class SalesEditConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SalesEdit() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SalesEditConfirm() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf8");
-		
+
 		String day = request.getParameter("day");
 		String name = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
@@ -45,10 +49,11 @@ public class SalesEdit extends HttpServlet {
 		String unit_price = request.getParameter("price");
 		String sale_num = request.getParameter("product_name");
 		String sale_note = request.getParameter("mail");
-		String sale_id = request.getParameter("mail");
-		
-		
-		this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
+
+		SalesServices si = new SalesServices();
+		si.salesEdit(day, name, sale_category, trade_name, unit_price, sale_num, sale_note, 1);
+		response.sendRedirect("SalesEdit");
+
 	}
 
 }

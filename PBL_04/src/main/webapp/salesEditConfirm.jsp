@@ -47,7 +47,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <select name="staff" class="col-12 border rounded px-4 fs-3 form-select" readonly>
+                    <select name="category" class="col-12 border rounded px-4 fs-3 form-select" readonly>
                         <option selected value="食料品">食料品</option>
                     </select>
                 </div>

@@ -37,6 +37,7 @@
                 </div>
                 <div class="col-8">
                     <select name="staff" class="col-12 border rounded px-4 fs-3 form-select" required>
+                        <option selected value="山田太郎">山田太郎</option>
                         <option selected value="花本">花本</option>
                         <option value="鷹野">鷹野</option>
                         <option value="原">原</option>
@@ -51,7 +52,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <select name="staff" class="col-12 border rounded px-4 fs-3 form-select" required>
+                    <select name="category" class="col-12 border rounded px-4 fs-3 form-select" required>
                         <option selected value="食料品">食料品</option>
                         <option value="日用品">日用品</option>
                         <option value="家電製品">家電製品</option>
