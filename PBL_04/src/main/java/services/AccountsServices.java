@@ -164,4 +164,25 @@ public class AccountsServices {
 		
 	}
 	
+	public void updateAccount(String name, String mail, String password, int authority, int accountId) {
+		
+		String sql = "UPDATE accounts SET name = ?, mail = ?, password = ?, authority = ? WHERE account_id = ?";
+		
+		try(
+				Connection conn = DbUtil.open();
+				PreparedStatement ps = conn.prepareStatement(sql);){
+			
+			ps.setString(1, name);
+			ps.setString(2, mail);
+			ps.setString(3, password);
+			ps.setInt(4, authority);
+			ps.setInt(5, accountId);
+			
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

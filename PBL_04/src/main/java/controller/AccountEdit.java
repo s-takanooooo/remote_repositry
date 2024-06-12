@@ -50,8 +50,10 @@ public class AccountEdit extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
-		int permission = Integer.parseInt(request.getParameter("permission"));
+		String permission = request.getParameter("permission");
+		String accountId = request.getParameter("accountId");
 		
+		request.setAttribute("accountId", accountId);
 		request.setAttribute("name", name);
 		request.setAttribute("mail", mail);
 		request.setAttribute("pass", pass);

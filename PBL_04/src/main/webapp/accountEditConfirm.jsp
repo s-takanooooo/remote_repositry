@@ -17,49 +17,42 @@
 
 <div class="d-flex flex-row mt-4">
 	<form class="col-10 offset-1" method="post" action="AccountEditConfirm">
+	<input type="hidden" value="${accountId}" name="accountId">
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">氏名</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
-			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${name}" readonly>
+					value="${name}" name="name" readonly>
 			</div>
 		</div>
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">メールアドレス</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
-			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${mail}" readonly>
+					value="${mail}" name="mail" readonly>
 			</div>
 		</div>
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">パスワード</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
-			</div>
 			<div class="col-8">
 				<input type="text" class="col-12 border rounded px-4 fs-3"
-					placeholder="${pass}" readonly>
+					value="${pass}" name="pass" readonly>
+			</div>
+		</div>
+		
+		<div class="row col-12 my-4">
+			<div class="col-3 text-end fs-3">パスワード（確認）</div>
+			<div class="col-8">
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="passConfirm"
+					value="${pass}" name="passConfirm" readonly>
 			</div>
 		</div>
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">権限</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
-			</div>
 			<jsp:include page="authorityBottun.jsp"></jsp:include>
 		</div>
 		<div class="col-8 offset-4">

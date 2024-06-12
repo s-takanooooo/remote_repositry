@@ -43,10 +43,10 @@ public class AccountEditConfirm extends HttpServlet {
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
-		String passConfirm = request.getParameter("passConfirm");
 		int permission = Integer.parseInt(request.getParameter("permission"));
+		int accountId = Integer.parseInt(request.getParameter("accountId"));
 		
-		as.registerAccount(name, mail, pass, permission);
+		as.updateAccount(name, mail, pass, permission, accountId);
 		
 		response.sendRedirect("Dashboard");
 	}
