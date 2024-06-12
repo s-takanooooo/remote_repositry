@@ -81,7 +81,7 @@
 					 id="salesRegister" disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-3">
+			<div class="col-4">
 				<input type="checkbox" class="form-check-input"
 				 id="update" disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
@@ -96,7 +96,7 @@
 					id="salesRegister" checked disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-3">
+			<div class="col-4">
 				<input type="checkbox" class="form-check-input"
 					id="update" disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
@@ -110,7 +110,7 @@
 					 id="salesRegister" disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-3">
+			<div class="col-4">
 				<input type="checkbox" class="form-check-input"
 					 id="update" checked disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
@@ -124,7 +124,7 @@
 					 id="salesRegister" checked disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-3">
+			<div class="col-4">
 				<input type="checkbox" class="form-check-input"
 					 id="update" checked disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
