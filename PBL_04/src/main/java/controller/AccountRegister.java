@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import services.AccountsServices;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class AccountRegister
@@ -38,13 +39,14 @@ public class AccountRegister extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("postへ遷移");
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
-		int permission = Integer.parseInt(request.getParameter("permission"));
+		String accountsPermission = request.getParameter("accountsPermission");
+		String salesPermission = request.getParameter("salesPermission");
+		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		
 		request.setAttribute("name", name);
 		request.setAttribute("mail", mail);
