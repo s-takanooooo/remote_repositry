@@ -87,9 +87,9 @@
 					<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
 					<label class="fs-5" for="salesRegister">売上登録</label>
 				</div>
-				<div class="col-3">
+				<div class="col-4">
 					<input type="checkbox" class="form-check-input" name="accountsPermission" value="1"
-						id="update"> <label class="fs-5" for="update">アカウント登録</label>
+						id="update"> <label class="fs-5 text-nowrap" for="update">アカウント登録</label>
 				</div>
 			</div>
 		</div>
