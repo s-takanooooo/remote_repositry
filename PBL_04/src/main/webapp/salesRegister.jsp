@@ -41,6 +41,7 @@
 			</div>
 			<select class="col-8 border rounded px-4 fs-3" name="responsible">
 				<option selected>選択してください</option>
+				<!-- itemsに配列を格納　value=配列の値が入る変数-->
 				<c:forEach var="staff_name" items="${name}">
 					<option value="${staff_name}">${staff_name}</option>
 				</c:forEach>

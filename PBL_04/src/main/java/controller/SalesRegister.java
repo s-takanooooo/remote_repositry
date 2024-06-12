@@ -31,6 +31,7 @@ public class SalesRegister extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SalesServices ss = new SalesServices();
+		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("categories", ss.getCatgoryName());
 		request.setAttribute("name", ss.getStaffName());
 		this.getServletContext().getRequestDispatcher("/salesRegister.jsp").forward(request, response);
