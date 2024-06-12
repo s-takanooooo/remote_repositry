@@ -13,16 +13,16 @@
 <jsp:include page="header.jsp" />
 <!-- 本体 -->
 
-	<div class="col-8 offset-2">
-		<div class="fs-2 fw-bold text-center">アカウント登録</div>
-	</div>
+<div class="col-8 offset-2">
+	<div class="fs-2 fw-bold text-center">アカウント登録</div>
+</div>
 
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
 	<c:if test="${same == false}">
-	<div class="alert alert-danger" role="alert">
-		<div>入力されたパスワードが一致しておりません</div>
-	</div>
+		<div class="alert alert-danger" role="alert">
+			<div>入力されたパスワードが一致しておりません</div>
+		</div>
 	</c:if>
 	<form class="col-12" method="post" action="AccountRegister">
 		<div class="row col-12 my-4">
@@ -83,27 +83,19 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="row col-8">
-				<div class="col-2">
-					<input type="radio" class="" name="permission" value="0"
-						id="nothing"> <label class="fs-5" for="nothing">権限なし</label>
+				<div class="col-3 offset-1 form-check">
+					<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
+					<label class="fs-5" for="salesRegister">売上登録</label>
 				</div>
 				<div class="col-3">
-					<input type="radio" class="" name="permission" value="1"
-						id="read"> <label class="fs-5" for="read">売上登録</label>
-				</div>
-				<div class="col-3">
-					<input type="radio" class="" name="permission" value="10"
+					<input type="checkbox" class="form-check-input" name="accountsPermission" value="1"
 						id="update"> <label class="fs-5" for="update">アカウント登録</label>
-				</div>
-				<div class="col-4">
-					<input type="radio" class="" name="permission" value="11"
-						id="update"> <label class="fs-5" for="update">売上登録/アカウント登録</label>
 				</div>
 			</div>
 		</div>
 		<div class="col-8 offset-4">
-			<button type="submit" class="col-3 offset-2 btn btn-primary border rounded">✔
-				登 録</button>
+			<button type="submit"
+				class="col-3 offset-2 btn btn-primary border rounded">✔ 登 録</button>
 		</div>
 	</form>
 </div>
