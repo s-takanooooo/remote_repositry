@@ -231,4 +231,33 @@ public class AccountsServices {
 		}
 	}
 	
+	public boolean checkAccountMail(String mail) {
+		boolean f = false;
+		if(mail.length() >= 100) {
+			return f;
+		}else {
+			f = true;
+			return f;
+		}
+	}
+	
+	public boolean checkAccountPass(String pass) {
+		boolean f = false;
+		if(pass.length() >= 30) {
+			return f;
+		}else {
+			f = true;
+			return f;
+		}
+	}
+	public boolean checkAccountName(String name) {
+		boolean f = false;
+		if(name.length() >= 20) {
+			return f;
+		}else {
+			f = true;
+			return f;
+		}
+	}
+	
 }
