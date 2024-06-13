@@ -126,13 +126,13 @@ public class SalesServices {
 		}
 	}
 	
-	public void salesDelete(String sale_id) {
+	public void salesDelete(int sale_id) {
 		String sql = "DELETE FROM sales WHERE sale_id=?";
 		try(
 				Connection con = DbUtil.open();
 				PreparedStatement stmt = con.prepareStatement(sql);
 				){
-			stmt.setInt(1, Integer.parseInt(sale_id));
+			stmt.setInt(1,sale_id);
 			int result = stmt.executeUpdate();
 			System.out.println(result);
 		}catch (SQLException e) {
