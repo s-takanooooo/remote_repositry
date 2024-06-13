@@ -55,10 +55,11 @@
 		<div class="row col-12 my-4">
 			<div class="col-4 text-end fs-3">権限</div>
 			<jsp:include page="authorityButton.jsp"></jsp:include>
+		</div>
 		
-			<div class="col-7 offset-4">
-			<button type="submit" class="col-3 offset-1 btn btn-primary border rounded">ok</button>
-			<a href="AccountEdit" class="col-3 offset-1 btn btn-secondary">キャンセル</a>
+		<div class="col-8 offset-4">
+			<button type="submit" class="col-4 btn btn-primary border rounded">o　k</button>
+			<a href="AccountEdit" class="col-4 btn btn-secondary">キャンセル</a>
 		</div>
 	</form>
 </div>
