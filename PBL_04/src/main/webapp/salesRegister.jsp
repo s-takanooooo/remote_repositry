@@ -42,7 +42,7 @@
 			</div>
 			<div class="col-7">
 				<select class="w-100 border rounded px-4 fs-3" name="responsible">
-					<option selected>選択してください</option>
+					<option value="0" selected>選択してください</option>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="staff_name" items="${name}">
 						<option value="${staff_name}">${staff_name}</option>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="col-7">
 				<select class="w-100 border rounded px-4 fs-3" name="category">
-					<option selected>選択してください</option>
+					<option value="0" selected>選択してください</option>
 					<c:forEach var="category_name" items="${categories}">
 						<option value="${category_name}">${category_name}</option>
 					</c:forEach>

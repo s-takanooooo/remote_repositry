@@ -15,4 +15,5 @@ public class SearchResultBean {
 	int unit_prace;
 	int sale_number;
 	int subtotal;
+	String note;
 }

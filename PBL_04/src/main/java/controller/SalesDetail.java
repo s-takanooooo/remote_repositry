@@ -38,7 +38,7 @@ public class SalesDetail extends HttpServlet {
 		session.setAttribute("sale_num", sale_num);
 		ArrayList<SearchResultBean> sales = new ArrayList<>(
 				(ArrayList<SearchResultBean>) session.getAttribute("sales"));
-		SearchResultBean srb = sales.get((Integer)session.getAttribute("sale_num"));
+		SearchResultBean srb = sales.get(sale_num);
 		session.setAttribute("sale", srb);
 		this.getServletContext().getRequestDispatcher("/salesDetails.jsp").forward(request, response);
 
