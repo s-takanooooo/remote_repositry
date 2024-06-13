@@ -17,13 +17,13 @@
 	<div class="fs-1 fw-bold">アカウント登録</div>
 </div>
 
-<div class="d-flex flex-row mt-4">
-	<!-- アクションの指定 -->
 	<c:if test="${same == false}">
-		<div class="alert alert-danger" role="alert">
+		<div class="alert alert-danger col-5 offset-4" role="alert">
 			<div>入力されたパスワードが一致しておりません</div>
 		</div>
 	</c:if>
+<div class="d-flex flex-row mt-4">
+	<!-- アクションの指定 -->
 	<form class="col-12" method="post" action="AccountRegister">
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">氏名</div>
