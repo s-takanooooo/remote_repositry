@@ -59,7 +59,9 @@ public class AccountDelete extends HttpServlet {
 		int accountId = Integer.parseInt(request.getParameter("deleteAccountId"));
 		System.out.println(accountId);
 		as.deleteAccount(accountId);
-		response.sendRedirect("Dashboard");
+		String accountDeleteComplete = "completed";
+		request.setAttribute("accountDeleteComplete", accountDeleteComplete);
+		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 		
 	}
 
