@@ -6,6 +6,10 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  type="text/css"/>
 </head>
 
 <body>
@@ -34,8 +38,8 @@
 	</div>
 	<div>
 	<c:if test="${accountAuthError == false}">
-		<div class="alert alert-danger col-5 offset-4" role="alert">
-			<div>アカウント登録の権限がありません</div>
+		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">このアカウントには権限がありません</div>
 		</div>
 	</c:if>
 	</div>

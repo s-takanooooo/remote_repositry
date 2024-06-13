@@ -21,7 +21,9 @@
                 <table class="table">
                     <thead>
                         <tr>
+                        <c:if test="${authority == 10 || authority == 11}">
                             <th scope="col">操作</th>
+                        </c:if>
                             <th scope="col">No</th>
                             <th scope="col">氏名</th>
                             <th scope="col">メールアドレス</th>
@@ -31,9 +33,11 @@
                     <c:forEach var="item" items="${search}">
                         <tbody>
                             <tr>
-                                <td><a class="btn btn-primary  me-3" role="button" href="AccountEdit?accountId=${item.account_id}">✓編集</a>
-                                    <a class="btn btn-danger  me-3" role="button" href="AccountDelete?accountId=${item.account_id}">×削除</a>
-                                </td>
+                          	    <c:if test="${authority == 10 || authority == 11}">
+                            	    <td><a class="btn btn-primary  me-3" role="button" href="AccountEdit?accountId=${item.account_id}">✓編集</a>
+                                    	<a class="btn btn-danger  me-3" role="button" href="AccountDelete?accountId=${item.account_id}">×削除</a>
+                                	</td>
+                            	</c:if>
                                 <td>${item.account_id}</td>
                                 <td>${item.name}</td>
                                 <td>${item.mail}</td>

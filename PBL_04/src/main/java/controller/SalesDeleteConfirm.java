@@ -49,7 +49,7 @@ public class SalesDeleteConfirm extends HttpServlet {
 		request.setAttribute("sale_id", sale_id);
 		
 		SalesServices si = new SalesServices();
-		si.salesDelete(sale_id);
+//		si.salesDelete(sale_id);
 		response.sendRedirect("SalesDelete");
 	}
 
