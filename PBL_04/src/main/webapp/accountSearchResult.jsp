@@ -37,7 +37,18 @@
                                 <td>${item.account_id}</td>
                                 <td>${item.name}</td>
                                 <td>${item.mail}</td>
-                                <td>${item.authority}</td>
+                                <c:if test="${item.authority == 0}">
+                                	<td>権限なし</td>                                
+                                </c:if>
+                                <c:if test="${item.authority == 1}">
+                                	<td>売上登録</td>                                
+                                </c:if>
+                                <c:if test="${item.authority == 10}">
+                                	<td>アカウント登録</td>                                
+                                </c:if>
+                                <c:if test="${item.authority == 11}">
+                                	<td>売上登録/アカウント登録</td>                                
+                                </c:if>
                             </tr>
                         </tbody>
                     </c:forEach>

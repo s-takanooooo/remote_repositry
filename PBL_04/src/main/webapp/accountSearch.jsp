@@ -56,6 +56,10 @@
 					<input type="checkbox" class="form-check-input" name="accountsPermission" value="1"
 						id="update"> <label class="fs-5" for="update">アカウント登録</label>
 				</div>
+				<div class="col-4">
+					<input type="checkbox" class="form-check-input" name="allPermission" value="1"
+						id="update" checked> <label class="fs-5" for="update">条件なし</label>
+				</div>
 			</div>
 		</div>
             <div class="col-4 offset-4">

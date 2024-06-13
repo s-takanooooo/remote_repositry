@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import services.AccountsServices;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class AccountSearch
@@ -45,7 +46,15 @@ public class AccountSearch extends HttpServlet {
 		HttpSession session = request.getSession();
 		String name =  request.getParameter("name");
 		String mail = request.getParameter("mail");
-		String permission = request.getParameter("permission");
+		String accountsPermission = request.getParameter("accountsPermission");
+		String salesPermission = request.getParameter("salesPermission");
+		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);		
+		String allpermission = request.getParameter("allPermission");
+		
+		if(allpermission != null) {
+			permission = null;
+		}
+		
 		session.setAttribute("name", name);
 		session.setAttribute("mail", mail);
 		session.setAttribute("permission", permission);
