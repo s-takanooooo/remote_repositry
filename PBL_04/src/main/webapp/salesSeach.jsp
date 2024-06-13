@@ -76,7 +76,7 @@
 
 				<div class="col-7">
 					<input type="text" name="mail"
-						class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
+						class="col-12 border rounded px-4 fs-3" placeholder="商品名">
 				</div>
 			</div>
 			<div>
