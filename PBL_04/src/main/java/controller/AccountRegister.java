@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.AccountsServices;
 import util.CommonUtil;
@@ -31,6 +32,13 @@ public class AccountRegister extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		int authority = (int)session.getAttribute("authority");
+		if(authority != 10 && authority != 11) {
+			boolean f = false;
+			request.setAttribute("accountAuthError", f);
+			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
+		}
 		request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 	}
 
@@ -54,7 +62,7 @@ public class AccountRegister extends HttpServlet {
 		request.setAttribute("permission", permission);
 		request.setAttribute("passConfirm", passConfirm);
 		
-		if(as.selectByMail(mail).getMail().equals(mail)) {
+		if(as.selectByMail(mail) != null && as.selectByMail(mail).getMail().equals(mail)) {
 			boolean f = false;
 			request.setAttribute("already", f);
 			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);

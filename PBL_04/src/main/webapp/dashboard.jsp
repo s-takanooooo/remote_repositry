@@ -32,5 +32,12 @@
 				ログアウト </a>
 		</div>
 	</div>
+	<div>
+	<c:if test="${accountAuthError == false}">
+		<div class="alert alert-danger col-5 offset-4" role="alert">
+			<div>アカウント登録の権限がありません</div>
+		</div>
+	</c:if>
+	</div>
 </body>
 </html>
