@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -54,7 +55,8 @@ public class SalesSearch extends HttpServlet {
 		String sale_note = request.getParameter("note");
 
 		SalesServices si = new SalesServices();
-		request.setAttribute("sales", si.SearchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+		HttpSession session = request.getSession();
+		session.setAttribute("sales", si.SearchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
 
 		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
 	}

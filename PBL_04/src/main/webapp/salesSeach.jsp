@@ -51,11 +51,8 @@
 			</div>
 
 			<div class="row col-12 my-4">
-				<div class="col-3 text-end fs-3">商品カテゴリー</div>
-				<div class="col-1">
-					<div
-						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
-				</div>
+				<div class="col-3 offset-1 text-end fs-3">商品カテゴリー</div>
+
 				<div class="col-7">
 					<select class="w-100 border rounded px-4 fs-3 form-select name="category">
 						<option selected>選択してください</option>

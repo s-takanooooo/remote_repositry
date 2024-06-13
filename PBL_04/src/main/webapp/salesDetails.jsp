@@ -23,35 +23,35 @@
                         <tbody>
                             <tr class="mb-3">
                                 <th class="fw-bold pe-5">販売日</th>
-                                <td>2024/06/10</td>
+                                <td><c:out value="${sale.getSale_id() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">担当</th>
-                                <td>松岡修造</td>
+                                <td><c:out value="${sale.getSale_date() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold pe-5">商品カテゴリー</th>
-                                <td>食料品</td>
+                                <td><c:out value="${sale.getName() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">商品名</th>
-                                <td>リンゴ</td>
+                                <td><c:out value="${sale.getCategory_name() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">商品カテゴリー</th>
-                                <td>食料品</td>
+                                <td><c:out value="${sale.getTrade_name() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">単価</th>
-                                <td>30</td>
+                                <td><c:out value="${sale.getUnit_prace() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">個数</th>
-                                <td>1000</td>
+                                <td><c:out value="${sale.getSale_number() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">備考</th>
-                                <td>今日からの新商品</td>
+                                <td><c:out value="${sale.getSubtotal()}" /></td>
                             </tr>
                         </tbody>
                     </table>

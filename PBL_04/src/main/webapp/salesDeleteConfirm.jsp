@@ -93,7 +93,7 @@
 				✔ O K
 				</Kbd>
 			</button>
-			<button type="submit"
+			<a href="SalesDetail"
 				class="col-4 btn btn-white text-dark border rounded ml-4">
 				キャンセル</a>
 		</div>
