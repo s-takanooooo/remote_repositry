@@ -25,7 +25,7 @@
                     <div class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
                 </div>
                 <div class="col-8">
-                    <input type="date" name="day" id="datepicker" class="col-12 px-4 fs-3" value=""
+                    <input type="date" name="day" id="datepicker" class="col-12 border rounded px-4 fs-3" value=""
                         required>
                 </div>
             </div>
