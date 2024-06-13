@@ -166,7 +166,7 @@ public class SalesServices {
 	public ArrayList<SearchResultBean> SearchSales(String min_day, String max_day, String name, String sale_category, String trade_name, String sale_note) {
 	    ArrayList<SearchResultBean> sales = new ArrayList<>();
 	    String sql = "SELECT s.sale_id, s.sale_date, a.name, c.category_name,"+ 
-	    			" s.trade_name AS trade_name, s.sale_number, s.unit_price " +
+	    			" s.trade_name AS trade_name, s.sale_number, s.unit_price ,s.note" +
 	                 "FROM sales s JOIN accounts a ON s.account_id = a.account_id " +
 	                 "JOIN categories c ON s.category_id = c.category_id WHERE 1=1 ";
 	    
@@ -221,8 +221,9 @@ public class SalesServices {
 	            int sale_num = rs.getInt("sale_number");
 	            int sale_price = rs.getInt("unit_price");
 	            int subtotal = sale_num * sale_price;
+	            String note = rs.getString("note");
 
-	            SearchResultBean srb = new SearchResultBean(sale_id, sale_date, staff, c_name, t_name, sale_num, sale_price, subtotal);
+	            SearchResultBean srb = new SearchResultBean(sale_id, sale_date, staff, c_name, t_name, sale_num, sale_price, subtotal,note);
 	            sales.add(srb);
 	        }
 	    } catch (SQLException e) {
@@ -230,6 +231,22 @@ public class SalesServices {
 	    }
 
 	    return sales;
+	}
+	
+	public boolean nullcheck(String select) {
+		boolean check_result = false;
+		if(select.equals("0")) {
+			check_result = true;
+		}
+		return check_result;
+	}
+	
+	public boolean strCount(String str,int max_int) {
+		boolean check_count = false;
+		if(str.length()>max_int) {
+			check_count=true;
+		}
+		return check_count;
 	}
 
 }
