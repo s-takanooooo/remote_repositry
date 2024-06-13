@@ -12,7 +12,7 @@ public class SearchResultBean {
 	String name;
 	String category_name;
 	String trade_name;
-	int unit_prace;
+	int unit_price;
 	int sale_number;
 	int subtotal;
 	String note;
