@@ -8,13 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.AccountsBean;
+import services.AccountsServices;
+
 /**
  * Servlet implementation class AccountDelete
  */
 @WebServlet("/AccountDelete")
 public class AccountDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,6 +31,17 @@ public class AccountDelete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		
+		String accountId = request.getParameter("accountId");
+		AccountsBean ab = as.selectById(accountId);
+		
+		request.setAttribute("deleteAccountId", ab.getAccount_id());
+		request.setAttribute("deleteName", ab.getName());
+		request.setAttribute("deleteMail", ab.getMail());
+		request.setAttribute("deletePass", ab.getPassword());
+		request.setAttribute("permission", ab.getAuthority());
+		
 		this.getServletContext().getRequestDispatcher("/accountDelete.jsp").forward(request, response);
 	}
 
@@ -36,7 +50,17 @@ public class AccountDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		
+		String name = request.getParameter("deleteName");
+		String mail = request.getParameter("deleteMail");
+		String pass = request.getParameter("deletePass");
+		int permission = Integer.parseInt(request.getParameter("permission"));
+		int accountId = Integer.parseInt(request.getParameter("deleteAccountId"));
+		System.out.println(accountId);
+		as.deleteAccount(accountId);
+		response.sendRedirect("Dashboard");
+		
 	}
 
 }

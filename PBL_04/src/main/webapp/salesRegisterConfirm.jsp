@@ -30,18 +30,22 @@
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">担当</div>
-                <select class="col-8 border rounded px-4 fs-3" name="responsible">
+                <div class=col-8>
+                <select class="w-100 border rounded px-4 fs-3 form-select" name="responsible">
                     <option selected><c:out value="${responsible}"/></option>
                     
                 </select>
+                </div>
             </div>
 
             <div class="row offset-2 col-8 my-4">
                 <div class="col-3 text-end fs-3">商品カテゴリー</div>
-                <select class="col-8 border rounded px-4 fs-3" name="category_id">
+                <div class=col-8>
+                <select class="w-100 border rounded px-4 fs-3 form-select" name="category_id">
                     <option selected><c:out value="${sales_category}"/></option>
                     
                 </select>
+                </div>
             </div>
 
             <div class="row offset-2 col-8 my-4">
