@@ -23,27 +23,24 @@
                         <tbody>
                             <tr class="mb-3">
                                 <th class="fw-bold pe-5">販売日</th>
-                                <td><c:out value="${sale.getSale_id() }" /></td>
-                            </tr>
-                            <tr>
-                                <th class="fw-bold">担当</th>
                                 <td><c:out value="${sale.getSale_date() }" /></td>
                             </tr>
                             <tr>
-                                <th class="fw-bold pe-5">商品カテゴリー</th>
+                                <th class="fw-bold">担当</th>
                                 <td><c:out value="${sale.getName() }" /></td>
                             </tr>
                             <tr>
-                                <th class="fw-bold">商品名</th>
+                                <th class="fw-bold pe-5">商品カテゴリー</th>
                                 <td><c:out value="${sale.getCategory_name() }" /></td>
                             </tr>
                             <tr>
-                                <th class="fw-bold">商品カテゴリー</th>
+                                <th class="fw-bold">商品名</th>
                                 <td><c:out value="${sale.getTrade_name() }" /></td>
                             </tr>
+                            
                             <tr>
                                 <th class="fw-bold">単価</th>
-                                <td><c:out value="${sale.getUnit_prace() }" /></td>
+                                <td><c:out value="${sale.getUnit_price() }" /></td>
                             </tr>
                             <tr>
                                 <th class="fw-bold">個数</th>
@@ -61,7 +58,7 @@
         <div class="d-flex justify-content-center pe-5 me-5">
             <div class="text align-self-start">
                 <button class="btn btn-primary  me-3" role="button">✓編集</button>
-                <a href="SalesDelete?id="${sessionScope.sale_num }" class="btn btn-danger  me-3" role="button">×削除</button>
+                <a href="SalesDelete?id=${sessionScope.sale_num }" class="btn btn-danger  me-3" role="button">×削除</a>
                 <a class="btn btn-light" href="SalesDetail">キャンセル</a>
             </div>
         </div>

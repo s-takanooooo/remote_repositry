@@ -40,7 +40,7 @@
 						<td><c:out value="${item.getName() }" /></td>
 						<td><c:out value="${item.getCategory_name() }" /></td>
 						<td><c:out value="${item.getTrade_name() }" /></td>
-						<td><c:out value="${item.getUnit_prace() }" /></td>
+						<td><c:out value="${item.getUnit_price() }" /></td>
 						<td><c:out value="${item.getSale_number() }" /></td>
 						<td><c:out value="${item.getSubtotal()}" /></td>
 					</tr>
