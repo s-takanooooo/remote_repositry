@@ -14,7 +14,7 @@
 	<div class="mx-auto p-2" style="width: 350px;">
 		<div class="text-center">
 			<section>
-				<h3>物品売り上げ管理システム</h3>
+				<h3>物品売上管理システム</h3>
 			</section>
 			<c:if test="${login == false}">
 			<div class="alert alert-danger" role="alert">
