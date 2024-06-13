@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <script src="js/day.js"></script>
+<title>売上登録</title>
 </head>
 
 <jsp:include page="header.jsp" />
@@ -14,7 +15,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-8 offset-2">
-			<div class="fs-1 fw-bold">売り上げ登録</div>
+			<div class="fs-1 fw-bold">売上登録</div>
 		</div>
 	</div>
 	<div class="row mt-4">
@@ -22,10 +23,10 @@
 		<form method="post" action="#">
 			<div class="row offset-2 col-8 my-4">
 
-				<div class="col-3 text-end fs-3">発売日</div>
+				<div class="col-3 text-end fs-3">販売日</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-3">
 					<input type="date" name="sale" id="datepicker" value=""
@@ -38,7 +39,7 @@
 				<div class="col-3 text-end fs-3">担当</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-8">
 					<select class="w-100 border rounded px-4 fs-3" name="responsible">
@@ -55,7 +56,7 @@
 				<div class="col-3 text-end fs-3">商品カテゴリー</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-8">
 					<select class="w-100 border rounded px-4 fs-3" name="category">
@@ -71,7 +72,7 @@
 				<div class="col-3 text-end fs-3">商品名</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-8">
 					<input type="text" name="trade_name"
@@ -83,7 +84,7 @@
 				<div class="col-3 text-end fs-3">単価</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-3">
 					<input type="text" name="unit_price"
@@ -95,7 +96,7 @@
 				<div class="col-3 text-end fs-3">個数</div>
 				<div class="col-1">
 					<div
-						class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-3">
 					<input type="text" name="sale_number"
@@ -105,11 +106,8 @@
 
 			<div class="row offset-2 col-8 my-4">
 				<div class="col-3 text-end fs-3">備考</div>
-				<div class="col-1">
-					<div class="col-10 text-white fs-4"></div>
-				</div>
 
-				<div class="col-8">
+				<div class="col-8 offset-1">
 					<textarea name="note" rows="4"
 						class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
 				</div>
