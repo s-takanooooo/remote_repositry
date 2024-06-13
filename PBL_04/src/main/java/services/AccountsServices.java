@@ -67,6 +67,7 @@ public class AccountsServices {
 	}
 	
 	public void registerAccount(String name, String mail, String password, int authority) {
+		boolean f = false;
 		
 		String sql = "INSERT INTO accounts (name, mail, password, authority) VALUES (?,?,?,?)";
 		
@@ -83,6 +84,7 @@ public class AccountsServices {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 	}
 	
@@ -146,6 +148,34 @@ public class AccountsServices {
 				PreparedStatement ps = conn.prepareStatement(sql);){
 			
 			ps.setString(1, accountId);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int id = rs.getInt("account_id");
+				String name = rs.getString("name");
+				String email = rs.getString("mail");
+				String pass = rs.getString("password");
+				int authority = rs.getInt("authority");
+				ab = new AccountsBean(id, name, email, pass, authority); 
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ab;
+		
+	}
+	
+	public AccountsBean selectByMail(String mail) {
+		
+		AccountsBean ab = null;
+		String sql = "SELECT * FROM accounts WHERE mail = ?";
+		
+		try(
+				Connection conn =DbUtil.open();
+				PreparedStatement ps = conn.prepareStatement(sql);){
+			
+			ps.setString(1, mail);
 			
 			ResultSet rs = ps.executeQuery();
 			

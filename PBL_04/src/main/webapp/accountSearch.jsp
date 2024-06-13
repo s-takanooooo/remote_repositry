@@ -29,7 +29,7 @@
                 </div>
             </div>
                 <div class="col-7">
-                    <input type="text" name="name" class="col-12 border rounded px-4 fs-3" placeholder="氏名">
+                    <input type="text" name="name" class="col-12 border rounded px-4 fs-3" placeholder="氏名" maxlength="20">
                 </div>
             </div>
             <div>
@@ -39,7 +39,7 @@
 				</div>
 
                 <div class="col-7">
-                    <input type="email" name="mail" class="col-12 border rounded px-4 fs-3 text" placeholder="メールアドレス">
+                    <input type="email" name="mail" class="col-12 border rounded px-4 fs-3 text" placeholder="メールアドレス" maxlength="100">
                 </div>
             </div>
             </div>

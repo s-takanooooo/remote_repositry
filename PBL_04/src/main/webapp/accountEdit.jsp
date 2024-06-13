@@ -30,7 +30,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3" name="name"
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="name" maxlength="20"
 					value="${editName}" required>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail"
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail" maxlength="100"
 					value="${editMail}" required>
 			</div>
 		</div>
@@ -54,7 +54,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass"
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass" maxlength="30"
 					value="${editPass}" required>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm"
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm" maxlength="30"
 					value="${editPass}" required>
 			</div>
 		</div>

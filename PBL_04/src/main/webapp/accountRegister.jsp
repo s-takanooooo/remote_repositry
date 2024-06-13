@@ -22,6 +22,11 @@
 			<div>入力されたパスワードが一致しておりません</div>
 		</div>
 	</c:if>
+	<c:if test="${already == false}">
+		<div class="alert alert-danger col-5 offset-4" role="alert">
+			<div>このメールアドレスは使用できません</div>
+		</div>
+	</c:if>
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
 	<form class="col-12" method="post" action="AccountRegister">
@@ -33,7 +38,7 @@
 			</div>
 			<div class="col-7">
 				<input type="text" name="name"
-					class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
+					class="col-12 border rounded px-4 fs-3" placeholder="氏名" required maxlength="20">
 			</div>
 		</div>
 
@@ -45,7 +50,7 @@
 			</div>
 			<div class="col-7">
 				<input type="email" name="mail"
-					class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス"
+					class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス" maxlength="100"
 					required>
 			</div>
 		</div>
@@ -58,7 +63,7 @@
 			</div>
 			<div class="col-7">
 				<input type="password" name="pass"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード"
+					class="col-12 border rounded px-4 fs-3" placeholder="パスワード" maxlength="30"
 					required>
 			</div>
 		</div>
@@ -71,7 +76,7 @@
 			</div>
 			<div class="col-7">
 				<input type="password" name="passConfirm"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
+					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）" maxlength="30"
 					required>
 			</div>
 		</div>
