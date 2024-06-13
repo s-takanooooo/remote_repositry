@@ -8,17 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="row col-8">
+	<div class="row col-7">
 		<!-- 権限無しの場合 -->
 		<c:if test="${permission == '0'}">
 			<input type="hidden" value="${permission}" name="permission">
-			<div class="col-3 offset-1 form-check">
+			<div class="col-4 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-4">
-				<input type="checkbox" class="form-check-input"
+			<div class="col-4 offset-1">
+				<input type="checkbox" class="form-check-input text-nowrap"
 					name="accountsPermission" value="1" id="update" disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
 			</div>
@@ -27,12 +27,12 @@
 		<!-- 売上登録のみの場合 -->
 		<c:if test="${permission == '1'}">
 		<input type="hidden" value="${permission}" name="permission">
-			<div class="col-3 offset-1 form-check">
+			<div class="col-4 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" checked disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-4">
+			<div class="col-4 offset-1">
 				<input type="checkbox" class="form-check-input"
 					name="accountsPermission" value="1" id="update" disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
@@ -41,12 +41,12 @@
 		<!-- アカウント登録のみの場合 -->
 		<c:if test="${permission == '10'}">
 		<input type="hidden" value="${permission}" name="permission">
-			<div class="col-3 offset-1 form-check">
+			<div class="col-4 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-4">
+			<div class="col-4 offset-1">
 				<input type="checkbox" class="form-check-input"
 					name="accountsPermission" value="1" id="update" checked disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
@@ -55,12 +55,12 @@
 		<!-- 全権限の場合 -->
 		<c:if test="${permission == '11'}">
 		<input type="hidden" value="${permission}" name="permission">
-			<div class="col-3 offset-1 form-check">
+			<div class="col-4 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					name="salesPermission" value="1" id="salesRegister" checked disabled> <label
 					class="fs-5" for="salesRegister">売上登録</label>
 			</div>
-			<div class="col-4">
+			<div class="col-4 offset-1">
 				<input type="checkbox" class="form-check-input"
 					name="accountsPermission" value="1" id="update" checked disabled> <label
 					class="fs-5" for="update">アカウント登録</label>
