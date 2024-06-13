@@ -50,7 +50,9 @@ public class AccountRegisterConfirm extends HttpServlet {
 		
 		as.registerAccount(name, mail, pass, permission);
 		
-		response.sendRedirect("Dashboard");
+		String accountRegisterComplete = "completed";
+		request.setAttribute("accountRegisterComplete", accountRegisterComplete);
+		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 	}
 
 }

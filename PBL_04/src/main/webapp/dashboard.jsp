@@ -42,6 +42,16 @@
 			<div class="text-center">このアカウントには権限がありません</div>
 		</div>
 	</c:if>
+	<c:if test="${accountDeleteComplete == 'completed'}">
+		<div class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">アカウントの削除が完了しました</div>
+		</div>
+	</c:if>
+	<c:if test="${accountRegisterComplete == 'completed'}">
+		<div class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">アカウント登録がが完了しました</div>
+		</div>
+	</c:if>
 	</div>
 </body>
 </html>
