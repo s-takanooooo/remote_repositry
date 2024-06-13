@@ -14,7 +14,7 @@
 <!-- 本体 -->
 
 <div class="col-8 offset-2">
-	<div class="fs-2 fw-bold text-center">アカウント登録</div>
+	<div class="fs-1 fw-bold">アカウント登録</div>
 </div>
 
 <div class="d-flex flex-row mt-4">
@@ -93,9 +93,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-8 offset-4">
+		<div class="col-2 offset-5">
 			<button type="submit"
-				class="col-3 offset-2 btn btn-primary border rounded">✔ 登 録</button>
+				class="col-6 btn btn-primary border rounded">✔ 登 録</button>
 		</div>
 	</form>
 </div>
