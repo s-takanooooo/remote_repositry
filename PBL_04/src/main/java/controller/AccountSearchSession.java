@@ -14,14 +14,14 @@ import services.AccountsServices;
 /**
  * Servlet implementation class SearchSession
  */
-@WebServlet("/SearchSession")
-public class SearchSession extends HttpServlet {
+@WebServlet("/AccountSearchSession")
+public class AccountSearchSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	AccountsServices as = new AccountsServices();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchSession() {
+    public AccountSearchSession() {
         super();
         // TODO Auto-generated constructor stub
     }

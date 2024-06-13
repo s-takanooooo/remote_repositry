@@ -34,7 +34,6 @@ public class AccountEdit extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		String accountId = request.getParameter("accountId");
-		System.out.println(accountId);
 		AccountsBean ab = as.selectById(accountId);
 		
 		request.setAttribute("editAccountId", ab.getAccount_id());

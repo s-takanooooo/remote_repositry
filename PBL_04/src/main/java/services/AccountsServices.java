@@ -184,5 +184,21 @@ public class AccountsServices {
 			e.printStackTrace();
 		}
 	}
+	public void deleteAccount(int accountId) {
+		
+		String sql = "DELETE FROM accounts WHERE account_id = ?";
+		
+		try(
+				Connection conn = DbUtil.open();
+				PreparedStatement ps = conn.prepareStatement(sql);){
+			
+			ps.setInt(1, accountId);			
+			
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
