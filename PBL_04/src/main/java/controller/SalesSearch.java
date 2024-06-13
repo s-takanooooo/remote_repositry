@@ -16,19 +16,20 @@ import services.SalesServices;
 @WebServlet("/SalesSearch")
 public class SalesSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SalesSearch() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SalesSearch() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SalesServices ss = new SalesServices();
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
@@ -40,8 +41,21 @@ public class SalesSearch extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf8");
+
+		String min_day = request.getParameter("startDate");
+		String max_day = request.getParameter("endDate");
+		String name = request.getParameter("staff");
+		String sale_category = request.getParameter("category");
+		String trade_name = request.getParameter("mail");
+		String sale_note = request.getParameter("note");
+
+		SalesServices si = new SalesServices();
+		request.setAttribute("sales", si.SearchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+
 		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
 	}
 

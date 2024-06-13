@@ -31,21 +31,21 @@
 						<th scope="col">小計</th>
 					</tr>
 				</thead>
-				<%-- <c:forEach var="item" items="sales"> --%>
+				<c:forEach var="item" items="${sales }"> 
 				<tbody>
 					<tr>
 						<td><a class="btn btn-primary" role="button" href="SalesDetail">✓詳細</a></td>
-						<td>{item.sale_id}</td>
-						<td>{item.sale_date}</td>
-						<td>{item.account_name}</td>
-						<td>{item.category_name}</td>
-						<td>{item.trade_name}</td>
-						<td>{item.unit_price}</td>
-						<td>{item.sale_number}</td>
-						<td>{item.unit_price*item.sale_number}</td>
+						<td><c:out value="${item.getSale_id() }" /></td>
+						<td><c:out value="${item.getSale_date() }" /></td>
+						<td><c:out value="${item.getName() }" /></td>
+						<td><c:out value="${item.getCategory_name() }" /></td>
+						<td><c:out value="${item.getTrade_name() }" /></td>
+						<td><c:out value="${item.getUnit_prace() }" /></td>
+						<td><c:out value="${item.getSale_number() }" /></td>
+						<td><c:out value="${item.getSubtotal()}" /></td>
 					</tr>
 				</tbody>
-				<%-- </c:forEach> --%>
+				</c:forEach>
 			</table>
 		</div>
 		<script src="../javascript/bootstrap.bundle.min.js"></script>

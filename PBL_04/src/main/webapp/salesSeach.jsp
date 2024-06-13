@@ -41,7 +41,7 @@
 			<div class="row col-12 my-4">
 				<div class="col-3 offset-1 text-end fs-3">担当</div>
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select">
+					<select class="w-100 border rounded px-4 fs-3 form-select name="staff">
 						<option selected>選択してください</option>
 						<c:forEach var="staff_name" items="${staff}">
 							<option value="${staff_name}">${staff_name}</option>
@@ -57,7 +57,7 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select">
+					<select class="w-100 border rounded px-4 fs-3 form-select name="category">
 						<option selected>選択してください</option>
 						<c:forEach var="category_name" items="${category}">
 							<option value="${category_name}">${category_name}</option>
@@ -89,8 +89,8 @@
 					</div>
 
 					<div class="col-7">
-						<textarea name="mail" class="col-12 border rounded px-4 fs-3"
-							placeholder="備考" required></textarea>
+						<textarea name="note" class="col-12 border rounded px-4 fs-3"
+							placeholder="備考"></textarea>
 					</div>
 				</div>
 			</div>
