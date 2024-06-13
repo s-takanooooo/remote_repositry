@@ -7,7 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import beans.SearchResultBean;
 import services.SalesServices;
 
 /**
@@ -40,17 +42,14 @@ public class SalesDeleteConfirm extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String sale_id = request.getParameter("sale_id");
-		
-		System.out.println(sale_id);
-
-		int sale = Integer.parseInt(sale_id);
-
-		request.setAttribute("sale_id", sale_id);
+		HttpSession session = request.getSession();
+		SearchResultBean srb = (SearchResultBean)session.getAttribute("sale");
+		int sale_id = srb.getSale_id();
 		
 		SalesServices si = new SalesServices();
-//		si.salesDelete(sale_id);
-		response.sendRedirect("SalesDelete");
+		si.salesDelete(sale_id);
+		
+		session.setAttribute("sale", null);
+		session.setAttribute("sales", null);
 	}
-
 }
