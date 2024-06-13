@@ -7,6 +7,10 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  type="text/css"/>
 <title>アカウント登録</title>
 </head>
 
@@ -18,28 +22,33 @@
 </div>
 
 	<c:if test="${same == false}">
-		<div class="alert alert-danger col-5 offset-4" role="alert">
-			<div>入力されたパスワードが一致しておりません</div>
+		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">入力されたパスワードが一致しておりません</div>
 		</div>
 	</c:if>
 	<c:if test="${already == false}">
-		<div class="alert alert-danger col-5 offset-4" role="alert">
-			<div>このメールアドレスは使用できません</div>
+		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">このメールアドレスは使用できません</div>
 		</div>
 	</c:if>
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
 	<form class="col-12" method="post" action="AccountRegister">
-		<div class="row col-12 my-4">
+		<div class="row col-12 my-4 input-group has-validation">
 			<div class="col-3 text-end fs-3">氏名</div>
 			<div class="col-1">
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 form-floating is-invalid">
 				<input type="text" name="name"
-					class="col-12 border rounded px-4 fs-3" placeholder="氏名" required maxlength="20">
+					class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
 			</div>
+					<c:if test="${accountNameError == false}">
+						<div class="invalid-feedback col-4 offset-4" role="alert">
+							<div>名前は20字以内で入力してください</div>
+						</div>
+					</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -48,11 +57,17 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 form-floating is-invalid">
 				<input type="email" name="mail"
-					class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス" maxlength="100"
+					class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス"
 					required>
+					
 			</div>
+				<c:if test="${accountMailError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>メールアドレスは100字以内で入力してください</div>
+					</div>
+				</c:if>		
 		</div>
 
 		<div class="row col-12 my-4">
@@ -61,11 +76,16 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 form-floating is-invalid">
 				<input type="password" name="pass"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード" maxlength="30"
+					class="col-12 border rounded px-4 fs-3" placeholder="パスワード"
 					required>
 			</div>
+				<c:if test="${accountPassError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>パスワードは30字以内で入力してください</div>
+					</div>
+				</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -74,11 +94,16 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 form-floating is-invalid">
 				<input type="password" name="passConfirm"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）" maxlength="30"
+					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
 					required>
 			</div>
+				<c:if test="${accountPassError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>パスワードは30字以内で入力してください</div>
+					</div>
+				</c:if>
 		</div>
 
 		<div class="row col-12 my-4">

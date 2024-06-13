@@ -6,6 +6,10 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  type="text/css"/>
 <title>アカウント詳細編集</title>
 </head>
 
@@ -16,8 +20,8 @@
 	<div class="fs-2 fw-bold text-center">アカウント詳細編集</div>
 </div>
 	<c:if test="${same == false}">
-		<div class="alert alert-danger col-5 offset-4" role="alert">
-			<div>入力されたパスワードが一致しておりません</div>
+		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">入力されたパスワードが一致しておりません</div>
 		</div>
 	</c:if>
 <div class="d-flex flex-row mt-4">
@@ -30,10 +34,16 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3" name="name" maxlength="20"
+			<div class="col-8 form-floating is-invalid">
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="name"
 					value="${editName}" required>
 			</div>
+			
+				<c:if test="${accountNameError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>名前は20字以内で入力してください</div>
+					</div>
+				</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -42,10 +52,15 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-8">
-				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail" maxlength="100"
+			<div class="col-8 form-floating is-invalid">
+				<input type="text" class="col-12 border rounded px-4 fs-3" name="mail"
 					value="${editMail}" required>
 			</div>
+				<c:if test="${accountMailError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>メールアドレスは100字以内で入力してください</div>
+					</div>
+				</c:if>		
 		</div>
 
 		<div class="row col-12 my-4">
@@ -54,10 +69,15 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass" maxlength="30"
+			<div class="col-8 form-floating is-invalid">
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="pass"
 					value="${editPass}" required>
 			</div>
+			<c:if test="${accountPassError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>パスワードは30字以内で入力してください</div>
+					</div>
+				</c:if>
 		</div>
 
 		<div class="row col-12">
@@ -66,10 +86,15 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-8">
-				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm" maxlength="30"
+			<div class="col-8 form-floating is-invalid">
+				<input type="password" class="col-12 border rounded px-4 fs-3" name="passConfirm"
 					value="${editPass}" required>
 			</div>
+			<c:if test="${accountPassError == false}">
+					<div class="invalid-feedback col-4 offset-4" role="alert">
+						<div>パスワードは30字以内で入力してください</div>
+					</div>
+				</c:if>
 		</div>
 
 		<div class="row col-12 my-4">

@@ -62,18 +62,27 @@ public class AccountRegister extends HttpServlet {
 		request.setAttribute("permission", permission);
 		request.setAttribute("passConfirm", passConfirm);
 		
-		if(as.selectByMail(mail) != null && as.selectByMail(mail).getMail().equals(mail)) {
-			boolean f = false;
-			request.setAttribute("already", f);
-			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
-			
+		boolean f = true;
+		if(as.checkAccountName(name) == false) {
+			f = false;
+			request.setAttribute("accountNameError", f);
+		}
+		if(as.checkAccountMail(mail) == false) {
+			f = false;
+			request.setAttribute("accountMailError", f);
+		}
+		if(as.checkAccountPass(pass) == false) {
+			f = false;
+			request.setAttribute("accountPassError", f);	
 		}
 		if(!passConfirm.equals(pass)) {
-			boolean f = false;
+			f = false;
 			request.setAttribute("same", f);
-			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 		}
+		if(f == false) {
+			doGet(request,response);
+		}else{
 			this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
+		}
 	}
-
 }
