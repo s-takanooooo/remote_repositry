@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<title>アカウント詳細編集</title>
 </head>
 
 <jsp:include page="header.jsp" />
@@ -60,7 +61,7 @@
 		</div>
 
 		<div class="row col-12">
-			<div class="col-3 text-end fs-3">パスワード（確認）</div>
+			<div class="col-3 text-end text-nowrap fs-3">パスワード（確認）</div>
 			<div class="col-1">
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
@@ -84,7 +85,7 @@
 						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
 						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-3">
+					<div class="col-4">
 						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update">
 						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -95,7 +96,7 @@
 						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister" checked>
 						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-3">
+					<div class="col-4">
 						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update">
 						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -106,7 +107,7 @@
 						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
 						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-3">
+					<div class="col-4">
 						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update" checked>
 						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -116,7 +117,7 @@
 						<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister" checked>
 						<label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-3">
+					<div class="col-4">
 						<input type="checkbox" class="form-check-input" name="accountsPermission" value="1" id="update" cheched>
 						<label class="fs-5" for="update">アカウント登録</label>
 					</div>
