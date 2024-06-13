@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import beans.AccountsBean;
 import beans.CategoriesBean;
+import beans.SearchResultBean;
 import util.DbUtil;
 
 public class SalesServices {
@@ -162,5 +163,73 @@ public class SalesServices {
 		}
 	}
 	
-	
+	public ArrayList<SearchResultBean> SearchSales(String min_day, String max_day, String name, String sale_category, String trade_name, String sale_note) {
+	    ArrayList<SearchResultBean> sales = new ArrayList<>();
+	    String sql = "SELECT s.sale_id, s.sale_date, a.name, c.category_name,"+ 
+	    			" s.trade_name AS trade_name, s.sale_number, s.unit_price " +
+	                 "FROM sales s JOIN accounts a ON s.account_id = a.account_id " +
+	                 "JOIN categories c ON s.category_id = c.category_id WHERE 1=1 ";
+	    
+	    // 条件に応じてSQL文を動的に追加
+	    if (min_day != null && !min_day.isEmpty() && max_day != null && !max_day.isEmpty()) {
+	        sql += "AND s.sale_date BETWEEN ? AND ? ";
+	    }
+	    if (name != null && !name.isEmpty()) {
+	        sql += "AND a.name = ? ";
+	    }
+	    if (sale_category != null && !sale_category.isEmpty()) {
+	        sql += "AND c.category_name = ? ";
+	    }
+	    if (trade_name != null && !trade_name.isEmpty()) {
+	        sql += "AND s.trade_name LIKE ? ";
+	    }
+	    if (sale_note != null && !sale_note.isEmpty()) {
+	        sql += "AND s.note LIKE ? ";
+	    }
+	    
+	    try (
+	        Connection con = DbUtil.open();
+	        PreparedStatement stmt = con.prepareStatement(sql);
+	    ) {
+	        // ?の位置の変数
+	        int paramIndex = 1;
+	        if (min_day != null && !min_day.isEmpty() && max_day != null && !max_day.isEmpty()) {
+	            stmt.setString(paramIndex++, min_day);
+	            stmt.setString(paramIndex++, max_day);
+	        }
+	        if (name != null && !name.isEmpty()) {
+	            stmt.setString(paramIndex++, name);
+	        }
+	        if (sale_category != null && !sale_category.isEmpty()) {
+	            stmt.setString(paramIndex++, sale_category);
+	        }
+	        if (trade_name != null && !trade_name.isEmpty()) {
+	            stmt.setString(paramIndex++, "%" + trade_name + "%");
+	        }
+	        if (sale_note != null && !sale_note.isEmpty()) {
+	            stmt.setString(paramIndex++, "%" + sale_note + "%");
+	        }
+
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        while (rs.next()) {
+	            int sale_id = rs.getInt("sale_id");
+	            Date sale_date = rs.getDate("sale_date");
+	            String staff = rs.getString("name");
+	            String c_name = rs.getString("category_name");
+	            String t_name = rs.getString("trade_name");
+	            int sale_num = rs.getInt("sale_number");
+	            int sale_price = rs.getInt("unit_price");
+	            int subtotal = sale_num * sale_price;
+
+	            SearchResultBean srb = new SearchResultBean(sale_id, sale_date, staff, c_name, t_name, sale_num, sale_price, subtotal);
+	            sales.add(srb);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    return sales;
+	}
+
 }
