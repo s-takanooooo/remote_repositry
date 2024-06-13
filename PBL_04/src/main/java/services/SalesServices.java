@@ -163,7 +163,7 @@ public class SalesServices {
 		}
 	}
 	
-	public ArrayList<SearchResultBean> SearchSales(String min_day, String max_day, String name, String sale_category, String trade_name, String sale_note) {
+	public ArrayList<SearchResultBean> searchSales(String min_day, String max_day, String name, String sale_category, String trade_name, String sale_note) {
 	    ArrayList<SearchResultBean> sales = new ArrayList<>();
 	    String sql = "SELECT s.sale_id, s.sale_date, a.name, c.category_name, " +  
                 "s.trade_name AS trade_name, s.sale_number, s.unit_price, s.note " +  
