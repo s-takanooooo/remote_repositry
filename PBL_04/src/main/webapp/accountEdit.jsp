@@ -10,6 +10,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   type="text/css"/>
+  
+  
 <title>アカウント詳細編集</title>
 </head>
 
@@ -152,7 +154,7 @@
 		<div class="col-8 offset-4">
 			<button type="submit" class="col-4 btn btn-primary border rounded">✔
 				更 新</button>
-			<a href="AccountSearchSession" class="btn btn-secondary col-4">キャンセル</a>
+			<a href="AccountSearchSession"  class="btn btn-secondary col-4">キャンセル</a>
 		</div>
 	</form>
 </div>
