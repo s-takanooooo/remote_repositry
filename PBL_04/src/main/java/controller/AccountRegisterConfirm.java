@@ -40,11 +40,9 @@ public class AccountRegisterConfirm extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
-		System.out.println(name);
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String strPermission = request.getParameter("permission");
-		System.out.println(strPermission);
 		
 		int permission = Integer.parseInt(strPermission);
 		

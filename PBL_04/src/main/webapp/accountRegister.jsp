@@ -27,13 +27,7 @@
 		<div class="text-center">入力されたパスワードが一致しておりません</div>
 	</div>
 </c:if>
-<c:if test="${already == false}">
-	<div
-		class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
-		role="alert">
-		<div class="text-center">このメールアドレスは使用できません</div>
-	</div>
-</c:if>
+
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
 	<form class="col-12" method="post" action="AccountRegister">
