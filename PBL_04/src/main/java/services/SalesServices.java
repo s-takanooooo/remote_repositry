@@ -1,5 +1,6 @@
 package services;
 
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -232,6 +233,12 @@ public class SalesServices {
 
 	    return sales;
 	}
+	public BigInteger subTotal(String sale_num,String unit_price) {
+		BigInteger  num =new BigInteger(sale_num);
+		BigInteger price = new BigInteger(unit_price);
+		BigInteger subtotal = num.multiply(price);
+		return subtotal;
+	}
 	
 	public boolean selectCheck(String select) {
 		boolean f = false;
@@ -261,20 +268,30 @@ public class SalesServices {
 		}
 		return f;
 	}
-	public boolean saleNumCheck(String num) {
-		boolean f = false;
-		if(Long.parseLong(num)>99999999999l) {
-			f=false;
-		}else {
-			f=true;
+	public int saleNumCheck(String num) {
+		int f = 0;
+		try{
+			if(Integer.parseInt(num)>2147483647) {
+				f=1;//１なら長さエラー
+			}else {
+				int sale_num = Integer.parseInt(num);
+				f=3;//３なら問題なし
+			}
+		}catch(Exception e) {
+			f=2;//２ならフォーマットエラー
 		}
 		return f;
-	}public boolean salePriceCheck(String price) {
-		boolean f = false;
-		if(Long.parseLong(price)>99999999999l) {
-			f=false;
-		}else {
-			f=true;
+	}public int salePriceCheck(String price) {
+		int f = 0;
+		try{
+			if(Integer.parseInt(price)>2147483647) {
+				f=1;//１なら長さエラー
+			}else {
+				int sale_price =Integer.parseInt(price);
+				f=3;//３なら問題なし
+			}
+		}catch(Exception e) {
+			f=2;//２ならフォーマットエラー
 		}
 		return f;
 	}

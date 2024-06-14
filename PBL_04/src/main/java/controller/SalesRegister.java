@@ -54,29 +54,43 @@ public class SalesRegister extends HttpServlet {
 		String unit_price = request.getParameter("unit_price");
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
-
-		int price = Integer.parseInt(unit_price);
-		int num = Integer.parseInt(sales_num);
-
-		long subtotal = price * num;
+		
 		//バリデーション
 		boolean f = true;
+		//担当者未入力チェック
 		if (ss.selectCheck(responsible) == false) {
 			f = false;
 			request.setAttribute("staffError", f);
 		}
+		//商品カテゴリー未入力チェック
 		if (ss.selectCheck(sales_category) == false) {
 			f = false;
 			request.setAttribute("categoryNameError", f);
 		}
-		if (ss.salePriceCheck(unit_price) == false) {
+		//商品名長さチェック
+		if(ss.tradeNameCheck(trade_name)==false) {
+			f=false;
+			request.setAttribute("tradeNameError", f);
+		}
+		//単価長さチェック
+		if (ss.salePriceCheck(unit_price) == 1) {
 			f = false;
 			request.setAttribute("unitPriceError", f);
 		}
-		if (ss.saleNumCheck(sales_num) == false) {
+		if(ss.salePriceCheck(unit_price) == 2) {
+			f = false;
+			request.setAttribute("unitPriceFomartError", f);
+		}
+		//個数長さチェック
+		if (ss.saleNumCheck(sales_num) == 1) {
 			f = false;
 			request.setAttribute("saleNumError", f);
 		}
+		if(ss.saleNumCheck(sales_num) == 2) {
+			f = false;
+			request.setAttribute("saleNumFomartError", f);
+		}
+		//備考長さチャック
 		if (ss.noteCheck(sales_note) == false) {
 			f = false;
 			request.setAttribute("noteError", f);
@@ -91,7 +105,7 @@ public class SalesRegister extends HttpServlet {
 			request.setAttribute("unit_price", unit_price);
 			request.setAttribute("sales_num", sales_num);
 			request.setAttribute("sales_note", sales_note);
-			request.setAttribute("subtotal", subtotal);
+			request.setAttribute("subtotal", ss.subTotal(sales_num, unit_price));
 			this.getServletContext().getRequestDispatcher("/salesRegisterConfirm.jsp").forward(request, response);
 		}
 	}

@@ -40,8 +40,9 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
-				<select class="w-100 border rounded px-4 fs-3 form-select" name="responsible">
+			<div class="col-7 is-invalid">
+				<select class="w-100 border rounded px-4 fs-3 form-select"
+					name="responsible">
 					<option value="0" selected>選択してください</option>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="staff_name" items="${name}">
@@ -49,6 +50,11 @@
 					</c:forEach>
 				</select>
 			</div>
+			<c:if test="${staffError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>担当者が未選択です。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -57,14 +63,20 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
-				<select class="w-100 border rounded px-4 fs-3 form-select" name="category">
+			<div class="col-7 is-invalid">
+				<select class="w-100 border rounded px-4 fs-3 form-select"
+					name="category">
 					<option value="0" selected>選択してください</option>
 					<c:forEach var="category_name" items="${categories}">
 						<option value="${category_name}">${category_name}</option>
 					</c:forEach>
 				</select>
 			</div>
+			<c:if test="${categoryNameError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>商品カテゴリーが未選択です。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -73,10 +85,15 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 form-floating is-invalid">
 				<input type="text" name="trade_name"
 					class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
 			</div>
+			<c:if test="${tradeNameError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>商品名は100字以内で入力してください。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -85,10 +102,20 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-3">
+			<div class="col-3 form-floating is-invalid">
 				<input type="text" name="unit_price"
 					class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
 			</div>
+			<c:if test="${unitPriceError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>単価が長すぎます。</div>
+				</div>
+			</c:if>
+			<c:if test="${unitPriceFomartError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>単価を正しく入力してください。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -97,19 +124,34 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-3">
+			<div class="col-3 form-floating is-invalid">
 				<input type="text" name="sale_number"
 					class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
 			</div>
+			<c:if test="${saleNumError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>個数が長すぎます。</div>
+				</div>
+			</c:if>
+			<c:if test="${saleNumFomartError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>個数を正しく入力してください。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">備考</div>
 
-			<div class="col-7 offset-1">
+			<div class="col-7 offset-1 form-floating is-invalid">
 				<textarea name="note" rows="4"
 					class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
 			</div>
+			<c:if test="${noteError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>備考は400字以内で入力してください。</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="col-2 offset-5">
