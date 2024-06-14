@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -35,6 +36,14 @@ public class SalesSearch extends HttpServlet {
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("category", ss.getCatgoryName());
 		request.setAttribute("staff", ss.getStaffName());
+		//sessionを初期化
+		HttpSession session = request.getSession();
+		session.setAttribute("min_day", null);
+		session.setAttribute("max_day", null);
+		session.setAttribute("name", null);
+		session.setAttribute("sale_category", null);
+		session.setAttribute("trade_name", null);
+		session.setAttribute("sale_note", null);
 		this.getServletContext().getRequestDispatcher("/salesSeach.jsp").forward(request, response);
 	}
 

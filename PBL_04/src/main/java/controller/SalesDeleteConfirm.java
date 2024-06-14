@@ -51,5 +51,6 @@ public class SalesDeleteConfirm extends HttpServlet {
 		
 		session.setAttribute("sale", null);
 		session.setAttribute("sales", null);
+		response.sendRedirect("SalesSearchAll");
 	}
 }
