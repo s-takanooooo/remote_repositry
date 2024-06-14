@@ -38,9 +38,9 @@
                                     	<a class="btn btn-danger  me-3" role="button" href="AccountDelete?accountId=${item.account_id}">×削除</a>
                                 	</td>
                             	</c:if>
-                                <td>${item.account_id}</td>
-                                <td>${item.name}</td>
-                                <td>${item.mail}</td>
+                                <td><c:out value="${item.account_id}"></c:out></td>
+                                <td><c:out value="${item.name}"></c:out></td>
+                                <td><c:out value="${item.mail}"></c:out></td>
                                 <c:if test="${item.authority == 0}">
                                 	<td>権限なし</td>                                
                                 </c:if>
