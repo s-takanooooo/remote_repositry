@@ -166,9 +166,8 @@ public class AccountsServices {
 		
 	}
 	
-	public AccountsBean selectByMail(String mail) {
-		
-		AccountsBean ab = null;
+	public boolean validateByMail(String mail) {
+		boolean f = true;
 		String sql = "SELECT * FROM accounts WHERE mail = ?";
 		
 		try(
@@ -179,18 +178,16 @@ public class AccountsServices {
 			
 			ResultSet rs = ps.executeQuery();
 			
-			while(rs.next()) {
-				int id = rs.getInt("account_id");
-				String name = rs.getString("name");
-				String email = rs.getString("mail");
-				String pass = rs.getString("password");
-				int authority = rs.getInt("authority");
-				ab = new AccountsBean(id, name, email, pass, authority); 
+			if (rs.next()){
+				f =  false;
+			} else {
+				System.out.println("Query returned no results");
+				f = true;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return ab;
+		return f;
 		
 	}
 	

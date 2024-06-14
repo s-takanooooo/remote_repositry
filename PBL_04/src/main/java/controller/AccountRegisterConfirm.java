@@ -43,14 +43,20 @@ public class AccountRegisterConfirm extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String strPermission = request.getParameter("permission");
-		
 		int permission = Integer.parseInt(strPermission);
 		
-		as.registerAccount(name, mail, pass, permission);
+		if(as.validateByMail(mail) == false) {
+			boolean already = false;
+			request.setAttribute("already", already);
+			request.getRequestDispatcher("accountRegisterConfirm.jsp").forward(request, response);
+		}else {
+			as.registerAccount(name, mail, pass, permission);
+			
+			String accountRegisterComplete = "completed";
+			request.setAttribute("accountRegisterComplete", accountRegisterComplete);
+			request.getRequestDispatcher("dashboard.jsp").forward(request, response);			
+		}
 		
-		String accountRegisterComplete = "completed";
-		request.setAttribute("accountRegisterComplete", accountRegisterComplete);
-		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 	}
 
 }

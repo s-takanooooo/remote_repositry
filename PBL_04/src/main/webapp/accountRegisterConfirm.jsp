@@ -32,8 +32,8 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="name" value="${name}"
-						placeholder="${name}" readonly>
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="name" value="${registerName}"
+						placeholder="${registerName}" readonly>
 				</div>
 			</div>
 
@@ -44,8 +44,8 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="mail" value="${mail}"
-						placeholder="${mail}" readonly>
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="mail" value="${registerMail}"
+						placeholder="${registerMail}" readonly>
 				</div>
 			</div>
 
@@ -56,8 +56,8 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="pass" value="${pass}"
-						placeholder="${pass}" readonly>
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="pass" value="${registerPass}"
+						placeholder="${registerPass}" readonly>
 				</div>
 			</div>
 
@@ -68,8 +68,8 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="passConfirm" value="${passConfirm}"
-						placeholder="${passConfirm}" readonly>
+					<input type="text" class="col-12 border rounded px-4 fs-3" name="passConfirm" value="${registerPassConfirm}"
+						placeholder="${registerPassConfirm}" readonly>
 				</div>
 			</div>
 
@@ -81,8 +81,8 @@
 				</div>
 				<div class="row col-8">
 		<!-- 権限無しの場合 -->
-		<c:if test="${permission == '0'}">
-			<input type="hidden" name= "permission" value="${ permission }">
+		<c:if test="${registerPermission == '0'}">
+			<input type="hidden" name= "permission" value="${ registerPermission }">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					 id="salesRegister" disabled> <label
@@ -96,8 +96,8 @@
 
 		</c:if>
 		<!-- 売上登録のみの場合 -->
-		<c:if test="${permission == '1'}">
-		<input type="hidden" name= "permission" value="${ permission }">
+		<c:if test="${registerPermission == '1'}">
+		<input type="hidden" name= "permission" value="${ registerPermission }">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					id="salesRegister" checked disabled> <label
@@ -110,8 +110,8 @@
 			</div>
 		</c:if>
 		<!-- アカウント登録のみの場合 -->
-		<c:if test="${permission == '10'}">
-		<input type="hidden" name= "permission" value="${ permission }">
+		<c:if test="${registerPermission == '10'}">
+		<input type="hidden" name= "permission" value="${ registerPermission }">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					 id="salesRegister" disabled> <label
@@ -124,8 +124,8 @@
 			</div>
 		</c:if>
 		<!-- 全権限の場合 -->
-		<c:if test="${permission == '11'}">
-		<input type="hidden" name= "permission" value="${ permission }">
+		<c:if test="${registerPermission == '11'}">
+		<input type="hidden" name= "permission" value="${ registerPermission }">
 			<div class="col-3 offset-1 form-check">
 				<input type="checkbox" class="form-check-input"
 					 id="salesRegister" checked disabled> <label

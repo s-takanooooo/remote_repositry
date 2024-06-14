@@ -59,18 +59,6 @@ public class AccountRegister extends HttpServlet {
 		String salesPermission = request.getParameter("salesPermission");
 		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		
-		request.setAttribute("name", name);
-		request.setAttribute("mail", mail);
-		request.setAttribute("pass", pass);
-		request.setAttribute("permission", permission);
-		request.setAttribute("passConfirm", passConfirm);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("registerName", name);
-		session.setAttribute("registerMail", mail);
-		session.setAttribute("registerPass", pass);
-		session.setAttribute("registerPassConfirm", passConfirm);
-		session.setAttribute("registerPermission", permission);
 		
 		boolean f = true;
 		if(as.checkAccountName(name) == false) {
@@ -92,6 +80,12 @@ public class AccountRegister extends HttpServlet {
 		if(f == false) {
 			doGet(request,response);
 		}else{
+			HttpSession session = request.getSession();
+			session.setAttribute("registerName", name);
+			session.setAttribute("registerMail", mail);
+			session.setAttribute("registerPass", pass);
+			session.setAttribute("registerPassConfirm", passConfirm);
+			session.setAttribute("registerPermission", permission);
 			this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
 		}
 	}
