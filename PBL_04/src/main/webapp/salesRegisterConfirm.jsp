@@ -22,7 +22,7 @@
 		<div class="row offset-2 col-8 my-4">
 
 			<div class="col-4 text-end fs-3">販売日</div>
-			<div class="col-5">
+			<div class="col-8">
 				<input type="date" name="sale_date" id="datepicker"
 					value="<c:out value="${day }"/>"
 					class="col-12 border rounded px-4 fs-3" readonly>
