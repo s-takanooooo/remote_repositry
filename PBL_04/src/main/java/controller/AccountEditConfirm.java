@@ -48,7 +48,7 @@ public class AccountEditConfirm extends HttpServlet {
 		
 		as.updateAccount(name, mail, pass, permission, accountId);
 		
-		response.sendRedirect("Dashboard");
+		response.sendRedirect("AccountSearchSession");
 	}
 
 }
