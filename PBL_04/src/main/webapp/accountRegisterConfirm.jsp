@@ -134,7 +134,7 @@
 			</div>
 			<div class="col-8 offset-4">
 				<button type="submit" class="col-3 btn btn-primary border rounded">ok</button>
-				<a href="AccountRegister" class="btn btn-secondary col-3 offset-1">キャンセル</a>
+				<a href="AccountRegisterSession" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 			</div>
 		</form>
 	</div>

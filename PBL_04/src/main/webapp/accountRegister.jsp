@@ -7,10 +7,9 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  type="text/css"/>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	type="text/css" />
 <title>アカウント登録</title>
 </head>
 
@@ -21,16 +20,20 @@
 	<div class="fs-1 fw-bold">アカウント登録</div>
 </div>
 
-	<c:if test="${same == false}">
-		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
-			<div class="text-center">入力されたパスワードが一致しておりません</div>
-		</div>
-	</c:if>
-	<c:if test="${already == false}">
-		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
-			<div class="text-center">このメールアドレスは使用できません</div>
-		</div>
-	</c:if>
+<c:if test="${same == false}">
+	<div
+		class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
+		role="alert">
+		<div class="text-center">入力されたパスワードが一致しておりません</div>
+	</div>
+</c:if>
+<c:if test="${already == false}">
+	<div
+		class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
+		role="alert">
+		<div class="text-center">このメールアドレスは使用できません</div>
+	</div>
+</c:if>
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
 	<form class="col-12" method="post" action="AccountRegister">
@@ -41,14 +44,21 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7 form-floating is-invalid">
-				<input type="text" name="name"
-					class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
+				<c:if test="${getSession == 0}">
+					<input type="text" name="name"
+						class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
+				</c:if>
+				<c:if test="${getSession == 1}">
+					<input type="text" name="name"
+						class="col-12 border rounded px-4 fs-3" value="${registerName}"
+						required>
+				</c:if>
 			</div>
-					<c:if test="${accountNameError == false}">
-						<div class="invalid-feedback col-4 offset-4" role="alert">
-							<div>名前は20字以内で入力してください</div>
-						</div>
-					</c:if>
+			<c:if test="${accountNameError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>名前は20字以内で入力してください</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -58,16 +68,23 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7 form-floating is-invalid">
-				<input type="email" name="mail"
-					class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス"
-					required>
-					
+				<c:if test="${getSession == 0}">
+					<input type="email" name="mail"
+						class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス"
+						required>
+				</c:if>
+				<c:if test="${getSession == 1}">
+					<input type="email" name="mail"
+						class="col-12 border rounded px-4 fs-3" value="${registerMail}"
+						required>
+				</c:if>
+
 			</div>
-				<c:if test="${accountMailError == false}">
-					<div class="invalid-feedback col-4 offset-4" role="alert">
-						<div>メールアドレスは100字以内で入力してください</div>
-					</div>
-				</c:if>		
+			<c:if test="${accountMailError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>メールアドレスは100字以内で入力してください</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -77,15 +94,22 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7 form-floating is-invalid">
-				<input type="password" name="pass"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード"
-					required>
-			</div>
-				<c:if test="${accountPassError == false}">
-					<div class="invalid-feedback col-4 offset-4" role="alert">
-						<div>パスワードは30字以内で入力してください</div>
-					</div>
+				<c:if test="${getSession == 0}">
+					<input type="password" name="pass"
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード"
+						required>
 				</c:if>
+				<c:if test="${getSession == 1}">
+					<input type="password" name="pass"
+						class="col-12 border rounded px-4 fs-3" value="${registerPass}"
+						required>
+				</c:if>
+			</div>
+			<c:if test="${accountPassError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -95,15 +119,22 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7 form-floating is-invalid">
-				<input type="password" name="passConfirm"
-					class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
-					required>
-			</div>
-				<c:if test="${accountPassError == false}">
-					<div class="invalid-feedback col-4 offset-4" role="alert">
-						<div>パスワードは30字以内で入力してください</div>
-					</div>
+				<c:if test="${getSession == 0}">
+					<input type="password" name="passConfirm"
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
+						required>
 				</c:if>
+				<c:if test="${getSession == 1}">
+					<input type="password" name="passConfirm"
+						class="col-12 border rounded px-4 fs-3"
+						value="${registerPassConfirm}" required>
+				</c:if>
+			</div>
+			<c:if test="${accountPassError == false}">
+				<div class="invalid-feedback col-4 offset-4" role="alert">
+					<div>パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="row col-12 my-4">
@@ -113,19 +144,77 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="row col-8">
-				<div class="col-3 offset-1 form-check">
-					<input type="checkbox" class="form-check-input" name="salesPermission" value="1" id="salesRegister">
-					<label class="fs-5" for="salesRegister">売上登録</label>
-				</div>
-				<div class="col-4">
-					<input type="checkbox" class="form-check-input" name="accountsPermission" value="1"
-						id="update"> <label class="fs-5 text-nowrap" for="update">アカウント登録</label>
-				</div>
+				<c:if test="${getSession == 0}">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input"
+							name="salesPermission" value="1" id="salesRegister"> <label
+							class="fs-5" for="salesRegister">売上登録</label>
+					</div>
+					<div class="col-4">
+						<input type="checkbox" class="form-check-input"
+							name="accountsPermission" value="1" id="update"> <label
+							class="fs-5 text-nowrap" for="update">アカウント登録</label>
+					</div>
+				</c:if>
+				<c:if test="${getSession == 1}">
+					<c:if test="${registerPermission == '0'}">
+						<input type="hidden" name="permission" value="${ registerPermission }">
+						<div class="col-3 offset-1 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="salesRegister"  > <label class="fs-5"
+								for="salesRegister">売上登録</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" class="form-check-input" id="update"
+								 > <label class="fs-5" for="update">アカウント登録</label>
+						</div>
+
+					</c:if>
+					<!-- 売上登録のみの場合 -->
+					<c:if test="${registerPermission == '1'}">
+						<input type="hidden" name="permission" value="${ registerPermission }">
+						<div class="col-3 offset-1 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="salesRegister" checked> <label class="fs-5"
+								for="salesRegister">売上登録</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" class="form-check-input" id="update"
+								> <label class="fs-5" for="update">アカウント登録</label>
+						</div>
+					</c:if>
+					<!-- アカウント登録のみの場合 -->
+					<c:if test="${registerPermission == '10'}">
+						<input type="hidden" name="permission" value="${ registerPermission }">
+						<div class="col-3 offset-1 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="salesRegister"> <label class="fs-5"
+								for="salesRegister">売上登録</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" class="form-check-input" id="update"
+								checked > <label class="fs-5" for="update">アカウント登録</label>
+						</div>
+					</c:if>
+					<!-- 全権限の場合 -->
+					<c:if test="${registerPermission == '11'}">
+						<input type="hidden" name="permission" value="${ registerPermission }">
+						<div class="col-3 offset-1 form-check">
+							<input type="checkbox" class="form-check-input"
+								id="salesRegister" checked> <label class="fs-5"
+								for="salesRegister">売上登録</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" class="form-check-input" id="update"
+								checked > <label class="fs-5" for="update">アカウント登録</label>
+						</div>
+					</c:if>
+				</c:if>
 			</div>
 		</div>
 		<div class="col-2 offset-5">
-			<button type="submit"
-				class="col-6 btn btn-primary border rounded">✔ 登 録</button>
+			<button type="submit" class="col-6 btn btn-primary border rounded">✔
+				登 録</button>
 		</div>
 	</form>
 </div>
