@@ -33,7 +33,7 @@ public class AccountSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
+		//検索条件入力画面に遷移
 		this.getServletContext().getRequestDispatcher("/accountSearch.jsp").forward(request, response);
 	}
 
