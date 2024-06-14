@@ -112,9 +112,9 @@
 			</div>
 		</div>
 
-		<div class="col-4 offset-4">
+		<div class="col-2 offset-5">
 			<button type="submit"
-				class="col-6 offset-3 btn btn-primary border rounded">✔ 登 録</button>
+				class="col-5 offset-3 btn btn-primary border rounded">✔ 登 録</button>
 		</div>
 	</form>
 </div>
