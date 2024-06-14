@@ -6,7 +6,6 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<script src="js/day.js"></script>
 <title>売上登録確認</title>
 </head>
 
