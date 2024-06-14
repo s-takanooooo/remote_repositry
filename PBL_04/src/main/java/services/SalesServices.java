@@ -142,7 +142,7 @@ public class SalesServices {
 	
 	public void salesEdit(String day,String name,String sale_category,
 			String trade_name,String unit_price,String sale_num,
-			String sale_note, int sale_id) {
+			String sale_note,String sale_id) {
 		String sql = "UPDATE sales SET sale_date=?,account_id=?,category_id=?,trade_name=?,unit_price=?,sale_number=?,note=? where sale_id=?";
 		try(
 				Connection con = DbUtil.open();
@@ -155,7 +155,7 @@ public class SalesServices {
 			stmt.setString(5, unit_price);
 			stmt.setString(6, sale_num);
 			stmt.setString(7, sale_note);
-			stmt.setInt(8, sale_id);
+			stmt.setInt(8, Integer.parseInt(sale_id));
 			int result = stmt.executeUpdate();
 			System.out.println(result);
 		}catch (SQLException e) {
@@ -233,20 +233,34 @@ public class SalesServices {
 	    return sales;
 	}
 	
-	public boolean nullcheck(String select) {
-		boolean check_result = false;
-		if(select.equals("0")) {
-			check_result = true;
+	public boolean selectCheck(String select) {
+		boolean f = false;
+		if(!select.equals("0")) {
+			f = false;
+		}else {
+			f=true;
 		}
-		return check_result;
+		return f;
 	}
 	
-	public boolean strCount(String str,int max_int) {
-		boolean check_count = false;
-		if(str.length()>max_int) {
-			check_count=true;
+	public boolean tradeNameCheck(String trade_name) {
+		boolean f = false;
+		if(trade_name.length()>100) {
+			f=false;
+		}else {
+			f=true;
 		}
-		return check_count;
+		return f;
 	}
+	public boolean tradeNoteCheck(String note) {
+		boolean f = false;
+		if(note.length()>400) {
+			f=false;
+		}else {
+			f=true;
+		}
+		return f;
+	}
+
 
 }
