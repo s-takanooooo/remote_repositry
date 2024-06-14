@@ -88,7 +88,7 @@
 			</div>
 		</div>
 
-		<div class="col-4 offset-5">
+		<div class="col-2 offset-5">
 			<button type="submit" class="col-4 btn btn-danger border rounded">
 				✔ O K
 				</Kbd>

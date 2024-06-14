@@ -93,9 +93,9 @@
 			</div>
 
 			<div class="col-2 offset-5">
-				<button type="submit" class="col-5 btn btn-primary border rounded">検
+				<button type="submit" class="col-4 btn btn-primary border rounded">検
 					索</button>
-				<a href="SalesSearch" class="btn btn-white border rounded col-5">クリア</a>
+				<a href="SalesSearch" class="btn btn-white border rounded col-4">クリア</a>
 			</div>
 		</form>
 	</div>
