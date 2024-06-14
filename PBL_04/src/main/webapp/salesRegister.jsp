@@ -41,7 +41,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7">
-				<select class="w-100 border rounded px-4 fs-3" name="responsible">
+				<select class="w-100 border rounded px-4 fs-3 form-select" name="responsible">
 					<option value="0" selected>選択してください</option>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="staff_name" items="${name}">
@@ -58,7 +58,7 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7">
-				<select class="w-100 border rounded px-4 fs-3" name="category">
+				<select class="w-100 border rounded px-4 fs-3 form-select" name="category">
 					<option value="0" selected>選択してください</option>
 					<c:forEach var="category_name" items="${categories}">
 						<option value="${category_name}">${category_name}</option>

@@ -49,7 +49,10 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
 		
+		System.out.println(responsible);
+		
 		SalesServices si = new SalesServices();
+		System.out.println(si.getAccountId(responsible));
 		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
 		response.sendRedirect("SalesRegister");
 	}
