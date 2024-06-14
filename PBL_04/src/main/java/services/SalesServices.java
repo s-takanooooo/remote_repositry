@@ -235,7 +235,7 @@ public class SalesServices {
 	
 	public boolean selectCheck(String select) {
 		boolean f = false;
-		if(!select.equals("0")) {
+		if(select.equals("0")) {
 			f = false;
 		}else {
 			f=true;
@@ -252,7 +252,7 @@ public class SalesServices {
 		}
 		return f;
 	}
-	public boolean tradeNoteCheck(String note) {
+	public boolean noteCheck(String note) {
 		boolean f = false;
 		if(note.length()>400) {
 			f=false;
@@ -261,6 +261,21 @@ public class SalesServices {
 		}
 		return f;
 	}
-
-
+	public boolean saleNumCheck(String num) {
+		boolean f = false;
+		if(Long.parseLong(num)>99999999999l) {
+			f=false;
+		}else {
+			f=true;
+		}
+		return f;
+	}public boolean salePriceCheck(String price) {
+		boolean f = false;
+		if(Long.parseLong(price)>99999999999l) {
+			f=false;
+		}else {
+			f=true;
+		}
+		return f;
+	}
 }
