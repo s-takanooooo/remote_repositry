@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <script src="js/day.js"></script>
+    <script src="js/checkbox.js"></script>
 </head>
 
 <jsp:include page="header.jsp" />
@@ -54,11 +55,11 @@
 				</div>
 				<div class="col-4">
 					<input type="checkbox" class="form-check-input" name="accountsPermission" value="1"
-						id="update"> <label class="fs-5" for="update">アカウント登録</label>
+						id="accountsRegister"> <label class="fs-5" for="accountsRegister">アカウント登録</label>
 				</div>
 				<div class="col-4">
 					<input type="checkbox" class="form-check-input" name="allPermission" value="1"
-						id="update" checked> <label class="fs-5" for="update">条件なし</label>
+						id="allPermission" checked> <label class="fs-5" for="allPermission">条件なし</label>
 				</div>
 			</div>
 		</div>
