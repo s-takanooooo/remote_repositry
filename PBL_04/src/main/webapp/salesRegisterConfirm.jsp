@@ -98,7 +98,7 @@
 		</div>
 
 
-		<div class="col-6 offset-3">
+		<div class="col-2 offset-5">
 			<table>
 				<tr>
 					<button type="submit"
