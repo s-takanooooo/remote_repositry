@@ -55,16 +55,27 @@ public class AccountSearch extends HttpServlet {
 			permission = null;
 		}
 		
+		
+		
+		boolean f = true;
+		if(as.checkAccountName(name) == false) {
+			f = false;
+			request.setAttribute("accountNameError", f);
+		}
+		if(as.checkAccountMail(mail) == false) {
+			f = false;
+			request.setAttribute("accountMailError", f);
+		}if(f == false) {
+			doGet(request,response);
+		}else {
 		session.setAttribute("name", name);
 		session.setAttribute("mail", mail);
 		session.setAttribute("permission", permission);
 		
-		
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
 		
-		
-		
 		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
+		}
 	}
 
 }
