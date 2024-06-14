@@ -39,7 +39,12 @@
 	<div>
 	<c:if test="${accountAuthError == false}">
 		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
-			<div class="text-center">このアカウントには権限がありません</div>
+			<div class="text-center">このアカウントにはアカウント登録を行う権限がありません</div>
+		</div>
+	</c:if>
+	<c:if test="${salesAuthError == false}">
+		<div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s" role="alert">
+			<div class="text-center">このアカウントには売上登録を行う権限がありません</div>
 		</div>
 	</c:if>
 	<c:if test="${accountDeleteComplete == 'completed'}">

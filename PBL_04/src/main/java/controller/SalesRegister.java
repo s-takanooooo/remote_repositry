@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -31,6 +32,13 @@ public class SalesRegister extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		int authority = (int)session.getAttribute("authority");
+		if(authority != 1 && authority != 11) {
+			boolean f = false;
+			request.setAttribute("salesAuthError", f);
+			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
+		}
 		
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("categories", ss.getCatgoryName());
