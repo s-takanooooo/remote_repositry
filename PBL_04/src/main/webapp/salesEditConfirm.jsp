@@ -12,7 +12,7 @@
     <!-- 本体 -->
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="fs-1 fw-bold">売上編集確認</div>
+            <div class="fs-1 fw-bold">売上詳細編集確認</div>
         </div>
     </div>
     <div class="row mt-4">
