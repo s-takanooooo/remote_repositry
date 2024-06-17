@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>ダッシュボード</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
