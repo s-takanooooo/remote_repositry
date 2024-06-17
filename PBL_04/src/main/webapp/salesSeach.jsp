@@ -27,12 +27,12 @@
 				<div class="col-3 offset-1 text-end fs-3">販売日</div>
 				<div class="col-3">
 					<input type="date" name="startDate" id="datepicker" value=""
-						class="col-12 border rounded px-4 fs-3" required>
+						class="col-12 border rounded px-4 fs-3">
 				</div>
 				<div class="col-1 text-center fs-2">~</div>
 				<div class="col-3">
 					<input type="date" name="endDate" id="datepicker" value=""
-						class="col-12 border rounded px-4 fs-3" required>
+						class="col-12 border rounded px-4 fs-3">
 				</div>
 
 			</div>
@@ -41,8 +41,8 @@
 			<div class="row col-12 my-4">
 				<div class="col-3 offset-1 text-end fs-3">担当</div>
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select name="staff">
-						<option selected>選択してください</option>
+					<select class="w-100 border rounded px-4 fs-3 form-select" name="staff">
+						<option selected value="0">選択してください</option>
 						<c:forEach var="staff_name" items="${staff}">
 							<option value="${staff_name}">${staff_name}</option>
 						</c:forEach>
@@ -54,8 +54,8 @@
 				<div class="col-3 offset-1 text-end fs-3">商品カテゴリー</div>
 
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select name="category">
-						<option selected>選択してください</option>
+					<select class="w-100 border rounded px-4 fs-3 form-select" name="category">
+						<option selected value="0">選択してください</option>
 						<c:forEach var="category_name" items="${category}">
 							<option value="${category_name}">${category_name}</option>
 						</c:forEach>
@@ -93,7 +93,7 @@
 			</div>
 
 			<div class="col-2 offset-5">
-				<button type="submit" class="col-4 btn btn-primary border rounded">
+				<button type="submit" class="col-5 btn btn-primary border rounded">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 						fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   					<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />

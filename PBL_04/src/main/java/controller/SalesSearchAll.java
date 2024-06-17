@@ -69,7 +69,6 @@ public class SalesSearchAll extends HttpServlet {
 		session.setAttribute("trade_name", trade_name);
 		session.setAttribute("sale_note", sale_note);
 		session.setAttribute("sales", si.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
-
 		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
 	}
 
