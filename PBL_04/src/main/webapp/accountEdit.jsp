@@ -24,7 +24,7 @@
 	<div
 		class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
 		role="alert">
-		<div class="text-center">入力されたパスワードが一致しておりません</div>
+		<div class="text-center fw-bold fs-3">入力されたパスワードが一致しておりません</div>
 	</div>
 </c:if>
 <div class="d-flex flex-row mt-4">
@@ -55,7 +55,7 @@
 
 			<c:if test="${accountNameError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>名前は20字以内で入力してください</div>
+					<div class="fw-bold fs-3">名前は20字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -78,7 +78,7 @@
 			</div>
 			<c:if test="${accountMailError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>メールアドレスは100字以内で入力してください</div>
+					<div class="fw-bold fs-3">メールアドレスは100字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -101,7 +101,7 @@
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>パスワードは30字以内で入力してください</div>
+					<div class="fw-bold fs-3">パスワードは30字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -124,7 +124,7 @@
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>パスワードは30字以内で入力してください</div>
+					<div class="fw-bold fs-3">パスワードは30字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>

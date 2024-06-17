@@ -100,7 +100,9 @@ public class AccountsServices {
 		if(mail != null && !mail.isEmpty()) {
 			sql += " AND mail = ?";
 		}
-		if(authority != null && !authority.isEmpty()) {
+		if(authority == "1" || authority == "10") {
+			sql += " AND authority IN (?, '11')";
+		}else if(authority != null && !authority.isEmpty()) {
 			sql += " AND authority = ?";
 		}
 		
@@ -116,7 +118,10 @@ public class AccountsServices {
 			if(mail != null && !mail.isEmpty()) {
 				ps.setString(paramInt++, mail);				
 			}
-			if(authority != null && !authority.isEmpty()) {
+			if(authority == "1" || authority == "10") {
+				ps.setString(paramInt++, authority);
+			}
+			else if(authority != null && !authority.isEmpty()) {
 				ps.setString(paramInt++, authority);
 			}
 			

@@ -12,13 +12,13 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="col-8 offset-2">
-		<div class="fs-2 fw-bold text-center">アカウント登録してよろしですか？</div>
+		<div class="fs-2 fw-bold text-center">アカウント登録してよろしいですか？</div>
 	</div>
 	<c:if test="${already == false}">
 		<div
 			class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
 			role="alert">
-			<div class="text-center">このメールアドレスは使用できません</div>
+			<div class="text-center fw-bold fs-3">このメールアドレスは使用できません</div>
 		</div>
 	</c:if>
 
