@@ -27,12 +27,14 @@ public class AccountFilter implements Filter {
 		HttpSession session = httpRequest.getSession(false);
 		
 		String loginServletURI = httpRequest.getContextPath() + "/LoginServlet";
+		String cssFilesURI = httpRequest.getContextPath() + "/css/";
 		
 		boolean loggedIn = (session != null && session.getAttribute("accountMail") != null);
 		
 		boolean loginServletRequest = httpRequest.getRequestURI().equals(loginServletURI);
+		boolean cssRequest = httpRequest.getRequestURI().startsWith(cssFilesURI);
 		
-		if(loggedIn || loginServletRequest) {
+		if(loggedIn || loginServletRequest || cssRequest) {
 			chain.doFilter(request, response);
 		}else {
 			httpResponse.sendRedirect(loginServletURI);
