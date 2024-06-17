@@ -6,6 +6,7 @@
 
 <head>
 <meta charset="utf-8">
+<title>売上詳細削除確認画面</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
@@ -14,7 +15,7 @@
 <!-- 本体 -->
 <div class="row">
 	<div class="col-8 offset-2">
-		<div class="fs-1 fw-bold">削除確認画面</div>
+		<div class="fs-1 fw-bold">売上詳細削除確認画面</div>
 	</div>
 </div>
 <div class="row mt-4">
