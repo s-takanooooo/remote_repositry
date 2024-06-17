@@ -32,7 +32,7 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 						name="name" value="${registerName}" placeholder="${registerName}"
 						readonly>
 				</div>
@@ -45,7 +45,7 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 						name="mail" value="${registerMail}" placeholder="${registerMail}"
 						readonly>
 				</div>
@@ -58,7 +58,7 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 						name="pass" value="${registerPass}" placeholder="${registerPass}"
 						readonly>
 				</div>
@@ -71,7 +71,7 @@
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 				</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 						name="passConfirm" value="${registerPassConfirm}"
 						placeholder="${registerPassConfirm}" readonly>
 				</div>

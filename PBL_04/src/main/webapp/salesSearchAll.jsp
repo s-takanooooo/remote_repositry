@@ -12,6 +12,8 @@
 </head>
 
 <jsp:include page="header.jsp" />
+<div class="col-8 offset-2" style=
+"white-space: nowrap; ">
 	<div class="container-fluid">
 		<div class="d-flex justify-content-start">
 			<h1 class="fw-bold mt-5">売上検索結果表示</h1>
@@ -47,6 +49,7 @@
 				</tbody>
 				</c:forEach>
 			</table>
+		</div>
 		</div>
 		<script src="../javascript/bootstrap.bundle.min.js"></script>
 </body>

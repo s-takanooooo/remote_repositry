@@ -154,9 +154,9 @@
 			</c:if>
 		</div>
 
-		<div class="col-2 offset-5">
+		<div class="col-8 offset-2">
 			<button type="submit"
-				class="col-5 offset-3 btn btn-primary border rounded">✔ 登 録</button>
+				class="col-2 offset-5 btn btn-primary border rounded">✔ 登 録</button>
 		</div>
 	</form>
 </div>
