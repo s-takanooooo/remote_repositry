@@ -98,16 +98,16 @@
 		</div>
 
 
-		<div class="col-2 offset-5">
+		<div class="col-8 offset-4">
 			<table>
 				<tr>
 					<button type="submit"
-						class="col-4 offset-2 btn btn-primary border rounded">✔ 登
+						class="col-3 btn btn-primary border rounded">✔ 登
 						録</button>
 				</tr>
 				<tr>
 					<a href="SalesRegister"
-						class="col-4 offset-1 btn btn-light border rounded">キャンセル</a>
+						class="col-3 btn btn-light border rounded">キャンセル</a>
 				</tr>
 			</table>
 		</div>
