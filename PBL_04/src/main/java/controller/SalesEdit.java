@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -35,6 +36,9 @@ public class SalesEdit extends HttpServlet {
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("category", ss.getCatgoryName());
 		request.setAttribute("staff", ss.getStaffName());
+		
+		int num = 0;
+		request.setAttribute("getSession", num);
 		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 	}
 
@@ -45,7 +49,7 @@ public class SalesEdit extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf8");
-
+		HttpSession session = request.getSession();
 		String day = request.getParameter("day");
 		String name = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
@@ -98,14 +102,14 @@ public class SalesEdit extends HttpServlet {
 		if (f == false) {
 			doGet(request, response);
 		} else {
-			request.setAttribute("day", day);
-			request.setAttribute("name", name);
-			request.setAttribute("sale_category", sale_category);
-			request.setAttribute("trade_name", trade_name);
-			request.setAttribute("unit_price", unit_price);
-			request.setAttribute("sale_num", sale_num);
-			request.setAttribute("sale_note", sale_note);
-			request.setAttribute("sale_id", sale_id);
+			session.setAttribute("edit_day", day);
+			session.setAttribute("edit_name", name);
+			session.setAttribute("edit_sale_category", sale_category);
+			session.setAttribute("edit_trade_name", trade_name);
+			session.setAttribute("edit_unit_price", unit_price);
+			session.setAttribute("edit_sale_num", sale_num);
+			session.setAttribute("edit_sale_note", sale_note);
+			session.setAttribute("edit_sale_id", sale_id);
 
 			this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
 		}

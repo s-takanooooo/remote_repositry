@@ -27,8 +27,10 @@
 					class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 			</div>
 			<div class="col-8">
+			<c:if test="${getSession==0 }">
 				<input type="date" name="day" id="datepicker"
-					class="col-12 border rounded px-4 fs-3" value="" required>
+					class="col-12 border rounded px-4 fs-3" value="${sale.getSale_date() }" required>
+			</c:if>
 			</div>
 		</div>
 
@@ -41,7 +43,9 @@
 			<div class="col-8 is-invalid">
 				<select name="staff"
 					class="col-12 border rounded px-4 fs-3 form-select" required>
-					<option value="0" selected>選択してください</option>
+					<c:if test="${getSession ==0}">
+					<option value="${sale.getName() }" selected>${sale.getName() }</option>
+					</c:if>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="staff_name" items="${staff}">
 						<option value="${staff_name}">${staff_name}</option>
@@ -64,7 +68,9 @@
 			<div class="col-8 is-invalid">
 				<select name="category"
 					class="col-12 border rounded px-4 fs-3 form-select" required>
-					<option value="0" selected>選択してください</option>
+					<c:if test="${getSession ==0}">
+					<option value="${sale.getCategory_name() }" selected>${sale.getCategory_name() }</option>
+					</c:if>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="category_name" items="${category}">
 						<option value="${category_name}">${category_name}</option>
@@ -85,8 +91,10 @@
 					class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 			</div>
 			<div class="col-8 form-floating is-invalid">
+			<c:if test="${getSession==0 }">
 				<input type="text" name="product_name"
-					class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
+					class="col-12 border rounded px-4 fs-3" value="${sale.getTrade_name() }" required>
+			</c:if>
 			</div>
 			<c:if test="${tradeNameError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -102,8 +110,10 @@
 					class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 			</div>
 			<div class="col-4 form-floating is-invalid">
+			<c:if test="${getSession==0 }">
 				<input type="text" name="price"
-					class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
+					class="col-12 border rounded px-4 fs-3" value="${sale.getUnit_price() }" required>
+			</c:if>
 			</div>
 			<c:if test="${unitPriceError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -124,8 +134,10 @@
 					class="col-10 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
 			</div>
 			<div class="col-4 form-floating is-invalid">
+			<c:if test="${getSession==0 }">
 				<input type="text" name="product_num"
-					class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
+					class="col-12 border rounded px-4 fs-3" value="${sale.getSale_number() }" required>
+			</c:if>
 			</div>
 			<c:if test="${saleNumError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -144,8 +156,10 @@
 				<div class="col-10  text-dark  text-center fs-3">備考</div>
 			</div>
 			<div class="col-8 form-floating is-invalid">
+			<c:if test="${getSession==0 }">
 				<textarea name="mail" rows="4"
-					class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
+					class="col-12 border rounded px-4 fs-3"><c:out value="${sale.getNote() }"></c:out></textarea>
+			</c:if>
 			</div>
 			<c:if test="${noteError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -157,7 +171,7 @@
 		<div class="col-4 offset-5">
 			<button type="submit" class="col-4 btn btn-primary border rounded">✔
 				登 録</button>
-			<a href="SalesDetail?id=${sessionScope.sale_num }" type="button"
+			<a href="SalesDetail?id=${sale_num }" type="button"
 				class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
 		</div>
 	</form>
