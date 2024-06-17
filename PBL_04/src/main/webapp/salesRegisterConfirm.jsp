@@ -25,7 +25,7 @@
 			<div class="col-8">
 				<input type="date" name="sale_date" id="datepicker"
 					value="<c:out value="${day }"/>"
-					class="col-12 border rounded px-4 fs-3" readonly>
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" readonly>
 			</div>
 		</div>
 
@@ -33,7 +33,7 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">担当</div>
 			<div class=col-8>
-				<select class="w-100 border rounded px-4 fs-3 form-select"
+				<select class="w-100 border rounded px-4 fs-3 form-select  bg-body-secondary"
 					name="responsible">
 					<option selected><c:out value="${responsible}" /></option>
 
@@ -44,7 +44,7 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">商品カテゴリー</div>
 			<div class=col-8>
-				<select class="w-100 border rounded px-4 fs-3 form-select"
+				<select class="w-100 border rounded px-4 fs-3 form-select bg-body-secondary"
 					name="category_id">
 					<option selected><c:out value="${sales_category}" /></option>
 
@@ -56,7 +56,7 @@
 			<div class="col-4 text-end fs-3">商品名</div>
 			<div class="col-8">
 				<input type="text" name="trade_name"
-					class="col-12 border rounded px-4 fs-3"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<c:out value="${trade_name}"/>" readonly>
 			</div>
 		</div>
@@ -65,7 +65,7 @@
 			<div class="col-4 text-end fs-3">単価</div>
 			<div class="col-3">
 				<input type="text" name="unit_price"
-					class="col-12 border rounded px-4 fs-3"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<c:out value="${unit_price}"/>" readonly>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 			<div class="col-4 text-end fs-3">個数</div>
 			<div class="col-3">
 				<input type="text" name="sale_number"
-					class="col-12 border rounded px-4 fs-3"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<c:out value="${sales_num}"/>" readonly>
 			</div>
 		</div>
@@ -82,7 +82,7 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">小計</div>
 			<div class="col-3">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
+				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<c:out value="${subtotal}"/>" readonly>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 
 			<div class="col-8">
 				<textarea name="note" rows="4"
-					class="col-12 border rounded px-4 fs-3" readonly><c:out
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" readonly><c:out
 						value="${sales_note}" /></textarea>
 			</div>
 		</div>
