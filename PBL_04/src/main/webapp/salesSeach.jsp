@@ -41,7 +41,8 @@
 			<div class="row col-12 my-4">
 				<div class="col-3 offset-1 text-end fs-3">担当</div>
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select" name="staff">
+					<select class="w-100 border rounded px-4 fs-3 form-select"
+						name="staff">
 						<option selected value="0">選択してください</option>
 						<c:forEach var="staff_name" items="${staff}">
 							<option value="${staff_name}">${staff_name}</option>
@@ -54,7 +55,8 @@
 				<div class="col-3 offset-1 text-end fs-3">商品カテゴリー</div>
 
 				<div class="col-7">
-					<select class="w-100 border rounded px-4 fs-3 form-select" name="category">
+					<select class="w-100 border rounded px-4 fs-3 form-select"
+						name="category">
 						<option selected value="0">選択してください</option>
 						<c:forEach var="category_name" items="${category}">
 							<option value="${category_name}">${category_name}</option>
@@ -63,25 +65,25 @@
 				</div>
 			</div>
 
-			<div class="row col-12 my-4">
+			<div class="row my-4">
 				<div class="col-3 text-end fs-3">商品名</div>
 
-				<div class="col-1">
+				<div class="col-2">
 					<div
-						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
+						class="col-8 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
 				</div>
-
 				<div class="col-7">
 					<input type="text" name="mail"
 						class="col-12 border rounded px-4 fs-3" placeholder="商品名">
 				</div>
 			</div>
 			<div>
-				<div class="row col-12 my-4">
+				<div class="row my-4">
 					<div class="col-3 text-end fs-3">備考</div>
-					<div class="col-1">
+					<div class="col-2">
 						<div
-							class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">部分一致</div>
+							class="col-8 border rounded-pill text-white bg-secondary text-center fs-5"
+							style="min-width: 110px;">部分一致</div>
 
 					</div>
 
@@ -96,8 +98,10 @@
 				<button type="submit" class="col-5 btn btn-primary border rounded">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 						fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  					<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-					</svg>　検 索
+  					<path
+							d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+					</svg>
+					検 索
 				</button>
 				<a href="SalesSearch" class="btn btn-white border rounded col-4">クリア</a>
 			</div>
