@@ -26,7 +26,7 @@ public class AccountFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		HttpSession session = httpRequest.getSession(false);
 		
-		String loginServletURI = httpRequest.getContextPath() + "/LoginServlet";
+		String loginServletURI = httpRequest.getContextPath() + "/C0010.html";
 		String cssFilesURI = httpRequest.getContextPath() + "/css/";
 		
 		boolean loggedIn = (session != null && session.getAttribute("accountMail") != null);
