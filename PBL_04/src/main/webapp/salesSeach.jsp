@@ -19,7 +19,7 @@
 			<div class="fs-1 fw-bold">売上検索条件入力</div>
 		</div>
 	</div>
-	<div class="row mt-4">
+	<div class="d-flex flex-row mt-4">
 		<!-- アクションの指定 -->
 		<form class="col-12" method="post" action="SalesSearchAll">
 			<div class="row col-12 my-4">
@@ -92,7 +92,7 @@
 				</div>
 			</div>
 
-			<div class="col-2 offset-5">
+			<div class="col-3 offset-5">
 				<button type="submit" class="col-5 btn btn-primary border rounded">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 						fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
