@@ -5,6 +5,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>売上詳細編集確認</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 </head>
 
