@@ -18,7 +18,7 @@
 			</section>
 			<c:if test="${login == false}">
 			<div class="alert alert-danger" role="alert">
-				<div>入力内容に誤りがあります</div>
+				<div class="text-center fw-bold fs-3">入力内容に誤りがあります</div>
 			</div>
 			</c:if>
 			<div class="main">

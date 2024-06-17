@@ -64,28 +64,28 @@
 			<div
 				class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
 				role="alert">
-				<div class="text-center">このアカウントにはアカウント登録を行う権限がありません</div>
+				<div class="text-center fw-bold fs-3">このアカウントにはアカウント登録を行う権限がありません</div>
 			</div>
 		</c:if>
 		<c:if test="${salesAuthError == false}">
 			<div
 				class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
 				role="alert">
-				<div class="text-center">このアカウントには売上登録を行う権限がありません</div>
+				<div class="text-center fw-bold fs-3">このアカウントには売上登録を行う権限がありません</div>
 			</div>
 		</c:if>
 		<c:if test="${accountDeleteComplete == 'completed'}">
 			<div
 				class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
 				role="alert">
-				<div class="text-center">アカウントの削除が完了しました</div>
+				<div class="text-center fw-bold fs-3">アカウントの削除が完了しました</div>
 			</div>
 		</c:if>
 		<c:if test="${accountRegisterComplete == 'completed'}">
 			<div
 				class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
 				role="alert">
-				<div class="text-center">アカウント登録がが完了しました</div>
+				<div class="text-center fw-bold fs-3">アカウント登録がが完了しました</div>
 			</div>
 		</c:if>
 	</div>
