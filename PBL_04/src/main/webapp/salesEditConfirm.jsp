@@ -94,7 +94,7 @@
 
             <div class="col-4 offset-5">
                 <button type="submit" class="col-4 btn btn-primary border rounded">✔　O　K</Kbd></button>
-                <a href="SalesEdit?type=1" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+                <a href="SalesEditSession" type="button" class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
             </div>
         </form>
     </div>

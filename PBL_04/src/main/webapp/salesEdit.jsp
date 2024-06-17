@@ -31,6 +31,10 @@
 				<input type="date" name="day" id="datepicker"
 					class="col-12 border rounded px-4 fs-3" value="${sale.getSale_date() }" required>
 			</c:if>
+			<c:if test="${getSession==1 }">
+				<input type="date" name="day" id="datepicker"
+					class="col-12 border rounded px-4 fs-3" value="${edit_day }" required>
+			</c:if>
 			</div>
 		</div>
 
@@ -45,6 +49,9 @@
 					class="col-12 border rounded px-4 fs-3 form-select" required>
 					<c:if test="${getSession ==0}">
 					<option value="${sale.getName() }" selected>${sale.getName() }</option>
+					</c:if>
+					<c:if test="${getSession ==1}">
+					<option value="${edit_name }" selected>${edit_name }</option>
 					</c:if>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="staff_name" items="${staff}">
@@ -71,6 +78,9 @@
 					<c:if test="${getSession ==0}">
 					<option value="${sale.getCategory_name() }" selected>${sale.getCategory_name() }</option>
 					</c:if>
+					<c:if test="${getSession ==1}">
+					<option value="${edit_sale_category }" selected>${edit_sale_category }</option>
+					</c:if>
 					<!-- itemsに配列を格納　value=配列の値が入る変数-->
 					<c:forEach var="category_name" items="${category}">
 						<option value="${category_name}">${category_name}</option>
@@ -95,6 +105,10 @@
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3" value="${sale.getTrade_name() }" required>
 			</c:if>
+			<c:if test="${getSession==1 }">
+				<input type="text" name="product_name"
+					class="col-12 border rounded px-4 fs-3" value="${edit_trade_name }" required>
+			</c:if>
 			</div>
 			<c:if test="${tradeNameError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -113,6 +127,10 @@
 			<c:if test="${getSession==0 }">
 				<input type="text" name="price"
 					class="col-12 border rounded px-4 fs-3" value="${sale.getUnit_price() }" required>
+			</c:if>
+			<c:if test="${getSession==1 }">
+				<input type="text" name="price"
+					class="col-12 border rounded px-4 fs-3" value="${edit_unit_price }" required>
 			</c:if>
 			</div>
 			<c:if test="${unitPriceError == false}">
@@ -138,6 +156,10 @@
 				<input type="text" name="product_num"
 					class="col-12 border rounded px-4 fs-3" value="${sale.getSale_number() }" required>
 			</c:if>
+			<c:if test="${getSession==1 }">
+				<input type="text" name="product_num"
+					class="col-12 border rounded px-4 fs-3" value="${edit_sale_num }" required>
+			</c:if>
 			</div>
 			<c:if test="${saleNumError == false}">
 				<div class="invalid-feedback col-4 offset-4" role="alert">
@@ -159,6 +181,10 @@
 			<c:if test="${getSession==0 }">
 				<textarea name="mail" rows="4"
 					class="col-12 border rounded px-4 fs-3"><c:out value="${sale.getNote() }"></c:out></textarea>
+			</c:if>
+			<c:if test="${getSession==1 }">
+				<textarea name="mail" rows="4"
+					class="col-12 border rounded px-4 fs-3"><c:out value="${edit_sale_note }"></c:out></textarea>
 			</c:if>
 			</div>
 			<c:if test="${noteError == false}">
