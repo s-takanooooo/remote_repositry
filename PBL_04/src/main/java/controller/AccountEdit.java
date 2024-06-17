@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.AccountsBean;
 import services.AccountsServices;
@@ -33,6 +34,7 @@ public class AccountEdit extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+
 		String accountId = request.getParameter("accountId");
 		AccountsBean ab = as.selectById(accountId);
 		
@@ -41,7 +43,9 @@ public class AccountEdit extends HttpServlet {
 		request.setAttribute("editMail", ab.getMail());
 		request.setAttribute("editPass", ab.getPassword());
 		request.setAttribute("editAuth", ab.getAuthority());
+		int num = 0;
 		
+		request.setAttribute("getSession", num);
 		
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
 	}
@@ -62,12 +66,12 @@ public class AccountEdit extends HttpServlet {
 		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		String accountId = request.getParameter("accountId");
 		
-		request.setAttribute("accountId", accountId);
+		/*request.setAttribute("accountId", accountId);
 		request.setAttribute("name", name);
 		request.setAttribute("mail", mail);
 		request.setAttribute("pass", pass);
 		request.setAttribute("permission", permission);
-		request.setAttribute("passConfirm", passConfirm);
+		request.setAttribute("passConfirm", passConfirm);*/
 		
 		boolean f = true;
 		if(as.checkAccountName(name) == false) {
@@ -89,6 +93,13 @@ public class AccountEdit extends HttpServlet {
 		if(f == false) {
 			doGet(request,response);
 		}else{
+			HttpSession session = request.getSession();
+			session.setAttribute("editAccountIdSession", accountId);
+			session.setAttribute("editNameSession", name);
+			session.setAttribute("editMailSession", mail);
+			session.setAttribute("editPassSession", pass);
+			session.setAttribute("editPassConfirmSession", passConfirm);
+			session.setAttribute("editPermissionSession", permission);
 			this.getServletContext().getRequestDispatcher("/accountEditConfirm.jsp").forward(request, response);
 		}
 		
