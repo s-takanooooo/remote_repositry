@@ -47,8 +47,8 @@
                                 <td><c:out value="${sale.getSale_number() }" /></td>
                             </tr>
                             <tr>
-                                <th class="fw-bold">小計</th>
-                                <td><c:out value="${sale.getSubtotal()}" /></td>
+                                <th class="fw-bold">備考</th>
+                                <td><c:out value="${sale.getNote()}" /></td>
                             </tr>
                         </tbody>
                     </table>
