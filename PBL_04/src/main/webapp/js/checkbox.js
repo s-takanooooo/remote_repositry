@@ -1,27 +1,58 @@
-/* function togglePermissionCheckboxes() {
-            var allPermission = document.getElementById('allPermission');
-            var salesRegister = document.getElementById('salesRegister');
-            var accountsRegister = document.getElementById('accountsRegister');
-            
-            if (allPermission.checked) {
-                salesRegister.checked;
-                accountsRegister.checked;
-            }
-            if(salesRegister.checked || accountsRegister.checked){
-				allPermission.checked ;
-			}
-            
-            allPermission.checked;
+
+    function togglePermissionCheckboxes() {
+        var allPermission = document.getElementById('allPermission');
+        var salesRegister = document.getElementById('salesRegister');
+        var accountsRegister = document.getElementById('accountsRegister');
+
+        if (salesRegister.checked || accountsRegister.checked) {
+            allPermission.checked = false;
+        } else {
+            allPermission.disabled = false;
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var allPermission = document.getElementById('allPermission');
-            var salesRegister = document.getElementById('salesPermission');
-            var accountsRegister = document.getElementById('accountsRegister');
-            allPermission.addEventListener('change', togglePermissionCheckboxes);
-            salesRegister.addEventListener('change', togglePermissionCheckboxes);
-            accountsRegister.addEventListener('change', togglePermissionCheckboxes);
+    function toggleSpecificCheckboxes() {
+        var allPermission = document.getElementById('allPermission');
+        var salesRegister = document.getElementById('salesRegister');
+        var accountsRegister = document.getElementById('accountsRegister');
 
-            // 初期状態を設定
+        if (allPermission.checked) {
+            salesRegister.checked = false;
+            accountsRegister.checked = false;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var allPermission = document.getElementById('allPermission');
+        var salesRegister = document.getElementById('salesRegister');
+        var accountsRegister = document.getElementById('accountsRegister');
+
+        // 初期状態の設定
+        allPermission.checked = true;
+        togglePermissionCheckboxes();
+        toggleSpecificCheckboxes();
+
+        // イベントリスナーの設定
+        allPermission.addEventListener('change', function() {
+            if (allPermission.checked) {
+                salesRegister.checked = false;
+                accountsRegister.checked = false;
+            }
             togglePermissionCheckboxes();
-        });*/
+        });
+
+        salesRegister.addEventListener('change', function() {
+            if (salesRegister.checked) {
+                allPermission.checked = false;
+            }
+            togglePermissionCheckboxes();
+        });
+
+        accountsRegister.addEventListener('change', function() {
+            if (accountsRegister.checked) {
+                allPermission.checked = false;
+            }
+            togglePermissionCheckboxes();
+        });
+    });
+
