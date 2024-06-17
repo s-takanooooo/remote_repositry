@@ -26,7 +26,7 @@
 
 				<div class="col-3 offset-1 text-end fs-3">販売日</div>
 				<div class="col-3">
-					<input type="date" name="startDate" id="datepicker" value=""
+					<input type="date" name="startDate" value=""
 						class="col-12 border rounded px-4 fs-3">
 				</div>
 				<div class="col-1 text-center fs-2">~</div>
