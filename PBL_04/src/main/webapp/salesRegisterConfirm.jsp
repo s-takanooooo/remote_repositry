@@ -16,9 +16,9 @@
 	<div class="fs-1 fw-bold">売上登録確認</div>
 </div>
 
-<div class="row mt-4">
+<div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
-	<form method="post" action="SalesRegisterConfirmServlet">
+	<form class="col-12" method="post" action="SalesRegisterConfirmServlet">
 		<div class="row offset-2 col-8 my-4">
 
 			<div class="col-4 text-end fs-3">販売日</div>
@@ -98,12 +98,11 @@
 		</div>
 
 
-		<div class="col-2 offset-5">
+		<div class="col-8 offset-2">
 			<table>
 				<tr>
 					<button type="submit"
-						class="col-4 offset-2 btn btn-primary border rounded">✔ 登
-						録</button>
+						class="col-4 offset-2 btn btn-primary border rounded">✔ 登　録</button>
 				</tr>
 				<tr>
 					<a href="SalesRegister"
