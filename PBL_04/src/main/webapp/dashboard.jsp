@@ -11,6 +11,12 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         type="text/css" />
+	<!-- jQueryの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- ApexChartsの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- 外部JavaScriptファイルの読み込み -->
+    <script src="js/chart.js"></script>
 </head>
 
 <body>
@@ -81,8 +87,13 @@
                     </div>
                 </c:if>
             </div>
+            <h1>Donut Chart Example</h1>
+    <div id="chart" style="width: 900px; height: 500px;"></div>
+
+    <!-- サーブレットからのデータをJavaScriptに渡すためのhidden要素 -->
+    <input type="hidden" id="categories" value='<%= request.getAttribute("categories") %>' />
+    <input type="hidden" id="values" value='<%= request.getAttribute("values") %>' />
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
 </html>

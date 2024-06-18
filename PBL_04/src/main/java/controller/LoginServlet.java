@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import beans.AccountsBean;
 import services.AccountsServices;
+import services.ChartServices;
+import services.ChartServices.ChartData;
 
 /**
  * Servlet implementation class LoginServlet
@@ -55,6 +57,11 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("accountMail", ab.getMail());
 			session.setAttribute("password", ab.getPassword());
 			session.setAttribute("authority", ab.getAuthority());
+			ChartServices cs = new ChartServices();
+			ChartData chartData = cs.ChartData();
+			 // JSON文字列をリクエスト属性に設定
+	        request.setAttribute("categories", chartData.getCategories().toString());
+	        request.setAttribute("values", chartData.getValues().toString());
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}else {
 			request.setAttribute("login", false);
