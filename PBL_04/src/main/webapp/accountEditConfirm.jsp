@@ -23,7 +23,7 @@
 		<div class="row col-12 my-4">
 			<div class="col-4 text-end fs-3">氏名</div>
 			<div class="col-7">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
+				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${editNameSession}" name="name" readonly>
 			</div>
 		</div>
@@ -31,7 +31,7 @@
 		<div class="row col-12 my-4">
 			<div class="col-4 text-end fs-3">メールアドレス</div>
 			<div class="col-7">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
+				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${editMailSession}" name="mail" readonly>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 		<div class="row col-12 my-4">
 			<div class="col-4 text-end fs-3">パスワード</div>
 			<div class="col-7">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
+				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${editPassSession}" name="pass" readonly>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 		<div class="row col-12 my-4">
 			<div class="col-4 text-end text-nowrap fs-3">パスワード（確認）</div>
 			<div class="col-7">
-				<input type="text" class="col-12 border rounded px-4 fs-3"
+				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					name="passConfirm" value="${editPassConfirmSession}"
 					name="passConfirm" readonly>
 			</div>
