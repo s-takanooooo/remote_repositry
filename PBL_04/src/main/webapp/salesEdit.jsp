@@ -20,7 +20,7 @@
 <div class="row mt-4">
 	<!-- アクションの指定 -->
 	<form method="post"
-		action="SalesEdit?id=${sessionScope.sale.getSale_id() }" id="form">
+		action="S0023?id=${sessionScope.sale.getSale_id() }" id="form">
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-3 text-end fs-3">販売日</div>
 			<div class="col-1">

@@ -14,7 +14,7 @@ import services.SalesServices;
 /**
  * Servlet implementation class SalesEdit
  */
-@WebServlet("/SalesEdit")
+@WebServlet("/S0023")
 public class SalesEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SalesServices ss = new SalesServices();
