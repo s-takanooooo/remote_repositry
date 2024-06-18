@@ -54,7 +54,7 @@ public class AccountRegisterConfirm extends HttpServlet {
 			
 //			String accountRegisterComplete = "completed";
 //			request.setAttribute("accountRegisterComplete", accountRegisterComplete);
-			response.sendRedirect("AccountRegister");
+			response.sendRedirect("S0030");
 		}
 		
 	}

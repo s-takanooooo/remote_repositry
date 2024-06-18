@@ -15,7 +15,7 @@ import services.AccountsServices;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/C0010.html")
+@WebServlet("/C0010")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        AccountsServices as = new AccountsServices();

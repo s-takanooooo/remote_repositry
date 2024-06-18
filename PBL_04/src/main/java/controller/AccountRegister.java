@@ -15,7 +15,7 @@ import util.CommonUtil;
 /**
  * Servlet implementation class AccountRegister
  */
-@WebServlet("/AccountRegister")
+@WebServlet("/S0030")
 public class AccountRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        AccountsServices as = new AccountsServices();
