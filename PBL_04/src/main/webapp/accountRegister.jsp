@@ -41,17 +41,21 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" name="name"
-						class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
+						class="col-12 border rounded px-4 fs-3" placeholder="氏名">
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" name="name"
-						class="col-12 border rounded px-4 fs-3" value="${registerName}"
-						required>
+						class="col-12 border rounded px-4 fs-3" value="${registerName}">
 				</c:if>
 			</div>
 			<c:if test="${accountNameError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">名前は20字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountName == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">名前を入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -65,19 +69,22 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="email" name="mail"
-						class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス"
-						required>
+						class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス">
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="email" name="mail"
-						class="col-12 border rounded px-4 fs-3" value="${registerMail}"
-						required>
+						class="col-12 border rounded px-4 fs-3" value="${registerMail}">
 				</c:if>
 
 			</div>
 			<c:if test="${accountMailError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">メールアドレスは100字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountMail == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">メールアドレスを入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -91,18 +98,21 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" name="pass"
-						class="col-12 border rounded px-4 fs-3" placeholder="パスワード"
-						required>
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード">
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" name="pass"
-						class="col-12 border rounded px-4 fs-3" value="${registerPass}"
-						required>
+						class="col-12 border rounded px-4 fs-3" value="${registerPass}">
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAcountPass == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">パスワードを入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -116,18 +126,22 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" name="passConfirm"
-						class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）"
-						required>
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）">
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" name="passConfirm"
 						class="col-12 border rounded px-4 fs-3"
-						value="${registerPassConfirm}" required>
+						value="${registerPassConfirm}">
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountPassConfirm == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">確認用のパスワードを入力してください</div>
 				</div>
 			</c:if>
 		</div>

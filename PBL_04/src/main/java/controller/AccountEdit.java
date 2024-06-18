@@ -66,14 +66,23 @@ public class AccountEdit extends HttpServlet {
 		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		String accountId = request.getParameter("accountId");
 		
-		/*request.setAttribute("accountId", accountId);
-		request.setAttribute("name", name);
-		request.setAttribute("mail", mail);
-		request.setAttribute("pass", pass);
-		request.setAttribute("permission", permission);
-		request.setAttribute("passConfirm", passConfirm);*/
-		
 		boolean f = true;
+		if(name == "") {
+			f = false;
+			request.setAttribute("fillAccountName", f);
+		}
+		if(mail == "") {
+			f = false;
+			request.setAttribute("fillAccountMail", f);
+		}
+		if(pass == "") {
+			f = false;
+			request.setAttribute("fillAcountPass", f);
+		}
+		if(passConfirm == "") {
+			f = false;
+			request.setAttribute("fillAccountPassConfirm", f);
+		}
 		if(as.checkAccountName(name) == false) {
 			f = false;
 			request.setAttribute("accountNameError", f);

@@ -45,17 +45,22 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="name" value="${editName}" required>
+						name="name" value="${editName}"  >
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="name" value="${editNameSession}" required>
+						name="name" value="${editNameSession}"  >
 				</c:if>
 			</div>
 
 			<c:if test="${accountNameError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">名前は20字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountName == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">名前を入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -69,16 +74,21 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="mail" value="${editMail}" required>
+						name="mail" value="${editMail}"  >
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="mail" value="${editMailSession}" required>
+						name="mail" value="${editMailSession}"  >
 				</c:if>
 			</div>
 			<c:if test="${accountMailError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">メールアドレスは100字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountMail == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">メールアドレスを入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -92,16 +102,21 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="pass" value="${editPass}" required>
+						name="pass" value="${editPass}"  >
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="pass" value="${editPassSession}" required>
+						name="pass" value="${editPassSession}"  >
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAcountPass == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">パスワードを入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -115,16 +130,21 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="passConfirm" value="${editPass}" required>
+						name="passConfirm" value="${editPass}"  >
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="passConfirm" value="${editPassSession}" required>
+						name="passConfirm" value="${editPassSession}"  >
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback" role="alert">
 					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+				</div>
+			</c:if>
+			<c:if test="${fillAccountPassConfirm == false}">
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">確認用のパスワードを入力してください</div>
 				</div>
 			</c:if>
 		</div>

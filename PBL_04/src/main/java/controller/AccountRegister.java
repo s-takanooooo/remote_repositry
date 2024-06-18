@@ -61,6 +61,25 @@ public class AccountRegister extends HttpServlet {
 		
 		
 		boolean f = true;
+		
+		
+		
+		if(name == "") {
+			f = false;
+			request.setAttribute("fillAccountName", f);
+		}
+		if(mail == "") {
+			f = false;
+			request.setAttribute("fillAccountMail", f);
+		}
+		if(pass == "") {
+			f = false;
+			request.setAttribute("fillAcountPass", f);
+		}
+		if(passConfirm == "") {
+			f = false;
+			request.setAttribute("fillAccountPassConfirm", f);
+		}
 		if(as.checkAccountName(name) == false) {
 			f = false;
 			request.setAttribute("accountNameError", f);
