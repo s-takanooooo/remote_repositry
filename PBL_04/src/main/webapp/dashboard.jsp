@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-3">
-                        <a class="nav-link fs-5" href="Dashboard">ダッシュボード</a>
+                        <a class="nav-link fs-5" href="C0020">ダッシュボード</a>
                     </li>
                     <li class="nav-item mx-3">
                         <a class="nav-link fs-5" href="SalesRegister">売上登録</a>
