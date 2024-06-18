@@ -18,7 +18,7 @@
             <a href="C0020" class="mx-2 text-secondary text-decoration-none text-nowrap">ダッシュボード</a>
             <a href="SalesRegister" class="mx-2 text-secondary text-decoration-none text-nowrap">売上登録</a>
             <a href="SalesSearch" class="mx-2 text-secondary text-decoration-none text-nowrap">売上検索</a>
-            <a href="AccountRegister" class="mx-2 text-secondary text-decoration-none text-nowrap">アカウント登録</a>
+            <a href="S0030" class="mx-2 text-secondary text-decoration-none text-nowrap">アカウント登録</a>
             <a href="AccountSearch" class="mx-2 text-secondary text-decoration-none text-nowrap">アカウント検索</a>
         </div>
         <a href="Logout" class="col-2 text-center text-secondary text-decoration-none text-nowrap">
