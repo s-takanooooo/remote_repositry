@@ -16,7 +16,7 @@
 	<div class="fs-1 fw-bold">売上詳細編集確認</div>
 </div>
 
-<div class="row mt-4">
+<div class="mt-4">
 	<!-- アクションの指定 -->
 	<form method="post" action="S0024?id=${sale.getSale_id() }">
 		<div class="row col-12 my-4">
