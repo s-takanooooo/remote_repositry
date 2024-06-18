@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>アカウント検索結果表示</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
