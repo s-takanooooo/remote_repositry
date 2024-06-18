@@ -34,7 +34,7 @@
                         <tbody>
                             <tr>
                           	    <c:if test="${authority == 10 || authority == 11}">
-                            	    <td><a class="btn btn-primary  me-3" role="button" href="AccountEdit?accountId=${item.account_id}">✓編集</a>
+                            	    <td><a class="btn btn-primary  me-3" role="button" href="S0042?accountId=${item.account_id}">✓編集</a>
                                     	<a class="btn btn-danger  me-3" role="button" href="S0044?accountId=${item.account_id}">×削除</a>
                                 	</td>
                             	</c:if>

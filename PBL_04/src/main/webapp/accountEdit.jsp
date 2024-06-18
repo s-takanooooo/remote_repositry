@@ -28,7 +28,7 @@
 	</div>
 </c:if>
 <div class="d-flex flex-row mt-4">
-	<form class="col-10 offset-1" method="post" action="AccountEdit">
+	<form class="col-10 offset-1" method="post" action="S0042">
 		<c:if test="${getSession == 0}">
 			<input type="hidden" value="${editAccountId}" name="accountId">
 		</c:if>

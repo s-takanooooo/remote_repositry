@@ -24,7 +24,7 @@
 
 	<!-- placeholderにサーブレットから値を持ってくる -->
 	<div class="d-flex flex-row mt-4">
-		<form class="col-12" method="post" action="AccountRegisterConfirm">
+		<form class="col-12" method="post" action="S0031">
 			<div class="row col-12 my-4">
 				<div class="col-3 text-end fs-3">氏名</div>
 				<div class="col-1">
