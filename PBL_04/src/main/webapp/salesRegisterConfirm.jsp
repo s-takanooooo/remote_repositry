@@ -18,7 +18,7 @@
 
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
-	<form class="col-12" method="post" action="SalesRegisterConfirmServlet">
+	<form class="col-12" method="post" action="S0011">
 		<div class="row offset-2 col-8 my-4">
 
 			<div class="col-4 text-end fs-3">販売日</div>

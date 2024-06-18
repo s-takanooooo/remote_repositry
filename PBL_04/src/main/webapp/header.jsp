@@ -16,7 +16,7 @@
         </a>
         <div class="col-7 d-flex justify-content-between">
             <a href="C0020" class="mx-2 text-secondary text-decoration-none text-nowrap">ダッシュボード</a>
-            <a href="SalesRegister" class="mx-2 text-secondary text-decoration-none text-nowrap">売上登録</a>
+            <a href="S0010" class="mx-2 text-secondary text-decoration-none text-nowrap">売上登録</a>
             <a href="S0020" class="mx-2 text-secondary text-decoration-none text-nowrap">売上検索</a>
             <a href="S0030" class="mx-2 text-secondary text-decoration-none text-nowrap">アカウント登録</a>
             <a href="S0040" class="mx-2 text-secondary text-decoration-none text-nowrap">アカウント検索</a>

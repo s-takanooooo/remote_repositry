@@ -13,7 +13,7 @@ import services.SalesServices;
 /**
  * Servlet implementation class SalesRegisterConfirmServlet
  */
-@WebServlet("/SalesRegisterConfirmServlet")
+@WebServlet("/S0011")
 public class SalesRegisterConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
