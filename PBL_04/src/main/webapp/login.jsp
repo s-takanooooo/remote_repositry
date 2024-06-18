@@ -22,7 +22,7 @@
 			</div>
 			</c:if>
 			<div class="main">
-				<form action="C0010.html" method="post">
+				<form action="C0010" method="post">
 					<div class="login-box">
 						<input class="form-control" type="email" name="email"
 							placeholder="メールアドレス" /> <input class="form-control"

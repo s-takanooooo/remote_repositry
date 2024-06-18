@@ -43,7 +43,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 					<a class="navbar-brand text-secondary" href="#">物品売上管理システム</a>
-					<a class="nav-link" href="C0020.html">ダッシュボード</a>
+					<a class="nav-link" href="C0020">ダッシュボード</a>
 					<a class="nav-link" href="SalesRegister">売上登録</a>
 					<a class="nav-link" href="SalesSearch">売上検索</a>
 					<a class="nav-link" href="AccountRegister">アカウント登録</a>
