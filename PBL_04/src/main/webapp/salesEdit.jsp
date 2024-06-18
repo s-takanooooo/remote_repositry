@@ -114,11 +114,9 @@
 							value="${sale.getTrade_name() }" required>
 				</c:if>
 				<c:if test="${getSession==1 }">
-					<div class="col-7">
 						<input type="text" name="product_name"
 							class="col-12 border rounded px-4 fs-3"
 							value="${edit_trade_name }" required>
-					</div>
 				</c:if>
 			</div>
 			<c:if test="${tradeNameError == false}">
