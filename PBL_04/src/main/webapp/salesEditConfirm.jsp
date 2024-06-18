@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-7">
 				<input type="date" name="day" id="datepicker"
-					class="col-12 border rounded px-4 fs-3" value="${edit_day}"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value="${edit_day}"
 					readonly>
 			</div>
 		</div>
@@ -38,9 +38,9 @@
 				<div
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
-			<div class="col-7">
+			<div class="col-7 is-invalid">
 				<select name="staff"
-					class="col-12 border rounded px-4 fs-3 form-select" readonly>
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
 					<option selected value="${edit_name}">${edit_name}</option>
 				</select>
 			</div>
@@ -54,7 +54,7 @@
 			</div>
 			<div class="col-7">
 				<select name="category"
-					class="col-12 border rounded px-4 fs-3 form-select" readonly>
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
 					<option selected value="${edit_sale_category}">${edit_sale_category}</option>
 				</select>
 			</div>
@@ -68,7 +68,7 @@
 			</div>
 			<div class="col-7">
 				<input type="text" name="product_name"
-					class="col-12 border rounded px-4 fs-3" value="${edit_trade_name}"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value="${edit_trade_name}"
 					readonly>
 			</div>
 		</div>
@@ -81,7 +81,7 @@
 			</div>
 			<div class="col-3 form-floating is-invalid">
 				<input type="text" name="price"
-					class="col-12 border rounded px-4 fs-3" value="${edit_unit_price}"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value="${edit_unit_price}"
 					readonly>
 			</div>
 		</div>
@@ -94,7 +94,7 @@
 			</div>
 			<div class="col-3 form-floating is-invalid">
 				<input type="text" name="product_num"
-					class="col-12 border rounded px-4 fs-3" value="${edit_sale_num}"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value="${edit_sale_num}"
 					readonly>
 			</div>
 		</div>
@@ -104,7 +104,7 @@
 
 			<div class="col-7 offset-1 form-floating is-invalid">
 				<textarea name="mail" rows="4"
-					class="col-12 border rounded px-4 fs-3" value="備考" readonly>${edit_sale_note}</textarea>
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value="備考" readonly>${edit_sale_note}</textarea>
 			</div>
 		</div>
 
