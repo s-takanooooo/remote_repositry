@@ -20,7 +20,7 @@
 </div>
 <div class="row mt-4">
 	<!-- アクションの指定 -->
-	<form method="post" action="SalesDeleteConfirm">
+	<form method="post" action="S0025">
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-3 text-end fs-3">販売日</div>
 			<div class="col-8 offset-1">

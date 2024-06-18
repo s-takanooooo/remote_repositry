@@ -15,7 +15,7 @@ import services.SalesServices;
 /**
  * Servlet implementation class SalesDeleteConfirm
  */
-@WebServlet("/SalesDeleteConfirm")
+@WebServlet("/S0025")
 public class SalesDeleteConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
