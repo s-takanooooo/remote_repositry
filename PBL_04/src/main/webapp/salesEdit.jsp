@@ -18,8 +18,7 @@
 </div>
 <div class="mt-4">
 	<!-- アクションの指定 -->
-	<form method="post"
-		action="S0023?id=${sale.getSale_id() }" id="form">
+	<form method="post" action="S0023?id=${sale.getSale_id() }" id="form">
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">販売日</div>
 			<div class="col-1">
@@ -28,200 +27,227 @@
 			</div>
 			<div class="col-7">
 				<c:if test="${getSession==0 }">
-						<input type="date" name="day" id="datepicker"
-							class="col-12 border rounded px-4 fs-3"
-							value="${sale.getSale_date() }" required>
+					<input type="date" name="day" id="datepicker"
+						class="col-12 border rounded px-4 fs-3"
+						value="${sale.getSale_date() }" required>
 				</c:if>
 				<c:if test="${getSession==1 }">
-						<input type="date" name="day" id="datepicker"
-							class="col-12 border rounded px-4 fs-3" value="${edit_day }"
-							required>
-					</div>
-				</c:if>
+					<input type="date" name="day" id="datepicker"
+						class="col-12 border rounded px-4 fs-3" value="${edit_day }"
+						required>
 			</div>
+			</c:if>
 		</div>
+</div>
 
-		<div class="row col-12 my-4">
-			<div class="col-3 text-end fs-3">担当</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
-			</div>
-			<div class="col-7 is-invalid">
-				<select name="staff"
-					class="w-100 border rounded px-4 fs-3 form-select" required>
-					<c:if test="${getSession ==0}">
-						<div class="col-7">
-							<option value="${sale.getName() }" selected>${sale.getName() }</option>
-						</div>
-					</c:if>
-					<c:if test="${getSession ==1}">
-						<div class="col-7">
-							<option value="${edit_name }" selected>${edit_name }</option>
-						</div>
-					</c:if>
-					<!-- itemsに配列を格納　value=配列の値が入る変数-->
-					<c:forEach var="staff_name" items="${staff}">
-						<option value="${staff_name}">${staff_name}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<c:if test="${staffError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">担当が未選択です。</div>
-				</div>
-			</c:if>
-		</div>
+<div class="row col-12 my-4">
+	<div class="col-3 text-end fs-3">担当</div>
+	<div class="col-1">
+		<div
+			class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+	</div>
+	<div class="col-7 is-invalid">
+		<select name="staff"
+			class="w-100 border rounded px-4 fs-3 form-select" required>
 
-		<div class="row col-12 my-4">
-			<div class="col-3 text-end fs-3">商品カテゴリー</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
-			</div>
-			<div class="col-7 is-invalid">
-				<select name="category"
-					class="w-100 border rounded px-4 fs-3 form-select" required>
-					<c:if test="${getSession ==0}">
-							<option value="${sale.getCategory_name() }" selected>${sale.getCategory_name() }</option>
-					</c:if>
-					<c:if test="${getSession ==1}">
-							<option value="${edit_sale_category }" selected>${edit_sale_category }</option>
-					</c:if>
-					<!-- itemsに配列を格納　value=配列の値が入る変数-->
-					<c:forEach var="category_name" items="${category}">
-						<option value="${category_name}">${category_name}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<c:if test="${categoryNameError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">商品カテゴリーが未選択です。</div>
-				</div>
-			</c:if>
+			<div class="col-7">
+				<!-- itemsに配列を格納　value=配列の値が入る変数-->
+				<c:forEach var="staff_name" items="${staff}">
+					<c:choose>
+						<c:when test="${getSession == 0}">
+							<c:choose>
+								<c:when test="${staff_name == sale.getName()}">
+									<option value="${staff_name}" selected>${staff_name}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${staff_name}">${staff_name}</option>
+								</c:otherwise>
+							</c:choose>
+						</c:when>
+						<c:when test="${getSession == 1}">
+							<c:choose>
+								<c:when test="${staff_name == edit_name}">
+									<option value="${staff_name}" selected>${staff_name}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${staff_name}">${staff_name}</option>
+								</c:otherwise>
+							</c:choose>
+						</c:when>
+					</c:choose>
+				</c:forEach>
+		</select>
+	</div>
+	<c:if test="${staffError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">担当が未選択です。</div>
 		</div>
+	</c:if>
+</div>
 
-		<div class="row col-12 my-4">
-			<div class="col-3 text-end fs-3">商品名</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
-			</div>
-			<div class="col-7 form-floating is-invalid">
-				<c:if test="${getSession==0 }">
-						<input type="text" name="product_name"
-							class="col-12 border rounded px-4 fs-3"
-							value="${sale.getTrade_name() }" required>
-				</c:if>
-				<c:if test="${getSession==1 }">
-						<input type="text" name="product_name"
-							class="col-12 border rounded px-4 fs-3"
-							value="${edit_trade_name }" required>
-				</c:if>
-			</div>
-			<c:if test="${tradeNameError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">商品名は100字以内で入力してください。</div>
-				</div>
-			</c:if>
+<div class="row col-12 my-4">
+	<div class="col-3 text-end fs-3">商品カテゴリー</div>
+	<div class="col-1">
+		<div
+			class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+	</div>
+	<div class="col-7 is-invalid">
+		<select name="category"
+			class="w-100 border rounded px-4 fs-3 form-select" required>
+			<c:forEach var="category_name" items="${category}">
+				<c:choose>
+					<c:when test="${getSession ==0}">
+						<c:choose>
+							<c:when test="${sale.getCategory_name()==category_name }">
+								<option value="${category_name }" selected>${sale.getCategory_name() }</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${category_name }">${category_name }</option>
+							</c:otherwise>
+						</c:choose>
+					</c:when>
+					<c:when test="${getSession == 1}">
+						<c:choose>
+							<c:when test="${edit_sale_category == category_name}">
+								<option value="${category_name}" selected>${category_name}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${category_name}">${category_name}</option>
+							</c:otherwise>
+						</c:choose>
+					</c:when>
+				</c:choose>
+			</c:forEach>
+		</select>
+	</div>
+	<c:if test="${categoryNameError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">商品カテゴリーが未選択です。</div>
 		</div>
+	</c:if>
+</div>
 
-		<div class="row col-12 my-4">
-			<div class="col-3 text-end fs-3">単価</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
-			</div>
-			<div class="col-4 form-floating is-invalid">
-				<c:if test="${getSession==0 }">
-					<div class="col-7">
-						<input type="text" name="price"
-							class="col-12 border rounded px-4 fs-3"
-							value="${sale.getUnit_price() }" required>
-					</div>
-				</c:if>
-				<c:if test="${getSession==1 }">
-					<div class="col-7">
-						<input type="text" name="price"
-							class="col-12 border rounded px-4 fs-3"
-							value="${edit_unit_price }" required>
-					</div>
-				</c:if>
-			</div>
-			<c:if test="${unitPriceError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">単価が長すぎます。</div>
-				</div>
-			</c:if>
-			<c:if test="${unitPriceFomartError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">単価を正しく入力してください。</div>
-				</div>
-			</c:if>
+<div class="row col-12 my-4">
+	<div class="col-3 text-end fs-3">商品名</div>
+	<div class="col-1">
+		<div
+			class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+	</div>
+	<div class="col-7 form-floating is-invalid">
+		<c:if test="${getSession==0 }">
+			<input type="text" name="product_name"
+				class="col-12 border rounded px-4 fs-3"
+				value="${sale.getTrade_name() }" required>
+		</c:if>
+		<c:if test="${getSession==1 }">
+			<input type="text" name="product_name"
+				class="col-12 border rounded px-4 fs-3" value="${edit_trade_name }"
+				required>
+		</c:if>
+	</div>
+	<c:if test="${tradeNameError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">商品名は100字以内で入力してください。</div>
 		</div>
+	</c:if>
+</div>
 
-		<div class="row col-12 my-4">
-			<div class="col-3 text-end fs-3">個数</div>
-			<div class="col-1">
-				<div
-					class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+<div class="row col-12 my-4">
+	<div class="col-3 text-end fs-3">単価</div>
+	<div class="col-1">
+		<div
+			class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+	</div>
+	<div class="col-4 form-floating is-invalid">
+		<c:if test="${getSession==0 }">
+			<div class="col-7">
+				<input type="text" name="price"
+					class="col-12 border rounded px-4 fs-3"
+					value="${sale.getUnit_price() }" required>
 			</div>
-			<div class="col-4 form-floating is-invalid">
-				<c:if test="${getSession==0 }">
-					<div class="col-7">
-						<input type="text" name="product_num"
-							class="col-12 border rounded px-4 fs-3"
-							value="${sale.getSale_number() }" required>
-					</div>
-				</c:if>
-				<c:if test="${getSession==1 }">
-					<div class="col-7">
-						<input type="text" name="product_num"
-							class="col-12 border rounded px-4 fs-3" value="${edit_sale_num }"
-							required>
-					</div>
-				</c:if>
+		</c:if>
+		<c:if test="${getSession==1 }">
+			<div class="col-7">
+				<input type="text" name="price"
+					class="col-12 border rounded px-4 fs-3" value="${edit_unit_price }"
+					required>
 			</div>
-			<c:if test="${saleNumError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">個数が長すぎます。</div>
-				</div>
-			</c:if>
-			<c:if test="${saleNumFomartError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">個数を正しく入力してください。</div>
-				</div>
-			</c:if>
+		</c:if>
+	</div>
+	<c:if test="${unitPriceError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">単価が長すぎます。</div>
 		</div>
+	</c:if>
+	<c:if test="${unitPriceFomartError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">単価を正しく入力してください。</div>
+		</div>
+	</c:if>
+</div>
 
-		<div class="row col-12 my-4">
-			<div class="col-3  text-dark  text-end fs-3">備考</div>
-			<div class="col-7 offset-1 form-floating is-invalid">
-				<c:if test="${getSession==0 }">
-					<textarea name="note" rows="4"
-						class="col-12 border rounded px-4 fs-3"><c:out
-							value="${sale.getNote() }"></c:out></textarea>
-				</c:if>
-				<c:if test="${getSession==1 }">
-					<textarea name="note" rows="4"
-						class="col-12 border rounded px-4 fs-3"><c:out
-							value="${edit_sale_note }"></c:out></textarea>
-				</c:if>
+<div class="row col-12 my-4">
+	<div class="col-3 text-end fs-3">個数</div>
+	<div class="col-1">
+		<div
+			class="col-12 border rounded-pill text-white bg-secondary text-center fs-4">必須</div>
+	</div>
+	<div class="col-4 form-floating is-invalid">
+		<c:if test="${getSession==0 }">
+			<div class="col-7">
+				<input type="text" name="product_num"
+					class="col-12 border rounded px-4 fs-3"
+					value="${sale.getSale_number() }" required>
 			</div>
-			<c:if test="${noteError == false}">
-				<div class="invalid-feedback" role="alert">
-					<div class="offset-4 fs-3 fw-bold">備考は400字以内で入力してください。</div>
-				</div>
-			</c:if>
+		</c:if>
+		<c:if test="${getSession==1 }">
+			<div class="col-7">
+				<input type="text" name="product_num"
+					class="col-12 border rounded px-4 fs-3" value="${edit_sale_num }"
+					required>
+			</div>
+		</c:if>
+	</div>
+	<c:if test="${saleNumError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">個数が長すぎます。</div>
 		</div>
+	</c:if>
+	<c:if test="${saleNumFomartError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">個数を正しく入力してください。</div>
+		</div>
+	</c:if>
+</div>
 
-		<div class="col-4 offset-5">
-			<button type="submit" class="col-4 btn btn-primary border rounded">✔
-				登 録</button>
-			<a href="S0022?id=${sale_num }" type="button"
-				class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+<div class="row col-12 my-4">
+	<div class="col-3  text-dark  text-end fs-3">備考</div>
+	<div class="col-7 offset-1 form-floating is-invalid">
+		<c:if test="${getSession==0 }">
+			<textarea name="note" rows="4"
+				class="col-12 border rounded px-4 fs-3"><c:out
+					value="${sale.getNote() }"></c:out></textarea>
+		</c:if>
+		<c:if test="${getSession==1 }">
+			<textarea name="note" rows="4"
+				class="col-12 border rounded px-4 fs-3"><c:out
+					value="${edit_sale_note }"></c:out></textarea>
+		</c:if>
+	</div>
+	<c:if test="${noteError == false}">
+		<div class="invalid-feedback" role="alert">
+			<div class="offset-4 fs-3 fw-bold">備考は400字以内で入力してください。</div>
 		</div>
-	</form>
+	</c:if>
+</div>
+
+<div class="col-4 offset-5">
+	<button type="submit" class="col-4 btn btn-primary border rounded">✔
+		登 録</button>
+	<a href="S0022?id=${sale_num }" type="button"
+		class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+</div>
+</form>
 </div>
 </body>
 </html>

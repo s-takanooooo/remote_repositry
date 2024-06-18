@@ -32,6 +32,7 @@ public class SalesEditSession extends HttpServlet {
 		// TODO Auto-generated method stub
 		SalesServices ss = new SalesServices();
 		int num =1;
+	
 		request.setAttribute("category", ss.getCatgoryName());
 		request.setAttribute("staff", ss.getStaffName());
 		request.setAttribute("getSession", num);
