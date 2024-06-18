@@ -18,7 +18,7 @@
 
 <div class="d-flex flex-row mt-4">
 	<!-- アクションの指定 -->
-	<form class="col-12" method="post" action="#">
+	<form class="col-12" method="post" action="S0010">
 
 		<div class="row col-12 my-4">
 			<div class="col-3 text-end fs-3">販売日</div>

@@ -13,7 +13,7 @@ import services.SalesServices;
 /**
  * Servlet implementation class SalesRegisterConfirmServlet
  */
-@WebServlet("/SalesRegisterConfirmServlet")
+@WebServlet("/S0011")
 public class SalesRegisterConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -54,7 +54,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		SalesServices si = new SalesServices();
 		System.out.println(si.getAccountId(responsible));
 		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
-		response.sendRedirect("SalesRegister");
+		response.sendRedirect("S0010");
 	}
 
 }

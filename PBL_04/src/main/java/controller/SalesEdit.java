@@ -56,8 +56,8 @@ public class SalesEdit extends HttpServlet {
 		String trade_name = request.getParameter("product_name");
 		String unit_price = request.getParameter("price");
 		String sale_num = request.getParameter("product_num");
-		String sale_note = request.getParameter("mail");
-		String sale_id = request.getParameter("mail");
+		String sale_note = request.getParameter("note");
+		String sale_id = request.getParameter("id");
 
 		//バリデーション
 		boolean f = true;
