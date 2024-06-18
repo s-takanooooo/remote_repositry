@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.ChartServices;
+import services.ChartServices.ChartData;
+
 /**
  * Servlet implementation class Dashboard
  */
@@ -28,6 +31,11 @@ public class Dashboard extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		ChartServices cs = new ChartServices();
+		ChartData chartData = cs.ChartData();
+		 // JSON文字列をリクエスト属性に設定
+        request.setAttribute("categories", chartData.getCategories().toString());
+        request.setAttribute("values", chartData.getValues().toString());
 		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
 	}
 
