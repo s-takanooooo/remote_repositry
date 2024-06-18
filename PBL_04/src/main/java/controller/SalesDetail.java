@@ -15,7 +15,7 @@ import beans.SearchResultBean;
 /**
  * Servlet implementation class SalesDetail
  */
-@WebServlet("/SalesDetail")
+@WebServlet("/S0022")
 public class SalesDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

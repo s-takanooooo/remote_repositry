@@ -36,7 +36,7 @@
 				<c:forEach var="item" items="${sales }" varStatus="status"> 
 				<tbody>
 					<tr>
-						<td><a class="btn btn-primary" role="button" href="SalesDetail?id=${status.index}" >✓詳細</a></td>
+						<td><a class="btn btn-primary" role="button" href="S0022?id=${status.index}" >✓詳細</a></td>
 						<td><c:out value="${item.getSale_id() }" /></td>
 						<td><c:out value="${item.getSale_date() }" /></td>
 						<td><c:out value="${item.getName() }" /></td>
