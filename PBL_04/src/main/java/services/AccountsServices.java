@@ -196,7 +196,8 @@ public class AccountsServices {
 		
 	}
 	
-	public void updateAccount(String name, String mail, String password, int authority, int accountId) {
+	public boolean updateAccount(String name, String mail, String password, int authority, int accountId) {
+		boolean f = false;
 		
 		String sql = "UPDATE accounts SET name = ?, mail = ?, password = ?, authority = ? WHERE account_id = ?";
 		
@@ -214,7 +215,10 @@ public class AccountsServices {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			return f;
 		}
+		f = true;
+		return f;
 	}
 	public void deleteAccount(int accountId) {
 		

@@ -46,9 +46,14 @@ public class AccountEditConfirm extends HttpServlet {
 		int permission = Integer.parseInt(request.getParameter("permission"));
 		int accountId = Integer.parseInt(request.getParameter("accountId"));
 		
-		as.updateAccount(name, mail, pass, permission, accountId);
-		
-		response.sendRedirect("AccountSearchSession");
+		boolean f = as.updateAccount(name, mail, pass, permission, accountId);
+		if(f == false) {
+			boolean already = false;
+			request.setAttribute("already", already);
+			request.getRequestDispatcher("accountEditConfirm.jsp").forward(request, response);
+		}else{
+			response.sendRedirect("AccountSearchSession");
+		}
 	}
 
 }
