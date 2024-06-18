@@ -110,7 +110,7 @@
 
 				</tr>
 				<tr>
-					<a href="SalesRegister"
+					<a href="S0010"
 						class="col-3 btn btn-light border rounded">キャンセル</a>
 				</tr>
 			</table>
