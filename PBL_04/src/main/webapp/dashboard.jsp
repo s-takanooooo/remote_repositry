@@ -87,8 +87,10 @@
                     </div>
                 </c:if>
             </div>
-            <h1>Donut Chart Example</h1>
-    <div id="chart" style="width: 900px; height: 500px;"></div>
+            <div class="d-flex flex-row">
+            	<div class="col-3 offset-1 ps-4 fs-2 text-center">カテゴリ集計</div>
+            </div>
+    <div id="chart"></div>
 
     <!-- サーブレットからのデータをJavaScriptに渡すためのhidden要素 -->
     <input type="hidden" id="categories" value='<%= request.getAttribute("categories") %>' />
