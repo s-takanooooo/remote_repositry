@@ -33,20 +33,18 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-3 text-end fs-3">担当</div>
 			<div class="col-8 offset-1">
-				<select name="staff"
+				<input type="text" name="staff" value="${sale.getName() }"
 					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					<option selected value="${sale.getName() }">${sale.getName() }</option>
-				</select>
+					
 			</div>
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-3 text-end fs-3">商品カテゴリー</div>
 			<div class="col-8 offset-1">
-				<select name="staff"
+				<input type="text" name="staff" value="${sale.getCategory_name() }"
 					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					<option selected value="${sale.getCategory_name() }">${sale.getCategory_name() }</option>
-				</select>
+					
 			</div>
 		</div>
 

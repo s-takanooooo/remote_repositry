@@ -39,10 +39,10 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7 is-invalid">
-				<select name="staff"
+				<input  value="${edit_name}" type="text" name="staff"
 					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					<option selected value="${edit_name}">${edit_name}</option>
-				</select>
+					
+
 			</div>
 		</div>
 
@@ -53,10 +53,9 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-7">
-				<select name="category"
+				<input name="category" value="${edit_sale_category}"
 					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					<option selected value="${edit_sale_category}">${edit_sale_category}</option>
-				</select>
+					
 			</div>
 		</div>
 
