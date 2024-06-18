@@ -12,7 +12,6 @@
 
 <jsp:include page="header.jsp" />
 <!-- 本体 -->
-
 <div class="col-8 offset-2">
 	<div class="fs-1 fw-bold">売上登録</div>
 </div>
@@ -51,8 +50,8 @@
 				</select>
 			</div>
 			<c:if test="${staffError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>担当者が未選択です。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">担当者が未選択です。</div>
 				</div>
 			</c:if>
 		</div>
@@ -73,8 +72,8 @@
 				</select>
 			</div>
 			<c:if test="${categoryNameError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>商品カテゴリーが未選択です。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">商品カテゴリーが未選択です。</div>
 				</div>
 			</c:if>
 		</div>
@@ -90,8 +89,8 @@
 					class="col-12 border rounded px-4 fs-3" placeholder="商品名" required>
 			</div>
 			<c:if test="${tradeNameError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>商品名は100字以内で入力してください。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">商品名は100字以内で入力してください。</div>
 				</div>
 			</c:if>
 		</div>
@@ -107,13 +106,13 @@
 					class="col-12 border rounded px-4 fs-3" placeholder="単価" required>
 			</div>
 			<c:if test="${unitPriceError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>単価が長すぎます。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">単価が長すぎます。</div>
 				</div>
 			</c:if>
 			<c:if test="${unitPriceFomartError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>単価を正しく入力してください。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">単価を正しく入力してください。</div>
 				</div>
 			</c:if>
 		</div>
@@ -129,13 +128,13 @@
 					class="col-12 border rounded px-4 fs-3" placeholder="個数" required>
 			</div>
 			<c:if test="${saleNumError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>個数が長すぎます。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">個数が長すぎます。</div>
 				</div>
 			</c:if>
 			<c:if test="${saleNumFomartError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>個数を正しく入力してください。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">個数を正しく入力してください。</div>
 				</div>
 			</c:if>
 		</div>
@@ -148,8 +147,8 @@
 					class="col-12 border rounded px-4 fs-3" placeholder="備考"></textarea>
 			</div>
 			<c:if test="${noteError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>備考は400字以内で入力してください。</div>
+				<div class="invalid-feedback text-center" role="alert">
+					<div class="fs-3 fw-bold">備考は400字以内で入力してください。</div>
 				</div>
 			</c:if>
 		</div>
