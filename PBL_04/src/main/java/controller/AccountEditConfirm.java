@@ -14,7 +14,7 @@ import services.AccountsServices;
 /**
  * Servlet implementation class AccountEditConfirm
  */
-@WebServlet("/AccountEditConfirm")
+@WebServlet("/S0043")
 public class AccountEditConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     AccountsServices as = new AccountsServices();

@@ -17,7 +17,7 @@
 </div>
 
 <div class="d-flex flex-row mt-4">
-	<form class="col-12" method="post" action="AccountEditConfirm">
+	<form class="col-12" method="post" action="S0043">
 		<input type="hidden" value="${editAccountIdSession}" name="accountId">
 
 		<div class="row col-12 my-4">
