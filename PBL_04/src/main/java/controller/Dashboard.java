@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Dashboard
  */
-@WebServlet("/Dashboard")
+@WebServlet("/C0020.html")
 public class Dashboard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
