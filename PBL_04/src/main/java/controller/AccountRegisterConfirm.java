@@ -13,7 +13,7 @@ import services.AccountsServices;
 /**
  * Servlet implementation class AccountRegisterConfirm
  */
-@WebServlet("/AccountRegisterConfirm")
+@WebServlet("/S0031")
 public class AccountRegisterConfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	AccountsServices as = new AccountsServices();

@@ -35,8 +35,8 @@
 					class="col-12 border rounded px-4 fs-3" placeholder="氏名">
 			</div>
 			<c:if test="${accountNameError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div>名前は20字以内で入力してください</div>
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">名前は20字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -51,8 +51,8 @@
 						class="col-12 border rounded px-4 fs-3 text" placeholder="メールアドレス">
 				</div>
 				<c:if test="${accountMailError == false}">
-					<div class="invalid-feedback col-4 offset-4" role="alert">
-						<div>メールアドレスは100字以内で入力してください</div>
+					<div class="invalid-feedback" role="alert">
+						<div class="fw-bold fs-3 offset-4">メールアドレスは100字以内で入力してください</div>
 					</div>
 				</c:if>
 			</div>

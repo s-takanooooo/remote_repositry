@@ -50,8 +50,8 @@
 				</c:if>
 			</div>
 			<c:if test="${accountNameError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div class="fw-bold fs-3">名前は20字以内で入力してください</div>
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">名前は20字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -76,8 +76,8 @@
 
 			</div>
 			<c:if test="${accountMailError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div class="fw-bold fs-3">メールアドレスは100字以内で入力してください</div>
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">メールアドレスは100字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -101,8 +101,8 @@
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div class="fw-bold fs-3">パスワードは30字以内で入力してください</div>
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>
@@ -126,8 +126,8 @@
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
-				<div class="invalid-feedback col-4 offset-4" role="alert">
-					<div class="fw-bold fs-3">パスワードは30字以内で入力してください</div>
+				<div class="invalid-feedback" role="alert">
+					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
 				</div>
 			</c:if>
 		</div>

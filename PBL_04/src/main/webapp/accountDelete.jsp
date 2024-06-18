@@ -21,7 +21,6 @@
 		<input type="hidden" value="${deleteAccountId}" name="deleteAccountId"> 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">氏名</div>
-				<div class="col-1"></div>
 				<div class="col-7">
 					<input type="text" class="col-12 border rounded px-4 fs-3" name="deleteName"
 						value="${deleteName}" readonly>
@@ -30,7 +29,6 @@
 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">メールアドレス</div>
-				<div class="col-1"></div>
 				<div class="col-7">
 					<input type="text" class="col-12 border rounded px-4 fs-3" name="deleteMail"
 						value="${deleteMail}" readonly>
@@ -39,7 +37,6 @@
 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">パスワード</div>
-				<div class="col-1"></div>
 				<div class="col-7">
 					<input type="text" class="col-12 border rounded px-4 fs-3" name="deletePass"
 						value="${deletePass}" readonly>
@@ -47,7 +44,6 @@
 			</div>
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">パスワード（確認）</div>
-				<div class="col-1"></div>
 				<div class="col-7">
 					<input type="text" class="col-12 border rounded px-4 fs-3" name="deletePassConfirm"
 						value="${deletePass}" readonly>
@@ -56,7 +52,6 @@
 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">権限</div>
-				<div class="col-1"></div>
 				<!-- permissionがnothingの場合 -->
 				<jsp:include page="authorityButton.jsp"></jsp:include>
 			</div>
