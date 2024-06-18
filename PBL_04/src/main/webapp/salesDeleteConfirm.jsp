@@ -94,7 +94,7 @@
 				✔ O K
 				</Kbd>
 			</button>
-			<a href="S0022?id=${sessionScope.sale_num }"
+			<a href="S0022?id=${sale_num }"
 				class="col-4 btn btn-white text-dark border rounded ml-4">
 				キャンセル</a>
 		</div>
