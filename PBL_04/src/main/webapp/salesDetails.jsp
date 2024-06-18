@@ -59,7 +59,7 @@
             <div class="text align-self-start">
                 <a href="SalesEdit?id=${sale.getSale_id()}" class="btn btn-primary  me-3" role="button">✓編集</a>
                 <a href="SalesDelete?id=${sale_num }" class="btn btn-danger  me-3" role="button">×削除</a>
-                <a class="btn btn-light" href="SalesSearchAll">キャンセル</a>
+                <a class="btn btn-light" href="S0021">キャンセル</a>
             </div>
         </div>
     </div>

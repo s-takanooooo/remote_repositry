@@ -55,7 +55,7 @@ public class SalesEditConfirm extends HttpServlet {
 
 		SalesServices si = new SalesServices();
 		si.salesEdit(day, name, sale_category, trade_name, unit_price, sale_num, sale_note, sale_id);
-		response.sendRedirect("SalesSearchAll");
+		response.sendRedirect("S0021");
 
 	}
 
