@@ -80,12 +80,6 @@
                         <div class="text-center fw-bold fs-3">アカウントの削除が完了しました</div>
                     </div>
                 </c:if>
-                <c:if test="${accountRegisterComplete == 'completed'}">
-                    <div class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
-                        role="alert">
-                        <div class="text-center fw-bold fs-3">アカウント登録がが完了しました</div>
-                    </div>
-                </c:if>
             </div>
             <div class="d-flex flex-row">
             	<div class="col-3 offset-1 ps-4 fs-2 text-center">カテゴリ集計</div>
