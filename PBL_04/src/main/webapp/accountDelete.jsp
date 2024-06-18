@@ -17,7 +17,7 @@
 		</div>
 	
 	<div class="d-flex flex-row mt-4">
-		<form class="col-12" method="post" action="AccountDelete">
+		<form class="col-12" method="post" action="S0044">
 		<input type="hidden" value="${deleteAccountId}" name="deleteAccountId"> 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">氏名</div>

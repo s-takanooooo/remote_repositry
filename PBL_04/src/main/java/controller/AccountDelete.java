@@ -14,7 +14,7 @@ import services.AccountsServices;
 /**
  * Servlet implementation class AccountDelete
  */
-@WebServlet("/AccountDelete")
+@WebServlet("/S0044")
 public class AccountDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        AccountsServices as = new AccountsServices();
