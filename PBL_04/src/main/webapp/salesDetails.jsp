@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-start mx-4 mt-4">
             <h1 class="fw-bold">売上詳細表示</h1>
         </div>
-        <div class="row mt-2">
+        <div class="mt-2">
             <div class="d-flex justify-content-start ps-5 ms-5">
                 <div class="d-flex justify-content-center ps-5 ms-5">
                     <table class="table table-borderless">
