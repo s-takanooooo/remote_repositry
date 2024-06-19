@@ -15,13 +15,13 @@ import services.SalesServices;
  * Servlet implementation class SalesSearchAll
  */
 @WebServlet("/S0021")
-public class SalesSearchAll extends HttpServlet {
+public class SalesSearchResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SalesSearchAll() {
+	public SalesSearchResult() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -54,7 +54,7 @@ public class SalesSearchAll extends HttpServlet {
 		}
 		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
 
-		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class SalesSearchAll extends HttpServlet {
 		session.setAttribute("trade_name", trade_name);
 		session.setAttribute("sale_note", sale_note);
 		session.setAttribute("sales", si.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
-		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 	}
 
 }
