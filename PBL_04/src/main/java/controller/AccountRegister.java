@@ -44,11 +44,15 @@ public class AccountRegister extends HttpServlet {
 			 // JSON文字列をリクエスト属性に設定
 	        request.setAttribute("categories", chartData.getCategories().toString());
 	        request.setAttribute("values", chartData.getValues().toString());
+	        String current = "active1";
+	        request.setAttribute("current", current);
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}
 		int num = 0;
 		
 		request.setAttribute("getSession", num);
+		String current = "active4";
+		request.setAttribute("current", current);
 		request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 	}
 
@@ -112,6 +116,8 @@ public class AccountRegister extends HttpServlet {
 			session.setAttribute("registerPass", pass);
 			session.setAttribute("registerPassConfirm", passConfirm);
 			session.setAttribute("registerPermission", permission);
+			String current = "active4";
+			request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
 		}
 	}
