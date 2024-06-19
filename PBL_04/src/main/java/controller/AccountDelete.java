@@ -78,7 +78,7 @@ public class AccountDelete extends HttpServlet {
         request.setAttribute("categories", chartData.getCategories().toString());
         request.setAttribute("values", chartData.getValues().toString());
 		request.setAttribute("accountDeleteComplete", accountDeleteComplete);
-		 String current = "active";
+		 String current = "active1";
 	     request.setAttribute("current", current);
 		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 		}

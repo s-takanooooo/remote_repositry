@@ -24,13 +24,13 @@
 				<ul class="navbar-nav">
 					<li class="nav-item mx-3"><a class="nav-link fs-5"
 						href="C0020">ダッシュボード</a></li>
-					<li class="nav-item mx-3"><a class="nav-link fs-5"
+					<li class="nav-item mx-3"><a class="nav-link fs-5  ${current == 'active' ? 'current' : ''}"
 						href="S0010">売上登録</a></li>
-					<li class="nav-item mx-3"><a class="nav-link fs-5"
+					<li class="nav-item mx-3"><a class="nav-link fs-5  ${current == 'active' ? 'current' : ''}"
 						href="S0020">売上検索</a></li>
-					<li class="nav-item mx-3"><a class="nav-link fs-5"
+					<li class="nav-item mx-3"><a class="nav-link fs-5  ${current == 'active' ? 'current' : ''}"
 						href="S0030">アカウント登録</a></li>
-					<li class="nav-item mx-3"><a class="nav-link fs-5"
+					<li class="nav-item mx-3"><a class="nav-link fs-5  ${current == 'active' ? 'current' : ''}"
 						href="S0040">アカウント検索</a></li>
 				</ul>
 				<div class="nav-item ms-auto me-4">
