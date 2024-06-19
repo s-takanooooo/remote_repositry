@@ -7,21 +7,21 @@ $(document).ready(function(){
     var options = {
         series: values,
         chart: {
-            type: 'donut',
-            width: '80%', // グラフの幅
-        	height: '250px',//グラフの高さ
+            type: 'pie',
+            width: '100%', // グラフの幅
+        	height: '500px',//グラフの高さ
         },
         labels: categories,
         legend: {
-			offsetX: 200,
+			offsetX: 500,
             position: 'right',
              // legendの位置を指定（'top', 'bottom', 'left', 'right'から選択）
         },
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 1500,
             options: {
                 chart: {
-                    width: 200
+                    width: '100%',
                 },
                 legend: {
                     position: 'bottom'
