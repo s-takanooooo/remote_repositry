@@ -38,6 +38,8 @@ public class Dashboard extends HttpServlet {
         request.setAttribute("values", chartData.getValues().toString());
         request.setAttribute("currentLink", request.getRequestURI().toString());
         System.out.println(request.getRequestURI().toString());
+        String current = "active";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
 	}
 

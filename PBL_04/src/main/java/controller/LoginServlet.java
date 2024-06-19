@@ -62,6 +62,8 @@ public class LoginServlet extends HttpServlet {
 			 // JSON文字列をリクエスト属性に設定
 	        request.setAttribute("categories", chartData.getCategories().toString());
 	        request.setAttribute("values", chartData.getValues().toString());
+	        String current = "active";
+	        request.setAttribute("current", current);
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}else {
 			request.setAttribute("login", false);

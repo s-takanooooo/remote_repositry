@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <c:set var="currentLink" value="${currentLink}"/>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +30,7 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-3 py-3 px-2 ${currentLink == '/PBL_04/C0020' ? 'current' : ''} ${currentLink == '/PBL_04/C0010' ? 'current' : ''} ">
+                    <li class="nav-item mx-3 py-3 px-2 ${current == 'active' ? 'current' : ''}  ">
                         <a class="nav-link fs-5" href="C0020">ダッシュボード</a>
                     </li>
                     <li class="nav-item mx-3 py-3 px-2">
