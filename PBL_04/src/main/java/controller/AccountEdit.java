@@ -67,45 +67,68 @@ public class AccountEdit extends HttpServlet {
 		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		String accountId = request.getParameter("accountId");
 		
+		AccountsBean ab = as.selectById(accountId);
+		
+		HttpSession session = request.getSession();
+		
 		boolean f = true;
+		
 		if(name == "") {
 			f = false;
 			request.setAttribute("fillAccountName", f);
+		}else {
+			session.setAttribute("editNameSession", name);			
 		}
 		if(mail == "") {
 			f = false;
 			request.setAttribute("fillAccountMail", f);
+		}else {			
+			session.setAttribute("editMailSession", mail);
 		}
 		if(pass == "") {
 			f = false;
 			request.setAttribute("fillAcountPass", f);
+		}else {			
+			session.setAttribute("editPassSession", pass);
 		}
 		if(passConfirm == "") {
 			f = false;
 			request.setAttribute("fillAccountPassConfirm", f);
+		}else {			
+			session.setAttribute("editPassConfirmSession", passConfirm);
 		}
+		
 		if(as.checkAccountName(name) == false) {
 			f = false;
 			request.setAttribute("accountNameError", f);
+			session.setAttribute("editNameSession", ab.getName());			
 		}
 		if(as.checkAccountMail(mail) == false) {
 			f = false;
 			request.setAttribute("accountMailError", f);
+			session.setAttribute("editMailSession", ab.getMail());
 		}
 		if(as.checkAccountPass(pass) == false) {
 			f = false;
 			request.setAttribute("accountPassError", f);	
+			session.setAttribute("editPassSession", ab.getPassword());
 		}
 		if(!passConfirm.equals(pass)) {
 			f = false;
 			request.setAttribute("same", f);
 		}
 		if(f == false) {
-			doGet(request,response);
-		}else{
-			HttpSession session = request.getSession();
 			session.setAttribute("editAccountIdSession", accountId);
-			session.setAttribute("editNameSession", name);
+			int getSession = 1;
+			
+			request.setAttribute("getSession", getSession);
+			 String current = "active5";
+		     request.setAttribute("current", current);
+			this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
+			
+		}else{
+			session.setAttribute("editAccountIdSession", accountId);
+			session.setAttribute("editNameSession", name);			
 			session.setAttribute("editMailSession", mail);
 			session.setAttribute("editPassSession", pass);
 			session.setAttribute("editPassConfirmSession", passConfirm);
