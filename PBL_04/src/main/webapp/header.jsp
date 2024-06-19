@@ -7,17 +7,9 @@
 <link rel="stylesheet" href="css/current.css" type="text/css">   
 </head>
 <body>
-	<script>
-		const links = jQuery(".navbar-nav > a");
-		links.each(function() {
-			if (this.href === location.href) {
-				jQuery(this).closest(".nav-link").addClass("current");
-			}
-		});
-	</script>
 	 <nav class="navbar navbar-expand-sm bg-body-tertiary p-0">
         <div class="container-fluid p-0">
-            <a class="navbar-brand fs-3 p-2" href="#">物品売り上げ管理システム</a>
+            <a class="navbar-brand fs-3 p-2" href="#">物品売上管理システム</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
@@ -45,7 +37,6 @@
             </div>
         </div>
     </nav>
-	<div></div>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
