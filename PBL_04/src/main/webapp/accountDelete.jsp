@@ -32,7 +32,7 @@
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">氏名</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="deleteName"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary" name="deleteName"
 						value="${deleteName}" readonly>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">メールアドレス</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="deleteMail"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary" name="deleteMail"
 						value="${deleteMail}" readonly>
 				</div>
 			</div>
@@ -48,14 +48,14 @@
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">パスワード</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="deletePass"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary" name="deletePass"
 						value="${deletePass}" readonly>
 				</div>
 			</div>
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">パスワード（確認）</div>
 				<div class="col-7">
-					<input type="text" class="col-12 border rounded px-4 fs-3" name="deletePassConfirm"
+					<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary" name="deletePassConfirm"
 						value="${deletePass}" readonly>
 				</div>
 			</div>
@@ -65,10 +65,10 @@
 				<!-- permissionがnothingの場合 -->
 				<jsp:include page="authorityButton.jsp"></jsp:include>
 			</div>
-			<div class="col-4 offset-4">
-				<button type="submit" class="col-5 btn btn-danger border rounded">✖
-					O K</button>
-				<a href="AccountSearchSession" class="btn btn-secondary col-5">キャンセル</a>
+			<div class="col-8 offset-4">
+				<button type="submit" class="col-3 btn btn-danger border rounded">✖
+					削　除</button>
+				<a href="AccountSearchSession" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 			</div>
 		</form>
 	</div>
