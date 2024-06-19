@@ -7,7 +7,6 @@
 <meta charset="utf-8">
 <title>アカウント検索条件入力</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<script src="js/checkbox.js"></script>
 </head>
 
 <jsp:include page="header.jsp" />
@@ -89,5 +88,6 @@
 	</form>
 </div>
 <div></div>
+<script src="js/checkbox.js"></script>
 </body>
 </html>
