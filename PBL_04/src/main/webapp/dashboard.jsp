@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-body-tertiary p-0">
         <div class="container-fluid p-0">
-            <a class="navbar-brand fs-3 p-2" href="#">物品売上管理システム</a>
+            <div class="navbar-brand fs-3 p-2">物品売上管理システム</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
