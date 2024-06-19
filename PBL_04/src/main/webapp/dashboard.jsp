@@ -31,7 +31,7 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-3 py-3 px-2 ${currentLink == '/PBL_04/C0020' ? 'current' : ''} ">
+                    <li class="nav-item mx-3 py-3 px-2 ${currentLink == '/PBL_04/C0020' ? 'current' : ''} ${currentLink == '/PBL_04/C0010' ? 'current' : ''} ">
                         <a class="nav-link fs-5" href="C0020">ダッシュボード</a>
                     </li>
                     <li class="nav-item mx-3 py-3 px-2">
@@ -60,19 +60,19 @@
                 <c:if test="${accountAuthError == false}">
                     <div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
                         role="alert">
-                        <div class="text-center fw-bold fs-3">このアカウントにはアカウント登録を行う権限がありません</div>
+                        <div class="fw-bold">このアカウントにはアカウント登録を行う権限がありません</div>
                     </div>
                 </c:if>
                 <c:if test="${salesAuthError == false}">
                     <div class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
                         role="alert">
-                        <div class="text-center fw-bold fs-3">このアカウントには売上登録を行う権限がありません</div>
+                        <div class="fw-bold">このアカウントには売上登録を行う権限がありません</div>
                     </div>
                 </c:if>
                 <c:if test="${accountDeleteComplete == 'completed'}">
                     <div class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
                         role="alert">
-                        <div class="text-center fw-bold fs-3">アカウントの削除が完了しました</div>
+                        <div class="fw-bold">アカウントの削除が完了しました</div>
                     </div>
                 </c:if>
             </div>
