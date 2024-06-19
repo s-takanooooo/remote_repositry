@@ -50,9 +50,6 @@ public class SalesEditConfirm extends HttpServlet {
 		String sale_num = request.getParameter("product_num");
 		String sale_note = request.getParameter("mail");
 		String sale_id = request.getParameter("id");
-		
-		System.out.println(sale_id);
-
 		SalesServices si = new SalesServices();
 		si.salesEdit(day, name, sale_category, trade_name, unit_price, sale_num, sale_note, sale_id);
 		response.sendRedirect("S0021");

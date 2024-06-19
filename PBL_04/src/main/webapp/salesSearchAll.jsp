@@ -15,11 +15,18 @@
 </head>
 
 <jsp:include page="header.jsp" />
-<c:if test="${saleDeleteComplete == 'completed'}">
+<c:if test="${deleteCompleted == 'SalesDelete'}">
 	<div
 		class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
 		role="alert">
 		<div class="text- fw-bold fs-5">売上の削除が完了しました</div>
+	</div>
+</c:if>
+<c:if test="${editCompleted == 'S0023'}">
+	<div
+		class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
+		role="alert">
+		<div class="text- fw-bold fs-5">売上の編集が完了しました</div>
 	</div>
 </c:if>
 <div class="col-8 offset-2" style="white-space: nowrap;">

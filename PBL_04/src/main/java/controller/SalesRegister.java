@@ -50,7 +50,6 @@ public class SalesRegister extends HttpServlet {
 		
 		// 登録を完了してこの画面に戻ってきたらコメントをだす
 		String registerCompleteFlag = (String)session.getAttribute("registerCompleteFlag");
-		System.out.println(registerCompleteFlag);
 		if(registerCompleteFlag!=null&&!registerCompleteFlag.isEmpty()) {
 			String registerComplete = "completed";
 			request.setAttribute("saleRegisterComplete", registerComplete);

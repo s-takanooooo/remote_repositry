@@ -32,6 +32,7 @@ public class SalesSearchAll extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		try {
 		SalesServices ss = new SalesServices();
 		HttpSession session = request.getSession();
 		String min_day = (String) session.getAttribute("min_day");
@@ -40,15 +41,24 @@ public class SalesSearchAll extends HttpServlet {
 		String sale_category = (String) session.getAttribute("sale_category");
 		String trade_name = (String) session.getAttribute("trade_name");
 		String sale_note = (String) session.getAttribute("sale_note");
-		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
-		boolean deleteFlag = (boolean)session.getAttribute("deleteFlag");
-		if(deleteFlag) {
-			String saleDeleteComplete = "completed";
-			request.setAttribute("saleDeleteComplete", saleDeleteComplete);
-			session.removeAttribute("deleteFlag"); // 使用後にセッション属性をクリアする
+		String headerName = request.getHeader("REFERER");
+		String notCompleted = request.getParameter("notCompleted");
+		if(headerName != null && notCompleted==null) {
+			System.out.println();
+			if(headerName.contains("SalesDelete")) {
+				request.setAttribute("deleteCompleted", headerName.substring(29,40));
+			}
+			else {
+				request.setAttribute("editCompleted", headerName.substring(29,34));
+			}
 		}
+		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
 
 		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 	/**
