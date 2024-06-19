@@ -52,9 +52,11 @@ public class AccountRegisterConfirm extends HttpServlet {
 		}else {
 			as.registerAccount(name, mail, pass, permission);
 			
-//			String accountRegisterComplete = "completed";
-//			request.setAttribute("accountRegisterComplete", accountRegisterComplete);
-			response.sendRedirect("S0030");
+			String accountRegisterComplete = "completed";
+			int getSession = 0;
+			request.setAttribute("getSession", getSession);
+			request.setAttribute("accountRegisterComplete", accountRegisterComplete);
+			request.getRequestDispatcher("accountRegister.jsp").forward(request, response);			
 		}
 		
 	}
