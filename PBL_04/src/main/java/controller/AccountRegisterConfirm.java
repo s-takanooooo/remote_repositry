@@ -48,6 +48,8 @@ public class AccountRegisterConfirm extends HttpServlet {
 		if(as.validateByMail(mail) == false) {
 			boolean already = false;
 			request.setAttribute("already", already);
+			String current = "active4";
+			request.setAttribute("current", current);
 			request.getRequestDispatcher("accountRegisterConfirm.jsp").forward(request, response);
 		}else {
 			as.registerAccount(name, mail, pass, permission);
@@ -56,6 +58,8 @@ public class AccountRegisterConfirm extends HttpServlet {
 			int getSession = 0;
 			request.setAttribute("getSession", getSession);
 			request.setAttribute("accountRegisterComplete", accountRegisterComplete);
+			String current = "active4";
+			request.setAttribute("current", current);
 			request.getRequestDispatcher("accountRegister.jsp").forward(request, response);			
 		}
 		

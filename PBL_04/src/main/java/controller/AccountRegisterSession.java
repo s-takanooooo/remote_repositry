@@ -43,7 +43,8 @@ public class AccountRegisterSession extends HttpServlet {
 		request.setAttribute("registerPassConfirm", passConfirm);
 		request.setAttribute("registerPermission", permission);
 		
-		
+		String current = "active4";
+		request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 	}
 
