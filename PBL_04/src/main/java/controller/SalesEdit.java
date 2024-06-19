@@ -54,8 +54,9 @@ public class SalesEdit extends HttpServlet {
 		String name = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("product_name");
-		String unit_price = request.getParameter("price");
-		String sale_num = request.getParameter("product_num");
+		String unit_price = SalesServices.convertString(request.getParameter("price"));
+		String sale_num = SalesServices.convertString(request.getParameter("product_num"));
+		
 		String sale_note = request.getParameter("note");
 		String sale_id = request.getParameter("id");
 

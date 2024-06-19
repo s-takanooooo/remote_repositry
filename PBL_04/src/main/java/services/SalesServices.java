@@ -294,4 +294,26 @@ public class SalesServices {
 		}
 		return f;
 	}
+	
+	public static String convertString(String zenkaku) {
+        if (zenkaku == null) {
+            return null;
+        }
+
+        StringBuilder hankaku = new StringBuilder(zenkaku.length());
+        for (int i = 0; i < zenkaku.length(); i++) {
+            char c = zenkaku.charAt(i);
+
+            // 全角アルファベット・数字・記号を対応する半角に変換
+            if (c >= '！' && c <= '～') {
+                c = (char)(c - '！' + '!');
+            } else if (c == '　') {
+                c = ' '; // 全角スペースを半角スペースに変換
+            }
+            
+            hankaku.append(c);
+        }
+
+        return hankaku.toString();
+    }
 }
