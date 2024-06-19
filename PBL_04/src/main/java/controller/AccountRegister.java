@@ -70,47 +70,63 @@ public class AccountRegister extends HttpServlet {
 		String salesPermission = request.getParameter("salesPermission");
 		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
 		
+		HttpSession session = request.getSession();
 		
 		boolean f = true;
-		
 		
 		
 		if(name == "") {
 			f = false;
 			request.setAttribute("fillAccountName", f);
+		}else {
+			session.setAttribute("registerName", name);			
 		}
 		if(mail == "") {
 			f = false;
 			request.setAttribute("fillAccountMail", f);
+		}else {
+			session.setAttribute("registerMail", mail);			
 		}
 		if(pass == "") {
 			f = false;
 			request.setAttribute("fillAcountPass", f);
+		}else {
+			session.setAttribute("registerPass", pass);			
 		}
 		if(passConfirm == "") {
 			f = false;
 			request.setAttribute("fillAccountPassConfirm", f);
+		}else {
+			session.setAttribute("registerPassConfirm", passConfirm);
 		}
+		
 		if(as.checkAccountName(name) == false) {
 			f = false;
 			request.setAttribute("accountNameError", f);
+			session.setAttribute("registerName", "");	
 		}
 		if(as.checkAccountMail(mail) == false) {
 			f = false;
 			request.setAttribute("accountMailError", f);
+			session.setAttribute("registerMail", "");	
 		}
 		if(as.checkAccountPass(pass) == false) {
 			f = false;
-			request.setAttribute("accountPassError", f);	
+			request.setAttribute("accountPassError", f);
+			session.setAttribute("registerPass", "");
 		}
 		if(!passConfirm.equals(pass)) {
 			f = false;
 			request.setAttribute("same", f);
 		}
 		if(f == false) {
-			doGet(request,response);
+			int getSession = 1;
+			
+			request.setAttribute("getSession", getSession);
+			String current = "active4";
+			request.setAttribute("current", current);
+			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 		}else{
-			HttpSession session = request.getSession();
 			session.setAttribute("registerName", name);
 			session.setAttribute("registerMail", mail);
 			session.setAttribute("registerPass", pass);
