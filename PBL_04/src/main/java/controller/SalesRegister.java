@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import services.ChartServices;
+import services.ChartServices.ChartData;
 import services.SalesServices;
 
 /**
@@ -37,6 +39,11 @@ public class SalesRegister extends HttpServlet {
 		if(authority != 1 && authority != 11) {
 			boolean f = false;
 			request.setAttribute("salesAuthError", f);
+			ChartServices cs = new ChartServices();
+			ChartData chartData = cs.ChartData();
+			 // JSON文字列をリクエスト属性に設定
+	        request.setAttribute("categories", chartData.getCategories().toString());
+	        request.setAttribute("values", chartData.getValues().toString());
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}
 		
