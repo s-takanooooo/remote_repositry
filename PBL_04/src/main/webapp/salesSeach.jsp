@@ -8,7 +8,6 @@
 <meta charset="utf-8">
 <title>売上検索条件入力</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<script src="js/day.js"></script>
 </head>
 
 <jsp:include page="header.jsp" />
@@ -114,6 +113,7 @@
 	</div>
 	<div></div>
 </div>
+<script src="js/day.js"></script>
 </body>
 
 </html>

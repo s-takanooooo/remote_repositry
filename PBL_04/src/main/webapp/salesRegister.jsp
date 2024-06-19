@@ -9,7 +9,6 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 	type="text/css" />
-<script src="js/day.js"></script>
 <title>売上登録</title>
 </head>
 
@@ -169,5 +168,6 @@
 		</div>
 	</form>
 </div>
+<script src="js/day.js"></script>
 </body>
 </html>
