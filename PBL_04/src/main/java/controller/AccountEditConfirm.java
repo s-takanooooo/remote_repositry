@@ -52,7 +52,7 @@ public class AccountEditConfirm extends HttpServlet {
 			request.setAttribute("already", already);
 			request.getRequestDispatcher("accountEditConfirm.jsp").forward(request, response);
 		}else{
-			response.sendRedirect("AccountSearchSession");
+			response.sendRedirect("S0045");
 		}
 	}
 

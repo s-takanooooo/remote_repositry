@@ -14,7 +14,7 @@ import services.AccountsServices;
 /**
  * Servlet implementation class SearchSession
  */
-@WebServlet("/AccountSearchSession")
+@WebServlet("/S0046")
 public class AccountSearchSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	AccountsServices as = new AccountsServices();

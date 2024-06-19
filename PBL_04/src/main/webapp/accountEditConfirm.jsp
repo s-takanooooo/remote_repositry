@@ -124,7 +124,7 @@
 		<div class="col-8 offset-4">
 			<button type="submit" class="col-4 btn btn-primary border rounded">o
 				k</button>
-			<a href="AccountEditSession"
+			<a href="S0045"
 				class="col-4 btn btn-secondary">キャンセル</a>
 		</div>
 	</form>
