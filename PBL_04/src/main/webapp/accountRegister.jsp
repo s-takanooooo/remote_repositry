@@ -41,11 +41,11 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" name="name"
-						class="col-12 border rounded px-4 fs-3" placeholder="氏名">
+						class="col-12 border rounded px-4 fs-3" placeholder="氏名" required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" name="name"
-						class="col-12 border rounded px-4 fs-3" value="${registerName}">
+						class="col-12 border rounded px-4 fs-3" value="${registerName}" required>
 				</c:if>
 			</div>
 			<c:if test="${accountNameError == false}">
@@ -69,11 +69,11 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="email" name="mail"
-						class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス">
+						class="col-12 border rounded px-4 fs-3" placeholder="メールアドレス" required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="email" name="mail"
-						class="col-12 border rounded px-4 fs-3" value="${registerMail}">
+						class="col-12 border rounded px-4 fs-3" value="${registerMail}" required>
 				</c:if>
 
 			</div>
@@ -98,11 +98,11 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" name="pass"
-						class="col-12 border rounded px-4 fs-3" placeholder="パスワード">
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード" required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" name="pass"
-						class="col-12 border rounded px-4 fs-3" value="${registerPass}">
+						class="col-12 border rounded px-4 fs-3" value="${registerPass}" required>
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
@@ -126,12 +126,12 @@
 			<div class="col-7 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" name="passConfirm"
-						class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）">
+						class="col-12 border rounded px-4 fs-3" placeholder="パスワード（確認）" required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" name="passConfirm"
 						class="col-12 border rounded px-4 fs-3"
-						value="${registerPassConfirm}">
+						value="${registerPassConfirm}" required>
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">

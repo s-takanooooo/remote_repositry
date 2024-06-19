@@ -45,11 +45,11 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="name" value="${editName}"  >
+						name="name" value="${editName}"  required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="name" value="${editNameSession}"  >
+						name="name" value="${editNameSession}"  required>
 				</c:if>
 			</div>
 
@@ -74,11 +74,11 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="mail" value="${editMail}"  >
+						name="mail" value="${editMail}"  required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="text" class="col-12 border rounded px-4 fs-3"
-						name="mail" value="${editMailSession}"  >
+						name="mail" value="${editMailSession}"  required>
 				</c:if>
 			</div>
 			<c:if test="${accountMailError == false}">
@@ -102,11 +102,11 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="pass" value="${editPass}"  >
+						name="pass" value="${editPass}"  required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="pass" value="${editPassSession}"  >
+						name="pass" value="${editPassSession}"  required>
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
@@ -130,11 +130,11 @@
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="passConfirm" value="${editPass}"  >
+						name="passConfirm" value="${editPass}"  required>
 				</c:if>
 				<c:if test="${getSession == 1}">
 					<input type="password" class="col-12 border rounded px-4 fs-3"
-						name="passConfirm" value="${editPassSession}"  >
+						name="passConfirm" value="${editPassSession}"  required>
 				</c:if>
 			</div>
 			<c:if test="${accountPassError == false}">
