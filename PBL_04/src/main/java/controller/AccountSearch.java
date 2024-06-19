@@ -34,6 +34,8 @@ public class AccountSearch extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		//検索条件入力画面に遷移
+		 String current = "active5";
+	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountSearch.jsp").forward(request, response);
 	}
 
@@ -73,7 +75,8 @@ public class AccountSearch extends HttpServlet {
 		session.setAttribute("permission", permission);
 		
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
-		
+		 String current = "active5";
+	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
 		}
 	}

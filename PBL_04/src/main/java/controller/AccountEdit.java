@@ -46,7 +46,8 @@ public class AccountEdit extends HttpServlet {
 		int num = 0;
 		
 		request.setAttribute("getSession", num);
-		
+		 String current = "active5";
+	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
 	}
 
@@ -109,6 +110,8 @@ public class AccountEdit extends HttpServlet {
 			session.setAttribute("editPassSession", pass);
 			session.setAttribute("editPassConfirmSession", passConfirm);
 			session.setAttribute("editPermissionSession", permission);
+			 String current = "active5";
+		     request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/accountEditConfirm.jsp").forward(request, response);
 		}
 		

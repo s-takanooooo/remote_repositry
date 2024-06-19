@@ -43,6 +43,8 @@ public class AccountDelete extends HttpServlet {
 		request.setAttribute("deleteMail", ab.getMail());
 		request.setAttribute("deletePass", ab.getPassword());
 		request.setAttribute("permission", ab.getAuthority());
+		 String current = "active5";
+	     request.setAttribute("current", current);
 		
 		this.getServletContext().getRequestDispatcher("/accountDelete.jsp").forward(request, response);
 	}

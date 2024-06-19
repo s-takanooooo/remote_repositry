@@ -50,9 +50,11 @@ public class AccountEditConfirm extends HttpServlet {
 		if(f == false) {
 			boolean already = false;
 			request.setAttribute("already", already);
+			 String current = "active5";
+		     request.setAttribute("current", current);
 			request.getRequestDispatcher("accountEditConfirm.jsp").forward(request, response);
 		}else{
-			response.sendRedirect("S0045");
+			response.sendRedirect("S0046");
 		}
 	}
 

@@ -42,7 +42,8 @@ public class AccountEditSession extends HttpServlet {
 		request.setAttribute("editPassSession", pass);
 		request.setAttribute("editPassConfirmSession", passConfirm);
 		request.setAttribute("editPermissionSession", permission);
-		
+		 String current = "active5";
+	     request.setAttribute("current", current);
 		
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
 	}
