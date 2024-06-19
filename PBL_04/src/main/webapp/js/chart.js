@@ -12,6 +12,11 @@ $(document).ready(function(){
         	height: '250px',//グラフの高さ
         },
         labels: categories,
+        legend: {
+			offsetX: 200,
+            position: 'right',
+             // legendの位置を指定（'top', 'bottom', 'left', 'right'から選択）
+        },
         responsive: [{
             breakpoint: 480,
             options: {

@@ -20,7 +20,7 @@ public class ChartServices {
                 "JOIN categories c ON s.category_id = c.category_id " +
                 "WHERE c.active_flg = 1 " +
                 "GROUP BY c.category_name " +
-                "ORDER BY c.category_id ASC";
+                "ORDER BY total_sales DESC";
 		try (
 				Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);
