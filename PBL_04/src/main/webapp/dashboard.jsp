@@ -76,7 +76,7 @@
                 </c:if>
             </div>
             <div class="d-flex flex-row">
-            	<div class="col-3 offset-1 ps-4 fs-2 text-center">カテゴリ集計</div>
+            	<div class="col-4 offset-4 ps-4 fs-2 text-center">カテゴリ集計</div>
             </div>
     <div id="chart"></div>
 

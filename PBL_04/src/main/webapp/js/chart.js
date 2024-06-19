@@ -8,7 +8,7 @@ $(document).ready(function(){
         series: values,
         chart: {
             type: 'donut',
-            width: '50%', // グラフの幅
+            width: '80%', // グラフの幅
         	height: '250px',//グラフの高さ
         },
         labels: categories,
