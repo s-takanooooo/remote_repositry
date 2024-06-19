@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        type="text/css" />
 <title>アカウント削除</title>
 </head>
 
@@ -15,6 +18,13 @@
 		<div class="col-8 offset-2">
 			<div class="fs-2 fw-bold">アカウント詳細削除確認</div>
 		</div>
+		<c:if test="${deletable == false}">
+		<div
+			class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
+			role="alert">
+			<div class="text-center fw-bold fs-3">このアカウントは削除できません</div>
+		</div>
+	</c:if>
 	
 	<div class="d-flex flex-row mt-4">
 		<form class="col-12" method="post" action="S0044">

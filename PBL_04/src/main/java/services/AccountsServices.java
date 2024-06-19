@@ -220,21 +220,24 @@ public class AccountsServices {
 		f = true;
 		return f;
 	}
-	public void deleteAccount(int accountId) {
-		
+	public boolean deleteAccount(String accountId) {
+		boolean f = false;
 		String sql = "DELETE FROM accounts WHERE account_id = ?";
 		
 		try(
 				Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);){
 			
-			ps.setInt(1, accountId);			
+			ps.setString(1, accountId);			
 			
 			ps.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			return f;
 		}
+		f = true;
+		return f;
 	}
 	
 	public boolean checkAccountMail(String mail) {

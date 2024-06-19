@@ -58,9 +58,19 @@ public class AccountDelete extends HttpServlet {
 		String mail = request.getParameter("deleteMail");
 		String pass = request.getParameter("deletePass");
 		int permission = Integer.parseInt(request.getParameter("permission"));
-		int accountId = Integer.parseInt(request.getParameter("deleteAccountId"));
-		System.out.println(accountId);
-		as.deleteAccount(accountId);
+		String accountId = request.getParameter("deleteAccountId");
+		if(as.deleteAccount(accountId) == false) {
+			boolean deletable = false;
+			AccountsBean ab = as.selectById(accountId);
+			
+			request.setAttribute("deleteAccountId", ab.getAccount_id());
+			request.setAttribute("deleteName", ab.getName());
+			request.setAttribute("deleteMail", ab.getMail());
+			request.setAttribute("deletePass", ab.getPassword());
+			request.setAttribute("permission", ab.getAuthority());
+			request.setAttribute("deletable", deletable);
+			request.getRequestDispatcher("accountDelete.jsp").forward(request, response);
+		}else {
 		String accountDeleteComplete = "completed";
 		ChartServices cs = new ChartServices();
 		ChartData chartData = cs.ChartData();
@@ -69,7 +79,7 @@ public class AccountDelete extends HttpServlet {
         request.setAttribute("values", chartData.getValues().toString());
 		request.setAttribute("accountDeleteComplete", accountDeleteComplete);
 		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
-		
+		}
 	}
 
 }
