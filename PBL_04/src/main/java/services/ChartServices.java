@@ -14,7 +14,7 @@ public class ChartServices {
 	
 	public ChartData ChartData() {
 		ArrayList<String> categories = new ArrayList<>();
-        ArrayList<Integer> values = new ArrayList<>();
+        ArrayList<Long> values = new ArrayList<>();
         String sql = "SELECT c.category_name, SUM(s.unit_price * s.sale_number) AS total_sales " +
                 "FROM sales s " +
                 "JOIN categories c ON s.category_id = c.category_id " +
@@ -27,7 +27,7 @@ public class ChartServices {
 				ResultSet rs = ps.executeQuery();){ 
 		while (rs.next()) {
 	        categories.add(rs.getString("category_name"));
-	        values.add(rs.getInt("total_sales"));}
+	        values.add(rs.getLong("total_sales"));}
 		} catch (SQLException e) {
 	        e.printStackTrace();
 	    }
