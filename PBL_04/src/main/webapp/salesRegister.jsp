@@ -6,11 +6,21 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	type="text/css" />
 <script src="js/day.js"></script>
 <title>売上登録</title>
 </head>
 
 <jsp:include page="header.jsp" />
+<c:if test="${saleRegisterComplete == 'completed'}">
+	<div
+		class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
+		role="alert">
+		<div class="text- fw-bold fs-5">売上の登録が完了しました</div>
+	</div>
+</c:if>
 <!-- 本体 -->
 <div class="col-8 offset-2">
 	<div class="fs-1 fw-bold">売上登録</div>

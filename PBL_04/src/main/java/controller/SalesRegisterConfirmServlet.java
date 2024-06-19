@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.SalesServices;
 
@@ -40,6 +41,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		request.setCharacterEncoding("utf8");
+		HttpSession session = request.getSession();
 		
 		String day = request.getParameter("sale_date");
 		String responsible = request.getParameter("responsible");
@@ -48,12 +50,10 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		String unit_price = request.getParameter("unit_price");
 		String sales_num = request.getParameter("sale_number");
 		String sales_note = request.getParameter("note");
-		
-		System.out.println(responsible);
-		
+		String registerCompleteFlag = "true";
 		SalesServices si = new SalesServices();
-		System.out.println(si.getAccountId(responsible));
 		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
+		session.setAttribute("registerCompleteFlag", registerCompleteFlag);
 		response.sendRedirect("S0010");
 	}
 

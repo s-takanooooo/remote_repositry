@@ -35,6 +35,7 @@ public class SalesRegister extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
+		
 		int authority = (int)session.getAttribute("authority");
 		if(authority != 1 && authority != 11) {
 			boolean f = false;
@@ -47,6 +48,14 @@ public class SalesRegister extends HttpServlet {
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}
 		
+		// 登録を完了してこの画面に戻ってきたらコメントをだす
+		String registerCompleteFlag = (String)session.getAttribute("registerCompleteFlag");
+		System.out.println(registerCompleteFlag);
+		if(registerCompleteFlag!=null&&!registerCompleteFlag.isEmpty()) {
+			String registerComplete = "completed";
+			request.setAttribute("saleRegisterComplete", registerComplete);
+			session.removeAttribute("registerCompleteFlag"); // 使用後にセッション属性をクリアする
+		}
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("categories", ss.getCatgoryName());
 		request.setAttribute("name", ss.getStaffName());
