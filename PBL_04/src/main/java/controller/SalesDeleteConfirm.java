@@ -45,10 +45,10 @@ public class SalesDeleteConfirm extends HttpServlet {
 		HttpSession session = request.getSession();
 		SearchResultBean srb = (SearchResultBean)session.getAttribute("sale");
 		int sale_id = srb.getSale_id();
-		
 		SalesServices si = new SalesServices();
-		si.salesDelete(sale_id);
-		
+		si.salesDelete(sale_id);	
+		boolean deleteFlag=true;
+		session.setAttribute("deleteFlag", deleteFlag);
 		session.setAttribute("sale", null);
 		session.setAttribute("sales", null);
 		response.sendRedirect("S0021");

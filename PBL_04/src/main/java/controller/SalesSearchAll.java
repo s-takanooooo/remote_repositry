@@ -41,6 +41,12 @@ public class SalesSearchAll extends HttpServlet {
 		String trade_name = (String) session.getAttribute("trade_name");
 		String sale_note = (String) session.getAttribute("sale_note");
 		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+		boolean deleteFlag = (boolean)session.getAttribute("deleteFlag");
+		if(deleteFlag) {
+			String saleDeleteComplete = "completed";
+			request.setAttribute("saleDeleteComplete", saleDeleteComplete);
+			session.removeAttribute("deleteFlag"); // 使用後にセッション属性をクリアする
+		}
 
 		this.getServletContext().getRequestDispatcher("/salesSearchAll.jsp").forward(request, response);
 	}
