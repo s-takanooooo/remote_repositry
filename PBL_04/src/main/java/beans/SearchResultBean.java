@@ -1,5 +1,6 @@
 package beans;
 
+import java.math.BigInteger;
 import java.sql.Date;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,6 @@ public class SearchResultBean {
 	String trade_name;
 	int unit_price;
 	int sale_number;
-	int subtotal;
+	BigInteger subtotal;
 	String note;
 }
