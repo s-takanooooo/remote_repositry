@@ -8,6 +8,9 @@
     <meta charset="UTF-8">
     <title>アカウント検索結果表示</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        type="text/css" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
@@ -16,6 +19,13 @@
         <div class="d-flex justify-content-start">
             <h1 class="fw-bold mt-5">アカウント検索結果表示</h1>
         </div>
+        <c:if test="${editCompleted == 'S0042'}">
+		<div
+			class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
+			role="alert">
+			<div class="fw-bold fs-5">アカウント編集が完了しました</div>
+		</div>
+		</c:if>
         <div class="row">
             <div class="d-flex justify-content-center">
                 <table class="table">
@@ -61,6 +71,7 @@
         </div>
     </div>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script>const ref = document.referrer</script>
 </body>
 
 </html>

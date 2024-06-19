@@ -22,7 +22,7 @@
 		<div
 			class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
 			role="alert">
-			<div class="text-center fw-bold fs-3">このアカウントは削除できません</div>
+			<div class="fw-bold fs-5">このアカウントは削除できません</div>
 		</div>
 	</c:if>
 	
