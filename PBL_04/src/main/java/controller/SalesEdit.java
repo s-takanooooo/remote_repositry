@@ -114,7 +114,5 @@ public class SalesEdit extends HttpServlet {
 
 			this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
 		}
-
 	}
-
 }
