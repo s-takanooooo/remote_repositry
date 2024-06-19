@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-body-tertiary p-0">
         <div class="container-fluid p-0">
-            <a class="navbar-brand fs-3 p-2" href="#">物品売り上げ管理システム</a>
+            <a class="navbar-brand fs-3 p-2" href="#">物品売上管理システム</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
