@@ -107,7 +107,7 @@
                     </svg>
 					検 索
 				</button>
-				<a href="S0020" class="btn btn-white border rounded col-4">クリア</a>
+				<a href="S0020" class="btn btn-white border rounded col-5">クリア</a>
 			</div>
 		</form>
 	</div>
