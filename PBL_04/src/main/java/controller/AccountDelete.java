@@ -36,6 +36,7 @@ public class AccountDelete extends HttpServlet {
 		String accountId = request.getParameter("accountId");
 		AccountsBean ab = as.selectById(accountId);
 		
+		if(ab != null) {
 		request.setAttribute("deleteAccountId", ab.getAccount_id());
 		request.setAttribute("deleteName", ab.getName());
 		request.setAttribute("deleteMail", ab.getMail());
@@ -45,6 +46,10 @@ public class AccountDelete extends HttpServlet {
 	     request.setAttribute("current", current);
 		
 		this.getServletContext().getRequestDispatcher("/accountDelete.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("S0040");
+		}
+		
 	}
 
 	/**
