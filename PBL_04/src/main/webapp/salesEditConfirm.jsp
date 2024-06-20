@@ -112,7 +112,7 @@
 				✔ O K
 				</Kbd>
 			</button>
-			<a href="SalesEditSession" type="button"
+			<a href="S0027" type="button"
 				class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
 		</div>
 	</form>

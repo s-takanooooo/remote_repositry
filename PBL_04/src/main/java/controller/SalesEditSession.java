@@ -13,7 +13,7 @@ import services.SalesServices;
 /**
  * Servlet implementation class SalesEditSession
  */
-@WebServlet("/SalesEditSession")
+@WebServlet("/S0027")
 public class SalesEditSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
