@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.AccountsBean;
 import services.AccountsServices;
-import services.ChartServices;
-import services.ChartServices.ChartData;
 
 /**
  * Servlet implementation class AccountDelete
@@ -73,16 +71,7 @@ public class AccountDelete extends HttpServlet {
 			request.setAttribute("deletable", deletable);
 			request.getRequestDispatcher("accountDelete.jsp").forward(request, response);
 		}else {
-		String accountDeleteComplete = "completed";
-		ChartServices cs = new ChartServices();
-		ChartData chartData = cs.ChartData();
-		 // JSON文字列をリクエスト属性に設定
-        request.setAttribute("categories", chartData.getCategories().toString());
-        request.setAttribute("values", chartData.getValues().toString());
-		request.setAttribute("accountDeleteComplete", accountDeleteComplete);
-		 String current = "active1";
-	     request.setAttribute("current", current);
-		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+			response.sendRedirect("S0046");
 		}
 	}
 

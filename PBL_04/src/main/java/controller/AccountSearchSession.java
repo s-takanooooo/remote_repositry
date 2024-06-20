@@ -38,10 +38,11 @@ public class AccountSearchSession extends HttpServlet {
 		String current = "active5";
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");
+		
 		if(headerName != null && notCompleted == null) {
-		System.out.println(headerName.substring(29, 34));
-		request.setAttribute("editCompleted", headerName.substring(29, 34));
-		}
+				System.out.println(headerName.substring(29, 34));
+				request.setAttribute("completed", headerName.substring(29, 34));
+			}
 	    request.setAttribute("current", current);
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
 		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);

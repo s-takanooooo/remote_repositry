@@ -63,12 +63,6 @@
                         <div class="fw-bold fs-5">このアカウントには売上登録を行う権限がありません</div>
                     </div>
                 </c:if>
-                <c:if test="${accountDeleteComplete == 'completed'}">
-                    <div class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
-                        role="alert">
-                        <div class="fw-bold fs-5">アカウントの削除が完了しました</div>
-                    </div>
-                </c:if>
             </div>
             <div class="d-flex flex-row">
             	<div class="col-4 offset-4 ps-4 fs-2 text-center">カテゴリ集計</div>

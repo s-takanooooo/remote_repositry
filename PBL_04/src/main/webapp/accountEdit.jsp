@@ -73,11 +73,11 @@
 			</div>
 			<div class="col-8 form-floating is-invalid">
 				<c:if test="${getSession == 0}">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="email" class="col-12 border rounded px-4 fs-3"
 						name="mail" value="${editMail}"  required>
 				</c:if>
 				<c:if test="${getSession == 1}">
-					<input type="text" class="col-12 border rounded px-4 fs-3"
+					<input type="email" class="col-12 border rounded px-4 fs-3"
 						name="mail" value="${editMailSession}"  required>
 				</c:if>
 			</div>
