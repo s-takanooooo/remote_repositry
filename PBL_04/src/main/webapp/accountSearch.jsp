@@ -14,7 +14,7 @@
 
 <div class="">
 	<div class="col-8 offset-2">
-		<div class="fs-2 fw-bold text-center">アカウント検索条件入力</div>
+		<div class="fs-1 fw-bold">アカウント検索条件入力</div>
 	</div>
 </div>
 
