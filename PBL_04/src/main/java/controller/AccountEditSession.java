@@ -35,8 +35,8 @@ public class AccountEditSession extends HttpServlet {
 		String permission = (String) session.getAttribute("editPermissionSession");
 		String pass = (String) session.getAttribute("editPassSession");
 		String passConfirm = (String) session.getAttribute("editPassConfirmSession");
-		int num = 1;
-		request.setAttribute("getSession", num);
+		int getSession = 1;
+		request.setAttribute("getSession", getSession);
 		request.setAttribute("editNameSession", name);
 		request.setAttribute("editMailSession", mail);
 		request.setAttribute("editPassSession", pass);

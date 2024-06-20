@@ -43,9 +43,9 @@ public class AccountEdit extends HttpServlet {
 		request.setAttribute("editMail", ab.getMail());
 		request.setAttribute("editPass", ab.getPassword());
 		request.setAttribute("editAuth", ab.getAuthority());
-		int num = 0;
+		int getSession = 0;
 		
-		request.setAttribute("getSession", num);
+		request.setAttribute("getSession", getSession);
 		 String current = "active5";
 	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);

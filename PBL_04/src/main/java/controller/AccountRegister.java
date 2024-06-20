@@ -48,9 +48,9 @@ public class AccountRegister extends HttpServlet {
 	        request.setAttribute("current", current);
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}
-		int num = 0;
+		int getSession = 0;
 		
-		request.setAttribute("getSession", num);
+		request.setAttribute("getSession", getSession);
 		String current = "active4";
 		request.setAttribute("current", current);
 		request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);

@@ -35,8 +35,8 @@ public class AccountRegisterSession extends HttpServlet {
 		String permission = (String) session.getAttribute("registerPermission");
 		String pass = (String) session.getAttribute("registerPass");
 		String passConfirm = (String) session.getAttribute("registerPassConfirm");
-		int num = 1;
-		request.setAttribute("getSession", num);
+		int getSession = 1;
+		request.setAttribute("getSession", getSession);
 		request.setAttribute("registerName", name);
 		request.setAttribute("registerMail", mail);
 		request.setAttribute("registerPass", pass);
