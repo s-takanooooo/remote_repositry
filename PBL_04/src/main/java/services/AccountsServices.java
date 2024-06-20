@@ -269,4 +269,13 @@ public class AccountsServices {
 		}
 	}
 	
+	public boolean mailFormatCheck(String mail) {
+		boolean f = false;
+		if(mail.matches(".+@.+")) {
+			f= true;
+			return f;
+		}else {
+			return f;
+		}
+	}
 }

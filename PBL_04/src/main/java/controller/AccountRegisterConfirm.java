@@ -45,9 +45,19 @@ public class AccountRegisterConfirm extends HttpServlet {
 		String strPermission = request.getParameter("permission");
 		int permission = Integer.parseInt(strPermission);
 		
+		boolean f = true;
+		
+		if(as.mailFormatCheck(mail) == false) {
+			boolean format = false;
+			f = false;
+			request.setAttribute("format", format);	
+		}
 		if(as.validateByMail(mail) == false) {
 			boolean already = false;
+			f = false;
 			request.setAttribute("already", already);
+		}
+		if(f == false) {
 			String current = "active4";
 			request.setAttribute("current", current);
 			request.getRequestDispatcher("accountRegisterConfirm.jsp").forward(request, response);

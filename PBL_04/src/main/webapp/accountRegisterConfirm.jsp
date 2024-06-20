@@ -24,6 +24,13 @@
 			<div class="text-center fw-bold fs-3">このメールアドレスは使用できません</div>
 		</div>
 	</c:if>
+	<c:if test="${format == false}">
+		<div
+			class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
+			role="alert">
+			<div class="text-center fw-bold fs-3">メールアドレスを正しい形式で入力して下さい</div>
+		</div>
+	</c:if>
 
 	<!-- placeholderにサーブレットから値を持ってくる -->
 	<div class="d-flex flex-row mt-4">
