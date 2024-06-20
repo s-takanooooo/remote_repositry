@@ -46,10 +46,17 @@ public class AccountEditConfirm extends HttpServlet {
 		int permission = Integer.parseInt(request.getParameter("permission"));
 		int accountId = Integer.parseInt(request.getParameter("accountId"));
 		
-		boolean f = as.updateAccount(name, mail, pass, permission, accountId);
-		if(f == false) {
+		boolean f = true;
+		if(as.updateAccount(name, mail, pass, permission, accountId) == false) {
 			boolean already = false;
+			f = false;
 			request.setAttribute("already", already);
+		}
+		if(as.mailFormatCheck(mail) == false) {
+			f = false;
+			request.setAttribute("format", f);	
+		}
+		if(f == false) {
 			 String current = "active5";
 		     request.setAttribute("current", current);
 			request.getRequestDispatcher("accountEditConfirm.jsp").forward(request, response);

@@ -25,6 +25,13 @@
 			<div class="text-center fw-bold fs-3">このメールアドレスは使用できません</div>
 		</div>
 	</c:if>
+	<c:if test="${format == false}">
+		<div
+			class="alert alert-danger col-12 animate__animated animate__fadeOut animate__delay-2s"
+			role="alert">
+			<div class="text-center fw-bold fs-3">メールアドレスは正しい形式で入力してください</div>
+		</div>
+	</c:if>
 <div class="d-flex flex-row mt-4">
 	<form class="col-12" method="post" action="S0043">
 		<input type="hidden" value="${editAccountIdSession}" name="accountId">

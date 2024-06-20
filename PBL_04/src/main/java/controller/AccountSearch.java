@@ -67,8 +67,15 @@ public class AccountSearch extends HttpServlet {
 		if(as.checkAccountMail(mail) == false) {
 			f = false;
 			request.setAttribute("accountMailError", f);
-		}if(f == false) {
-			doGet(request,response);
+		}
+		if(as.mailFormatCheck(mail) == false) {
+			f = false;
+			request.setAttribute("format", f);
+		}
+		if(f == false) {
+			 String current = "active5";
+		     request.setAttribute("current", current);
+			this.getServletContext().getRequestDispatcher("/accountSearch.jsp").forward(request, response);
 		}else {
 		session.setAttribute("name", name);
 		session.setAttribute("mail", mail);
