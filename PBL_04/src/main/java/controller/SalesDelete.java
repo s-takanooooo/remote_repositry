@@ -35,11 +35,16 @@ public class SalesDelete extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		SearchResultBean srb = (SearchResultBean) session.getAttribute("sale");
-		int subtotal = srb.getUnit_price() * srb.getSale_number();
-		request.setAttribute("subtotal", subtotal);
-		String current = "active3";
-        request.setAttribute("current", current);
-		this.getServletContext().getRequestDispatcher("/salesDeleteConfirm.jsp").forward(request, response);
+		if (srb != null) {
+
+			int subtotal = srb.getUnit_price() * srb.getSale_number();
+			request.setAttribute("subtotal", subtotal);
+			String current = "active3";
+			request.setAttribute("current", current);
+			this.getServletContext().getRequestDispatcher("/salesDeleteConfirm.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("S0020");
+		}
 	}
 
 	/**
@@ -49,11 +54,11 @@ public class SalesDelete extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		SearchResultBean srb = (SearchResultBean)session.getAttribute("sale");
+		SearchResultBean srb = (SearchResultBean) session.getAttribute("sale");
 		int sale_id = srb.getSale_id();
 		SalesServices si = new SalesServices();
-		si.salesDelete(sale_id);	
-		boolean deleteFlag=true;
+		si.salesDelete(sale_id);
+		boolean deleteFlag = true;
 		session.setAttribute("deleteFlag", deleteFlag);
 		session.setAttribute("sale", null);
 		session.setAttribute("sales", null);
