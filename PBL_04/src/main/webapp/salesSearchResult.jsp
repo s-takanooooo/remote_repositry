@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -60,9 +61,9 @@
 							<td><c:out value="${item.getName() }" /></td>
 							<td><c:out value="${item.getCategory_name() }" /></td>
 							<td><c:out value="${item.getTrade_name() }" /></td>
-							<td><c:out value="${item.getUnit_price() }" /></td>
-							<td><c:out value="${item.getSale_number() }" /></td>
-							<td><c:out value="${item.getSubtotal()}" /></td>
+							<td><fmt:formatNumber value="${item.getUnit_price() }" /></td>
+							<td><fmt:formatNumber value="${item.getSale_number() }" /></td>
+							<td><fmt:formatNumber value="${item.getSubtotal()}" /></td>
 						</tr>
 					</tbody>
 				</c:forEach>
