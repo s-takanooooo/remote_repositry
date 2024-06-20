@@ -15,7 +15,7 @@
 </head>
 
 <jsp:include page="header.jsp" />
-<c:if test="${deleteCompleted == 'SalesDelete'}">
+<c:if test="${deleteCompleted == 'S0025'}">
 	<div
 		class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
 		role="alert">

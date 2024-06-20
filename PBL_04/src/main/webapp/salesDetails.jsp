@@ -60,7 +60,7 @@
 			<c:if test="${authority == 10 || authority == 11}">
 				<a href="S0023?id=${sale.getSale_id()}"
 					class="btn btn-primary  me-3" role="button">✓編集</a>
-				<a href="S0026?id=${sale_num }" class="btn btn-danger  me-3"
+				<a href="S0025?id=${sale_num }" class="btn btn-danger  me-3"
 					role="button">×削除</a>
 			</c:if>
 			<a class="btn btn-light" href="S0021">キャンセル</a>

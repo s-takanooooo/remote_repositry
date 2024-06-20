@@ -43,10 +43,10 @@ public class SalesSearchResult extends HttpServlet {
 		String sale_note = (String) session.getAttribute("sale_note");
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");
+		
 		if(headerName != null && notCompleted==null) {
-			System.out.println();
-			if(headerName.contains("SalesDelete")) {
-				request.setAttribute("deleteCompleted", headerName.substring(29,40));
+			if(headerName.contains("S0025")) {
+				request.setAttribute("deleteCompleted", headerName.substring(29,34));
 			}
 			else {
 				request.setAttribute("editCompleted", headerName.substring(29,34));
