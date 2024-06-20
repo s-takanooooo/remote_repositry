@@ -44,6 +44,8 @@ public class SalesSearch extends HttpServlet {
 		session.setAttribute("sale_category", null);
 		session.setAttribute("trade_name", null);
 		session.setAttribute("sale_note", null);
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesSeach.jsp").forward(request, response);
 	}
 

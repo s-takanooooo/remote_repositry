@@ -53,6 +53,9 @@ public class SalesSearchResult extends HttpServlet {
 			}
 		}
 		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+		
+		String current = "active3";
+        request.setAttribute("current", current);
 
 		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 		}catch (Exception e) {
@@ -85,6 +88,8 @@ public class SalesSearchResult extends HttpServlet {
 		session.setAttribute("trade_name", trade_name);
 		session.setAttribute("sale_note", sale_note);
 		session.setAttribute("sales", si.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 	}
 

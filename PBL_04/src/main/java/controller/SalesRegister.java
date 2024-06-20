@@ -45,6 +45,8 @@ public class SalesRegister extends HttpServlet {
 			 // JSON文字列をリクエスト属性に設定
 	        request.setAttribute("categories", chartData.getCategories().toString());
 	        request.setAttribute("values", chartData.getValues().toString());
+	        String current = "active1";
+	        request.setAttribute("current", current);
 			request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
 		}
 		
@@ -58,6 +60,8 @@ public class SalesRegister extends HttpServlet {
 		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
 		request.setAttribute("categories", ss.getCatgoryName());
 		request.setAttribute("name", ss.getStaffName());
+		String current = "active2";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesRegister.jsp").forward(request, response);
 	}
 
@@ -129,6 +133,8 @@ public class SalesRegister extends HttpServlet {
 			request.setAttribute("sales_num", sales_num);
 			request.setAttribute("sales_note", sales_note);
 			request.setAttribute("subtotal", ss.subTotal(sales_num, unit_price));
+			String current = "active2";
+	        request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/salesRegisterConfirm.jsp").forward(request, response);
 		}
 	}

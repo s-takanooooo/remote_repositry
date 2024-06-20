@@ -36,6 +36,8 @@ public class SalesEditSession extends HttpServlet {
 		request.setAttribute("category", ss.getCatgoryName());
 		request.setAttribute("staff", ss.getStaffName());
 		request.setAttribute("getSession", num);
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 	}
 

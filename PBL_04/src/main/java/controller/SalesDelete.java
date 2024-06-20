@@ -36,6 +36,8 @@ public class SalesDelete extends HttpServlet {
 		SearchResultBean srb = (SearchResultBean) session.getAttribute("sale");
 		int subtotal = srb.getUnit_price() * srb.getSale_number();
 		request.setAttribute("subtotal", subtotal);
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesDeleteConfirm.jsp").forward(request, response);
 	}
 
@@ -52,7 +54,9 @@ public class SalesDelete extends HttpServlet {
 		int sale = Integer.parseInt(sale_id);
 
 		request.setAttribute("sale", sale);
-
+		
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/SalesDeleteConfirm.jsp").forward(request, response);
 	}
 

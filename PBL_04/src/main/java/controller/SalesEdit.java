@@ -39,6 +39,8 @@ public class SalesEdit extends HttpServlet {
 		
 		int num = 0;
 		request.setAttribute("getSession", num);
+		String current = "active3";
+        request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 	}
 
@@ -111,6 +113,8 @@ public class SalesEdit extends HttpServlet {
 			session.setAttribute("edit_sale_num", sale_num);
 			session.setAttribute("edit_sale_note", sale_note);
 			session.setAttribute("edit_sale_id", sale_id);
+			String current = "active3";
+	        request.setAttribute("current", current);
 
 			this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
 		}
