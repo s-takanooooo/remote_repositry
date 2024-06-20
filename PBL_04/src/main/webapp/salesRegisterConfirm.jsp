@@ -34,7 +34,7 @@
 			<div class="col-4 text-end fs-3">担当</div>
 			<div class=col-8>
 				<input type="text" class="w-100 border rounded px-4 fs-3 form-select  bg-body-secondary"
-					name="responsible" value="${responsible}">
+					name="responsible" value="${responsible}" readonly>
 					
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 			<div class="col-4 text-end fs-3">商品カテゴリー</div>
 			<div class=col-8>
 				<input type="text" class="w-100 border rounded px-4 fs-3 form-select bg-body-secondary"
-					name="category_id" value="${sales_category}">
+					name="category_id" value="${sales_category}" readonly>
 					
 			</div>
 		</div>
