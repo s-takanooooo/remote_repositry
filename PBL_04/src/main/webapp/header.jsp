@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <div class="nav-item ms-auto me-4 ">
-                    <a class="nav-link fs-5" href="Logout">ログアウト</a>
+                    <a class="nav-link fs-5" href="C0011">ログアウト</a>
                 </div>
             </div>
         </div>
