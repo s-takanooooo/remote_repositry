@@ -37,16 +37,15 @@ public class SalesEdit extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String str_sales_id = request.getParameter("id");
+		String headerName = request.getHeader("REFERER");
 		ArrayList<SearchResultBean> sales = new ArrayList<>();
-		if(str_sales_id!=null) {
+		if(headerName!=null) {
 			int sales_id = Integer.parseInt(str_sales_id);
 			sales = new ArrayList<>(
 					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
 			if(sales_id<=sales.size()) {
-				SearchResultBean srb = sales.get(sales_id);
 				request.setAttribute("category", ss.getCatgoryName());
 				request.setAttribute("staff", ss.getStaffName());
-				session.setAttribute("sale", srb);
 				int num = 0;
 				request.setAttribute("getSession", num);
 				String current = "active3";

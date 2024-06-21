@@ -37,8 +37,9 @@ public class SalesDetail extends HttpServlet {
 		String s_sale_num = request.getParameter("id");
 		//session取得
 		HttpSession session = request.getSession();
+		String headerName = request.getHeader("REFERER");
 		ArrayList<SearchResultBean> sales = new ArrayList<>();
-		if (s_sale_num != null) {
+		if (headerName != null) {
 			int sale_num = Integer.parseInt(s_sale_num);
 			sales = new ArrayList<>(
 					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
@@ -46,7 +47,7 @@ public class SalesDetail extends HttpServlet {
 				session.setAttribute("sale_num",sale_num);
 				//表示するbeanを代入
 				SearchResultBean srb = sales.get(sale_num);
-				request.setAttribute("sale",srb);
+				session.setAttribute("sale",srb);
 				String current = "active3";request.setAttribute("current",current);
 				this.getServletContext().getRequestDispatcher("/salesDetails.jsp").forward(request,response);
 			}

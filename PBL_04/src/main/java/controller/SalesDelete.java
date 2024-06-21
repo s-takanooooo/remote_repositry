@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.math.BigInteger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,10 +35,11 @@ public class SalesDelete extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		SearchResultBean srb = (SearchResultBean) session.getAttribute("sale");
-		if (srb != null) {
-
-			int subtotal = srb.getUnit_price() * srb.getSale_number();
+		String headerName = request.getHeader("REFERER");
+		
+		if (headerName != null) {
+			SearchResultBean srb = (SearchResultBean) session.getAttribute("sale");
+			BigInteger subtotal = srb.getSubtotal();
 			request.setAttribute("subtotal", subtotal);
 			String current = "active3";
 			request.setAttribute("current", current);
