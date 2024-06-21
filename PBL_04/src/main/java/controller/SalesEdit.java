@@ -18,6 +18,7 @@ import services.SalesServices;
 public class SalesEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SalesServices ss = new SalesServices();
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -32,16 +33,21 @@ public class SalesEdit extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
-		request.setAttribute("category", ss.getCatgoryName());
-		request.setAttribute("staff", ss.getStaffName());
-		
-		int num = 0;
-		request.setAttribute("getSession", num);
-		String current = "active3";
-        request.setAttribute("current", current);
-		this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
+		String sales_id = request.getParameter("id");
+		if (sales_id != null) {
+			//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
+			request.setAttribute("category", ss.getCatgoryName());
+			request.setAttribute("staff", ss.getStaffName());
+			int num = 0;
+			request.setAttribute("getSession", num);
+			String current = "active3";
+			request.setAttribute("current", current);
+			this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
+		}
+		else {
+			response.sendRedirect("S0020");
+		}
+
 	}
 
 	/**
@@ -58,7 +64,7 @@ public class SalesEdit extends HttpServlet {
 		String trade_name = request.getParameter("product_name");
 		String unit_price = SalesServices.convertString(request.getParameter("price"));
 		String sale_num = SalesServices.convertString(request.getParameter("product_num"));
-		
+
 		String sale_note = request.getParameter("note");
 		String sale_id = request.getParameter("id");
 
@@ -114,7 +120,7 @@ public class SalesEdit extends HttpServlet {
 			session.setAttribute("edit_sale_note", sale_note);
 			session.setAttribute("edit_sale_id", sale_id);
 			String current = "active3";
-	        request.setAttribute("current", current);
+			request.setAttribute("current", current);
 
 			this.getServletContext().getRequestDispatcher("/salesEditConfirm.jsp").forward(request, response);
 		}
