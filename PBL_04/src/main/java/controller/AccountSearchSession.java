@@ -38,7 +38,6 @@ public class AccountSearchSession extends HttpServlet {
 		String current = "active5";
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");
-		System.out.println(headerName);
 		
 		boolean t = true;
 		
