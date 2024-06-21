@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'MyFont'; /* フォントファミリーの名前 */
+    src: url('../font/keifont.ttf'); /* フォントファイルへのパスと形式 */
+}
+
+body {
+    font-family: 'MyFont', Arial, sans-serif; /* MyFontが利用できない場合に備えてバックアップフォントを指定 */
+}

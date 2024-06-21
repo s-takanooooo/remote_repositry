@@ -5,6 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/current.css" type="text/css">
+<link rel="stylesheet" href="css/font.css"> 
 </head>
 <div style="white-space: nowrap;">
 	<table class="table table-secondary">
