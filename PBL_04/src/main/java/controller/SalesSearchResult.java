@@ -60,6 +60,7 @@ public class SalesSearchResult extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 		}catch (Exception e) {
 			// TODO: handle exception
+			response.sendRedirect("S0020");
 			e.printStackTrace();
 		}
 	}

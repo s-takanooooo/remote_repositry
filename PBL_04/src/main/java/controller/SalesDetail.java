@@ -34,21 +34,28 @@ public class SalesDetail extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//検索結果配列の詳細を表示するbeanが入っている要素番号を取得
-		int sale_num = Integer.parseInt(request.getParameter("id"));
+		String s_sale_num = request.getParameter("id");
 		//session取得
 		HttpSession session = request.getSession();
-		
-		session.setAttribute("sale_num", sale_num);
-		//ArrayListをコピー
-		ArrayList<SearchResultBean> sales = new ArrayList<>(
-				(ArrayList<SearchResultBean>) session.getAttribute("sales"));
-		//表示するbeanを代入
-		SearchResultBean srb = sales.get(sale_num);
-		request.setAttribute("sale", srb);
-		String current = "active3";
-        request.setAttribute("current", current);
-		this.getServletContext().getRequestDispatcher("/salesDetails.jsp").forward(request, response);
-
+		ArrayList<SearchResultBean> sales = new ArrayList<>();
+		if (s_sale_num != null) {
+			int sale_num = Integer.parseInt(s_sale_num);
+			sales = new ArrayList<>(
+					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
+			if (sale_num <= sales.size()) {
+				session.setAttribute("sale_num",sale_num);
+				//表示するbeanを代入
+				SearchResultBean srb = sales.get(sale_num);
+				request.setAttribute("sale",srb);
+				String current = "active3";request.setAttribute("current",current);
+				this.getServletContext().getRequestDispatcher("/salesDetails.jsp").forward(request,response);
+			}
+			else {
+				response.sendRedirect("S0020");
+			}
+		}else {
+			response.sendRedirect("S0020");
+		}
 	}
 
 	/**
