@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="css/current.css" type="text/css">   
 </head>
 <body>
-	 <nav class="navbar navbar-expand-md bg-body-tertiary p-0">
+<div style="white-space: nowrap;">
+	 <nav class="navbar navbar-expand-md bg-body-tertiary p-0" >
         <div class="container-fluid p-0">
             <div class="navbar-brand fs-3 p-2">物品売上管理システム</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,6 +38,7 @@
             </div>
         </div>
     </nav>
+</div>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
