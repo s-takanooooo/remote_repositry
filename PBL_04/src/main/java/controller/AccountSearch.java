@@ -68,10 +68,6 @@ public class AccountSearch extends HttpServlet {
 			f = false;
 			request.setAttribute("accountMailError", f);
 		}
-		if(as.mailFormatCheck(mail) == false) {
-			f = false;
-			request.setAttribute("format", f);
-		}
 		if(f == false) {
 			 String current = "active5";
 		     request.setAttribute("current", current);
