@@ -25,19 +25,19 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-3 py-3 px-2 ${current == 'active1' ? 'current' : ''}  ">
+                    <li class="nav-item mx-2 p-3 ${current == 'active1' ? 'current' : ''}  ">
                         <a class="nav-link fs-5" href="C0020">ダッシュボード</a>
                     </li>
-                    <li class="nav-item mx-3 py-3 px-2">
+                    <li class="nav-item mx-2 p-3">
                         <a class="nav-link fs-5" href="S0010">売上登録</a>
                     </li>
-                    <li class="nav-item mx-3 py-3 px-2">
+                    <li class="nav-item mx-2 p-3">
                         <a class="nav-link fs-5" href="S0020">売上検索</a>
                     </li>
-                    <li class="nav-item mx-3 py-3 px-2">
+                    <li class="nav-item mx-2 p-3">
                         <a class="nav-link fs-5" href="S0030">アカウント登録</a>
                     </li>
-                    <li class="nav-item mx-3 py-3 px-2">
+                    <li class="nav-item mx-2 p-3">
                         <a class="nav-link fs-5" href="S0040">アカウント検索</a>
                     </li>
                 </ul>

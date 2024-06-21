@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
-<jsp:include page="header.jsp" />
+<jsp:include page="headerForSearchResult.jsp" />
 <c:if test="${deleteCompleted == 'S0025'}">
 	<div
 		class="alert alert-primary col-12 animate__animated animate__fadeOut animate__delay-2s"
@@ -70,6 +70,7 @@
 			</table>
 		</div>
 	</div>
+</div>
 	<script src="../javascript/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
