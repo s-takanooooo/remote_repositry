@@ -44,7 +44,7 @@ public class SalesDetail extends HttpServlet {
 				(ArrayList<SearchResultBean>) session.getAttribute("sales"));
 		//表示するbeanを代入
 		SearchResultBean srb = sales.get(sale_num);
-		session.setAttribute("sale", srb);
+		request.setAttribute("sale", srb);
 		String current = "active3";
         request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesDetails.jsp").forward(request, response);

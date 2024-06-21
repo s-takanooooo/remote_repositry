@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.SearchResultBean;
 import services.SalesServices;
 
 /**
@@ -33,20 +35,32 @@ public class SalesEdit extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String sales_id = request.getParameter("id");
-		if (sales_id != null) {
-			//ss.getCatgoryName()を呼んだらcategory_nameが入った配列がvlaueにセットされる
-			request.setAttribute("category", ss.getCatgoryName());
-			request.setAttribute("staff", ss.getStaffName());
-			int num = 0;
-			request.setAttribute("getSession", num);
-			String current = "active3";
-			request.setAttribute("current", current);
-			this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
-		}
-		else {
+		HttpSession session = request.getSession();
+		String str_sales_id = request.getParameter("id");
+		ArrayList<SearchResultBean> sales = new ArrayList<>();
+		if(str_sales_id!=null) {
+			int sales_id = Integer.parseInt(str_sales_id);
+			sales = new ArrayList<>(
+					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
+			if(sales_id<=sales.size()) {
+				SearchResultBean srb = sales.get(sales_id);
+				request.setAttribute("category", ss.getCatgoryName());
+				request.setAttribute("staff", ss.getStaffName());
+				session.setAttribute("sale", srb);
+				int num = 0;
+				request.setAttribute("getSession", num);
+				String current = "active3";
+				request.setAttribute("current", current);
+				this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
+			}else {
+				response.sendRedirect("S0020");
+			}
+		}else {
 			response.sendRedirect("S0020");
 		}
+		
+			
+			
 
 	}
 
