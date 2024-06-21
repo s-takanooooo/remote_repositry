@@ -62,6 +62,8 @@ public class SalesRegister extends HttpServlet {
 		request.setAttribute("name", ss.getStaffName());
 		String current = "active2";
         request.setAttribute("current", current);
+        int num=0;
+        request.setAttribute("getSession", num);
 		this.getServletContext().getRequestDispatcher("/salesRegister.jsp").forward(request, response);
 	}
 
@@ -73,7 +75,7 @@ public class SalesRegister extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		request.setCharacterEncoding("utf8");
-
+		HttpSession session = request.getSession();
 		String day = request.getParameter("sale");
 		String responsible = request.getParameter("responsible");
 		String sales_category = request.getParameter("category");
@@ -125,14 +127,14 @@ public class SalesRegister extends HttpServlet {
 		if (f == false) {
 			doGet(request, response);
 		} else {
-			request.setAttribute("day", day);
-			request.setAttribute("responsible", responsible);
-			request.setAttribute("sales_category", sales_category);
-			request.setAttribute("trade_name", trade_name);
-			request.setAttribute("unit_price", unit_price);
-			request.setAttribute("sales_num", sales_num);
-			request.setAttribute("sales_note", sales_note);
-			request.setAttribute("subtotal", ss.subTotal(sales_num, unit_price));
+			session.setAttribute("day", day);
+			session.setAttribute("responsible", responsible);
+			session.setAttribute("sales_category", sales_category);
+			session.setAttribute("trade_name", trade_name);
+			session.setAttribute("unit_price", unit_price);
+			session.setAttribute("sales_num", sales_num);
+			session.setAttribute("sales_note", sales_note);
+			session.setAttribute("subtotal", ss.subTotal(sales_num, unit_price));
 			String current = "active2";
 	        request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/salesRegisterConfirm.jsp").forward(request, response);
