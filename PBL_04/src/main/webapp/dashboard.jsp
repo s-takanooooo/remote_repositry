@@ -18,8 +18,9 @@
 
 <body>
 <div style="white-space: nowrap;">
-
-    <nav class="navbar navbar-expand-md bg-body-tertiary p-0">
+<table class="table table-secondary">
+<td class="p-0">
+    <nav class="navbar navbar-expand-md p-0">
         <div class="container-fluid p-0">
             <div class="navbar-brand fs-3 p-2">物品売上管理システム</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,6 +50,8 @@
             </div>
         </div>
     </nav>
+</td>
+</table>
     </div>
     <div>
 
