@@ -38,14 +38,32 @@ public class AccountSearchSession extends HttpServlet {
 		String current = "active5";
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");
+		System.out.println(headerName);
 		
-		if(headerName != null && notCompleted == null) {
-				System.out.println(headerName.substring(29, 34));
-				request.setAttribute("completed", headerName.substring(29, 34));
+		boolean t = true;
+		
+		if(notCompleted != null) {
+			t = true;
+		}else if(headerName != null) {
+				String linkName = headerName.substring(29, 34);
+				t = true;
+				if(linkName.equals("S0044") || linkName.equals("S0042")) {
+					request.setAttribute("completed", linkName);
+					t = true;
+				}
+				if(linkName.equals("S0040")){				
+					t = true;
+				}
+			}else {
+				t = false;
 			}
-	    request.setAttribute("current", current);
-		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
-		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
+		if(t == true) {
+			request.setAttribute("current", current);
+			request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
+			this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("S0040");
+		}
 	}
 
 	/**
