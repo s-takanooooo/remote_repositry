@@ -33,33 +33,36 @@ public class SalesSearchResult extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-		SalesServices ss = new SalesServices();
-		HttpSession session = request.getSession();
-		String min_day = (String) session.getAttribute("min_day");
-		String max_day = (String) session.getAttribute("max_day");
-		String name = (String) session.getAttribute("name");
-		String sale_category = (String) session.getAttribute("sale_category");
-		String trade_name = (String) session.getAttribute("trade_name");
-		String sale_note = (String) session.getAttribute("sale_note");
-		String headerName = request.getHeader("REFERER");
-		String notCompleted = request.getParameter("notCompleted");
-		
-		if(headerName != null && notCompleted==null) {
-			if(headerName.contains("S0025")) {
-				request.setAttribute("deleteCompleted", headerName.substring(29,34));
-			}
-			else {
-				request.setAttribute("editCompleted", headerName.substring(29,34));
-			}
-		}
-		session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
-		
-		String current = "active3";
-        request.setAttribute("current", current);
+			SalesServices ss = new SalesServices();
+			HttpSession session = request.getSession();
+			String min_day = (String) session.getAttribute("min_day");
+			String max_day = (String) session.getAttribute("max_day");
+			String name = (String) session.getAttribute("name");
+			String sale_category = (String) session.getAttribute("sale_category");
+			String trade_name = (String) session.getAttribute("trade_name");
+			String sale_note = (String) session.getAttribute("sale_note");
+			String headerName = request.getHeader("REFERER");
+			String notCompleted = request.getParameter("notCompleted");
 
-		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
-		}catch (Exception e) {
-			// TODO: handle exception
+			if (headerName != null && notCompleted == null) {
+				if (headerName.contains("S0025")) {
+					request.setAttribute("deleteCompleted", headerName.substring(29, 34));
+				} else if(headerName.contains("S0023")) {
+					request.setAttribute("editCompleted", headerName.substring(29, 34));
+				}
+			}else {
+				response.sendRedirect("S0020");
+				return;
+			}
+
+			System.out.println(headerName);
+			session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+
+			String current = "active3";
+			request.setAttribute("current", current);
+
+			this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
+		} catch (Exception e) {
 			response.sendRedirect("S0020");
 			e.printStackTrace();
 		}
@@ -90,7 +93,7 @@ public class SalesSearchResult extends HttpServlet {
 		session.setAttribute("sale_note", sale_note);
 		session.setAttribute("sales", si.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
 		String current = "active3";
-        request.setAttribute("current", current);
+		request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 	}
 
