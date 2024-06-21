@@ -8,6 +8,7 @@
 <title>ログイン</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/login.css" type="text/css" />
+<link rel="stylesheet" href="css/font.css"> 
 </head>
 
 <body>
