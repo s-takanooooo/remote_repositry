@@ -54,7 +54,7 @@ public class AccountSearch extends HttpServlet {
 		String allpermission = request.getParameter("allPermission");
 		
 		if(allpermission != null) {
-			permission = null;
+			permission = allpermission;
 		}
 		
 		

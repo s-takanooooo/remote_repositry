@@ -90,6 +90,12 @@ public class AccountsServices {
 	
 	public ArrayList<AccountsBean> searchByNameAndMailAndAuthority(String name, String mail, String authority) {
 		
+		if(authority != null) {
+			if(authority.equals("100")) {
+				authority = null;				
+			}
+		}
+		
 		ArrayList<AccountsBean> abList = new ArrayList<>();
 		AccountsBean ab = null;
 		String sql = "SELECT * FROM accounts WHERE 1=1";

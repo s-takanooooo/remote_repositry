@@ -80,7 +80,7 @@
 				</div>
 				<div class="col-4">
 					<input type="checkbox" class="form-check-input"
-						name="allPermission" value="1" id="allPermission" checked>
+						name="allPermission" value="100" id="allPermission" checked>
 					<label class="fs-5" for="allPermission">条件なし</label>
 				</div>
 			</div>

@@ -35,17 +35,22 @@ public class AccountDelete extends HttpServlet {
 		
 		String accountId = request.getParameter("accountId");
 		AccountsBean ab = as.selectById(accountId);
+		String headerName = request.getHeader("REFERER");
 		
-		if(ab != null) {
-		request.setAttribute("deleteAccountId", ab.getAccount_id());
-		request.setAttribute("deleteName", ab.getName());
-		request.setAttribute("deleteMail", ab.getMail());
-		request.setAttribute("deletePass", ab.getPassword());
-		request.setAttribute("permission", ab.getAuthority());
-		 String current = "active5";
-	     request.setAttribute("current", current);
+		if(headerName != null){
+			if(ab != null) {
+				request.setAttribute("deleteAccountId", ab.getAccount_id());
+				request.setAttribute("deleteName", ab.getName());
+				request.setAttribute("deleteMail", ab.getMail());
+				request.setAttribute("deletePass", ab.getPassword());
+				request.setAttribute("permission", ab.getAuthority());
+				String current = "active5";
+				request.setAttribute("current", current);
 		
-		this.getServletContext().getRequestDispatcher("/accountDelete.jsp").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/accountDelete.jsp").forward(request, response);
+			}else {
+			response.sendRedirect("S0040");
+		}
 		}else {
 			response.sendRedirect("S0040");
 		}

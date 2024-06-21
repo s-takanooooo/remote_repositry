@@ -58,8 +58,13 @@ public class AccountSearchSession extends HttpServlet {
 			}
 		if(t == true) {
 			request.setAttribute("current", current);
+			if(name == null || mail == null || permission == null) {
+				System.out.println(name + mail + permission);
+				response.sendRedirect("S0040");
+			}else {
 			request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
 			this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
+			}
 		}else {
 			response.sendRedirect("S0040");
 		}

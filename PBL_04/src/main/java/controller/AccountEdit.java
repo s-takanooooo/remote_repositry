@@ -37,6 +37,9 @@ public class AccountEdit extends HttpServlet {
 
 		String accountId = request.getParameter("accountId");
 		AccountsBean ab = as.selectById(accountId);
+		String headerName = request.getHeader("REFERER");
+		
+		if(headerName != null) {
 		if(ab != null) {
 		request.setAttribute("editAccountId", ab.getAccount_id());
 		request.setAttribute("editName", ab.getName());
@@ -50,6 +53,8 @@ public class AccountEdit extends HttpServlet {
 	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountEdit.jsp").forward(request, response);
 		}else {
+			response.sendRedirect("S0040");
+		}}else {
 			response.sendRedirect("S0040");
 		}
 	}
