@@ -58,7 +58,7 @@
 	<div class="d-flex justify-content-center pe-5 me-5">
 		<div class="text align-self-start">
 			<c:if test="${authority == 10 || authority == 11}">
-				<a href="S0023?id=${sale.getSale_id()}"
+				<a href="S0023?id=${sale_num }"
 					class="btn btn-primary  me-3" role="button">✓編集</a>
 				<a href="S0025?id=${sale_num }" class="btn btn-danger  me-3"
 					role="button">×削除</a>
