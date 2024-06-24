@@ -33,18 +33,20 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">担当</div>
 			<div class=col-8>
-				<input type="text" class="w-100 border rounded px-4 fs-3 form-select  bg-body-secondary"
+				<input type="text"
+					class="w-100 border rounded px-4 fs-3 form-select  bg-body-secondary"
 					name="responsible" value="${responsible}" readonly>
-					
+
 			</div>
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">商品カテゴリー</div>
 			<div class=col-8>
-				<input type="text" class="w-100 border rounded px-4 fs-3 form-select bg-body-secondary"
+				<input type="text"
+					class="w-100 border rounded px-4 fs-3 form-select bg-body-secondary"
 					name="category_id" value="${sales_category}" readonly>
-					
+
 			</div>
 		</div>
 
@@ -78,7 +80,8 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">小計</div>
 			<div class="col-3">
-				<input type="text" class="col-12 border rounded px-4 fs-3 bg-body-secondary"
+				<input type="text"
+					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<c:out value="${subtotal}"/>" readonly>
 			</div>
 		</div>
@@ -92,24 +95,12 @@
 						value="${sales_note}" /></textarea>
 			</div>
 		</div>
-
-
-
 		<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-primary border rounded">✔
+				登 録</button>
 
-			<table>
-				<tr>
-					<button type="submit"
+			<a href="S0012" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 
-						class="col-3 btn btn-primary border rounded">✔ 登
-						録</button>
-
-				</tr>
-				<tr>
-					<a href="S0012"
-						class="col-3 btn btn-light border rounded">キャンセル</a>
-				</tr>
-			</table>
 		</div>
 
 	</form>
