@@ -4,15 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
 <link rel="stylesheet" href="css/current.css" type="text/css">
 <link rel="stylesheet" href="css/font.css"> 
 </head>
 <div style="white-space: nowrap;">
-	<table class="table table-secondary">
+	<table class="table ">
 		<td class="p-0">
 			<nav class="navbar navbar-expand-md bg-body-tertiary p-0">
 				<div class="container-fluid p-0">
-					<div class="navbar-brand fs-3 p-2">物品売上管理システム</div>
+					<div class="navbar-brand fs-3 p-2 me-5">物品売上管理システム</div>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 						aria-label="Toggle navigation">

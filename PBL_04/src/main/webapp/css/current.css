@@ -1,6 +1,24 @@
 
-.current {
-    font-weight: bold;
-    color: black; /* 適当なスタイル */
-    background-color: rgb(206, 206, 206);
+
+.current{
+	font-weight: bold;
+	background-color: rgb(206, 206, 206);
+	color: black;
+}
+
+td.p-2.col-1.current{
+    background:  rgb(206, 206, 206);	
+}
+
+a.link-underline.link-underline-opacity-0.fs-5{
+	color: gray;
+}
+
+a.link-underline.link-underline-opacity-0.fs-5.current{
+	color: black;
+	font-weight: bold;
+}
+
+a#logout{
+	color: black;
 }
