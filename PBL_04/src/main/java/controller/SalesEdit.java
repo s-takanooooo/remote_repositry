@@ -39,11 +39,11 @@ public class SalesEdit extends HttpServlet {
 		String str_sales_id = request.getParameter("id");
 		String headerName = request.getHeader("REFERER");
 		ArrayList<SearchResultBean> sales = new ArrayList<>();
-		if(headerName!=null) {
+		if (headerName != null) {
 			int sales_id = Integer.parseInt(str_sales_id);
 			sales = new ArrayList<>(
 					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
-			if(sales_id<=sales.size()) {
+			if (sales_id <= sales.size() || headerName.contains("S0023")) {
 				request.setAttribute("category", ss.getCatgoryName());
 				request.setAttribute("staff", ss.getStaffName());
 				int num = 0;
@@ -51,15 +51,14 @@ public class SalesEdit extends HttpServlet {
 				String current = "active3";
 				request.setAttribute("current", current);
 				this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
-			}else {
+
+			} else {
 				response.sendRedirect("S0020");
 			}
-		}else {
+		} else {
+			System.out.println(2);
 			response.sendRedirect("S0020");
 		}
-		
-			
-			
 
 	}
 
