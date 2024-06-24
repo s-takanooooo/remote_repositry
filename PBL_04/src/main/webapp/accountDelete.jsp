@@ -67,7 +67,7 @@
 			</div>
 			<div class="col-8 offset-4">
 				<button type="submit" class="col-3 btn btn-danger border rounded">✖
-					削　除</button>
+					 O K</button>
 				<a href="S0046?notCompleted=1" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 			</div>
 		</form>
