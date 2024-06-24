@@ -95,6 +95,10 @@ function setup() {
 	button.mousePressed(reset);
 
 	button.size(buttonW, buttonH);
+	
+	window.onresize = function(){
+		location.reload();
+	}
 }
 function draw() {
 	background(204);
