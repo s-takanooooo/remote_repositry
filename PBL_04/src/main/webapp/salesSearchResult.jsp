@@ -13,7 +13,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 	type="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="css/font.css"> 
+<link rel="stylesheet" href="css/font.css">
 </head>
 
 <jsp:include page="headerForSearchResult.jsp" />
@@ -32,7 +32,6 @@
 	</div>
 </c:if>
 <div class="col-8 offset-2" style="white-space: nowrap;">
-	<div></div>
 	<div class="container-fluid">
 		<div class="d-flex justify-content-start">
 			<h1 class="fw-bold mt-5">売上検索結果表示</h1>
@@ -71,7 +70,12 @@
 			</table>
 		</div>
 	</div>
+	<div class="row">
+		<div class="offset-4">
+			<a href="SaleSearchCsv" type="butoon" class="btn btn-success col-3">結果をダウンロード</a>
+		</div>
+	</div>
 </div>
-	<script src="../javascript/bootstrap.bundle.min.js"></script>
-	</body>
+<script src="../javascript/bootstrap.bundle.min.js"></script>
+</body>
 </html>
