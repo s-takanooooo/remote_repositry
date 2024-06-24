@@ -8,48 +8,45 @@
 </head>
 <body>
 	<div style="white-space: nowrap;">
-		<table class="table table-secondary">
-			<td class="p-0">
-				<nav class="navbar navbar-expand-md bg-body-tertiary p-0">
-					<div class="container-fluid p-0">
-						<div class="navbar-brand fs-3 p-2">物品売上管理システム</div>
-						<button class="navbar-toggler" type="button"
+		<table class="table">
+			<tbody class="p-0 col-12">
+			<tr>
+				<!-- <nav class="navbar navbar-expand-md bg-body-tertiary p-0"> -->
+<!-- 					<div class="container-fluid p-0">
+ -->					<td class="col-2">
+						<div class="fs-3 p-2">物品売上管理システム</div>
+						</td>
+						<!-- <button class="navbar-toggler" type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#navbarSupportedContent"
 							aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse p-0"
-							id="navbarSupportedContent">
-							<ul class="navbar-nav">
-								<li
-									class="nav-item mx-2 p-3 ${current == 'active1' ? 'current' : ''}  ">
-									<a class="nav-link fs-5" href="C0020">ダッシュボード</a>
-								</li>
-								<li
-									class="nav-item mx-2 p-3 ${current == 'active2' ? 'current' : ''}">
-									<a class="nav-link fs-5" href="S0010">売上登録</a>
-								</li>
-								<li
-									class="nav-item mx-2 p-3 ${current == 'active3' ? 'current' : ''}">
-									<a class="nav-link fs-5" href="S0020">売上検索</a>
-								</li>
-								<li
-									class="nav-item mx-2 p-3 ${current == 'active4' ? 'current' : ''}">
-									<a class="nav-link fs-5" href="S0030">アカウント登録</a>
-								</li>
-								<li
-									class="nav-item mx-2 p-3 ${current == 'active5' ? 'current' : ''}">
-									<a class="nav-link fs-5" href="S0040">アカウント検索</a>
-								</li>
-							</ul>
-							<div class="nav-item ms-auto me-4 ">
-								<a class="nav-link fs-5" href="C0011">ログアウト</a>
+						</button> -->
+								<td class="p-0 col-1 ${current == 'active1' ? 'current' : ''}" align="center" valign="middle">
+									<a class=" fs-5  ${current == 'active1' ? 'current' : ''}" href="C0020">ダッシュボード</a>
+								</td>
+								<td class="p-0 col-1" align="center" valign="middle">
+									<a class=" fs-5  ${current == 'active2' ? 'current' : ''}" href="S0010">売上登録</a>
+								</td>
+								<td class="p-0 col-1 ${current == 'active3' ? 'current' : ''}" align="center" valign="middle">
+									<a class=" fs-5 ${current == 'active3' ? 'current' : ''}" href="S0020">売上検索</a>
+								</td>
+								<td class="p-0 col-1" align="center" valign="middle">
+									<a class=" fs-5  ${current == 'active4' ? 'current' : ''} " href="S0030">アカウント登録</a>
+								</td>
+								<td class=" p-0 col-1" align="center" valign="middle">
+									<a class=" fs-5 ${current == 'active5' ? 'current' : ''} " href="S0040">アカウント検索</a>
+								</td>
+								<td class="col-4"></td>
+							<td class="p-0" align="center" valign="middle">
+							<div class=" ms-auto">
+								<a class=" fs-5" href="C0011">ログアウト</a>
 							</div>
-						</div>
-					</div>
-				</nav>
-			</td>
+							</td>
+					<!-- </div> -->
+				<!-- </nav> -->
+			</tr>
+			</tbody>
 		</table>
 
 	</div>

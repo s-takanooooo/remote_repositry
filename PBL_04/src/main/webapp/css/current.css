@@ -1,6 +1,5 @@
 
-.current {
-    font-weight: bold;
-    color: black; /* 適当なスタイル */
-    background-color: rgb(206, 206, 206);
+
+td.p-0.col-1.current{
+    background:  rgb(206, 206, 206);	
 }
