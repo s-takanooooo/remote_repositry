@@ -29,12 +29,14 @@ public class AccountFilter implements Filter {
         String dashboardURI = httpRequest.getContextPath() + "/C0020";
         String cssFilesURI = httpRequest.getContextPath() + "/css/";
         String jsFilesURI = httpRequest.getContextPath() + "/js/";
+        String fontFilesURI = httpRequest.getContextPath() + "/font/";
         
         boolean loggedIn = (session != null && session.getAttribute("accountMail") != null);
         
         boolean loginServletRequest = httpRequest.getRequestURI().equals(loginServletURI);
         boolean cssRequest = httpRequest.getRequestURI().startsWith(cssFilesURI);
         boolean jsRequest = httpRequest.getRequestURI().startsWith(jsFilesURI);
+        boolean fontRequest = httpRequest.getRequestURI().startsWith(fontFilesURI);
         
         // .jspファイルへの直接アクセスを禁止
         boolean jspRequest = httpRequest.getRequestURI().endsWith(".jsp");
@@ -45,7 +47,7 @@ public class AccountFilter implements Filter {
             } else {
                 httpResponse.sendRedirect(loginServletURI);  // 非ログイン状態ならログイン画面にリダイレクト
             }
-        } else if (loggedIn || loginServletRequest || cssRequest || jsRequest) {
+        } else if (loggedIn || loginServletRequest || cssRequest || jsRequest || fontRequest) {
             chain.doFilter(request, response);
         } else {
             httpResponse.sendRedirect(loginServletURI);
