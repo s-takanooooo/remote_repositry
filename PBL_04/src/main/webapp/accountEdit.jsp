@@ -264,9 +264,9 @@
 			</div>
 		</div>
 		<div class="col-8 offset-4">
-			<button type="submit" class="col-4 btn btn-primary border rounded">✔
+			<button type="submit" class="col-3 btn btn-primary border rounded">✔
 				更 新</button>
-			<a href="S0046?notCompleted=1" class="btn btn-secondary col-4">キャンセル</a>
+			<a href="S0046?notCompleted=1" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 		</div>
 	</form>
 </div>

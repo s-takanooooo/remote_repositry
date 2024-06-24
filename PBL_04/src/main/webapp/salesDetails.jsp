@@ -63,8 +63,8 @@
 				<a href="S0025?id=${sale_num }" class="btn btn-danger  me-3"
 					role="button">×削除</a>
 			</c:if>
-			<a class="btn btn-light" href="S0021">キャンセル</a>
-		</div>
+			<a class="btn btn-secondary me-3" href="S0021">キャンセル</a>
+		</div> 
 	</div>
 </div>
 

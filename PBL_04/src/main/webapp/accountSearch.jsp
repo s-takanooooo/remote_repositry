@@ -85,8 +85,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-4 offset-4">
-			<button type="submit" class="col-5 btn btn-primary border rounded">
+		<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-primary border rounded">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path
@@ -94,7 +94,7 @@
 </svg>
 				検索
 			</button>
-			<a href="S0040" class="btn btn-white border rounded col-5">クリア</a>
+			<a href="S0040" class="btn btn-secondary col-3 offset-1">クリア</a>
 		</div>
 	</form>
 </div>
