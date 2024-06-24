@@ -11,17 +11,9 @@
 		<table class="table table-light">
 			<tbody class="p-0 col-12">
 			<tr>
-				<!-- <nav class="navbar navbar-expand-md bg-body-tertiary p-0"> -->
-<!-- 					<div class="container-fluid p-0">
- -->					<td class="col-2">
+					<td class="col-2">
 						<div class="fs-3 py-2">物品売上管理システム</div>
 						</td>
-						<!-- <button class="navbar-toggler" type="button"
-							data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent"
-							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button> -->
 								<td class="p-2 col-1 ${current == 'active1' ? 'current' : ''}" align="center" valign="middle">
 									<a class="link-underline link-underline-opacity-0 fs-5  ${current == 'active1' ? 'current' : ''}" href="C0020">ダッシュボード</a>
 								</td>
@@ -43,8 +35,6 @@
 								<a class="link-underline link-underline-opacity-0 fs-5" id="logout" href="C0011">ログアウト</a>
 							</div>
 							</td>
-					<!-- </div> -->
-				<!-- </nav> -->
 			</tr>
 			</tbody>
 		</table>
