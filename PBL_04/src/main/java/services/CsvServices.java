@@ -5,7 +5,9 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 
+import beans.AccountsBean;
 import beans.SearchResultBean;
+import util.CommonUtil;
 
 public class CsvServices {
 	public void createCsv(PrintWriter writer, ArrayList<SearchResultBean> searchResult) {
@@ -22,6 +24,19 @@ public class CsvServices {
 			String note = srb.getNote();
 			writer.println(sale_id + ","+date+","+staff+","+sale_category+","+trade_name
 					+","+unit_price+","+sale_num+","+subtotal+","+note);
+		}
+	}
+	public void createAccountCsv(PrintWriter writer, ArrayList<AccountsBean> accountSearchResult) {
+		writer.println("No,氏名,メールアドレス,権限");
+		CommonUtil cu = new CommonUtil();
+		
+		for (AccountsBean ab : accountSearchResult) {
+			int account_id = ab.getAccount_id();
+			String name = ab.getName();
+			String mail = ab.getMail();
+			String authority = String.valueOf(ab.getAuthority());
+			String authorityString  = cu.convAuthority(authority);
+			writer.println(account_id + ","+ name +","+ mail +","+authorityString);
 		}
 	}
 }
