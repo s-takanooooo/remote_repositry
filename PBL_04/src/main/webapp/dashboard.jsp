@@ -74,6 +74,7 @@
             	<div class="col-4 offset-4 ps-4 fs-2 text-center">カテゴリ集計</div>
             </div>
     <div id="chart"></div>
+    <canvas></canvas>
 
     <!-- サーブレットからのデータをJavaScriptに渡すためのhidden要素 -->
     <input type="hidden" id="categories" value='<%= request.getAttribute("categories") %>' />
@@ -85,6 +86,9 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <!-- 外部JavaScriptファイルの読み込み -->
     <script src="js/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
+    <script src="js/bankcy.js" defer></script>
 </body>
 
 </html>
