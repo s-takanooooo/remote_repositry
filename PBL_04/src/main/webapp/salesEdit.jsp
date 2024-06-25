@@ -65,7 +65,7 @@
 						</c:when>
 						<c:when test="${getSession == 1}">
 							<c:choose>
-								<c:when test="${staff_name == edit_name}">
+								<c:when test="${staff_name == edit_staff}">
 									<option value="${staff_name}" selected>${staff_name}</option>
 								</c:when>
 								<c:otherwise>
