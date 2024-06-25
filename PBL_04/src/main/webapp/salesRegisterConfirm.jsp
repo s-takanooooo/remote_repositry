@@ -45,7 +45,7 @@
 			<div class=col-8>
 				<input type="text"
 					class="w-100 border rounded px-4 fs-3 form-select bg-body-secondary"
-					name="category_id" value="${sales_category}" readonly>
+					name="sales_categor" value="${sales_category}" readonly>
 
 			</div>
 		</div>

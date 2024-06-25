@@ -46,7 +46,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		
 		String day = request.getParameter("sale_date");
 		String staff = request.getParameter("staff");
-		String sales_category = request.getParameter("category_id");
+		String sales_category = request.getParameter("sales_categor");
 		String trade_name = request.getParameter("trade_name");
 		String unit_price = request.getParameter("unit_price");
 		String sales_num = request.getParameter("sale_number");
