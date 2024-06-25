@@ -116,7 +116,6 @@ public class SalesServices {
 			stmt.setString(7, sales_note);
 			//sql文実行
 			int result = stmt.executeUpdate();
-			System.out.println(result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -129,7 +128,6 @@ public class SalesServices {
 				PreparedStatement stmt = con.prepareStatement(sql);) {
 			stmt.setInt(1, sale_id);
 			int result = stmt.executeUpdate();
-			System.out.println(result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -151,7 +149,6 @@ public class SalesServices {
 			stmt.setString(7, sale_note);
 			stmt.setInt(8, Integer.parseInt(sale_id));
 			int result = stmt.executeUpdate();
-			System.out.println(result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

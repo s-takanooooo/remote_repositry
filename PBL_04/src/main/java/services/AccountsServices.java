@@ -27,7 +27,6 @@ public class AccountsServices {
 			if (rs.next()){
 				f =  true;
 			} else {
-				System.out.println("Query returned no results");
 				f = false;
 			}
 
@@ -192,7 +191,6 @@ public class AccountsServices {
 			if (rs.next()){
 				f =  false;
 			} else {
-				System.out.println("Query returned no results");
 				f = true;
 			}
 		}catch(Exception e) {
