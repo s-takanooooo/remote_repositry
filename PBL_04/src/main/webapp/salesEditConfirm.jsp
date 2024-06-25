@@ -107,13 +107,13 @@
 			</div>
 		</div>
 
-		<div class="col-4 offset-5">
-			<button type="submit" class="col-4 btn btn-primary border rounded">
+		<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-primary border rounded">
 				✔ O K
 				</Kbd>
 			</button>
 			<a href="S0027" type="button"
-				class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+				class="btn btn-secondary col-3 offset-1">キャンセル</a>
 		</div>
 	</form>
 </div>
