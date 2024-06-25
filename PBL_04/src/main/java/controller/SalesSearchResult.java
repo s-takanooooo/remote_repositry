@@ -55,7 +55,6 @@ public class SalesSearchResult extends HttpServlet {
 				return;
 			}
 
-			System.out.println(headerName);
 			session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
 
 			String current = "active3";
