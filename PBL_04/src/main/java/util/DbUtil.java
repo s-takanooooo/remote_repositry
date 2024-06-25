@@ -1,3 +1,4 @@
+
 package util;
 
 import java.sql.Connection;
@@ -24,7 +25,6 @@ public class DbUtil {
 			con = ds.getConnection();
 			// DriverManager.getConnection()だと、DB名まで含めたURL、ユーザー名、パスワードをすべてJavaのコード内に埋め込む必要がある
 			// DataSourceを使うと、これらの情報をcontext.xmlに書いて、Javaソースコードから追い出せる
-			System.out.println("接続成功");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
