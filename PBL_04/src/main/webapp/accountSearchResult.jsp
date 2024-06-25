@@ -12,7 +12,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 	type="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="css/font.css"> 
+<link rel="stylesheet" href="css/font.css">
 </head>
 
 <jsp:include page="headerForSearchResult.jsp" />
@@ -35,7 +35,7 @@
 	<div class="row">
 		<div class="d-flex justify-content-start" style="white-space: nowrap;">
 			<div class="col-8 offset-2">
-			<h1 class="fw-bold mt-5">アカウント検索結果表示</h1>
+				<h1 class="fw-bold mt-5">アカウント検索結果表示</h1>
 				<table class="table" id="accountTable">
 					<thead>
 						<tr>
@@ -78,18 +78,21 @@
 				</table>
 			</div>
 		</div>
+	</div>
 		<div class="row">
-		<div class="offset-4">
-			<a href="AccountSearchCsv" type="butoon" class="btn btn-success col-3">結果をダウンロード</a>
+			<div class="d-flex justify-content-center" style="white-space:nowrap;">
+				<a href="AccountSearchCsv" type="button"
+					class="btn btn-success"
+					>結果をダウンロード</a>
+			</div>
 		</div>
-	</div>
-	</div>
 </div>
 <script src="../javascript/bootstrap.bundle.min.js"></script>
 <script>
 	const ref = document.referrer
 </script>
-<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+<script lang="javascript"
+	src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
 
 </body>
 
