@@ -64,7 +64,6 @@ public class AccountEdit extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("postへ遷移");
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
