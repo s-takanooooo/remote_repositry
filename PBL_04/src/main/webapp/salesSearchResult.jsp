@@ -70,9 +70,10 @@
 			</table>
 		</div>
 	</div>
-	<div class="row">
-		<div class="offset-4">
-			<a href="SaleSearchCsv" type="butoon" class="btn btn-success col-3">結果をダウンロード</a>
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-4 col-sm-6">
+			<a href="SaleSearchCsv" type="button"
+				class="btn btn-success btn-block">結果をダウンロード</a>
 		</div>
 	</div>
 </div>
