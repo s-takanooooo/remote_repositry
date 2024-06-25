@@ -10,7 +10,6 @@
 </head>
 
 <jsp:include page="header.jsp" />
-<!-- 本体 -->
 
 <div class="">
 	<div class="col-8 offset-2">
