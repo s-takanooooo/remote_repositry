@@ -43,8 +43,8 @@ public class AccountSearchCsv extends HttpServlet {
 		AccountsServices as = new AccountsServices();
 		String name = (String)session.getAttribute("name");
 		String mail = (String)session.getAttribute("mail");
-		String permission = (String)session.getAttribute("permission");
-		ArrayList<AccountsBean> abList = as.searchByNameAndMailAndAuthority(name, mail, permission);
+		String authority = (String)session.getAttribute("authority");
+		ArrayList<AccountsBean> abList = as.searchByNameAndMailAndAuthority(name, mail, authority);
 		
 		
 		

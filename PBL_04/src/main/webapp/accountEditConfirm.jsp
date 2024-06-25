@@ -73,9 +73,9 @@
 			<div class="col-4 text-end fs-3">権限</div>
 			<div class="row col-8">
 				<!-- 権限無しの場合 -->
-				<c:if test="${editPermissionSession == '0'}">
-					<input type="hidden" name="permission"
-						value="${ editPermissionSession }">
+				<c:if test="${editAuthoritySession == '0'}">
+					<input type="hidden" name="authority"
+						value="${ editAuthoritySession }">
 					<div class="col-3 offset-1 form-check">
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							disabled> <label class="fs-5" for="salesRegister">売上登録</label>
@@ -87,9 +87,9 @@
 
 				</c:if>
 				<!-- 売上登録のみの場合 -->
-				<c:if test="${editPermissionSession == '1'}">
-					<input type="hidden" name="permission"
-						value="${ editPermissionSession }">
+				<c:if test="${editAuthoritySession == '1'}">
+					<input type="hidden" name="authority"
+						value="${ editAuthoritySession }">
 					<div class="col-3 offset-1 form-check">
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							checked disabled> <label class="fs-5" for="salesRegister">売上登録</label>
@@ -100,9 +100,9 @@
 					</div>
 				</c:if>
 				<!-- アカウント登録のみの場合 -->
-				<c:if test="${editPermissionSession == '10'}">
-					<input type="hidden" name="permission"
-						value="${ editPermissionSession }">
+				<c:if test="${editAuthoritySession == '10'}">
+					<input type="hidden" name="authority"
+						value="${ editAuthoritySession }">
 					<div class="col-3 offset-1 form-check">
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							disabled> <label class="fs-5" for="salesRegister">売上登録</label>
@@ -113,9 +113,9 @@
 					</div>
 				</c:if>
 				<!-- 全権限の場合 -->
-				<c:if test="${editPermissionSession == '11'}">
-					<input type="hidden" name="permission"
-						value="${ editPermissionSession }">
+				<c:if test="${editAuthoritySession == '11'}">
+					<input type="hidden" name="authority"
+						value="${ editAuthoritySession }">
 					<div class="col-3 offset-1 form-check">
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							checked disabled> <label class="fs-5" for="salesRegister">売上登録</label>
