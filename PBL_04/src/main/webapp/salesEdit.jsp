@@ -240,11 +240,11 @@
 	</c:if>
 </div>
 
-<div class="col-4 offset-5">
-	<button type="submit" class="col-4 btn btn-primary border rounded">✔
-		登 録</button>
+<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-primary border rounded">
+		✔ 更 新</button>
 	<a href="S0022?notCompleted=1&id=${sale_num }" type="button"
-		class="col-4 btn btn-white text-dark border rounded ml-4">キャンセル</a>
+		class="btn btn-secondary col-3 offset-1">キャンセル</a>
 </div>
 </form>
 </div>

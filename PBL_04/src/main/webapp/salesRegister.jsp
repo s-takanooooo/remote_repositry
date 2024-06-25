@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-7 is-invalid">
 				<select class="w-100 border rounded px-4 fs-3 form-select"
-					name="responsible">
+					name="staff">
 					<c:choose>
 						<c:when test="${getSession==0 }">
 							<option value="0" selected>選択してください</option>

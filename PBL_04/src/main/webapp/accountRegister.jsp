@@ -169,73 +169,73 @@
 				<c:if test="${getSession == 0}">
 					<div class="col-3 offset-1 form-check">
 						<input type="checkbox" class="form-check-input"
-							name="salesPermission" value="1" id="salesRegister"> <label
+							name="salesAuthority" value="1" id="salesRegister"> <label
 							class="fs-5" for="salesRegister">売上登録</label>
 					</div>
 					<div class="col-4">
 						<input type="checkbox" class="form-check-input"
-							name="accountsPermission" value="1" id="update"> <label
+							name="accountsAuthority" value="1" id="update"> <label
 							class="fs-5 text-nowrap" for="update">アカウント登録</label>
 					</div>
 				</c:if>
 				<c:if test="${getSession == 1}">
-					<c:if test="${registerPermission == '0'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '0'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsPermission" value="1"> <label
+								name="accountsAuthority" value="1"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 
 					</c:if>
 					<!-- 売上登録のみの場合 -->
-					<c:if test="${registerPermission == '1'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '1'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsPermission" value="1"> <label
+								name="accountsAuthority" value="1"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
 					<!-- アカウント登録のみの場合 -->
-					<c:if test="${registerPermission == '10'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '10'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsPermission" value="1" checked> <label
+								name="accountsAuthority" value="1" checked> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
 					<!-- 全権限の場合 -->
-					<c:if test="${registerPermission == '11'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '11'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsPermission" value="1" checked> <label
+								name="accountsAuthority" value="1" checked> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>

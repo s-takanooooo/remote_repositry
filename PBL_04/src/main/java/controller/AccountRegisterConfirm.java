@@ -42,8 +42,8 @@ public class AccountRegisterConfirm extends HttpServlet {
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
-		String strPermission = request.getParameter("permission");
-		int permission = Integer.parseInt(strPermission);
+		String strAuthority = request.getParameter("authority");
+		int authority = Integer.parseInt(strAuthority);
 		
 		boolean f = true;
 		
@@ -62,7 +62,7 @@ public class AccountRegisterConfirm extends HttpServlet {
 			request.setAttribute("current", current);
 			request.getRequestDispatcher("accountRegisterConfirm.jsp").forward(request, response);
 		}else {
-			as.registerAccount(name, mail, pass, permission);
+			as.registerAccount(name, mail, pass, authority);
 			
 			String accountRegisterComplete = "completed";
 			int getSession = 0;

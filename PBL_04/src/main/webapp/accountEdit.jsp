@@ -156,107 +156,102 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="row col-8">
-				<!-- permissionがnothingの時 -->
 				<c:if test="${getSession == 0}">
 					<c:if test="${editAuth == 0}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update"> <label
+								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
-						<!-- permissionがreadの時 -->
 					</c:if>
 					<c:if test="${editAuth == 1}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update"> <label
+								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
-					<!-- permissionがupdateの時 -->
 					<c:if test="${editAuth == 10}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update" checked>
+								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
 					<c:if test="${editAuth == 11}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update" checked>
+								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
 				</c:if>
 				<c:if test="${getSession == 1}">
-					<c:if test="${editPermissionSession == '0'}">
+					<c:if test="${editAuthoritySession == '0'}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update"> <label
+								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
-						<!-- permissionがreadの時 -->
 					</c:if>
-					<c:if test="${editPermissionSession == '1'}">
+					<c:if test="${editAuthoritySession == '1'}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update"> <label
+								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
-					<!-- permissionがupdateの時 -->
-					<c:if test="${editPermissionSession == '10'}">
+					<c:if test="${editAuthoritySession == '10'}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister"> <label
+								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update" checked>
+								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
-					<c:if test="${editPermissionSession == '11'}">
+					<c:if test="${editAuthoritySession == '11'}">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
-								name="salesPermission" value="1" id="salesRegister" checked>
+								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input"
-								name="accountsPermission" value="1" id="update" checked>
+								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
 						</div>
 					</c:if>
@@ -264,9 +259,9 @@
 			</div>
 		</div>
 		<div class="col-8 offset-4">
-			<button type="submit" class="col-4 btn btn-primary border rounded">✔
+			<button type="submit" class="col-3 btn btn-primary border rounded">✔
 				更 新</button>
-			<a href="S0046?notCompleted=1" class="btn btn-secondary col-4">キャンセル</a>
+			<a href="S0046?notCompleted=1" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 		</div>
 	</form>
 </div>

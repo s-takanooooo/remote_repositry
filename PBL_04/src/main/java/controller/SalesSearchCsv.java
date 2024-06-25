@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,17 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.SearchResultBean;
+import services.CsvServices;
+
 /**
- * Servlet implementation class AccountRegisterSession
+ * Servlet implementation class SaleSearchCsv
  */
-@WebServlet("/S0032")
-public class AccountRegisterSession extends HttpServlet {
+@WebServlet("/SaleSearchCsv")
+public class SalesSearchCsv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountRegisterSession() {
+    public SalesSearchCsv() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,23 +34,16 @@ public class AccountRegisterSession extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String fileName = "sale_search_result.csv";
+		response.setContentType("text/CSV; charset=Shift-JIS");
+		response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
+		CsvServices cs = new CsvServices();
 		HttpSession session = request.getSession();
-		String name = (String) session.getAttribute("registerName");
-		String mail = (String) session.getAttribute("registerMail");
-		String authority = (String) session.getAttribute("registerAuthority");
-		String pass = (String) session.getAttribute("registerPass");
-		String passConfirm = (String) session.getAttribute("registerPassConfirm");
-		int getSession = 1;
-		request.setAttribute("getSession", getSession);
-		request.setAttribute("registerName", name);
-		request.setAttribute("registerMail", mail);
-		request.setAttribute("registerPass", pass);
-		request.setAttribute("registerPassConfirm", passConfirm);
-		request.setAttribute("registerAuthority", authority);
 		
-		String current = "active4";
-		request.setAttribute("current", current);
-		this.getServletContext().getRequestDispatcher("/accountRegister.jsp").forward(request, response);
+		
+		try(PrintWriter writer = response.getWriter()){
+			cs.createCsv(writer, (ArrayList<SearchResultBean>)session.getAttribute("sales"));
+		}
 	}
 
 	/**

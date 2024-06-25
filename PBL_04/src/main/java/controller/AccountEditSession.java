@@ -32,7 +32,7 @@ public class AccountEditSession extends HttpServlet {
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("editNameSession");
 		String mail = (String) session.getAttribute("editMailSession");
-		String permission = (String) session.getAttribute("editPermissionSession");
+		String authority = (String) session.getAttribute("editAuthoritySession");
 		String pass = (String) session.getAttribute("editPassSession");
 		String passConfirm = (String) session.getAttribute("editPassConfirmSession");
 		int getSession = 1;
@@ -41,7 +41,7 @@ public class AccountEditSession extends HttpServlet {
 		request.setAttribute("editMailSession", mail);
 		request.setAttribute("editPassSession", pass);
 		request.setAttribute("editPassConfirmSession", passConfirm);
-		request.setAttribute("editPermissionSession", permission);
+		request.setAttribute("editAuthoritySession", authority);
 		 String current = "active5";
 	     request.setAttribute("current", current);
 		

@@ -92,13 +92,13 @@
 			</div>
 		</div>
 
-		<div class="col-2 offset-5">
-			<button type="submit" class="col-5 btn btn-danger border rounded">
-				✔ O K
+		<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-danger border rounded">
+				✖ O K
 				</Kbd>
 			</button>
 			<a href="S0022?id=${sale_num }"
-				class="col-5 btn btn-white text-dark border rounded ml-4"> キャンセル</a>
+				class="btn btn-secondary col-3 offset-1"> キャンセル</a>
 		</div>
 		<input type="hidden" name="sale_id" value="1">
 	</form>

@@ -36,7 +36,7 @@
 		<div class="d-flex justify-content-start" style="white-space: nowrap;">
 			<div class="col-8 offset-2">
 			<h1 class="fw-bold mt-5">アカウント検索結果表示</h1>
-				<table class="table">
+				<table class="table" id="accountTable">
 					<thead>
 						<tr>
 							<c:if test="${authority == 10 || authority == 11}">
@@ -78,13 +78,19 @@
 				</table>
 			</div>
 		</div>
+		<div class="row">
+		<div class="offset-4">
+			<a href="AccountSearchCsv" type="butoon" class="btn btn-success col-3">結果をダウンロード</a>
+		</div>
 	</div>
-</div>
+	</div>
 </div>
 <script src="../javascript/bootstrap.bundle.min.js"></script>
 <script>
 	const ref = document.referrer
 </script>
+<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+
 </body>
 
 </html>

@@ -34,7 +34,7 @@ public class AccountSearchSession extends HttpServlet {
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("name");
 		String mail = (String) session.getAttribute("mail");
-		String permission = (String) session.getAttribute("permission");
+		String authority = (String) session.getAttribute("authority");
 		String current = "active5";
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");
@@ -58,11 +58,10 @@ public class AccountSearchSession extends HttpServlet {
 			}
 		if(t == true) {
 			request.setAttribute("current", current);
-			if(name == null || mail == null || permission == null) {
-				System.out.println(name + mail + permission);
+			if(name == null || mail == null || authority == null) {
 				response.sendRedirect("S0040");
 			}else {
-			request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
+			request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, authority));
 			this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);
 			}
 		}else {

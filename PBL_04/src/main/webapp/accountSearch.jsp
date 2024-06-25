@@ -10,7 +10,6 @@
 </head>
 
 <jsp:include page="header.jsp" />
-<!-- 本体 -->
 
 <div class="">
 	<div class="col-8 offset-2">
@@ -70,23 +69,23 @@
 			<div class="row col-7">
 				<div class="col-3 offset-1 form-check">
 					<input type="checkbox" class="form-check-input"
-						name="salesPermission" value="1" id="salesRegister"> <label
+						name="salesAuthority" value="1" id="salesRegister"> <label
 						class="fs-5" for="salesRegister">売上登録</label>
 				</div>
 				<div class="col-4">
 					<input type="checkbox" class="form-check-input"
-						name="accountsPermission" value="1" id="accountsRegister">
+						name="accountsAuthority" value="1" id="accountsRegister">
 					<label class="fs-5" for="accountsRegister">アカウント登録</label>
 				</div>
 				<div class="col-4">
 					<input type="checkbox" class="form-check-input"
-						name="allPermission" value="100" id="allPermission" checked>
-					<label class="fs-5" for="allPermission">条件なし</label>
+						name="allAuthority" value="100" id="allAuthority" checked>
+					<label class="fs-5" for="allAuthority">条件なし</label>
 				</div>
 			</div>
 		</div>
-		<div class="col-4 offset-4">
-			<button type="submit" class="col-5 btn btn-primary border rounded">
+		<div class="col-8 offset-4">
+			<button type="submit" class="col-3 btn btn-primary border rounded">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path
@@ -94,7 +93,7 @@
 </svg>
 				検索
 			</button>
-			<a href="S0040" class="btn btn-white border rounded col-5">クリア</a>
+			<a href="S0040" class="btn btn-secondary col-3 offset-1">クリア</a>
 		</div>
 	</form>
 </div>

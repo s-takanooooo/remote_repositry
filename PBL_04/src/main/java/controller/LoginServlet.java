@@ -48,7 +48,6 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
-		System.out.println(email +  "+" +  pass);
 		if(as.Login(email, pass) == true) {
 			HttpSession session = request.getSession();
 			AccountsBean ab = as.selectByMailAndPass(email, pass);

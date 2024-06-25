@@ -43,7 +43,7 @@ public class AccountDelete extends HttpServlet {
 				request.setAttribute("deleteName", ab.getName());
 				request.setAttribute("deleteMail", ab.getMail());
 				request.setAttribute("deletePass", ab.getPassword());
-				request.setAttribute("permission", ab.getAuthority());
+				request.setAttribute("authority", ab.getAuthority());
 				String current = "active5";
 				request.setAttribute("current", current);
 		
@@ -67,7 +67,7 @@ public class AccountDelete extends HttpServlet {
 		String name = request.getParameter("deleteName");
 		String mail = request.getParameter("deleteMail");
 		String pass = request.getParameter("deletePass");
-		int permission = Integer.parseInt(request.getParameter("permission"));
+		int authority = Integer.parseInt(request.getParameter("authority"));
 		String accountId = request.getParameter("deleteAccountId");
 		if(as.deleteAccount(accountId) == false) {
 			boolean deletable = false;
@@ -77,7 +77,7 @@ public class AccountDelete extends HttpServlet {
 			request.setAttribute("deleteName", ab.getName());
 			request.setAttribute("deleteMail", ab.getMail());
 			request.setAttribute("deletePass", ab.getPassword());
-			request.setAttribute("permission", ab.getAuthority());
+			request.setAttribute("authority", ab.getAuthority());
 			request.setAttribute("deletable", deletable);
 			request.getRequestDispatcher("accountDelete.jsp").forward(request, response);
 		}else {

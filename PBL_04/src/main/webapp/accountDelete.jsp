@@ -62,12 +62,11 @@
 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">権限</div>
-				<!-- permissionがnothingの場合 -->
 				<jsp:include page="authorityButton.jsp"></jsp:include>
 			</div>
 			<div class="col-8 offset-4">
 				<button type="submit" class="col-3 btn btn-danger border rounded">✖
-					削　除</button>
+					 O K</button>
 				<a href="S0046?notCompleted=1" class="btn btn-secondary col-3 offset-1">キャンセル</a>
 			</div>
 		</form>

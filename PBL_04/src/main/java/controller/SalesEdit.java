@@ -39,11 +39,11 @@ public class SalesEdit extends HttpServlet {
 		String str_sales_id = request.getParameter("id");
 		String headerName = request.getHeader("REFERER");
 		ArrayList<SearchResultBean> sales = new ArrayList<>();
-		if(headerName!=null) {
+		if (headerName != null) {
 			int sales_id = Integer.parseInt(str_sales_id);
 			sales = new ArrayList<>(
 					(ArrayList<SearchResultBean>) session.getAttribute("sales"));
-			if(sales_id<=sales.size()) {
+			if (sales_id <= sales.size() || headerName.contains("S0023")) {
 				request.setAttribute("category", ss.getCatgoryName());
 				request.setAttribute("staff", ss.getStaffName());
 				int num = 0;
@@ -51,15 +51,13 @@ public class SalesEdit extends HttpServlet {
 				String current = "active3";
 				request.setAttribute("current", current);
 				this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
-			}else {
+
+			} else {
 				response.sendRedirect("S0020");
 			}
-		}else {
+		} else {
 			response.sendRedirect("S0020");
 		}
-		
-			
-			
 
 	}
 
@@ -83,6 +81,9 @@ public class SalesEdit extends HttpServlet {
 
 		//バリデーション
 		boolean f = true;
+		//販売日
+		if(day==null)
+			f=false;
 		//担当者未入力チェック
 		if (ss.selectCheck(name) == false) {
 			f = false;
@@ -93,11 +94,17 @@ public class SalesEdit extends HttpServlet {
 			f = false;
 			request.setAttribute("categoryNameError", f);
 		}
+		//商品名nullチェック
+		if(trade_name==null)
+			f=false;
 		//商品名長さチェック
 		if (ss.tradeNameCheck(trade_name) == false) {
 			f = false;
 			request.setAttribute("tradeNameError", f);
 		}
+		//単価nullチェック
+		if(unit_price==null)
+			f=false;
 		//単価長さチェック
 		if (ss.salePriceCheck(unit_price) == 1) {
 			f = false;
@@ -107,6 +114,9 @@ public class SalesEdit extends HttpServlet {
 			f = false;
 			request.setAttribute("unitPriceFomartError", f);
 		}
+		//個数nullチェック
+		if(sale_num==null)
+			f=false;
 		//個数長さチェック
 		if (ss.saleNumCheck(sale_num) == 1) {
 			f = false;
