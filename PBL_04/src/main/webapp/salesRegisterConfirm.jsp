@@ -35,7 +35,7 @@
 			<div class=col-8>
 				<input type="text"
 					class="w-100 border rounded px-4 fs-3 form-select  bg-body-secondary"
-					name="responsible" value="${responsible}" readonly>
+					name="staff" value="${staff}" readonly>
 
 			</div>
 		</div>

@@ -45,7 +45,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		String day = request.getParameter("sale_date");
-		String responsible = request.getParameter("responsible");
+		String staff = request.getParameter("staff");
 		String sales_category = request.getParameter("category_id");
 		String trade_name = request.getParameter("trade_name");
 		String unit_price = request.getParameter("unit_price");
@@ -53,7 +53,7 @@ public class SalesRegisterConfirmServlet extends HttpServlet {
 		String sales_note = request.getParameter("note");
 		String registerCompleteFlag = "true";
 		SalesServices si = new SalesServices();
-		si.salesInsert(day, responsible, sales_category, trade_name, unit_price, sales_num, sales_note);
+		si.salesInsert(day, staff, sales_category, trade_name, unit_price, sales_num, sales_note);
 		session.setAttribute("registerCompleteFlag", registerCompleteFlag);
 		response.sendRedirect("S0010");
 	}
