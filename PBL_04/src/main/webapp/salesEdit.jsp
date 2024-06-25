@@ -26,12 +26,12 @@
 			</div>
 			<div class="col-7">
 				<c:if test="${getSession==0 }">
-					<input type="date" name="day" id="datepicker"
+					<input type="date" name="day"
 						class="col-12 border rounded px-4 fs-3"
 						value="${sale.getSale_date() }" required>
 				</c:if>
 				<c:if test="${getSession==1 }">
-					<input type="date" name="day" id="datepicker"
+					<input type="date" name="day"
 						class="col-12 border rounded px-4 fs-3" value="${edit_day }"
 						required>
 			</div>

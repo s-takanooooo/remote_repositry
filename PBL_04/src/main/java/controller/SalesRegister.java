@@ -63,8 +63,8 @@ public class SalesRegister extends HttpServlet {
 		request.setAttribute("name", ss.getStaffName());
 		String current = "active2";
 		request.setAttribute("current", current);
-		int num = 0;
-		request.setAttribute("getSession", num);
+		int getSession = 0;
+		request.setAttribute("getSession", getSession);
 		this.getServletContext().getRequestDispatcher("/salesRegister.jsp").forward(request, response);
 	}
 

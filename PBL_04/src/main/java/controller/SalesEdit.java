@@ -46,10 +46,12 @@ public class SalesEdit extends HttpServlet {
 			if (sales_id <= sales.size() || headerName.contains("S0023")) {
 				request.setAttribute("category", ss.getCatgoryName());
 				request.setAttribute("staff", ss.getStaffName());
-				int num = 0;
-				request.setAttribute("getSession", num);
+				int getSession = 0;
+				request.setAttribute("getSession", getSession);
 				String current = "active3";
 				request.setAttribute("current", current);
+				SearchResultBean srb =sales.get(sales_id);
+				System.out.println(srb.getSale_date());
 				this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 
 			} else {
