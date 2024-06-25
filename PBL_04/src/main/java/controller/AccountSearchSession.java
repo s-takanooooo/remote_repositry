@@ -34,7 +34,7 @@ public class AccountSearchSession extends HttpServlet {
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("name");
 		String mail = (String) session.getAttribute("mail");
-		String authority = (String) session.getAttribute("authority");
+		String authority = (String) session.getAttribute("authoritySearch");
 		String current = "active5";
 		String headerName = request.getHeader("REFERER");
 		String notCompleted = request.getParameter("notCompleted");

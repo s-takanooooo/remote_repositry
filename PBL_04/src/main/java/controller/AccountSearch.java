@@ -75,7 +75,7 @@ public class AccountSearch extends HttpServlet {
 		}else {
 		session.setAttribute("name", name);
 		session.setAttribute("mail", mail);
-		session.setAttribute("authority", authority);
+		session.setAttribute("authoritySearch", authority);
 		
 		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, authority));
 		 String current = "active5";
