@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,6 @@
 <meta charset="UTF-8">
 <title>売上詳細表示</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <jsp:include page="header.jsp" />
@@ -37,7 +37,6 @@
 							<th class=" fs-3">商品名</th>
 							<td class="fs-4"><c:out value="${sale.getTrade_name() }" /></td>
 						</tr>
-
 						<tr>
 							<th class=" fs-3">単価</th>
 							<td class="fs-4"><c:out value="${sale.getUnit_price() }" /></td>

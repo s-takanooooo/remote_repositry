@@ -8,7 +8,6 @@
 <meta charset="utf-8">
 <title>売上詳細削除確認画面</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <jsp:include page="header.jsp" />
@@ -22,8 +21,8 @@
 	<!-- アクションの指定 -->
 	<form method="post" action="S0025">
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">販売日</div>
-			<div class="col-8 offset-1">
+			<div class="col-4 text-end fs-3">販売日</div>
+			<div class="col-8">
 				<input type="date" name="day" id="datepicker"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${sale.getSale_date() }" readonly>
@@ -31,26 +30,28 @@
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">担当</div>
-			<div class="col-8 offset-1">
+			<div class="col-4 text-end fs-3">担当</div>
+			<div class="col-8">
 				<input type="text" name="staff" value="${sale.getName() }"
-					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary"
+					readonly>
+
 			</div>
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">商品カテゴリー</div>
-			<div class="col-8 offset-1">
+			<div class="col-4 text-end fs-3">商品カテゴリー</div>
+			<div class="col-8 ">
 				<input type="text" name="staff" value="${sale.getCategory_name() }"
-					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary"
+					readonly>
+
 			</div>
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">商品名</div>
-			<div class="col-8 offset-1">
+			<div class="col-4 text-end fs-3">商品名</div>
+			<div class="col-8">
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${sale.getTrade_name() }" readonly>
@@ -58,8 +59,8 @@
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">単価</div>
-			<div class="col-4 offset-1">
+			<div class="col-4 text-end fs-3">単価</div>
+			<div class="col-4">
 				<input type="text" name="price"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${sale.getUnit_price() }" readonly>
@@ -67,8 +68,8 @@
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">個数</div>
-			<div class="col-4 offset-1">
+			<div class="col-4 text-end fs-3">個数</div>
+			<div class="col-4">
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${sale.getSale_number() }" readonly>
@@ -76,8 +77,8 @@
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3 text-end fs-3">小計</div>
-			<div class="col-4 offset-1">
+			<div class="col-4 text-end fs-3">小計</div>
+			<div class="col-4">
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="${sale.getSubtotal() }" readonly>
@@ -85,8 +86,8 @@
 		</div>
 
 		<div class="row offset-2 col-8 my-4">
-			<div class="col-3   text-dark  text-end fs-3">備考</div>
-			<div class="col-8 offset-1">
+			<div class="col-4   text-dark  text-end fs-3">備考</div>
+			<div class="col-8">
 				<textarea name="mail" rows="4"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary" readonly>${sale.getNote()}</textarea>
 			</div>
@@ -103,7 +104,6 @@
 		<input type="hidden" name="sale_id" value="1">
 	</form>
 </div>
-<div></div>
 </body>
 
 </html>

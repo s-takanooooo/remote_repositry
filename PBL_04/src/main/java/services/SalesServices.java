@@ -166,6 +166,12 @@ public class SalesServices {
 		if (min_day != null && !min_day.isEmpty() && max_day != null && !max_day.isEmpty()) {
 			sql += "AND s.sale_date BETWEEN ? AND ? ";
 		}
+		if(min_day != null && !min_day.isEmpty()) {
+			sql+="AND s.sale_date >= ? ";
+		}
+		if(max_day != null && !max_day.isEmpty()) {
+			sql+="AND s.sale_date <= ? ";
+		}
 		if (!name.equals("0")) {
 			sql += "AND a.name = ? ";
 		}
@@ -186,6 +192,12 @@ public class SalesServices {
 			int paramIndex = 1;
 			if (min_day != null && !min_day.isEmpty() && max_day != null && !max_day.isEmpty()) {
 				stmt.setString(paramIndex++, min_day);
+				stmt.setString(paramIndex++, max_day);
+			}
+			if(min_day != null && !min_day.isEmpty()) {
+				stmt.setString(paramIndex++, min_day);
+			}
+			if(max_day != null && !max_day.isEmpty()) {
 				stmt.setString(paramIndex++, max_day);
 			}
 			if (!name.equals("0")) {
