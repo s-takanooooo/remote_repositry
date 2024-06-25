@@ -75,7 +75,7 @@
 			</div>
 
 			<div class="row col-12 my-4">
-				<div class="col-3 text-end fs-3">パスワード（確認）</div>
+				<div class="col-3 text-end fs-3 text-nowrap">パスワード（確認）</div>
 				<div class="col-1">
 					<div
 						class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
