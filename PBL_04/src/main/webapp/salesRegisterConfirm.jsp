@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +65,7 @@
 			<div class="col-3">
 				<input type="text" name="unit_price"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value="<c:out value="${unit_price}"/>" readonly>
+					value="<fmt:formatNumber value="${unit_price}"/>" readonly>
 			</div>
 		</div>
 
@@ -73,7 +74,7 @@
 			<div class="col-3">
 				<input type="text" name="sale_number"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value="<c:out value="${sales_num}"/>" readonly>
+					value="<fmt:formatNumber value="${sales_num}"/>" readonly>
 			</div>
 		</div>
 
@@ -82,7 +83,7 @@
 			<div class="col-3">
 				<input type="text"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value="<c:out value="${subtotal}"/>" readonly>
+					value="<fmt:formatNumber value="${subtotal}"/>" readonly>
 			</div>
 		</div>
 
