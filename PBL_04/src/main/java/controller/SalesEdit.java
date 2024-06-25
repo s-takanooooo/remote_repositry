@@ -56,7 +56,6 @@ public class SalesEdit extends HttpServlet {
 				response.sendRedirect("S0020");
 			}
 		} else {
-			System.out.println(2);
 			response.sendRedirect("S0020");
 		}
 
