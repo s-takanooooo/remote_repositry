@@ -43,11 +43,11 @@ public class AccountEditConfirm extends HttpServlet {
 		String name = request.getParameter("name") ;
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
-		int permission = Integer.parseInt(request.getParameter("permission"));
+		int authority = Integer.parseInt(request.getParameter("authority"));
 		int accountId = Integer.parseInt(request.getParameter("accountId"));
 		
 		boolean f = true;
-		if(as.updateAccount(name, mail, pass, permission, accountId) == false) {
+		if(as.updateAccount(name, mail, pass, authority, accountId) == false) {
 			boolean already = false;
 			f = false;
 			request.setAttribute("already", already);

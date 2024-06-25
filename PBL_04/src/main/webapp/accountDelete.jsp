@@ -62,7 +62,6 @@
 
 			<div class="row col-12 my-4">
 				<div class="col-4 text-end fs-3">権限</div>
-				<!-- permissionがnothingの場合 -->
 				<jsp:include page="authorityButton.jsp"></jsp:include>
 			</div>
 			<div class="col-8 offset-4">

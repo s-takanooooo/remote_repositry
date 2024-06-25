@@ -78,7 +78,7 @@ public class SalesRegister extends HttpServlet {
 		request.setCharacterEncoding("utf8");
 		HttpSession session = request.getSession();
 		String day = request.getParameter("sale");
-		String responsible = request.getParameter("responsible");
+		String staff = request.getParameter("staff");
 		String sales_category = request.getParameter("category");
 		String trade_name = request.getParameter("trade_name");
 		String unit_price = request.getParameter("unit_price");
@@ -91,7 +91,7 @@ public class SalesRegister extends HttpServlet {
 		if (day == null)
 			f = false;
 		//担当者未入力チェック
-		if (ss.selectCheck(responsible) == false) {
+		if (ss.selectCheck(staff) == false) {
 			f = false;
 			request.setAttribute("staffError", f);
 		}
@@ -143,7 +143,7 @@ public class SalesRegister extends HttpServlet {
 			doGet(request, response);
 		} else {
 			session.setAttribute("day", day);
-			session.setAttribute("responsible", responsible);
+			session.setAttribute("staff", staff);
 			session.setAttribute("sales_category", sales_category);
 			session.setAttribute("trade_name", trade_name);
 			session.setAttribute("unit_price", unit_price);
