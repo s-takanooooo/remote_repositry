@@ -48,13 +48,13 @@ public class AccountSearch extends HttpServlet {
 		HttpSession session = request.getSession();
 		String name =  request.getParameter("name");
 		String mail = request.getParameter("mail");
-		String accountsPermission = request.getParameter("accountsPermission");
-		String salesPermission = request.getParameter("salesPermission");
-		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);		
-		String allpermission = request.getParameter("allPermission");
+		String accountsAuthority = request.getParameter("accountsAuthority");
+		String salesAuthority = request.getParameter("salesAuthority");
+		String authority = CommonUtil.setAutority(accountsAuthority, salesAuthority);		
+		String allAuthority = request.getParameter("allAuthority");
 		
-		if(allpermission != null) {
-			permission = allpermission;
+		if(allAuthority != null) {
+			authority = allAuthority;
 		}
 		
 		
@@ -75,9 +75,9 @@ public class AccountSearch extends HttpServlet {
 		}else {
 		session.setAttribute("name", name);
 		session.setAttribute("mail", mail);
-		session.setAttribute("permission", permission);
+		session.setAttribute("authority", authority);
 		
-		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, permission));
+		request.setAttribute("search", as.searchByNameAndMailAndAuthority(name, mail, authority));
 		 String current = "active5";
 	     request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/accountSearchResult.jsp").forward(request, response);

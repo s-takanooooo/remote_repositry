@@ -95,9 +95,9 @@
 				</div>
 				<div class="row col-8">
 					<!-- 権限無しの場合 -->
-					<c:if test="${registerPermission == '0'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '0'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
 								id="salesRegister" disabled> <label class="fs-5"
@@ -110,9 +110,9 @@
 
 					</c:if>
 					<!-- 売上登録のみの場合 -->
-					<c:if test="${registerPermission == '1'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '1'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
 								id="salesRegister" checked disabled> <label class="fs-5"
@@ -124,9 +124,9 @@
 						</div>
 					</c:if>
 					<!-- アカウント登録のみの場合 -->
-					<c:if test="${registerPermission == '10'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '10'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
 								id="salesRegister" disabled> <label class="fs-5"
@@ -138,9 +138,9 @@
 						</div>
 					</c:if>
 					<!-- 全権限の場合 -->
-					<c:if test="${registerPermission == '11'}">
-						<input type="hidden" name="permission"
-							value="${ registerPermission }">
+					<c:if test="${registerAuthority == '11'}">
+						<input type="hidden" name="authority"
+							value="${ registerAuthority }">
 						<div class="col-3 offset-1 form-check">
 							<input type="checkbox" class="form-check-input"
 								id="salesRegister" checked disabled> <label class="fs-5"

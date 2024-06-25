@@ -15,17 +15,17 @@ public class CommonUtil {
 		return authority;
 	}
 	
-	public static String setAutority(String accountsPermission,String salesPermission) {
-		String permission = null;
-		if ("1".equals(accountsPermission) && "1".equals(salesPermission)) {
-		    permission = "11";
-		} else if ("1".equals(accountsPermission) && salesPermission == null) {
-		    permission = "10";
-		} else if (accountsPermission == null && "1".equals(salesPermission)) {
-		    permission = "1";
-		} else if (accountsPermission == null && salesPermission == null) {
-		    permission = "0";
+	public static String setAutority(String accountsAuthority,String salesAuthority) {
+		String authority = null;
+		if ("1".equals(accountsAuthority) && "1".equals(salesAuthority)) {
+		    authority = "11";
+		} else if ("1".equals(accountsAuthority) && salesAuthority == null) {
+		    authority = "10";
+		} else if (accountsAuthority == null && "1".equals(salesAuthority)) {
+		    authority = "1";
+		} else if (accountsAuthority == null && salesAuthority == null) {
+		    authority = "0";
 		}
-		return permission;
+		return authority;
 	}
 }

@@ -69,9 +69,9 @@ public class AccountEdit extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
-		String accountsPermission = request.getParameter("accountsPermission");
-		String salesPermission = request.getParameter("salesPermission");
-		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
+		String accountsAuthority = request.getParameter("accountsAuthority");
+		String salesAuthority = request.getParameter("salesAuthority");
+		String authority = CommonUtil.setAutority(accountsAuthority, salesAuthority);
 		String accountId = request.getParameter("accountId");
 		
 		AccountsBean ab = as.selectById(accountId);
@@ -139,7 +139,7 @@ public class AccountEdit extends HttpServlet {
 			session.setAttribute("editMailSession", mail);
 			session.setAttribute("editPassSession", pass);
 			session.setAttribute("editPassConfirmSession", passConfirm);
-			session.setAttribute("editPermissionSession", permission);
+			session.setAttribute("editAuthoritySession", authority);
 			 String current = "active5";
 		     request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/accountEditConfirm.jsp").forward(request, response);

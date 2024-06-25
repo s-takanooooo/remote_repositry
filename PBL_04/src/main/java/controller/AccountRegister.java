@@ -66,9 +66,9 @@ public class AccountRegister extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String passConfirm = request.getParameter("passConfirm");
-		String accountsPermission = request.getParameter("accountsPermission");
-		String salesPermission = request.getParameter("salesPermission");
-		String permission = CommonUtil.setAutority(accountsPermission, salesPermission);
+		String accountsAuthority = request.getParameter("accountsAuthority");
+		String salesAuthority = request.getParameter("salesAuthority");
+		String authority = CommonUtil.setAutority(accountsAuthority, salesAuthority);
 		
 		HttpSession session = request.getSession();
 		
@@ -131,7 +131,7 @@ public class AccountRegister extends HttpServlet {
 			session.setAttribute("registerMail", mail);
 			session.setAttribute("registerPass", pass);
 			session.setAttribute("registerPassConfirm", passConfirm);
-			session.setAttribute("registerPermission", permission);
+			session.setAttribute("registerAuthority", authority);
 			String current = "active4";
 			request.setAttribute("current", current);
 			this.getServletContext().getRequestDispatcher("/accountRegisterConfirm.jsp").forward(request, response);
