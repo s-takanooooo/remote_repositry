@@ -34,14 +34,14 @@ public class SalesRegisterSession extends HttpServlet {
 		SalesServices ss = new SalesServices();
 		HttpSession session = request.getSession();
 		String day = (String)session.getAttribute("day");
-		String responsible = (String)session.getAttribute("responsible");
+		String staff = (String)session.getAttribute("staff");
 		String sales_category = (String)session.getAttribute("sales_category");
 		String trade_name = (String)session.getAttribute("trade_name");
 		String unit_price = (String)session.getAttribute("unit_price");
 		String sales_num = (String)session.getAttribute("sales_num");
 		String sales_note = (String)session.getAttribute("sales_note");
 		request.setAttribute("day", day);
-		request.setAttribute("responsible", responsible);
+		request.setAttribute("staff", staff);
 		request.setAttribute("sales_category", sales_category);
 		request.setAttribute("trade_name", trade_name);
 		request.setAttribute("unit_price", unit_price);

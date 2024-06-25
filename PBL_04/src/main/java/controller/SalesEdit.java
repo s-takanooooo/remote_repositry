@@ -70,7 +70,7 @@ public class SalesEdit extends HttpServlet {
 		request.setCharacterEncoding("utf8");
 		HttpSession session = request.getSession();
 		String day = request.getParameter("day");
-		String name = request.getParameter("staff");
+		String staff = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("product_name");
 		String unit_price = SalesServices.convertString(request.getParameter("price"));
@@ -85,7 +85,7 @@ public class SalesEdit extends HttpServlet {
 		if(day==null)
 			f=false;
 		//担当者未入力チェック
-		if (ss.selectCheck(name) == false) {
+		if (ss.selectCheck(staff) == false) {
 			f = false;
 			request.setAttribute("staffError", f);
 		}
@@ -135,7 +135,7 @@ public class SalesEdit extends HttpServlet {
 			doGet(request, response);
 		} else {
 			session.setAttribute("edit_day", day);
-			session.setAttribute("edit_name", name);
+			session.setAttribute("edit_staff", staff);
 			session.setAttribute("edit_sale_category", sale_category);
 			session.setAttribute("edit_trade_name", trade_name);
 			session.setAttribute("edit_unit_price", unit_price);

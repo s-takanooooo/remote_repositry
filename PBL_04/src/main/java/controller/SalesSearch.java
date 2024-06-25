@@ -40,7 +40,7 @@ public class SalesSearch extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("min_day", null);
 		session.setAttribute("max_day", null);
-		session.setAttribute("name", null);
+		session.setAttribute("staff", null);
 		session.setAttribute("sale_category", null);
 		session.setAttribute("trade_name", null);
 		session.setAttribute("sale_note", null);

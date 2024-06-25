@@ -43,7 +43,7 @@ public class SalesEditConfirm extends HttpServlet {
 		request.setCharacterEncoding("utf8");
 
 		String day = request.getParameter("day");
-		String name = request.getParameter("staff");
+		String staff = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("product_name");
 		String unit_price = request.getParameter("price");
@@ -51,7 +51,7 @@ public class SalesEditConfirm extends HttpServlet {
 		String sale_note = request.getParameter("mail");
 		String sale_id = request.getParameter("id");
 		SalesServices si = new SalesServices();
-		si.salesEdit(day, name, sale_category, trade_name, unit_price, sale_num, sale_note, sale_id);
+		si.salesEdit(day, staff, sale_category, trade_name, unit_price, sale_num, sale_note, sale_id);
 		response.sendRedirect("S0021");
 
 	}

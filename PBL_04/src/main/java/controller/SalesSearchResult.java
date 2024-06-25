@@ -37,7 +37,7 @@ public class SalesSearchResult extends HttpServlet {
 			HttpSession session = request.getSession();
 			String min_day = (String) session.getAttribute("min_day");
 			String max_day = (String) session.getAttribute("max_day");
-			String name = (String) session.getAttribute("name");
+			String staff = (String) session.getAttribute("staff");
 			String sale_category = (String) session.getAttribute("sale_category");
 			String trade_name = (String) session.getAttribute("trade_name");
 			String sale_note = (String) session.getAttribute("sale_note");
@@ -54,9 +54,7 @@ public class SalesSearchResult extends HttpServlet {
 				response.sendRedirect("S0020");
 				return;
 			}
-
-			System.out.println(headerName);
-			session.setAttribute("sales", ss.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+			session.setAttribute("sales", ss.searchSales(min_day, max_day, staff, sale_category, trade_name, sale_note));
 
 			String current = "active3";
 			request.setAttribute("current", current);
@@ -78,7 +76,7 @@ public class SalesSearchResult extends HttpServlet {
 
 		String min_day = request.getParameter("startDate");
 		String max_day = request.getParameter("endDate");
-		String name = request.getParameter("staff");
+		String staff = request.getParameter("staff");
 		String sale_category = request.getParameter("category");
 		String trade_name = request.getParameter("mail");
 		String sale_note = request.getParameter("note");
@@ -87,14 +85,13 @@ public class SalesSearchResult extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("min_day", min_day);
 		session.setAttribute("max_day", max_day);
-		session.setAttribute("name", name);
+		session.setAttribute("staff", staff);
 		session.setAttribute("sale_category", sale_category);
 		session.setAttribute("trade_name", trade_name);
 		session.setAttribute("sale_note", sale_note);
-		session.setAttribute("sales", si.searchSales(min_day, max_day, name, sale_category, trade_name, sale_note));
+		session.setAttribute("sales", si.searchSales(min_day, max_day, staff, sale_category, trade_name, sale_note));
 		String current = "active3";
 		request.setAttribute("current", current);
 		this.getServletContext().getRequestDispatcher("/salesSearchResult.jsp").forward(request, response);
 	}
-
 }
