@@ -8,7 +8,6 @@
 <meta charset="utf-8">
 <title>売上詳細削除確認画面</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <jsp:include page="header.jsp" />
@@ -34,8 +33,9 @@
 			<div class="col-3 text-end fs-3">担当</div>
 			<div class="col-8 offset-1">
 				<input type="text" name="staff" value="${sale.getName() }"
-					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary"
+					readonly>
+
 			</div>
 		</div>
 
@@ -43,8 +43,9 @@
 			<div class="col-3 text-end fs-3">商品カテゴリー</div>
 			<div class="col-8 offset-1">
 				<input type="text" name="staff" value="${sale.getCategory_name() }"
-					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary" readonly>
-					
+					class="col-12 border rounded px-4 fs-3 form-select bg-body-secondary"
+					readonly>
+
 			</div>
 		</div>
 
@@ -103,7 +104,6 @@
 		<input type="hidden" name="sale_id" value="1">
 	</form>
 </div>
-<div></div>
 </body>
 
 </html>
