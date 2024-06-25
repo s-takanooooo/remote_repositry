@@ -163,7 +163,7 @@
 								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
@@ -175,7 +175,7 @@
 								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
@@ -187,7 +187,7 @@
 								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
@@ -199,7 +199,7 @@
 								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
@@ -213,7 +213,7 @@
 								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
@@ -225,7 +225,7 @@
 								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update"> <label
 								class="fs-5" for="update">アカウント登録</label>
@@ -237,7 +237,7 @@
 								name="salesAuthority" value="1" id="salesRegister"> <label
 								class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
@@ -249,7 +249,7 @@
 								name="salesAuthority" value="1" id="salesRegister" checked>
 							<label class="fs-5" for="salesRegister">売上登録</label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="checkbox" class="form-check-input"
 								name="accountsAuthority" value="1" id="update" checked>
 							<label class="fs-5" for="update">アカウント登録</label>
@@ -265,7 +265,6 @@
 		</div>
 	</form>
 </div>
-<div></div>
 </body>
 
 </html>

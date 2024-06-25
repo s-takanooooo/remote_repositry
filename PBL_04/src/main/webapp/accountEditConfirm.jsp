@@ -80,7 +80,7 @@
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							disabled> <label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<input type="checkbox" class="form-check-input" id="update"
 							disabled> <label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -94,7 +94,7 @@
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							checked disabled> <label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<input type="checkbox" class="form-check-input" id="update"
 							disabled> <label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -107,7 +107,7 @@
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							disabled> <label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<input type="checkbox" class="form-check-input" id="update"
 							checked disabled> <label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -120,7 +120,7 @@
 						<input type="checkbox" class="form-check-input" id="salesRegister"
 							checked disabled> <label class="fs-5" for="salesRegister">売上登録</label>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<input type="checkbox" class="form-check-input" id="update"
 							checked disabled> <label class="fs-5" for="update">アカウント登録</label>
 					</div>
@@ -129,10 +129,10 @@
 		</div>
 
 		<div class="col-8 offset-4">
-			<button type="submit" class="col-4 btn btn-primary border rounded">o
+			<button type="submit" class="col-3 btn btn-primary border rounded">o
 				k</button>
 			<a href="S0045"
-				class="col-4 btn btn-secondary">キャンセル</a>
+				class="col-3 offset-1 btn btn-secondary">キャンセル</a>
 		</div>
 	</form>
 </div>
