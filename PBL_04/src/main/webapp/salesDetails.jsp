@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -39,11 +40,11 @@
 
 						<tr>
 							<th class="fw-bold">単価</th>
-							<td><c:out value="${sale.getUnit_price() }" /></td>
+							<td><fmt:formatNumber value="${sale.getUnit_price() }" /></td>
 						</tr>
 						<tr>
 							<th class="fw-bold">個数</th>
-							<td><c:out value="${sale.getSale_number() }" /></td>
+							<td><fmt:formatNumber value="${sale.getSale_number() }" /></td>
 						</tr>
 						<tr>
 							<th class="fw-bold">備考</th>
