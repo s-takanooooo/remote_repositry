@@ -263,6 +263,15 @@ public class AccountsServices {
 			return f;
 		}
 	}
+	public boolean checkAccountPassConfirm(String passConfirm) {
+		boolean f = false;
+		if(passConfirm.length() > 30) {
+			return f;
+		}else {
+			f = true;
+			return f;
+		}
+	}
 	public boolean checkAccountName(String name) {
 		boolean f = false;
 		if(name.length() > 20) {
