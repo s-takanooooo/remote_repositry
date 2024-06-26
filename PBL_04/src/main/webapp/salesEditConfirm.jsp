@@ -80,10 +80,11 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-3 form-floating is-invalid">
-				<input type="text" name="price"
+				<input type="text"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value ="<fmt:formatNumber value="${edit_unit_price}" />"
 					readonly>
 			</div>
+			<input type="hidden" name="price" value="${edit_unit_price }"> 
 		</div>
 
 		<div class="row col-12 my-4">
@@ -93,10 +94,11 @@
 					class="col-12 border rounded-pill text-white bg-secondary text-center fs-5">必須</div>
 			</div>
 			<div class="col-3 form-floating is-invalid">
-				<input type="text" name="product_num"
+				<input type="text"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary" value ="<fmt:formatNumber value="${edit_sale_num}" />"
 					readonly>
 			</div>
+			<input type="hidden" name="product_num" value="${edit_sale_num }">
 		</div>
 
 		<div class="row col-12 my-4">
