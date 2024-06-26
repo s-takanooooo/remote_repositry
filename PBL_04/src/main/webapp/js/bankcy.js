@@ -93,7 +93,7 @@ function preload() {
 
 function setup() {
     // Adjust the canvas width to be 98% of the window width
-    var canvasWidth = windowWidth * 0.98;
+    var canvasWidth = windowWidth * 0.99;
     createCanvas(canvasWidth, windowHeight);
     splatterPane = createGraphics(canvasWidth, windowHeight);
 
