@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
 			String sales2023 = cs.annualSales("2023");
 			String sales2024 = cs.annualSales("2024");
 			String salesGoal = String.valueOf((int)Math.floor(Integer.parseInt(sales2023)*1.15));
-			String salesPer = String.valueOf((Double.parseDouble(sales2024)/Double.parseDouble(salesGoal))*100);
+			String salesPer = String.valueOf(String.format("%.2f",((Double.parseDouble(sales2024)/Double.parseDouble(salesGoal))*100)));
 
 			request.setAttribute("sales2023", sales2023);
 			request.setAttribute("sales2024", sales2024);
