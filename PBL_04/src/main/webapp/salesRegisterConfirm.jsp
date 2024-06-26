@@ -63,20 +63,22 @@
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">単価</div>
 			<div class="col-3">
-				<input type="text" name="unit_price"
+				<input type="text"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<fmt:formatNumber value="${unit_price}"/>" readonly>
 			</div>
 		</div>
+		<input type="hidden" name="unit_price" value="${unit_price }">
 
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">個数</div>
 			<div class="col-3">
-				<input type="text" name="sale_number"
+				<input type="text"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
 					value="<fmt:formatNumber value="${sales_num}"/>" readonly>
 			</div>
 		</div>
+		<input type="hidden" name="sale_number" value="${sales_num }">
 
 		<div class="row offset-2 col-8 my-4">
 			<div class="col-4 text-end fs-3">小計</div>
