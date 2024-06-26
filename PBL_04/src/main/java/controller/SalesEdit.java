@@ -51,7 +51,6 @@ public class SalesEdit extends HttpServlet {
 				String current = "active3";
 				request.setAttribute("current", current);
 				SearchResultBean srb =sales.get(sales_id);
-				System.out.println(srb.getSale_date());
 				this.getServletContext().getRequestDispatcher("/salesEdit.jsp").forward(request, response);
 
 			} else {

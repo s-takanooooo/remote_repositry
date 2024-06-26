@@ -39,6 +39,17 @@ public class Dashboard extends HttpServlet {
         request.setAttribute("currentLink", request.getRequestURI().toString());
         String current = "active1";
         request.setAttribute("current", current);
+        
+        String sales2023 = cs.annualSales("2023");
+		String sales2024 = cs.annualSales("2024");
+		String salesGoal = String.valueOf((int)Math.floor(Integer.parseInt(sales2023)*1.15));
+		String salesPer = String.valueOf(String.format("%.2f",((Double.parseDouble(sales2024)/Double.parseDouble(salesGoal))*100)));
+
+		request.setAttribute("sales2023", sales2023);
+		request.setAttribute("sales2024", sales2024);
+		request.setAttribute("salesGoal", salesGoal);
+		request.setAttribute("salesPer", salesPer);
+        
 		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
 	}
 

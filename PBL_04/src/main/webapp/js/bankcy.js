@@ -92,11 +92,13 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    splatterPane = createGraphics(width, height);
+    // Adjust the canvas width to be 98% of the window width
+    var canvasWidth = windowWidth * 0.99;
+    createCanvas(canvasWidth, windowHeight);
+    splatterPane = createGraphics(canvasWidth, windowHeight);
 
     button = createButton('RESET');
-    button.position(width - (buttonW + 20), height - (buttonH + 40));
+    button.position(canvasWidth - (buttonW + 20), windowHeight - (buttonH + 40));
     button.mousePressed(reset);
 
     button.size(buttonW, buttonH);

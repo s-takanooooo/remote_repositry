@@ -8,12 +8,12 @@ $(document).ready(function(){
         series: values,
         chart: {
             type: 'pie',
-            width: '100%', // グラフの幅
+            width: '95%', // グラフの幅
         	height: '500px',//グラフの高さ
         },
         labels: categories,
         legend: {
-			offsetX: 500,
+			offsetX: 0,
             position: 'right',
              // legendの位置を指定（'top', 'bottom', 'left', 'right'から選択）
         },

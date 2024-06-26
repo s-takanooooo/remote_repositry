@@ -39,11 +39,11 @@
 						</tr>
 						<tr>
 							<th class=" fs-3">単価</th>
-							<td class="fs-4"><c:out value="${sale.getUnit_price() }" /></td>
+							<td class="fs-4"><fmt:formatNumber value="${sale.getUnit_price() }" /></td>
 						</tr>
 						<tr>
 							<th class=" fs-3">個数</th>
-							<td class="fs-4"><c:out value="${sale.getSale_number() }" /></td>
+							<td class="fs-4"><fmt:formatNumber value="${sale.getSale_number() }" /></td>
 						</tr>
 						<tr>
 							<th class=" fs-3">備考</th>

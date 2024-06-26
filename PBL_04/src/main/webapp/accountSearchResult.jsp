@@ -15,6 +15,7 @@
 </head>
 
 <jsp:include page="header.jsp" />
+
 <div class="container-fluid">
 	<c:if test="${completed == 'S0042'}">
 		<div

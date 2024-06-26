@@ -85,3 +85,36 @@ INSERT INTO sales (sale_date, account_id, category_id, trade_name, unit_price, s
 ('2024-01-29', 5, 4, 'Product AC', 2900, 290, 'Note 29'),
 ('2024-01-30', 6, 5, 'Product AD', 3000, 300, 'Note 30');
 
+INSERT INTO sales (sale_date, account_id, category_id, trade_name, unit_price, sale_number, note) VALUES
+('2023-01-01', 1, 1, 'Product A', 90, 9, 'Note 1'),
+('2023-01-02', 2, 2, 'Product B', 180, 18, 'Note 2'),
+('2023-01-03', 3, 3, 'Product C', 270, 27, 'Note 3'),
+('2023-01-04', 4, 4, 'Product D', 360, 36, 'Note 4'),
+('2023-01-05', 5, 5, 'Product E', 450, 45, 'Note 5'),
+('2023-01-06', 6, 1, 'Product F', 540, 54, 'Note 6'),
+('2023-01-07', 7, 2, 'Product G', 630, 63, 'Note 7'),
+('2023-01-08', 8, 3, 'Product H', 720, 72, 'Note 8'),
+('2023-01-09', 9, 4, 'Product I', 810, 81, 'Note 9'),
+('2023-01-10', 10, 5, 'Product J', 900, 90, 'Note 10'),
+('2023-01-11', 11, 1, 'Product K', 990, 99, 'Note 11'),
+('2023-01-12', 12, 2, 'Product L', 1080, 108, 'Note 12'),
+('2023-01-13', 1, 3, 'Product M', 1170, 117, 'Note 13'),
+('2023-01-14', 2, 4, 'Product N', 1260, 126, 'Note 14'),
+('2023-01-15', 3, 5, 'Product O', 1350, 135, 'Note 15'),
+('2023-01-16', 4, 1, 'Product P', 1440, 144, 'Note 16'),
+('2023-01-17', 5, 2, 'Product Q', 1530, 153, 'Note 17'),
+('2023-01-18', 6, 3, 'Product R', 1620, 162, 'Note 18'),
+('2023-01-19', 7, 4, 'Product S', 1710, 171, 'Note 19'),
+('2023-01-20', 8, 5, 'Product T', 1800, 180, 'Note 20'),
+('2023-01-21', 9, 1, 'Product U', 1890, 189, 'Note 21'),
+('2023-01-22', 10, 2, 'Product V', 1980, 198, 'Note 22'),
+('2023-01-23', 11, 3, 'Product W', 2070, 207, 'Note 23'),
+('2023-01-24', 12, 4, 'Product X', 2160, 216, 'Note 24'),
+('2023-01-25', 1, 5, 'Product Y', 2250, 225, 'Note 25'),
+('2023-01-26', 2, 1, 'Product Z', 2340, 234, 'Note 26'),
+('2023-01-27', 3, 2, 'Product AA', 2430, 243, 'Note 27'),
+('2023-01-28', 4, 3, 'Product AB', 2520, 252, 'Note 28'),
+('2023-01-29', 5, 4, 'Product AC', 2610, 261, 'Note 29'),
+('2023-01-30', 6, 5, 'Product AD', 2700, 270, 'Note 30');
+
+

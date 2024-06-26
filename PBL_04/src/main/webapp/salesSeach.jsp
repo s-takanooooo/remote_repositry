@@ -111,7 +111,6 @@
 			</div>
 		</form>
 	</div>
-	<div></div>
 </div>
 <script src="js/day.js"></script>
 </body>
