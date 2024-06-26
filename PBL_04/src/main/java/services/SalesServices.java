@@ -226,8 +226,8 @@ public class SalesServices {
 				BigInteger subtotal = BigInteger.valueOf(sale_num).multiply(BigInteger.valueOf(sale_price));
 				String note = rs.getString("note");
 
-				SearchResultBean srb = new SearchResultBean(sale_id, sale_date, staff, c_name, t_name, sale_num,
-						sale_price, subtotal, note);
+				SearchResultBean srb = new SearchResultBean(sale_id, sale_date, staff, c_name, t_name, sale_price,
+						sale_num, subtotal, note);
 				sales.add(srb);
 			}
 		} catch (SQLException e) {
