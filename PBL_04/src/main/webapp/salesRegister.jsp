@@ -41,7 +41,7 @@
 						class="col-12 border rounded px-4 fs-3" required>
 				</c:if>
 				<c:if test="${getSession==1 }">
-					<input type="date" name="sale" id="datepicker" value="${day }"
+					<input type="date" name="sale" value="${day }"
 						class="col-12 border rounded px-4 fs-3" required>
 				</c:if>
 			</div>
