@@ -89,7 +89,7 @@ public class SalesServices {
 		}
 		return staffs;
 	}
-	
+
 	public void salesInsert(String day, String name, String sales_category,
 			String trade_name, String unit_price, String sales_num,
 			String sales_note) {
@@ -166,11 +166,11 @@ public class SalesServices {
 		if (min_day != null && !min_day.isEmpty() && max_day != null && !max_day.isEmpty()) {
 			sql += "AND s.sale_date BETWEEN ? AND ? ";
 		}
-		if(min_day != null && !min_day.isEmpty()) {
-			sql+="AND s.sale_date >= ? ";
+		if (min_day != null && !min_day.isEmpty()) {
+			sql += "AND s.sale_date >= ? ";
 		}
-		if(max_day != null && !max_day.isEmpty()) {
-			sql+="AND s.sale_date <= ? ";
+		if (max_day != null && !max_day.isEmpty()) {
+			sql += "AND s.sale_date <= ? ";
 		}
 		if (!name.equals("0")) {
 			sql += "AND a.name = ? ";
@@ -194,10 +194,10 @@ public class SalesServices {
 				stmt.setString(paramIndex++, min_day);
 				stmt.setString(paramIndex++, max_day);
 			}
-			if(min_day != null && !min_day.isEmpty()) {
+			if (min_day != null && !min_day.isEmpty()) {
 				stmt.setString(paramIndex++, min_day);
 			}
-			if(max_day != null && !max_day.isEmpty()) {
+			if (max_day != null && !max_day.isEmpty()) {
 				stmt.setString(paramIndex++, max_day);
 			}
 			if (!name.equals("0")) {
@@ -303,26 +303,27 @@ public class SalesServices {
 		}
 		return f;
 	}
-	
+
 	public static String convertString(String zenkaku) {
-        if (zenkaku == null) {
-            return null;
-        }
+		if (zenkaku == null) {
+			return null;
+		}
 
-        StringBuilder hankaku = new StringBuilder(zenkaku.length());
-        for (int i = 0; i < zenkaku.length(); i++) {
-            char c = zenkaku.charAt(i);
+		StringBuilder hankaku = new StringBuilder(zenkaku.length());
+		for (int i = 0; i < zenkaku.length(); i++) {
+			char c = zenkaku.charAt(i);
 
-            // 全角アルファベット・数字・記号を対応する半角に変換
-            if (c >= '！' && c <= '～') {
-                c = (char)(c - '！' + '!');
-            } else if (c == '　') {
-                c = ' '; // 全角スペースを半角スペースに変換
-            }
-            
-            hankaku.append(c);
-        }
+			// 全角アルファベット・数字・記号を対応する半角に変換
+			if (c >= '！' && c <= '～') {
+				c = (char) (c - '！' + '!');
+			} else if (c == '　') {
+				c = ' '; // 全角スペースを半角スペースに変換
+			}
 
-        return hankaku.toString();
-    }
+			hankaku.append(c);
+		}
+
+		return hankaku.toString();
+	}
+
 }
