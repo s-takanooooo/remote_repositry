@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -71,19 +73,45 @@
 		</c:if>
 	</div>
 	<div class="d-flex flex-row">
-		<div class="col-6 fs-2 text-center">今期売上実績</div>
-		<div class="col-6 ps-4 fs-2 text-center">カテゴリ集計</div>
-	</div>
-	
-	<div class="d-flex flex-row">
-		<div class="col-6">
-		<!--  ここに売上データを追加-->
+		<div class="d-flex col-6 align-items-center flex-column">
+			<div class="text-end">
+				<div class="fs-1 text-center">今期売上実績</div>
+				<div class="fs-2">
+					<fmt:formatNumber value="${sales2024}" />
+					円
+				</div>
+			</div>
+			<div class="text-end mt-5">
+				<div class="fs-1">前期売上実績</div>
+				<div class="fs-2">
+					<fmt:formatNumber value="${sales2023}" />
+					円
+				</div>
+			</div>
+			<div class="text-end mt-5">
+				<div class="fs-1 text-center">今期売上目標</div>
+				<div class="fs-2">
+					<fmt:formatNumber value="${salesGoal}" />
+					円
+				</div>
+			</div>
+			<div class="text-end mt-5">
+				<div class="fs-1 text-center">売上目標達成率</div>
+				<div class="fs-2">
+					<fmt:formatNumber value="${salesPer}" />
+					%
+				</div>
+			</div>
 		</div>
-		
-		<div class="col-6">
-			<div id="chart"></div>
+		<div class="d-flex col-6 align-items-center flex-column">
+			<div class="fs-1 text-center">カテゴリ集計</div>
+			<div class="col-10">
+				<div id="chart"></div>
+			</div>
 		</div>
 	</div>
+
+
 	<canvas></canvas>
 
 	<!-- サーブレットからのデータをJavaScriptに渡すためのhidden要素 -->
