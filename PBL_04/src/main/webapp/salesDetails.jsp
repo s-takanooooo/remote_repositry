@@ -47,7 +47,7 @@
 						</tr>
 						<tr>
 							<th class=" fs-3">備考</th>
-							<td class="fs-4"><fmt:formatNumber value="${sale.getNote()}" /></td>
+							<td class="fs-4"><c:out value="${sale.getNote()}" /></td>
 						</tr>
 					</tbody>
 				</table>
