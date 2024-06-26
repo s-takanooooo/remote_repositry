@@ -77,28 +77,28 @@
 			<div class="text-end">
 				<div class="fs-1 text-center">今期売上実績</div>
 				<div class="fs-2">
-					<fmt:formatNumber value="${sales2024}" />
+					<c:out value="${sales2024}" />
 					円
 				</div>
 			</div>
 			<div class="text-end mt-5">
 				<div class="fs-1">前期売上実績</div>
 				<div class="fs-2">
-					<fmt:formatNumber value="${sales2023}" />
+					<c:out value="${sales2023}" />
 					円
 				</div>
 			</div>
 			<div class="text-end mt-5">
 				<div class="fs-1 text-center">今期売上目標</div>
 				<div class="fs-2">
-					<fmt:formatNumber value="${salesGoal}" />
+					<c:out value="${salesGoal}" />
 					円
 				</div>
 			</div>
 			<div class="text-end mt-5">
 				<div class="fs-1 text-center">売上目標達成率</div>
 				<div class="fs-2">
-					<fmt:formatNumber value="${salesPer}" />
+					<c:out value="${salesPer}" />
 					%
 				</div>
 			</div>

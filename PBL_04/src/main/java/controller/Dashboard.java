@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,13 +45,27 @@ public class Dashboard extends HttpServlet {
         
         String sales2023 = cs.annualSales("2023");
 		String sales2024 = cs.annualSales("2024");
-		String salesGoal = String.valueOf((int)Math.floor(Integer.parseInt(sales2023)*1.15));
-		String salesPer = String.valueOf(String.format("%.2f",((Double.parseDouble(sales2024)/Double.parseDouble(salesGoal))*100)));
+		BigDecimal bigDeci2023 = new BigDecimal(sales2023);
+		BigDecimal bigDeci2024 = new BigDecimal(sales2024);
+		BigDecimal bigDeciTimes = new BigDecimal("1.15");
+		BigDecimal bigDeciOnehundred = new BigDecimal("100");			
+		DecimalFormat df = new DecimalFormat("#,###.##");
+		DecimalFormat df0 = new DecimalFormat("#,###");
+		
+		BigDecimal salesGoal = bigDeci2023.multiply(bigDeciTimes);
+		BigDecimal salesPer = bigDeci2024.divide(salesGoal, 2, RoundingMode.HALF_UP).multiply(bigDeciOnehundred);
+		
+		String sales2023String = df0.format(bigDeci2023);
+		String sales2024String = df0.format(bigDeci2024);
+		String salesGoalString = df0.format(salesGoal);
+		String salesPerString = df.format(salesPer);
+		
+		
 
-		request.setAttribute("sales2023", sales2023);
-		request.setAttribute("sales2024", sales2024);
-		request.setAttribute("salesGoal", salesGoal);
-		request.setAttribute("salesPer", salesPer);
+		request.setAttribute("sales2023", sales2023String);
+		request.setAttribute("sales2024", sales2024String);
+		request.setAttribute("salesGoal", salesGoalString);
+		request.setAttribute("salesPer", salesPerString);
         
 		this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
 	}
