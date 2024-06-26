@@ -64,7 +64,7 @@
 			<div class="col-4">
 				<input type="text" name="price"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value ="<fmt:formatNumber　value="${sale.getUnit_price() }" readonly> />"
+					value ="<fmt:formatNumber value="${sale.getUnit_price() }"/>" readonly> 
 			</div>
 		</div>
 
@@ -73,7 +73,7 @@
 			<div class="col-4">
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value ="<fmt:formatNumber value="${sale.getSale_number() }" readonly> />"
+					value ="<fmt:formatNumber value="${sale.getSale_number() }" />" readonly> 
 			</div>
 		</div>
 
@@ -82,7 +82,7 @@
 			<div class="col-4">
 				<input type="text" name="product_name"
 					class="col-12 border rounded px-4 fs-3 bg-body-secondary"
-					value ="<fmt:formatNumber value="${sale.getSubtotal() }" readonly> />"
+					value ="<fmt:formatNumber value="${sale.getSubtotal() }"/>" readonly> 
 			</div>
 		</div>
 
