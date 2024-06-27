@@ -189,56 +189,55 @@
 						</div>
 						<div class="col-4">
 							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsAuthority" value="1"> <label
-								class="fs-5" for="update">アカウント登録</label>
-						</div>
-
-					</c:if>
-					<!-- 売上登録のみの場合 -->
-					<c:if test="${registerAuthority == '1'}">
-						<input type="hidden" name="authority"
-							value="${ registerAuthority }">
-						<div class="col-3 offset-1 form-check">
-							<input type="checkbox" class="form-check-input"
-								name="salesAuthority" value="1" id="salesRegister" checked>
-							<label class="fs-5" for="salesRegister">売上登録</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsAuthority" value="1"> <label
-								class="fs-5" for="update">アカウント登録</label>
+								name="accountsAuthority" value="1"> <label class="fs-5"
+								for="update">アカウント登録</label>
 						</div>
 					</c:if>
-					<!-- アカウント登録のみの場合 -->
-					<c:if test="${registerAuthority == '10'}">
-						<input type="hidden" name="authority"
-							value="${ registerAuthority }">
-						<div class="col-3 offset-1 form-check">
-							<input type="checkbox" class="form-check-input"
-								name="salesAuthority" value="1" id="salesRegister"> <label
-								class="fs-5" for="salesRegister">売上登録</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsAuthority" value="1" checked> <label
-								class="fs-5" for="update">アカウント登録</label>
-						</div>
-					</c:if>
-					<!-- 全権限の場合 -->
-					<c:if test="${registerAuthority == '11'}">
-						<input type="hidden" name="authority"
-							value="${ registerAuthority }">
-						<div class="col-3 offset-1 form-check">
-							<input type="checkbox" class="form-check-input"
-								name="salesAuthority" value="1" id="salesRegister" checked>
-							<label class="fs-5" for="salesRegister">売上登録</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" class="form-check-input" id="update"
-								name="accountsAuthority" value="1" checked> <label
-								class="fs-5" for="update">アカウント登録</label>
-						</div>
-					</c:if>
+				<!-- 売上登録のみの場合 -->
+				<c:if test="${registerAuthority == '1'}">
+					<input type="hidden" name="authority"
+						value="${ registerAuthority }">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input"
+							name="salesAuthority" value="1" id="salesRegister" checked>
+						<label class="fs-5" for="salesRegister">売上登録</label>
+					</div>
+					<div class="col-4">
+						<input type="checkbox" class="form-check-input" id="update"
+							name="accountsAuthority" value="1"> <label class="fs-5"
+							for="update">アカウント登録</label>
+					</div>
+				</c:if>
+				<!-- アカウント登録のみの場合 -->
+				<c:if test="${registerAuthority == '10'}">
+					<input type="hidden" name="authority"
+						value="${ registerAuthority }">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input"
+							name="salesAuthority" value="1" id="salesRegister"> <label
+							class="fs-5" for="salesRegister">売上登録</label>
+					</div>
+					<div class="col-4">
+						<input type="checkbox" class="form-check-input" id="update"
+							name="accountsAuthority" value="1" checked> <label
+							class="fs-5" for="update">アカウント登録</label>
+					</div>
+				</c:if>
+				<!-- 全権限の場合 -->
+				<c:if test="${registerAuthority == '11'}">
+					<input type="hidden" name="authority"
+						value="${ registerAuthority }">
+					<div class="col-3 offset-1 form-check">
+						<input type="checkbox" class="form-check-input"
+							name="salesAuthority" value="1" id="salesRegister" checked>
+						<label class="fs-5" for="salesRegister">売上登録</label>
+					</div>
+					<div class="col-4">
+						<input type="checkbox" class="form-check-input" id="update"
+							name="accountsAuthority" value="1" checked> <label
+							class="fs-5" for="update">アカウント登録</label>
+					</div>
+				</c:if>
 				</c:if>
 			</div>
 		</div>

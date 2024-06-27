@@ -130,6 +130,7 @@ public class AccountRegister extends HttpServlet {
 			request.setAttribute("getSession", getSession);
 			String current = "active4";
 			request.setAttribute("current", current);
+			session.setAttribute("registerAuthority", authority);
 			request.getRequestDispatcher("/accountRegister.jsp").forward(request, response);
 		}else{
 			session.setAttribute("registerName", name);
