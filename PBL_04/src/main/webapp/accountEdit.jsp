@@ -111,7 +111,7 @@
 			</div>
 			<c:if test="${accountPassError == false}">
 				<div class="invalid-feedback" role="alert">
-					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+					<div class="fw-bold fs-3 offset-4">パスワードは8文字以上30字以内で入力してください</div>
 				</div>
 			</c:if>
 			<c:if test="${fillAcountPass == false}">
@@ -137,9 +137,9 @@
 						name="passConfirm" value="${editPassSession}"  required>
 				</c:if>
 			</div>
-			<c:if test="${accountPassError == false}">
+			<c:if test="${accountPassConfirmError == false}">
 				<div class="invalid-feedback" role="alert">
-					<div class="fw-bold fs-3 offset-4">パスワードは30字以内で入力してください</div>
+					<div class="fw-bold fs-3 offset-4">パスワード（確認用）は8文字以上30字以内で入力してください</div>
 				</div>
 			</c:if>
 			<c:if test="${fillAccountPassConfirm == false}">

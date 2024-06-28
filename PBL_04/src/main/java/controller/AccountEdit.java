@@ -120,6 +120,11 @@ public class AccountEdit extends HttpServlet {
 			request.setAttribute("accountPassError", f);	
 			session.setAttribute("editPassSession", ab.getPassword());
 		}
+		if(as.checkAccountPassConfirm(passConfirm) == false) {
+			f = false;
+			request.setAttribute("accountPassConfirmError", f);
+			session.setAttribute("registerPassConfirm", "");
+		}
 		if(!passConfirm.equals(pass)) {
 			f = false;
 			request.setAttribute("same", f);

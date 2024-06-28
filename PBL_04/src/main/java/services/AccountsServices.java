@@ -256,7 +256,7 @@ public class AccountsServices {
 	
 	public boolean checkAccountPass(String pass) {
 		boolean f = false;
-		if(pass.length() > 30) {
+		if(pass.length() > 30 || pass.length() < 8) {
 			return f;
 		}else {
 			f = true;
@@ -265,7 +265,7 @@ public class AccountsServices {
 	}
 	public boolean checkAccountPassConfirm(String passConfirm) {
 		boolean f = false;
-		if(passConfirm.length() > 30) {
+		if(passConfirm.length() > 30 || passConfirm.length() < 8) {
 			return f;
 		}else {
 			f = true;
